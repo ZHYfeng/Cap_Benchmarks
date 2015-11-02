@@ -1,0 +1,228 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+OBJS	contiguous_blocks/Makefile	/^OBJS = lu.o$/;"	m
+TARGET	contiguous_blocks/Makefile	/^TARGET = LU$/;"	m
+BlockOwner	contiguous_blocks/lu (复件).C	/^long BlockOwner(long I, long J)$/;"	f
+BlockOwnerColumn	contiguous_blocks/lu (复件).C	/^long BlockOwnerColumn(long I, long J)$/;"	f
+BlockOwnerRow	contiguous_blocks/lu (复件).C	/^long BlockOwnerRow(long I, long J)$/;"	f
+CheckResult	contiguous_blocks/lu (复件).C	/^void CheckResult(long n, double **a, double *rhs)$/;"	f
+DEFAULT_B	contiguous_blocks/lu (复件).C	53;"	d	file:
+DEFAULT_N	contiguous_blocks/lu (复件).C	51;"	d	file:
+DEFAULT_P	contiguous_blocks/lu (复件).C	52;"	d	file:
+Global	contiguous_blocks/lu (复件).C	/^} *Global;$/;"	v	typeref:struct:GlobalMemory
+GlobalMemory	contiguous_blocks/lu (复件).C	/^struct GlobalMemory {$/;"	s	file:
+InitA	contiguous_blocks/lu (复件).C	/^void InitA(double *rhs)$/;"	f
+LocalCopies	contiguous_blocks/lu (复件).C	/^struct LocalCopies {$/;"	s	file:
+MAXRAND	contiguous_blocks/lu (复件).C	47;"	d	file:
+OneSolve	contiguous_blocks/lu (复件).C	/^void OneSolve(long n, long block_size, long MyNum, long dostats)$/;"	f
+P	contiguous_blocks/lu (复件).C	/^long P = DEFAULT_P;          \/* Number of processors *\/$/;"	v
+PAGE_SIZE	contiguous_blocks/lu (复件).C	56;"	d	file:
+PrintA	contiguous_blocks/lu (复件).C	/^void PrintA()$/;"	f
+SlaveStart	contiguous_blocks/lu (复件).C	/^void SlaveStart()$/;"	f
+TouchA	contiguous_blocks/lu (复件).C	/^double TouchA(long bs, long MyNum)$/;"	f
+a	contiguous_blocks/lu (复件).C	/^double **a;                  \/* a = lu; l and u both placed back in a *\/$/;"	v
+bdiv	contiguous_blocks/lu (复件).C	/^void bdiv(double *a, double *diag, long stride_a, long stride_diag, long dimi, long dimk)$/;"	f
+block_size	contiguous_blocks/lu (复件).C	/^long block_size = DEFAULT_B; \/* Block dimension *\/$/;"	v
+bmod	contiguous_blocks/lu (复件).C	/^void bmod(double *a, double *b, double *c, long dimi, long dimj, long dimk, long stridea, long strideb, long stridec)$/;"	f
+bmodd	contiguous_blocks/lu (复件).C	/^void bmodd(double *a, double *c, long dimi, long dimj, long stride_a, long stride_c)$/;"	f
+completion	contiguous_blocks/lu (复件).C	/^  double *completion;$/;"	m	struct:GlobalMemory	file:
+daxpy	contiguous_blocks/lu (复件).C	/^void daxpy(double *a, double *b, long n, double alpha)$/;"	f
+done	contiguous_blocks/lu (复件).C	/^  unsigned long done;$/;"	m	struct:GlobalMemory	file:
+doprint	contiguous_blocks/lu (复件).C	/^long doprint = 0;            \/* Print out matrix values? *\/$/;"	v
+dostats	contiguous_blocks/lu (复件).C	/^long dostats = 0;            \/* Print out individual processor statistics? *\/$/;"	v
+id	contiguous_blocks/lu (复件).C	/^  long id;$/;"	m	struct:GlobalMemory	file:
+last_malloc	contiguous_blocks/lu (复件).C	/^double **last_malloc;        \/* Starting point of last block of A *\/$/;"	v
+lu	contiguous_blocks/lu (复件).C	/^void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)$/;"	f
+lu0	contiguous_blocks/lu (复件).C	/^void lu0(double *a, long n, long stride)$/;"	f
+main	contiguous_blocks/lu (复件).C	/^int main(int argc, char *argv[])$/;"	f
+min	contiguous_blocks/lu (复件).C	54;"	d	file:
+n	contiguous_blocks/lu (复件).C	/^long n = DEFAULT_N;          \/* The size of the matrix *\/$/;"	v
+nblocks	contiguous_blocks/lu (复件).C	/^long nblocks;                \/* Number of blocks in each dimension *\/$/;"	v
+num_cols	contiguous_blocks/lu (复件).C	/^long num_cols;               \/* Number of processors per col of processor grid *\/$/;"	v
+num_rows	contiguous_blocks/lu (复件).C	/^long num_rows;               \/* Number of processors per row of processor grid *\/$/;"	v
+printerr	contiguous_blocks/lu (复件).C	/^void printerr(char *s)$/;"	f
+proc_bytes	contiguous_blocks/lu (复件).C	/^long *proc_bytes;            \/* Bytes to malloc per processor to hold blocks of A*\/$/;"	v
+rf	contiguous_blocks/lu (复件).C	/^  unsigned long rf; $/;"	m	struct:GlobalMemory	file:
+rhs	contiguous_blocks/lu (复件).C	/^double *rhs;$/;"	v
+rs	contiguous_blocks/lu (复件).C	/^  unsigned long rs; $/;"	m	struct:GlobalMemory	file:
+starttime	contiguous_blocks/lu (复件).C	/^  unsigned long starttime; $/;"	m	struct:GlobalMemory	file:
+t_in_bar	contiguous_blocks/lu (复件).C	/^  double *t_in_bar;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	contiguous_blocks/lu (复件).C	/^  double t_in_bar;$/;"	m	struct:LocalCopies	file:
+t_in_fac	contiguous_blocks/lu (复件).C	/^  double *t_in_fac;   $/;"	m	struct:GlobalMemory	file:
+t_in_fac	contiguous_blocks/lu (复件).C	/^  double t_in_fac;$/;"	m	struct:LocalCopies	file:
+t_in_mod	contiguous_blocks/lu (复件).C	/^  double *t_in_mod; $/;"	m	struct:GlobalMemory	file:
+t_in_mod	contiguous_blocks/lu (复件).C	/^  double t_in_mod;$/;"	m	struct:LocalCopies	file:
+t_in_solve	contiguous_blocks/lu (复件).C	/^  double *t_in_solve;$/;"	m	struct:GlobalMemory	file:
+t_in_solve	contiguous_blocks/lu (复件).C	/^  double t_in_solve;$/;"	m	struct:LocalCopies	file:
+test_result	contiguous_blocks/lu (复件).C	/^long test_result = 0;        \/* Test result of factorization? *\/$/;"	v
+BlockOwner	contiguous_blocks/lu.C	/^long BlockOwner(long I, long J)$/;"	f
+BlockOwnerColumn	contiguous_blocks/lu.C	/^long BlockOwnerColumn(long I, long J)$/;"	f
+BlockOwnerRow	contiguous_blocks/lu.C	/^long BlockOwnerRow(long I, long J)$/;"	f
+CheckResult	contiguous_blocks/lu.C	/^void CheckResult(long n, double **a, double *rhs)$/;"	f
+DEFAULT_B	contiguous_blocks/lu.C	53;"	d	file:
+DEFAULT_N	contiguous_blocks/lu.C	51;"	d	file:
+DEFAULT_P	contiguous_blocks/lu.C	52;"	d	file:
+Global	contiguous_blocks/lu.C	/^} *Global;$/;"	v	typeref:struct:GlobalMemory
+GlobalMemory	contiguous_blocks/lu.C	/^struct GlobalMemory {$/;"	s	file:
+InitA	contiguous_blocks/lu.C	/^void InitA(double *rhs)$/;"	f
+LocalCopies	contiguous_blocks/lu.C	/^struct LocalCopies {$/;"	s	file:
+MAXRAND	contiguous_blocks/lu.C	47;"	d	file:
+OneSolve	contiguous_blocks/lu.C	/^void OneSolve(long n, long block_size, long MyNum, long dostats)$/;"	f
+P	contiguous_blocks/lu.C	/^long P = DEFAULT_P;          \/* Number of processors *\/$/;"	v
+PAGE_SIZE	contiguous_blocks/lu.C	56;"	d	file:
+PrintA	contiguous_blocks/lu.C	/^void PrintA()$/;"	f
+SlaveStart	contiguous_blocks/lu.C	/^void SlaveStart()$/;"	f
+TouchA	contiguous_blocks/lu.C	/^double TouchA(long bs, long MyNum)$/;"	f
+a	contiguous_blocks/lu.C	/^double **a;                  \/* a = lu; l and u both placed back in a *\/$/;"	v
+bdiv	contiguous_blocks/lu.C	/^void bdiv(double *a, double *diag, long stride_a, long stride_diag, long dimi, long dimk)$/;"	f
+block_size	contiguous_blocks/lu.C	/^long block_size = DEFAULT_B; \/* Block dimension *\/$/;"	v
+bmod	contiguous_blocks/lu.C	/^void bmod(double *a, double *b, double *c, long dimi, long dimj, long dimk, long stridea, long strideb, long stridec)$/;"	f
+bmodd	contiguous_blocks/lu.C	/^void bmodd(double *a, double *c, long dimi, long dimj, long stride_a, long stride_c)$/;"	f
+completion	contiguous_blocks/lu.C	/^  double *completion;$/;"	m	struct:GlobalMemory	file:
+daxpy	contiguous_blocks/lu.C	/^void daxpy(double *a, double *b, long n, double alpha)$/;"	f
+done	contiguous_blocks/lu.C	/^  unsigned long done;$/;"	m	struct:GlobalMemory	file:
+doprint	contiguous_blocks/lu.C	/^long doprint = 0;            \/* Print out matrix values? *\/$/;"	v
+dostats	contiguous_blocks/lu.C	/^long dostats = 0;            \/* Print out individual processor statistics? *\/$/;"	v
+id	contiguous_blocks/lu.C	/^  long id;$/;"	m	struct:GlobalMemory	file:
+last_malloc	contiguous_blocks/lu.C	/^double **last_malloc;        \/* Starting point of last block of A *\/$/;"	v
+lu	contiguous_blocks/lu.C	/^void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)$/;"	f
+lu0	contiguous_blocks/lu.C	/^void lu0(double *a, long n, long stride)$/;"	f
+main	contiguous_blocks/lu.C	/^int main(int argc, char *argv[])$/;"	f
+min	contiguous_blocks/lu.C	54;"	d	file:
+n	contiguous_blocks/lu.C	/^long n = DEFAULT_N;          \/* The size of the matrix *\/$/;"	v
+nblocks	contiguous_blocks/lu.C	/^long nblocks;                \/* Number of blocks in each dimension *\/$/;"	v
+num_cols	contiguous_blocks/lu.C	/^long num_cols;               \/* Number of processors per col of processor grid *\/$/;"	v
+num_rows	contiguous_blocks/lu.C	/^long num_rows;               \/* Number of processors per row of processor grid *\/$/;"	v
+printerr	contiguous_blocks/lu.C	/^void printerr(char *s)$/;"	f
+proc_bytes	contiguous_blocks/lu.C	/^long *proc_bytes;            \/* Bytes to malloc per processor to hold blocks of A*\/$/;"	v
+rf	contiguous_blocks/lu.C	/^  unsigned long rf; $/;"	m	struct:GlobalMemory	file:
+rhs	contiguous_blocks/lu.C	/^double *rhs;$/;"	v
+rs	contiguous_blocks/lu.C	/^  unsigned long rs; $/;"	m	struct:GlobalMemory	file:
+starttime	contiguous_blocks/lu.C	/^  unsigned long starttime; $/;"	m	struct:GlobalMemory	file:
+t_in_bar	contiguous_blocks/lu.C	/^  double *t_in_bar;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	contiguous_blocks/lu.C	/^  double t_in_bar;$/;"	m	struct:LocalCopies	file:
+t_in_fac	contiguous_blocks/lu.C	/^  double *t_in_fac;   $/;"	m	struct:GlobalMemory	file:
+t_in_fac	contiguous_blocks/lu.C	/^  double t_in_fac;$/;"	m	struct:LocalCopies	file:
+t_in_mod	contiguous_blocks/lu.C	/^  double *t_in_mod; $/;"	m	struct:GlobalMemory	file:
+t_in_mod	contiguous_blocks/lu.C	/^  double t_in_mod;$/;"	m	struct:LocalCopies	file:
+t_in_solve	contiguous_blocks/lu.C	/^  double *t_in_solve;$/;"	m	struct:GlobalMemory	file:
+t_in_solve	contiguous_blocks/lu.C	/^  double t_in_solve;$/;"	m	struct:LocalCopies	file:
+test_result	contiguous_blocks/lu.C	/^long test_result = 0;        \/* Test result of factorization? *\/$/;"	v
+BlockOwner	contiguous_blocks/lu.c	/^long BlockOwner(long I, long J)$/;"	f
+BlockOwnerColumn	contiguous_blocks/lu.c	/^long BlockOwnerColumn(long I, long J)$/;"	f
+BlockOwnerRow	contiguous_blocks/lu.c	/^long BlockOwnerRow(long I, long J)$/;"	f
+CheckResult	contiguous_blocks/lu.c	/^void CheckResult(long n, double **a, double *rhs)$/;"	f
+DEFAULT_B	contiguous_blocks/lu.c	70;"	d	file:
+DEFAULT_N	contiguous_blocks/lu.c	68;"	d	file:
+DEFAULT_P	contiguous_blocks/lu.c	69;"	d	file:
+Global	contiguous_blocks/lu.c	/^} *Global;$/;"	v	typeref:struct:GlobalMemory
+GlobalMemory	contiguous_blocks/lu.c	/^struct GlobalMemory {$/;"	s	file:
+InitA	contiguous_blocks/lu.c	/^void InitA(double *rhs)$/;"	f
+LocalCopies	contiguous_blocks/lu.c	/^struct LocalCopies {$/;"	s	file:
+MAXRAND	contiguous_blocks/lu.c	64;"	d	file:
+MAX_THREADS	contiguous_blocks/lu.c	58;"	d	file:
+OneSolve	contiguous_blocks/lu.c	/^void OneSolve(long n, long block_size, long MyNum, long dostats)$/;"	f
+P	contiguous_blocks/lu.c	/^long P = DEFAULT_P;          \/* Number of processors *\/$/;"	v
+PAGE_SIZE	contiguous_blocks/lu.c	73;"	d	file:
+PThreadTable	contiguous_blocks/lu.c	/^pthread_t PThreadTable[MAX_THREADS];$/;"	v
+PrintA	contiguous_blocks/lu.c	/^void PrintA()$/;"	f
+SlaveStart	contiguous_blocks/lu.c	/^void SlaveStart()$/;"	f
+TouchA	contiguous_blocks/lu.c	/^double TouchA(long bs, long MyNum)$/;"	f
+a	contiguous_blocks/lu.c	/^double **a;                  \/* a = lu; l and u both placed back in a *\/$/;"	v
+bdiv	contiguous_blocks/lu.c	/^void bdiv(double *a, double *diag, long stride_a, long stride_diag, long dimi, long dimk)$/;"	f
+block_size	contiguous_blocks/lu.c	/^long block_size = DEFAULT_B; \/* Block dimension *\/$/;"	v
+bmod	contiguous_blocks/lu.c	/^void bmod(double *a, double *b, double *c, long dimi, long dimj, long dimk, long stridea, long strideb, long stridec)$/;"	f
+bmodd	contiguous_blocks/lu.c	/^void bmodd(double *a, double *c, long dimi, long dimj, long stride_a, long stride_c)$/;"	f
+completion	contiguous_blocks/lu.c	/^  double *completion;$/;"	m	struct:GlobalMemory	file:
+counter	contiguous_blocks/lu.c	/^	unsigned long	counter;$/;"	m	struct:GlobalMemory::__anon1	file:
+cv	contiguous_blocks/lu.c	/^	pthread_cond_t	cv;$/;"	m	struct:GlobalMemory::__anon1	file:
+cycle	contiguous_blocks/lu.c	/^	unsigned long	cycle;$/;"	m	struct:GlobalMemory::__anon1	file:
+daxpy	contiguous_blocks/lu.c	/^void daxpy(double *a, double *b, long n, double alpha)$/;"	f
+done	contiguous_blocks/lu.c	/^  unsigned long done;$/;"	m	struct:GlobalMemory	file:
+doprint	contiguous_blocks/lu.c	/^long doprint = 0;            \/* Print out matrix values? *\/$/;"	v
+dostats	contiguous_blocks/lu.c	/^long dostats = 0;            \/* Print out individual processor statistics? *\/$/;"	v
+id	contiguous_blocks/lu.c	/^  long id;$/;"	m	struct:GlobalMemory	file:
+last_malloc	contiguous_blocks/lu.c	/^double **last_malloc;        \/* Starting point of last block of A *\/$/;"	v
+lu	contiguous_blocks/lu.c	/^void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)$/;"	f
+lu0	contiguous_blocks/lu.c	/^void lu0(double *a, long n, long stride)$/;"	f
+main	contiguous_blocks/lu.c	/^int main(int argc, char *argv[])$/;"	f
+min	contiguous_blocks/lu.c	71;"	d	file:
+mutex	contiguous_blocks/lu.c	/^	pthread_mutex_t	mutex;$/;"	m	struct:GlobalMemory::__anon1	file:
+n	contiguous_blocks/lu.c	/^long n = DEFAULT_N;          \/* The size of the matrix *\/$/;"	v
+nblocks	contiguous_blocks/lu.c	/^long nblocks;                \/* Number of blocks in each dimension *\/$/;"	v
+num_cols	contiguous_blocks/lu.c	/^long num_cols;               \/* Number of processors per col of processor grid *\/$/;"	v
+num_rows	contiguous_blocks/lu.c	/^long num_rows;               \/* Number of processors per row of processor grid *\/$/;"	v
+printerr	contiguous_blocks/lu.c	/^void printerr(char *s)$/;"	f
+proc_bytes	contiguous_blocks/lu.c	/^long *proc_bytes;            \/* Bytes to malloc per processor to hold blocks of A*\/$/;"	v
+rf	contiguous_blocks/lu.c	/^  unsigned long rf; $/;"	m	struct:GlobalMemory	file:
+rhs	contiguous_blocks/lu.c	/^double *rhs;$/;"	v
+rs	contiguous_blocks/lu.c	/^  unsigned long rs; $/;"	m	struct:GlobalMemory	file:
+start	contiguous_blocks/lu.c	/^} (start);$/;"	m	struct:GlobalMemory	typeref:struct:GlobalMemory::__anon1	file:
+starttime	contiguous_blocks/lu.c	/^  unsigned long starttime; $/;"	m	struct:GlobalMemory	file:
+t_in_bar	contiguous_blocks/lu.c	/^  double *t_in_bar;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	contiguous_blocks/lu.c	/^  double t_in_bar;$/;"	m	struct:LocalCopies	file:
+t_in_fac	contiguous_blocks/lu.c	/^  double *t_in_fac;   $/;"	m	struct:GlobalMemory	file:
+t_in_fac	contiguous_blocks/lu.c	/^  double t_in_fac;$/;"	m	struct:LocalCopies	file:
+t_in_mod	contiguous_blocks/lu.c	/^  double *t_in_mod; $/;"	m	struct:GlobalMemory	file:
+t_in_mod	contiguous_blocks/lu.c	/^  double t_in_mod;$/;"	m	struct:LocalCopies	file:
+t_in_solve	contiguous_blocks/lu.c	/^  double *t_in_solve;$/;"	m	struct:GlobalMemory	file:
+t_in_solve	contiguous_blocks/lu.c	/^  double t_in_solve;$/;"	m	struct:LocalCopies	file:
+test_result	contiguous_blocks/lu.c	/^long test_result = 0;        \/* Test result of factorization? *\/$/;"	v
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+OBJS	non_contiguous_blocks/Makefile	/^OBJS = lu.o$/;"	m
+TARGET	non_contiguous_blocks/Makefile	/^TARGET = LU$/;"	m
+BlockOwner	non_contiguous_blocks/lu.C	/^long BlockOwner(long I, long J)$/;"	f
+BlockOwnerColumn	non_contiguous_blocks/lu.C	/^long BlockOwnerColumn(long I, long J)$/;"	f
+BlockOwnerRow	non_contiguous_blocks/lu.C	/^long BlockOwnerRow(long I, long J)$/;"	f
+CheckResult	non_contiguous_blocks/lu.C	/^void CheckResult(long n, double *a, double *rhs)$/;"	f
+DEFAULT_B	non_contiguous_blocks/lu.C	50;"	d	file:
+DEFAULT_N	non_contiguous_blocks/lu.C	48;"	d	file:
+DEFAULT_P	non_contiguous_blocks/lu.C	49;"	d	file:
+Global	non_contiguous_blocks/lu.C	/^} *Global;$/;"	v	typeref:struct:GlobalMemory
+GlobalMemory	non_contiguous_blocks/lu.C	/^struct GlobalMemory {$/;"	s	file:
+InitA	non_contiguous_blocks/lu.C	/^void InitA(double *rhs)$/;"	f
+LocalCopies	non_contiguous_blocks/lu.C	/^struct LocalCopies {$/;"	s	file:
+MAXRAND	non_contiguous_blocks/lu.C	44;"	d	file:
+OneSolve	non_contiguous_blocks/lu.C	/^void OneSolve(long n, long block_size, long MyNum, long dostats)$/;"	f
+P	non_contiguous_blocks/lu.C	/^long P = DEFAULT_P;          \/* Number of processors *\/$/;"	v
+PAGE_SIZE	non_contiguous_blocks/lu.C	53;"	d	file:
+PrintA	non_contiguous_blocks/lu.C	/^void PrintA()$/;"	f
+SlaveStart	non_contiguous_blocks/lu.C	/^void SlaveStart()$/;"	f
+TouchA	non_contiguous_blocks/lu.C	/^double TouchA(long bs, long MyNum)$/;"	f
+a	non_contiguous_blocks/lu.C	/^double *a;                   \/* a = lu; l and u both placed back in a *\/$/;"	v
+bdiv	non_contiguous_blocks/lu.C	/^void bdiv(double *a, double *diag, long stride_a, long stride_diag, long dimi, long dimk)$/;"	f
+block_size	non_contiguous_blocks/lu.C	/^long block_size = DEFAULT_B; \/* Block dimension *\/$/;"	v
+bmod	non_contiguous_blocks/lu.C	/^void bmod(double *a, double *b, double *c, long dimi, long dimj, long dimk, long stride)$/;"	f
+bmodd	non_contiguous_blocks/lu.C	/^void bmodd(double *a, double *c, long dimi, long dimj, long stride_a, long stride_c)$/;"	f
+completion	non_contiguous_blocks/lu.C	/^  double *completion;$/;"	m	struct:GlobalMemory	file:
+daxpy	non_contiguous_blocks/lu.C	/^void daxpy(double *a, double *b, long n, double alpha)$/;"	f
+done	non_contiguous_blocks/lu.C	/^  unsigned long done;$/;"	m	struct:GlobalMemory	file:
+doprint	non_contiguous_blocks/lu.C	/^long doprint = 0;            \/* Print out matrix values? *\/$/;"	v
+dostats	non_contiguous_blocks/lu.C	/^long dostats = 0;            \/* Print out individual processor statistics? *\/$/;"	v
+id	non_contiguous_blocks/lu.C	/^  long id;$/;"	m	struct:GlobalMemory	file:
+lu	non_contiguous_blocks/lu.C	/^void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)$/;"	f
+lu0	non_contiguous_blocks/lu.C	/^void lu0(double *a, long n, long stride)$/;"	f
+main	non_contiguous_blocks/lu.C	/^int main(int argc, char *argv[])$/;"	f
+min	non_contiguous_blocks/lu.C	52;"	d	file:
+n	non_contiguous_blocks/lu.C	/^long n = DEFAULT_N;          \/* The size of the matrix *\/$/;"	v
+nblocks	non_contiguous_blocks/lu.C	/^long nblocks;                \/* Number of blocks in each dimension *\/$/;"	v
+num_cols	non_contiguous_blocks/lu.C	/^long num_cols;               \/* Number of processors per col of processor grid *\/$/;"	v
+num_rows	non_contiguous_blocks/lu.C	/^long num_rows;               \/* Number of processors per row of processor grid *\/$/;"	v
+printerr	non_contiguous_blocks/lu.C	/^void printerr(char *s)$/;"	f
+proc_bytes	non_contiguous_blocks/lu.C	/^long *proc_bytes;            \/* Bytes to malloc per processor to hold blocks of A*\/$/;"	v
+rf	non_contiguous_blocks/lu.C	/^  unsigned long rf;$/;"	m	struct:GlobalMemory	file:
+rhs	non_contiguous_blocks/lu.C	/^double *rhs;$/;"	v
+rs	non_contiguous_blocks/lu.C	/^  unsigned long rs;$/;"	m	struct:GlobalMemory	file:
+starttime	non_contiguous_blocks/lu.C	/^  unsigned long starttime;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	non_contiguous_blocks/lu.C	/^  double *t_in_bar;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	non_contiguous_blocks/lu.C	/^  double t_in_bar;$/;"	m	struct:LocalCopies	file:
+t_in_fac	non_contiguous_blocks/lu.C	/^  double *t_in_fac;$/;"	m	struct:GlobalMemory	file:
+t_in_fac	non_contiguous_blocks/lu.C	/^  double t_in_fac;$/;"	m	struct:LocalCopies	file:
+t_in_mod	non_contiguous_blocks/lu.C	/^  double *t_in_mod;$/;"	m	struct:GlobalMemory	file:
+t_in_mod	non_contiguous_blocks/lu.C	/^  double t_in_mod;$/;"	m	struct:LocalCopies	file:
+t_in_solve	non_contiguous_blocks/lu.C	/^  double *t_in_solve;$/;"	m	struct:GlobalMemory	file:
+t_in_solve	non_contiguous_blocks/lu.C	/^  double t_in_solve;$/;"	m	struct:LocalCopies	file:
+test_result	non_contiguous_blocks/lu.C	/^long test_result = 0;        \/* Test result of factorization? *\/$/;"	v
