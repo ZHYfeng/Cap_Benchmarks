@@ -27,7 +27,8 @@ recurrence(){
 			echo "" >> ${all}/all.md
 			totalline
 			more ./output_info/statics.txt >> ${all}/all.md
-			awk -F":" '{ printf("%s ",$2); }' ./output_info/statics.txt >> ${all}/DATE.txt
+			awk -F":" '{ printf("%s ",$2); }' ./output_info/statics.txt >> ${all}/DATE1.txt
+			echo "" >> ${all}/DATE1.txt
 			echo "" >> ${all}/all.md
 			echo "" >> ${all}/all.md
 			echo "" >> ${all}/all.md
@@ -41,5 +42,7 @@ recurrence(){
 
 all=$PWD
 rm ${all}/all.md
-rm ${all}/DATE.txt
+rm ${all}/DATE1.txt
+rm ${all}/DATE2.txt
 recurrence "."
+awk -F" " '{ printf("%s %s ",$NF,$(NF-1)); x=1; while( x<NF-1 ){ printf("%s ",$x); x++; } printf("\n"); }' ${all}/DATE1.txt >> ${all}/DATE2.txt
