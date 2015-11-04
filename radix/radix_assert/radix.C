@@ -40,7 +40,6 @@
 #include <math.h>
 #include <unistd.h>
 #include <assert.h>
-
 #define DEFAULT_P                    2
 #define DEFAULT_N                    2
 #define DEFAULT_R                    2 
@@ -435,7 +434,7 @@ void slave_sort()
 
    LOCK(global->lock_Index)
      MyNum = global->Index;
-   // assert(MyNum == global->Index);
+   assert(MyNum == global->Index);
      global->Index++;
    UNLOCK(global->lock_Index)
 
@@ -601,7 +600,7 @@ void slave_sort()
      }
 
      id=ass;
-     // assert(id==ass);
+     assert(id==ass);
      BARRIER(global->barrier_rank, number_of_processors);
 
      if ((MyNum == 0) || (stats)) {

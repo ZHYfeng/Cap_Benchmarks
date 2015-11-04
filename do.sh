@@ -26,6 +26,7 @@ recurrence(){
 			more ./README >> ${all}/all.md
 			echo "" >> ${all}/all.md
 			totalline
+			pwd | awk -F"/" '{ printf("name:%s\n",$NF); }' >> ./output_info/statics.txt
 			more ./output_info/statics.txt >> ${all}/all.md
 			awk -F":" '{ printf("%s ",$2); }' ./output_info/statics.txt >> ${all}/DATE1.txt
 			echo "" >> ${all}/DATE1.txt
@@ -33,7 +34,7 @@ recurrence(){
 			echo "" >> ${all}/all.md
 			echo "" >> ${all}/all.md
 			make clean
-			rm -rf klee* output_info result.txt
+			# rm -rf klee* output_info result.txt
 		fi
 	done
 
@@ -45,4 +46,4 @@ rm ${all}/all.md
 rm ${all}/DATE1.txt
 rm ${all}/DATE2.txt
 recurrence "."
-awk -F" " '{ printf("%s %s ",$NF,$(NF-1)); x=1; while( x<NF-1 ){ printf("%s ",$x); x++; } printf("\n"); }' ${all}/DATE1.txt >> ${all}/DATE2.txt
+awk -F" " '{ printf("%s %s %s ",$NF,$(NF-1),$(NF-2)); x=1; while( x<NF-2 ){ printf("%s ",$x); x++; } printf("\n"); }' ${all}/DATE1.txt >> ${all}/DATE2.txt

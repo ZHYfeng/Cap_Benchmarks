@@ -324,7 +324,7 @@ void SlaveStart()
 
   LOCK(Global->idlock)
     MyNum = Global->id;
-  // assert(MyNum == Global->id);
+  assert(MyNum == Global->id);
     Global->id ++;
   UNLOCK(Global->idlock)
 
@@ -506,7 +506,7 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
     }
 
     id=ass;
-    // assert(id == ass);
+    assert(id == ass);
     BARRIER(Global->start, P);
 
     if ((MyNum == 0) || (dostats)) {

@@ -431,7 +431,7 @@ void SlaveStart()
 
   LOCK(Global->idlock);
     MyNum = Global->id;
-    // assert(MyNum == Global->id);
+    assert(MyNum == Global->id);
     Global->id++;
   UNLOCK(Global->idlock); 
 
@@ -624,7 +624,7 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
   }  
 
   id=ass;
-  // assert(id == ass);
+  assert(id == ass);
   BARRIER(Global->start, P);
 
   if ((MyNum == 0) || (dostats)) {
