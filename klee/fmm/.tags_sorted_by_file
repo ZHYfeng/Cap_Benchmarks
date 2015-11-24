@@ -1,0 +1,728 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+OBJS	Makefile	/^OBJS = box.o construct_grid.o cost_zones.o defs.o fmm.o interactions.o memory.o particle.o partition_grid.o$/;"	m
+TARGET	Makefile	/^TARGET = FMM$/;"	m
+AdjacentBoxes	box.C	/^AdjacentBoxes (box *b1, box *b2)$/;"	f
+BOXES_PER_LINE	box.C	25;"	d	file:
+BOXES_PER_LINE	box.C	365;"	d	file:
+CreateBoxes	box.C	/^CreateBoxes (long my_id, long num_boxes)$/;"	f
+FreeBoxes	box.C	/^FreeBoxes (long my_id)$/;"	f
+Grid	box.C	/^box *Grid = NULL;$/;"	v
+InitBox	box.C	/^InitBox (long my_id, real x_center, real y_center, real length, box *parent)$/;"	f
+ListIterate	box.C	/^ListIterate (long my_id, box *b, box **list, long length, list_function function)$/;"	f
+PrintBox	box.C	/^PrintBox (box *b)$/;"	f
+PrintBoxArrayIds	box.C	/^PrintBoxArrayIds (box *b_array[], long array_length)$/;"	f
+PrintExpansionTerms	box.C	/^PrintExpansionTerms (complex expansion[])$/;"	f
+TERMS_PER_LINE	box.C	26;"	d	file:
+TERMS_PER_LINE	box.C	366;"	d	file:
+WellSeparatedBoxes	box.C	/^WellSeparatedBoxes (box *b1, box *b2)$/;"	f
+ZeroBox	box.C	/^ZeroBox (long my_id, box *b)$/;"	f
+CHILDLESS	box.H	/^typedef enum { CHILDLESS, PARENT } box_type;$/;"	e	enum:__anon2
+ID_LIMIT	box.H	42;"	d
+MAX_COLLEAGUES	box.H	29;"	d
+MAX_EXPANSION_TERMS	box.H	33;"	d
+MAX_PARTICLES_PER_BOX	box.H	24;"	d
+MAX_SIBLINGS	box.H	28;"	d
+MAX_U_LIST	box.H	30;"	d
+MAX_V_LIST	box.H	31;"	d
+MAX_W_LIST	box.H	32;"	d
+NUM_OFFSPRING	box.H	27;"	d
+PARENT	box.H	/^typedef enum { CHILDLESS, PARENT } box_type;$/;"	e	enum:__anon2
+_Box	box.H	/^struct _Box$/;"	s
+_Box_H	box.H	18;"	d
+_Box_Node	box.H	/^struct _Box_Node$/;"	s
+box	box.H	/^typedef struct _Box box;$/;"	t	typeref:struct:_Box
+box_node	box.H	/^typedef struct _Box_Node box_node;$/;"	t	typeref:struct:_Box_Node
+box_type	box.H	/^typedef enum { CHILDLESS, PARENT } box_type;$/;"	t	typeref:enum:__anon2
+child_num	box.H	/^  long child_num;$/;"	m	struct:_Box
+children	box.H	/^  box *children[NUM_OFFSPRING];$/;"	m	struct:_Box
+colleagues	box.H	/^  box *colleagues[MAX_COLLEAGUES];$/;"	m	struct:_Box
+construct_synch	box.H	/^  volatile long construct_synch;$/;"	m	struct:_Box
+cost	box.H	/^  long cost;$/;"	m	struct:_Box
+data	box.H	/^  box *data;$/;"	m	struct:_Box_Node
+exp_lock_index	box.H	/^  long exp_lock_index;$/;"	m	struct:_Box
+id	box.H	/^  double id;$/;"	m	struct:_Box
+interaction_synch	box.H	/^  volatile long interaction_synch;$/;"	m	struct:_Box
+length	box.H	/^  real length;$/;"	m	struct:_Box
+level	box.H	/^  long level;$/;"	m	struct:_Box
+link1	box.H	/^  box *link1;$/;"	m	struct:_Box
+link2	box.H	/^  box *link2;$/;"	m	struct:_Box
+list_function	box.H	/^typedef void (*list_function)(long my_id, box *list_box, box *b);$/;"	t
+local_expansion	box.H	/^  complex local_expansion[MAX_EXPANSION_TERMS];$/;"	m	struct:_Box
+mp_expansion	box.H	/^  complex mp_expansion[MAX_EXPANSION_TERMS];$/;"	m	struct:_Box
+next	box.H	/^  box *next;$/;"	m	struct:_Box
+next	box.H	/^  struct _Box_Node *next;$/;"	m	struct:_Box_Node	typeref:struct:_Box_Node::_Box_Node
+num_children	box.H	/^  long num_children;$/;"	m	struct:_Box
+num_colleagues	box.H	/^  long num_colleagues;$/;"	m	struct:_Box
+num_particles	box.H	/^  long num_particles;$/;"	m	struct:_Box
+num_siblings	box.H	/^  long num_siblings;$/;"	m	struct:_Box
+num_u_list	box.H	/^  long num_u_list;$/;"	m	struct:_Box
+num_v_list	box.H	/^  long num_v_list;$/;"	m	struct:_Box
+num_w_list	box.H	/^  long num_w_list;$/;"	m	struct:_Box
+p_cost	box.H	/^  long p_cost;$/;"	m	struct:_Box
+parent	box.H	/^  box *parent;$/;"	m	struct:_Box
+particle_lock_index	box.H	/^  long particle_lock_index;$/;"	m	struct:_Box
+particles	box.H	/^  particle *particles[MAX_PARTICLES_PER_BOX + 1];$/;"	m	struct:_Box
+prev	box.H	/^  box *prev;$/;"	m	struct:_Box
+proc	box.H	/^  long proc;$/;"	m	struct:_Box
+shadow	box.H	/^  box *shadow[NUM_OFFSPRING];$/;"	m	struct:_Box
+siblings	box.H	/^  box *siblings[MAX_SIBLINGS];$/;"	m	struct:_Box
+subtree_cost	box.H	/^  long subtree_cost;$/;"	m	struct:_Box
+type	box.H	/^  box_type type;$/;"	m	struct:_Box
+u_cost	box.H	/^  long u_cost;$/;"	m	struct:_Box
+u_list	box.H	/^  box *u_list[MAX_U_LIST];$/;"	m	struct:_Box
+v_cost	box.H	/^  long v_cost;$/;"	m	struct:_Box
+v_list	box.H	/^  box *v_list[MAX_V_LIST];$/;"	m	struct:_Box
+w_cost	box.H	/^  long w_cost;$/;"	m	struct:_Box
+w_list	box.H	/^  box *w_list[MAX_W_LIST];$/;"	m	struct:_Box
+x_center	box.H	/^  real x_center;$/;"	m	struct:_Box
+x_expansion	box.H	/^  complex x_expansion[MAX_EXPANSION_TERMS];$/;"	m	struct:_Box
+y_center	box.H	/^  real y_center;$/;"	m	struct:_Box
+AdjacentBoxes	box.c	/^AdjacentBoxes (box *b1, box *b2)$/;"	f
+BOXES_PER_LINE	box.c	28;"	d	file:
+BOXES_PER_LINE	box.c	368;"	d	file:
+CreateBoxes	box.c	/^CreateBoxes (long my_id, long num_boxes)$/;"	f
+FreeBoxes	box.c	/^FreeBoxes (long my_id)$/;"	f
+Grid	box.c	/^box *Grid = NULL;$/;"	v
+InitBox	box.c	/^InitBox (long my_id, real x_center, real y_center, real length, box *parent)$/;"	f
+ListIterate	box.c	/^ListIterate (long my_id, box *b, box **list, long length, list_function function)$/;"	f
+PrintBox	box.c	/^PrintBox (box *b)$/;"	f
+PrintBoxArrayIds	box.c	/^PrintBoxArrayIds (box *b_array[], long array_length)$/;"	f
+PrintExpansionTerms	box.c	/^PrintExpansionTerms (complex expansion[])$/;"	f
+TERMS_PER_LINE	box.c	29;"	d	file:
+TERMS_PER_LINE	box.c	369;"	d	file:
+WellSeparatedBoxes	box.c	/^WellSeparatedBoxes (box *b1, box *b2)$/;"	f
+ZeroBox	box.c	/^ZeroBox (long my_id, box *b)$/;"	f
+CHILDLESS	box.h	/^typedef enum { CHILDLESS, PARENT } box_type;$/;"	e	enum:__anon5
+ID_LIMIT	box.h	45;"	d
+MAX_COLLEAGUES	box.h	32;"	d
+MAX_EXPANSION_TERMS	box.h	36;"	d
+MAX_PARTICLES_PER_BOX	box.h	27;"	d
+MAX_SIBLINGS	box.h	31;"	d
+MAX_U_LIST	box.h	33;"	d
+MAX_V_LIST	box.h	34;"	d
+MAX_W_LIST	box.h	35;"	d
+NUM_OFFSPRING	box.h	30;"	d
+PARENT	box.h	/^typedef enum { CHILDLESS, PARENT } box_type;$/;"	e	enum:__anon5
+_Box	box.h	/^struct _Box$/;"	s
+_Box_H	box.h	21;"	d
+_Box_Node	box.h	/^struct _Box_Node$/;"	s
+box	box.h	/^typedef struct _Box box;$/;"	t	typeref:struct:_Box
+box_node	box.h	/^typedef struct _Box_Node box_node;$/;"	t	typeref:struct:_Box_Node
+box_type	box.h	/^typedef enum { CHILDLESS, PARENT } box_type;$/;"	t	typeref:enum:__anon5
+child_num	box.h	/^  long child_num;$/;"	m	struct:_Box
+children	box.h	/^  box *children[NUM_OFFSPRING];$/;"	m	struct:_Box
+colleagues	box.h	/^  box *colleagues[MAX_COLLEAGUES];$/;"	m	struct:_Box
+construct_synch	box.h	/^  volatile long construct_synch;$/;"	m	struct:_Box
+cost	box.h	/^  long cost;$/;"	m	struct:_Box
+data	box.h	/^  box *data;$/;"	m	struct:_Box_Node
+exp_lock_index	box.h	/^  long exp_lock_index;$/;"	m	struct:_Box
+id	box.h	/^  double id;$/;"	m	struct:_Box
+interaction_synch	box.h	/^  volatile long interaction_synch;$/;"	m	struct:_Box
+length	box.h	/^  real length;$/;"	m	struct:_Box
+level	box.h	/^  long level;$/;"	m	struct:_Box
+link1	box.h	/^  box *link1;$/;"	m	struct:_Box
+link2	box.h	/^  box *link2;$/;"	m	struct:_Box
+list_function	box.h	/^typedef void (*list_function)(long my_id, box *list_box, box *b);$/;"	t
+local_expansion	box.h	/^  complex local_expansion[MAX_EXPANSION_TERMS];$/;"	m	struct:_Box
+mp_expansion	box.h	/^  complex mp_expansion[MAX_EXPANSION_TERMS];$/;"	m	struct:_Box
+next	box.h	/^  box *next;$/;"	m	struct:_Box
+next	box.h	/^  struct _Box_Node *next;$/;"	m	struct:_Box_Node	typeref:struct:_Box_Node::_Box_Node
+num_children	box.h	/^  long num_children;$/;"	m	struct:_Box
+num_colleagues	box.h	/^  long num_colleagues;$/;"	m	struct:_Box
+num_particles	box.h	/^  long num_particles;$/;"	m	struct:_Box
+num_siblings	box.h	/^  long num_siblings;$/;"	m	struct:_Box
+num_u_list	box.h	/^  long num_u_list;$/;"	m	struct:_Box
+num_v_list	box.h	/^  long num_v_list;$/;"	m	struct:_Box
+num_w_list	box.h	/^  long num_w_list;$/;"	m	struct:_Box
+p_cost	box.h	/^  long p_cost;$/;"	m	struct:_Box
+parent	box.h	/^  box *parent;$/;"	m	struct:_Box
+particle_lock_index	box.h	/^  long particle_lock_index;$/;"	m	struct:_Box
+particles	box.h	/^  particle *particles[MAX_PARTICLES_PER_BOX + 1];$/;"	m	struct:_Box
+prev	box.h	/^  box *prev;$/;"	m	struct:_Box
+proc	box.h	/^  long proc;$/;"	m	struct:_Box
+shadow	box.h	/^  box *shadow[NUM_OFFSPRING];$/;"	m	struct:_Box
+siblings	box.h	/^  box *siblings[MAX_SIBLINGS];$/;"	m	struct:_Box
+subtree_cost	box.h	/^  long subtree_cost;$/;"	m	struct:_Box
+type	box.h	/^  box_type type;$/;"	m	struct:_Box
+u_cost	box.h	/^  long u_cost;$/;"	m	struct:_Box
+u_list	box.h	/^  box *u_list[MAX_U_LIST];$/;"	m	struct:_Box
+v_cost	box.h	/^  long v_cost;$/;"	m	struct:_Box
+v_list	box.h	/^  box *v_list[MAX_V_LIST];$/;"	m	struct:_Box
+w_cost	box.h	/^  long w_cost;$/;"	m	struct:_Box
+w_list	box.h	/^  box *w_list[MAX_W_LIST];$/;"	m	struct:_Box
+x_center	box.h	/^  real x_center;$/;"	m	struct:_Box
+x_expansion	box.h	/^  complex x_expansion[MAX_EXPANSION_TERMS];$/;"	m	struct:_Box
+y_center	box.h	/^  real y_center;$/;"	m	struct:_Box
+AncestorBox	construct_grid.C	/^AncestorBox (box *b, box *ancestor_box)$/;"	f
+CleanupGrid	construct_grid.C	/^CleanupGrid (long my_id)$/;"	f
+ConstructGrid	construct_grid.C	/^ConstructGrid (long my_id, time_info *local_time, long time_all)$/;"	f
+ConstructGridLists	construct_grid.C	/^ConstructGridLists (long my_id, box *b)$/;"	f
+ConstructInteractionLists	construct_grid.C	/^ConstructInteractionLists (long my_id, box *b)$/;"	f
+ConstructLists	construct_grid.C	/^ConstructLists (long my_id, time_info *local_time, long time_all)$/;"	f
+ConstructLocalGrid	construct_grid.C	/^ConstructLocalGrid (long my_id)$/;"	f
+CreateChild	construct_grid.C	/^CreateChild (long my_id, box *pb, long new_child_num)$/;"	f
+CreateLeaf	construct_grid.C	/^CreateLeaf (long my_id, box *pb, long new_child_num, particle **p_array, long length)$/;"	f
+DestroyGrid	construct_grid.C	/^DestroyGrid (long my_id, time_info *local_time, long time_all)$/;"	f
+DetermineGridSize	construct_grid.C	/^DetermineGridSize (long my_id)$/;"	f
+DetermineLocalGridSize	construct_grid.C	/^DetermineLocalGridSize (long my_id)$/;"	f
+FindHome	construct_grid.C	/^FindHome (long my_id, particle *p, box *current_home)$/;"	f
+FindInitialRoot	construct_grid.C	/^FindInitialRoot (particle *p, box *current_home)$/;"	f
+InitGrid	construct_grid.C	/^InitGrid (long my_id)$/;"	f
+InsertBoxInGrid	construct_grid.C	/^InsertBoxInGrid (long my_id, box *b, box *pb)$/;"	f
+InsertNonAdjChildren	construct_grid.C	/^InsertNonAdjChildren (long my_id, box *b, box *pb)$/;"	f
+InsertParticlesInLeaf	construct_grid.C	/^InsertParticlesInLeaf (long my_id, particle **p_array, long length, box *b)$/;"	f
+InsertParticlesInTree	construct_grid.C	/^InsertParticlesInTree (long my_id, particle **p_list, long num_of_particles, box *root)$/;"	f
+InsertSubtreeInPartition	construct_grid.C	/^InsertSubtreeInPartition (long my_id, box *b)$/;"	f
+MLGHelper	construct_grid.C	/^MLGHelper (long my_id, box *local_box, box *global_box, box *global_parent)$/;"	f
+MY_MAX_PARTICLES	construct_grid.C	28;"	d	file:
+MY_NUM_PARTICLES	construct_grid.C	27;"	d	file:
+MY_PARTICLES	construct_grid.C	26;"	d	file:
+MergeLocalGrid	construct_grid.C	/^MergeLocalGrid (long my_id)$/;"	f
+MergeLocalGridSize	construct_grid.C	/^MergeLocalGridSize (long my_id)$/;"	f
+MergeLocalParticles	construct_grid.C	/^MergeLocalParticles (long my_id, particle **p_array, long num_of_particles, box *pb)$/;"	f
+PrintGrid	construct_grid.C	/^PrintGrid (long my_id)$/;"	f
+RemoveBoxFromGrid	construct_grid.C	/^RemoveBoxFromGrid (box *b, box *pb)$/;"	f
+SetColleagues	construct_grid.C	/^SetColleagues (long my_id, box *b)$/;"	f
+SetSiblings	construct_grid.C	/^SetSiblings (box *b)$/;"	f
+SetUList	construct_grid.C	/^SetUList (long my_id, box *b)$/;"	f
+SetUListHelper	construct_grid.C	/^SetUListHelper (long my_id, box *b, box *pb)$/;"	f
+SetVList	construct_grid.C	/^SetVList (long my_id, box *b)$/;"	f
+SetWList	construct_grid.C	/^SetWList (long my_id, box *b)$/;"	f
+SplitParticles	construct_grid.C	/^SplitParticles (particle **p_array, long length, particle **p_dist,$/;"	f
+SubdivideBox	construct_grid.C	/^SubdivideBox (long my_id, box *b)$/;"	f
+_Construct_Grid_H	construct_grid.H	18;"	d
+AncestorBox	construct_grid.c	/^AncestorBox (box *b, box *ancestor_box)$/;"	f
+CleanupGrid	construct_grid.c	/^CleanupGrid (long my_id)$/;"	f
+ConstructGrid	construct_grid.c	/^ConstructGrid (long my_id, time_info *local_time, long time_all)$/;"	f
+ConstructGridLists	construct_grid.c	/^ConstructGridLists (long my_id, box *b)$/;"	f
+ConstructInteractionLists	construct_grid.c	/^ConstructInteractionLists (long my_id, box *b)$/;"	f
+ConstructLists	construct_grid.c	/^ConstructLists (long my_id, time_info *local_time, long time_all)$/;"	f
+ConstructLocalGrid	construct_grid.c	/^ConstructLocalGrid (long my_id)$/;"	f
+CreateChild	construct_grid.c	/^CreateChild (long my_id, box *pb, long new_child_num)$/;"	f
+CreateLeaf	construct_grid.c	/^CreateLeaf (long my_id, box *pb, long new_child_num, particle **p_array, long length)$/;"	f
+DestroyGrid	construct_grid.c	/^DestroyGrid (long my_id, time_info *local_time, long time_all)$/;"	f
+DetermineGridSize	construct_grid.c	/^DetermineGridSize (long my_id)$/;"	f
+DetermineLocalGridSize	construct_grid.c	/^DetermineLocalGridSize (long my_id)$/;"	f
+FindHome	construct_grid.c	/^FindHome (long my_id, particle *p, box *current_home)$/;"	f
+FindInitialRoot	construct_grid.c	/^FindInitialRoot (particle *p, box *current_home)$/;"	f
+InitGrid	construct_grid.c	/^InitGrid (long my_id)$/;"	f
+InsertBoxInGrid	construct_grid.c	/^InsertBoxInGrid (long my_id, box *b, box *pb)$/;"	f
+InsertNonAdjChildren	construct_grid.c	/^InsertNonAdjChildren (long my_id, box *b, box *pb)$/;"	f
+InsertParticlesInLeaf	construct_grid.c	/^InsertParticlesInLeaf (long my_id, particle **p_array, long length, box *b)$/;"	f
+InsertParticlesInTree	construct_grid.c	/^InsertParticlesInTree (long my_id, particle **p_list, long num_of_particles, box *root)$/;"	f
+InsertSubtreeInPartition	construct_grid.c	/^InsertSubtreeInPartition (long my_id, box *b)$/;"	f
+MLGHelper	construct_grid.c	/^MLGHelper (long my_id, box *local_box, box *global_box, box *global_parent)$/;"	f
+MY_MAX_PARTICLES	construct_grid.c	31;"	d	file:
+MY_NUM_PARTICLES	construct_grid.c	30;"	d	file:
+MY_PARTICLES	construct_grid.c	29;"	d	file:
+MergeLocalGrid	construct_grid.c	/^MergeLocalGrid (long my_id)$/;"	f
+MergeLocalGridSize	construct_grid.c	/^MergeLocalGridSize (long my_id)$/;"	f
+MergeLocalParticles	construct_grid.c	/^MergeLocalParticles (long my_id, particle **p_array, long num_of_particles, box *pb)$/;"	f
+PrintGrid	construct_grid.c	/^PrintGrid (long my_id)$/;"	f
+RemoveBoxFromGrid	construct_grid.c	/^RemoveBoxFromGrid (box *b, box *pb)$/;"	f
+SetColleagues	construct_grid.c	/^SetColleagues (long my_id, box *b)$/;"	f
+SetSiblings	construct_grid.c	/^SetSiblings (box *b)$/;"	f
+SetUList	construct_grid.c	/^SetUList (long my_id, box *b)$/;"	f
+SetUListHelper	construct_grid.c	/^SetUListHelper (long my_id, box *b, box *pb)$/;"	f
+SetVList	construct_grid.c	/^SetVList (long my_id, box *b)$/;"	f
+SetWList	construct_grid.c	/^SetWList (long my_id, box *b)$/;"	f
+SplitParticles	construct_grid.c	/^SplitParticles (particle **p_array, long length, particle **p_dist,$/;"	f
+SubdivideBox	construct_grid.c	/^SubdivideBox (long my_id, box *b)$/;"	f
+_Construct_Grid_H	construct_grid.h	21;"	d
+Child_Sequence	cost_zones.C	/^static long Child_Sequence[NUM_DIRECTIONS][NUM_OFFSPRING] =$/;"	v	file:
+ComputeSubTreeCosts	cost_zones.C	/^ComputeSubTreeCosts (long my_id, box *b)$/;"	f
+CostZones	cost_zones.C	/^CostZones (long my_id)$/;"	f
+CostZonesHelper	cost_zones.C	/^CostZonesHelper (long my_id, box *b, long work, direction dir)$/;"	f
+DOWN	cost_zones.C	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon6	file:
+DOWN	cost_zones.C	123;"	d	file:
+Direction_Sequence	cost_zones.C	/^static long Direction_Sequence[NUM_DIRECTIONS][NUM_OFFSPRING] =$/;"	v	file:
+LEFT	cost_zones.C	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon6	file:
+LEFT	cost_zones.C	125;"	d	file:
+NUM_DIRECTIONS	cost_zones.C	127;"	d	file:
+NUM_DIRECTIONS	cost_zones.C	23;"	d	file:
+RIGHT	cost_zones.C	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon6	file:
+RIGHT	cost_zones.C	126;"	d	file:
+UP	cost_zones.C	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon6	file:
+UP	cost_zones.C	124;"	d	file:
+direction	cost_zones.C	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	t	typeref:enum:__anon6	file:
+_Cost_Zones_H	cost_zones.H	18;"	d
+Child_Sequence	cost_zones.c	/^static long Child_Sequence[NUM_DIRECTIONS][NUM_OFFSPRING] =$/;"	v	file:
+ComputeSubTreeCosts	cost_zones.c	/^ComputeSubTreeCosts (long my_id, box *b)$/;"	f
+CostZones	cost_zones.c	/^CostZones (long my_id)$/;"	f
+CostZonesHelper	cost_zones.c	/^CostZonesHelper (long my_id, box *b, long work, direction dir)$/;"	f
+DOWN	cost_zones.c	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon3	file:
+DOWN	cost_zones.c	230;"	d	file:
+Direction_Sequence	cost_zones.c	/^static long Direction_Sequence[NUM_DIRECTIONS][NUM_OFFSPRING] =$/;"	v	file:
+LEFT	cost_zones.c	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon3	file:
+LEFT	cost_zones.c	232;"	d	file:
+NUM_DIRECTIONS	cost_zones.c	234;"	d	file:
+NUM_DIRECTIONS	cost_zones.c	26;"	d	file:
+RIGHT	cost_zones.c	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon3	file:
+RIGHT	cost_zones.c	233;"	d	file:
+UP	cost_zones.c	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	e	enum:__anon3	file:
+UP	cost_zones.c	231;"	d	file:
+direction	cost_zones.c	/^typedef enum { RIGHT, LEFT, UP, DOWN } direction;$/;"	t	typeref:enum:__anon3	file:
+_Cost_Zones_H	cost_zones.h	21;"	d
+Expansion_Terms	defs.C	/^long Expansion_Terms;$/;"	v
+LockedPrint	defs.C	/^LockedPrint (char *format_str, ...)$/;"	f
+Number_Of_Processors	defs.C	/^long Number_Of_Processors;$/;"	v
+PrintComplexNum	defs.C	/^PrintComplexNum (complex *c)$/;"	f
+PrintVector	defs.C	/^PrintVector (vector *v)$/;"	f
+RoundReal	defs.C	/^RoundReal (real val)$/;"	f
+Softening_Param	defs.C	/^real Softening_Param;$/;"	v
+Timestep_Dur	defs.C	/^double Timestep_Dur;$/;"	v
+ABS_COST	defs.H	120;"	d
+ADD_COST	defs.H	117;"	d
+CACHE_SIZE	defs.H	129;"	d
+COMPLEX_ABS	defs.H	87;"	d
+COMPLEX_ADD	defs.H	53;"	d
+COMPLEX_DIV	defs.H	75;"	d
+COMPLEX_MUL	defs.H	65;"	d
+COMPLEX_SUB	defs.H	59;"	d
+DBL_MIN	defs.H	36;"	d
+DBL_MIN	defs.H	37;"	d
+DIV_COST	defs.H	119;"	d
+DOT_PRODUCT	defs.H	114;"	d
+FALSE	defs.H	/^typedef enum { FALSE = 0, TRUE = 1 } bool;$/;"	e	enum:__anon1
+FALSE	defs.H	31;"	d
+MAX_LEVEL	defs.H	50;"	d
+MAX_PROCS	defs.H	47;"	d
+MAX_REAL	defs.H	43;"	d
+MAX_TIME_STEPS	defs.H	51;"	d
+MIN_REAL	defs.H	44;"	d
+MUL_COST	defs.H	118;"	d
+MY_TIME_STEP	defs.H	41;"	d
+MY_TIMING	defs.H	40;"	d
+NUM_DIMENSIONS	defs.H	33;"	d
+NUM_DIM_POW_2	defs.H	34;"	d
+PAD_SIZE	defs.H	132;"	d
+PAGE_SIZE	defs.H	131;"	d
+REAL_DIG	defs.H	45;"	d
+SELF_COST	defs.H	126;"	d
+TIME_ALL	defs.H	39;"	d
+TRUE	defs.H	/^typedef enum { FALSE = 0, TRUE = 1 } bool;$/;"	e	enum:__anon1
+TRUE	defs.H	28;"	d
+U_LIST_COST	defs.H	122;"	d
+VECTOR_ADD	defs.H	90;"	d
+VECTOR_DIV	defs.H	108;"	d
+VECTOR_MUL	defs.H	102;"	d
+VECTOR_SUB	defs.H	96;"	d
+V_LIST_COST	defs.H	123;"	d
+W_LIST_COST	defs.H	124;"	d
+X_LIST_COST	defs.H	125;"	d
+_Defs_H	defs.H	18;"	d
+_Time_Info	defs.H	/^struct _Time_Info {$/;"	s
+_Vector	defs.H	/^struct _Vector {$/;"	s
+__Complex	defs.H	/^struct __Complex {$/;"	s
+barrier_time	defs.H	/^  unsigned long barrier_time;$/;"	m	struct:_Time_Info
+bool	defs.H	/^typedef enum { FALSE = 0, TRUE = 1 } bool;$/;"	t	typeref:enum:__anon1
+complex	defs.H	/^typedef struct __Complex complex;$/;"	t	typeref:struct:__Complex
+construct_time	defs.H	/^  unsigned long construct_time;$/;"	m	struct:_Time_Info
+i	defs.H	/^  real i;$/;"	m	struct:__Complex
+inter_time	defs.H	/^  unsigned long inter_time;$/;"	m	struct:_Time_Info
+intra_time	defs.H	/^  unsigned long intra_time;$/;"	m	struct:_Time_Info
+list_time	defs.H	/^  unsigned long list_time;$/;"	m	struct:_Time_Info
+other_time	defs.H	/^  unsigned long other_time;$/;"	m	struct:_Time_Info
+partition_time	defs.H	/^  unsigned long partition_time;$/;"	m	struct:_Time_Info
+pass_time	defs.H	/^  unsigned long pass_time;$/;"	m	struct:_Time_Info
+r	defs.H	/^  real r;$/;"	m	struct:__Complex
+real	defs.H	/^typedef double real;$/;"	t
+time_info	defs.H	/^typedef struct _Time_Info time_info;$/;"	t	typeref:struct:_Time_Info
+total_time	defs.H	/^  unsigned long total_time;$/;"	m	struct:_Time_Info
+vector	defs.H	/^typedef struct _Vector vector;$/;"	t	typeref:struct:_Vector
+x	defs.H	/^  real x;$/;"	m	struct:_Vector
+y	defs.H	/^  real y;$/;"	m	struct:_Vector
+Expansion_Terms	defs.c	/^long Expansion_Terms;$/;"	v
+LockedPrint	defs.c	/^LockedPrint (char *format_str, ...)$/;"	f
+Number_Of_Processors	defs.c	/^long Number_Of_Processors;$/;"	v
+PrintComplexNum	defs.c	/^PrintComplexNum (complex *c)$/;"	f
+PrintVector	defs.c	/^PrintVector (vector *v)$/;"	f
+RoundReal	defs.c	/^RoundReal (real val)$/;"	f
+Softening_Param	defs.c	/^real Softening_Param;$/;"	v
+Timestep_Dur	defs.c	/^double Timestep_Dur;$/;"	v
+ABS_COST	defs.h	123;"	d
+ADD_COST	defs.h	120;"	d
+CACHE_SIZE	defs.h	132;"	d
+COMPLEX_ABS	defs.h	90;"	d
+COMPLEX_ADD	defs.h	56;"	d
+COMPLEX_DIV	defs.h	78;"	d
+COMPLEX_MUL	defs.h	68;"	d
+COMPLEX_SUB	defs.h	62;"	d
+DBL_MIN	defs.h	39;"	d
+DBL_MIN	defs.h	40;"	d
+DIV_COST	defs.h	122;"	d
+DOT_PRODUCT	defs.h	117;"	d
+FALSE	defs.h	/^typedef enum { FALSE = 0, TRUE = 1 } bool;$/;"	e	enum:__anon4
+FALSE	defs.h	34;"	d
+MAX_LEVEL	defs.h	53;"	d
+MAX_PROCS	defs.h	50;"	d
+MAX_REAL	defs.h	46;"	d
+MAX_TIME_STEPS	defs.h	54;"	d
+MIN_REAL	defs.h	47;"	d
+MUL_COST	defs.h	121;"	d
+MY_TIME_STEP	defs.h	44;"	d
+MY_TIMING	defs.h	43;"	d
+NUM_DIMENSIONS	defs.h	36;"	d
+NUM_DIM_POW_2	defs.h	37;"	d
+PAD_SIZE	defs.h	135;"	d
+PAGE_SIZE	defs.h	134;"	d
+REAL_DIG	defs.h	48;"	d
+SELF_COST	defs.h	129;"	d
+TIME_ALL	defs.h	42;"	d
+TRUE	defs.h	/^typedef enum { FALSE = 0, TRUE = 1 } bool;$/;"	e	enum:__anon4
+TRUE	defs.h	31;"	d
+U_LIST_COST	defs.h	125;"	d
+VECTOR_ADD	defs.h	93;"	d
+VECTOR_DIV	defs.h	111;"	d
+VECTOR_MUL	defs.h	105;"	d
+VECTOR_SUB	defs.h	99;"	d
+V_LIST_COST	defs.h	126;"	d
+W_LIST_COST	defs.h	127;"	d
+X_LIST_COST	defs.h	128;"	d
+_Defs_H	defs.h	21;"	d
+_Time_Info	defs.h	/^struct _Time_Info {$/;"	s
+_Vector	defs.h	/^struct _Vector {$/;"	s
+__Complex	defs.h	/^struct __Complex {$/;"	s
+barrier_time	defs.h	/^  unsigned long barrier_time;$/;"	m	struct:_Time_Info
+bool	defs.h	/^typedef enum { FALSE = 0, TRUE = 1 } bool;$/;"	t	typeref:enum:__anon4
+complex	defs.h	/^typedef struct __Complex complex;$/;"	t	typeref:struct:__Complex
+construct_time	defs.h	/^  unsigned long construct_time;$/;"	m	struct:_Time_Info
+i	defs.h	/^  real i;$/;"	m	struct:__Complex
+inter_time	defs.h	/^  unsigned long inter_time;$/;"	m	struct:_Time_Info
+intra_time	defs.h	/^  unsigned long intra_time;$/;"	m	struct:_Time_Info
+list_time	defs.h	/^  unsigned long list_time;$/;"	m	struct:_Time_Info
+other_time	defs.h	/^  unsigned long other_time;$/;"	m	struct:_Time_Info
+partition_time	defs.h	/^  unsigned long partition_time;$/;"	m	struct:_Time_Info
+pass_time	defs.h	/^  unsigned long pass_time;$/;"	m	struct:_Time_Info
+r	defs.h	/^  real r;$/;"	m	struct:__Complex
+real	defs.h	/^typedef double real;$/;"	t
+time_info	defs.h	/^typedef struct _Time_Info time_info;$/;"	t	typeref:struct:_Time_Info
+total_time	defs.h	/^  unsigned long total_time;$/;"	m	struct:_Time_Info
+vector	defs.h	/^typedef struct _Vector vector;$/;"	t	typeref:struct:_Vector
+x	defs.h	/^  real x;$/;"	m	struct:_Vector
+y	defs.h	/^  real y;$/;"	m	struct:_Vector
+BASE	fmm.C	626;"	d	file:
+BASE	fmm.C	83;"	d	file:
+BDF	fmm.C	95;"	d	file:
+Cluster	fmm.C	/^static cluster_type Cluster;$/;"	v	file:
+GetArguments	fmm.C	/^GetArguments ()$/;"	f
+Help	fmm.C	/^Help ()$/;"	f
+MAX_LINE_SIZE	fmm.C	625;"	d	file:
+MAX_LINE_SIZE	fmm.C	84;"	d	file:
+Model	fmm.C	/^static model_type Model;$/;"	v	file:
+OCCUPANCY	fmm.C	86;"	d	file:
+PDF	fmm.C	89;"	d	file:
+ParallelExecute	fmm.C	/^ParallelExecute ()$/;"	f
+PartitionGrid	fmm.C	/^PartitionGrid (long my_id, time_info *local_time, long time_all)$/;"	f
+Partition_Flag	fmm.C	/^static partition_alg Partition_Flag;$/;"	v	file:
+Precision	fmm.C	/^static real Precision;$/;"	v	file:
+PrintTimes	fmm.C	/^PrintTimes ()$/;"	f
+StepSimulation	fmm.C	/^StepSimulation (long my_id, time_info *local_time, long time_all)$/;"	f
+TOLERANCE	fmm.C	92;"	d	file:
+Time_Steps	fmm.C	/^static long Time_Steps;$/;"	v	file:
+do_output	fmm.C	/^long do_output = 0;$/;"	v
+do_stats	fmm.C	/^long do_stats = 0;$/;"	v
+endtime	fmm.C	/^unsigned long endtime;$/;"	v
+main	fmm.C	/^main (int argc, char *argv[])$/;"	f
+starttime	fmm.C	/^unsigned long starttime;$/;"	v
+BASE	fmm.c	1103;"	d	file:
+BASE	fmm.c	86;"	d	file:
+BDF	fmm.c	98;"	d	file:
+Cluster	fmm.c	/^static cluster_type Cluster;$/;"	v	file:
+GetArguments	fmm.c	/^GetArguments ()$/;"	f
+Help	fmm.c	/^Help ()$/;"	f
+MAX_LINE_SIZE	fmm.c	1102;"	d	file:
+MAX_LINE_SIZE	fmm.c	87;"	d	file:
+Model	fmm.c	/^static model_type Model;$/;"	v	file:
+OCCUPANCY	fmm.c	89;"	d	file:
+PDF	fmm.c	92;"	d	file:
+ParallelExecute	fmm.c	/^ParallelExecute ()$/;"	f
+PartitionGrid	fmm.c	/^PartitionGrid (long my_id, time_info *local_time, long time_all)$/;"	f
+Partition_Flag	fmm.c	/^static partition_alg Partition_Flag;$/;"	v	file:
+Precision	fmm.c	/^static real Precision;$/;"	v	file:
+PrintTimes	fmm.c	/^PrintTimes ()$/;"	f
+StepSimulation	fmm.c	/^StepSimulation (long my_id, time_info *local_time, long time_all)$/;"	f
+TOLERANCE	fmm.c	95;"	d	file:
+Time_Steps	fmm.c	/^static long Time_Steps;$/;"	v	file:
+do_output	fmm.c	/^long do_output = 0;$/;"	v
+do_stats	fmm.c	/^long do_stats = 0;$/;"	v
+endtime	fmm.c	/^unsigned long endtime;$/;"	v
+main	fmm.c	/^main (int argc, char *argv[])$/;"	f
+starttime	fmm.c	/^unsigned long starttime;$/;"	v
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+C	interactions.C	/^static real C[2 * MAX_EXPANSION_TERMS][2 * MAX_EXPANSION_TERMS];$/;"	v	file:
+ComputeInteractions	interactions.C	/^ComputeInteractions (long my_id, box *b)$/;"	f
+ComputeMPExp	interactions.C	/^ComputeMPExp (box *b)$/;"	f
+ComputeParticlePositions	interactions.C	/^ComputeParticlePositions (long my_id, box *b)$/;"	f
+ComputeSelfInteraction	interactions.C	/^ComputeSelfInteraction (box *b)$/;"	f
+DownwardPass	interactions.C	/^DownwardPass (long my_id, box *b)$/;"	f
+EvaluateLocalExp	interactions.C	/^EvaluateLocalExp (box *b)$/;"	f
+InitExp	interactions.C	/^InitExp (box *b)$/;"	f
+InitExpTables	interactions.C	/^InitExpTables ()$/;"	f
+Inv	interactions.C	/^static real Inv[MAX_EXPANSION_TERMS + 1];$/;"	v	file:
+One	interactions.C	/^static complex One;$/;"	v	file:
+OverInc	interactions.C	/^static real OverInc[MAX_EXPANSION_TERMS + 1];$/;"	v	file:
+PrintExpTables	interactions.C	/^PrintExpTables ()$/;"	f
+ShiftLocalExp	interactions.C	/^ShiftLocalExp (box *pb, box *cb)$/;"	f
+ShiftMPExp	interactions.C	/^ShiftMPExp (box *cb, box *pb)$/;"	f
+UListInteraction	interactions.C	/^UListInteraction (long my_id, box *source_box, box *dest_box)$/;"	f
+UpwardPass	interactions.C	/^UpwardPass (long my_id, box *b)$/;"	f
+VListInteraction	interactions.C	/^VListInteraction (long my_id, box *source_box, box *dest_box)$/;"	f
+WAndXListInteractions	interactions.C	/^WAndXListInteractions (long my_id, box *b1, box *b2)$/;"	f
+WListInteraction	interactions.C	/^WListInteraction (box *source_box, box *dest_box)$/;"	f
+XListInteraction	interactions.C	/^XListInteraction (box *source_box, box *dest_box)$/;"	f
+Zero	interactions.C	/^static complex Zero;$/;"	v	file:
+_Expansions_H	interactions.H	18;"	d
+C	interactions.c	/^static real C[2 * MAX_EXPANSION_TERMS][2 * MAX_EXPANSION_TERMS];$/;"	v	file:
+ComputeInteractions	interactions.c	/^ComputeInteractions (long my_id, box *b)$/;"	f
+ComputeMPExp	interactions.c	/^ComputeMPExp (box *b)$/;"	f
+ComputeParticlePositions	interactions.c	/^ComputeParticlePositions (long my_id, box *b)$/;"	f
+ComputeSelfInteraction	interactions.c	/^ComputeSelfInteraction (box *b)$/;"	f
+DownwardPass	interactions.c	/^DownwardPass (long my_id, box *b)$/;"	f
+EvaluateLocalExp	interactions.c	/^EvaluateLocalExp (box *b)$/;"	f
+InitExp	interactions.c	/^InitExp (box *b)$/;"	f
+InitExpTables	interactions.c	/^InitExpTables ()$/;"	f
+Inv	interactions.c	/^static real Inv[MAX_EXPANSION_TERMS + 1];$/;"	v	file:
+One	interactions.c	/^static complex One;$/;"	v	file:
+OverInc	interactions.c	/^static real OverInc[MAX_EXPANSION_TERMS + 1];$/;"	v	file:
+PrintExpTables	interactions.c	/^PrintExpTables ()$/;"	f
+ShiftLocalExp	interactions.c	/^ShiftLocalExp (box *pb, box *cb)$/;"	f
+ShiftMPExp	interactions.c	/^ShiftMPExp (box *cb, box *pb)$/;"	f
+UListInteraction	interactions.c	/^UListInteraction (long my_id, box *source_box, box *dest_box)$/;"	f
+UpwardPass	interactions.c	/^UpwardPass (long my_id, box *b)$/;"	f
+VListInteraction	interactions.c	/^VListInteraction (long my_id, box *source_box, box *dest_box)$/;"	f
+WAndXListInteractions	interactions.c	/^WAndXListInteractions (long my_id, box *b1, box *b2)$/;"	f
+WListInteraction	interactions.c	/^WListInteraction (box *source_box, box *dest_box)$/;"	f
+XListInteraction	interactions.c	/^XListInteraction (box *source_box, box *dest_box)$/;"	f
+Zero	interactions.c	/^static complex Zero;$/;"	v	file:
+_Expansions_H	interactions.h	21;"	d
+G_Memory	memory.C	/^g_mem *G_Memory;$/;"	v
+InitGlobalMemory	memory.C	/^InitGlobalMemory ()$/;"	f
+Local	memory.C	/^local_memory Local[MAX_PROCS];$/;"	v
+B_Heap	memory.H	/^   box *B_Heap;$/;"	m	struct:_Local_Memory
+Childless_Partition	memory.H	/^   box *Childless_Partition;$/;"	m	struct:_Local_Memory
+Index_B_Heap	memory.H	/^   long Index_B_Heap;$/;"	m	struct:_Local_Memory
+Local_Grid	memory.H	/^   box *Local_Grid;$/;"	m	struct:_Local_Memory
+Local_X_Max	memory.H	/^   real Local_X_Max;$/;"	m	struct:_Local_Memory
+Local_X_Min	memory.H	/^   real Local_X_Min;$/;"	m	struct:_Local_Memory
+Local_Y_Max	memory.H	/^   real Local_Y_Max;$/;"	m	struct:_Local_Memory
+Local_Y_Min	memory.H	/^   real Local_Y_Min;$/;"	m	struct:_Local_Memory
+MAX_LOCKS	memory.H	24;"	d
+Max_B_Heap	memory.H	/^   long Max_B_Heap;$/;"	m	struct:_Local_Memory
+Max_Parent_Level	memory.H	/^   long Max_Parent_Level;$/;"	m	struct:_Local_Memory
+Max_Particles	memory.H	/^   long Max_Particles;$/;"	m	struct:_Local_Memory
+Max_Work	memory.H	/^   long Max_Work;$/;"	m	struct:_Local_Memory
+Min_Work	memory.H	/^   long Min_Work;$/;"	m	struct:_Local_Memory
+Num_Particles	memory.H	/^   long Num_Particles;$/;"	m	struct:_Local_Memory
+Parent_Partition	memory.H	/^   box *Parent_Partition[MAX_LEVEL];$/;"	m	struct:_Local_Memory
+Particles	memory.H	/^   particle **Particles;$/;"	m	struct:_Local_Memory
+Time	memory.H	/^   double Time;$/;"	m	struct:_Local_Memory
+Time_Step	memory.H	/^   long Time_Step;$/;"	m	struct:_Local_Memory
+Timing	memory.H	/^   time_info Timing[MAX_TIME_STEPS];$/;"	m	struct:_Local_Memory
+Total_Work	memory.H	/^   long Total_Work;$/;"	m	struct:_Local_Memory
+_G_Mem	memory.H	/^struct _G_Mem$/;"	s
+_Local_Memory	memory.H	/^struct _Local_Memory {$/;"	s
+_Memory_H	memory.H	18;"	d
+count	memory.H	/^   long count;$/;"	m	struct:_G_Mem
+d_array	memory.H	/^   volatile double *d_array;$/;"	m	struct:_G_Mem
+f_array	memory.H	/^   real f_array[MAX_PROCS][NUM_DIM_POW_2];$/;"	m	struct:_G_Mem
+g_mem	memory.H	/^typedef struct _G_Mem g_mem;$/;"	t	typeref:struct:_G_Mem
+i_array	memory.H	/^   volatile long *i_array;$/;"	m	struct:_G_Mem
+id	memory.H	/^   long id;$/;"	m	struct:_G_Mem
+init_done_times	memory.H	/^   unsigned long init_done_times;$/;"	m	struct:_Local_Memory
+local_memory	memory.H	/^typedef struct _Local_Memory local_memory;$/;"	t	typeref:struct:_Local_Memory
+max_x	memory.H	/^   real max_x;$/;"	m	struct:_G_Mem
+max_y	memory.H	/^   real max_y;$/;"	m	struct:_G_Mem
+min_x	memory.H	/^   real min_x;$/;"	m	struct:_G_Mem
+min_y	memory.H	/^   real min_y;$/;"	m	struct:_G_Mem
+pad_begin	memory.H	/^   long pad_begin[PAD_SIZE];$/;"	m	struct:_Local_Memory
+pad_end	memory.H	/^   long pad_end[PAD_SIZE];$/;"	m	struct:_Local_Memory
+G_Memory	memory.c	/^g_mem *G_Memory;$/;"	v
+InitGlobalMemory	memory.c	/^InitGlobalMemory ()$/;"	f
+Local	memory.c	/^local_memory Local[MAX_PROCS];$/;"	v
+MAX_THREADS	memory.c	34;"	d	file:
+PThreadTable	memory.c	/^pthread_t PThreadTable[MAX_THREADS];$/;"	v
+B_Heap	memory.h	/^   box *B_Heap;$/;"	m	struct:_Local_Memory
+Childless_Partition	memory.h	/^   box *Childless_Partition;$/;"	m	struct:_Local_Memory
+Index_B_Heap	memory.h	/^   long Index_B_Heap;$/;"	m	struct:_Local_Memory
+Local_Grid	memory.h	/^   box *Local_Grid;$/;"	m	struct:_Local_Memory
+Local_X_Max	memory.h	/^   real Local_X_Max;$/;"	m	struct:_Local_Memory
+Local_X_Min	memory.h	/^   real Local_X_Min;$/;"	m	struct:_Local_Memory
+Local_Y_Max	memory.h	/^   real Local_Y_Max;$/;"	m	struct:_Local_Memory
+Local_Y_Min	memory.h	/^   real Local_Y_Min;$/;"	m	struct:_Local_Memory
+MAX_LOCKS	memory.h	27;"	d
+Max_B_Heap	memory.h	/^   long Max_B_Heap;$/;"	m	struct:_Local_Memory
+Max_Parent_Level	memory.h	/^   long Max_Parent_Level;$/;"	m	struct:_Local_Memory
+Max_Particles	memory.h	/^   long Max_Particles;$/;"	m	struct:_Local_Memory
+Max_Work	memory.h	/^   long Max_Work;$/;"	m	struct:_Local_Memory
+Min_Work	memory.h	/^   long Min_Work;$/;"	m	struct:_Local_Memory
+Num_Particles	memory.h	/^   long Num_Particles;$/;"	m	struct:_Local_Memory
+Parent_Partition	memory.h	/^   box *Parent_Partition[MAX_LEVEL];$/;"	m	struct:_Local_Memory
+Particles	memory.h	/^   particle **Particles;$/;"	m	struct:_Local_Memory
+Time	memory.h	/^   double Time;$/;"	m	struct:_Local_Memory
+Time_Step	memory.h	/^   long Time_Step;$/;"	m	struct:_Local_Memory
+Timing	memory.h	/^   time_info Timing[MAX_TIME_STEPS];$/;"	m	struct:_Local_Memory
+Total_Work	memory.h	/^   long Total_Work;$/;"	m	struct:_Local_Memory
+_G_Mem	memory.h	/^struct _G_Mem$/;"	s
+_Local_Memory	memory.h	/^struct _Local_Memory {$/;"	s
+_Memory_H	memory.h	21;"	d
+count	memory.h	/^   long count;$/;"	m	struct:_G_Mem
+counter	memory.h	/^	unsigned long	counter;$/;"	m	struct:_G_Mem::__anon15
+cv	memory.h	/^	pthread_cond_t	cv;$/;"	m	struct:_G_Mem::__anon15
+cycle	memory.h	/^	unsigned long	cycle;$/;"	m	struct:_G_Mem::__anon15
+d_array	memory.h	/^   volatile double *d_array;$/;"	m	struct:_G_Mem
+f_array	memory.h	/^   real f_array[MAX_PROCS][NUM_DIM_POW_2];$/;"	m	struct:_G_Mem
+g_mem	memory.h	/^typedef struct _G_Mem g_mem;$/;"	t	typeref:struct:_G_Mem
+i_array	memory.h	/^   volatile long *i_array;$/;"	m	struct:_G_Mem
+id	memory.h	/^   long id;$/;"	m	struct:_G_Mem
+init_done_times	memory.h	/^   unsigned long init_done_times;$/;"	m	struct:_Local_Memory
+local_memory	memory.h	/^typedef struct _Local_Memory local_memory;$/;"	t	typeref:struct:_Local_Memory
+lock_array	memory.h	/^   pthread_mutex_t lock_array[MAX_LOCKS];$/;"	m	struct:_G_Mem
+max_x	memory.h	/^   real max_x;$/;"	m	struct:_G_Mem
+max_y	memory.h	/^   real max_y;$/;"	m	struct:_G_Mem
+min_x	memory.h	/^   real min_x;$/;"	m	struct:_G_Mem
+min_y	memory.h	/^   real min_y;$/;"	m	struct:_G_Mem
+mutex	memory.h	/^	pthread_mutex_t	mutex;$/;"	m	struct:_G_Mem::__anon15
+pad_begin	memory.h	/^   long pad_begin[PAD_SIZE];$/;"	m	struct:_Local_Memory
+pad_end	memory.h	/^   long pad_end[PAD_SIZE];$/;"	m	struct:_Local_Memory
+synch	memory.h	/^} (synch);$/;"	m	struct:_G_Mem	typeref:struct:_G_Mem::__anon15
+CreateDistribution	particle.C	/^CreateDistribution (cluster_type cluster, model_type model)$/;"	f
+CreateParticleList	particle.C	/^CreateParticleList (long my_id, long length)$/;"	f
+InitParticle	particle.C	/^InitParticle (real charge, real mass)$/;"	f
+InitParticleList	particle.C	/^InitParticleList (long my_id, long num_assigned, long starting_id)$/;"	f
+MAX_FRAC	particle.C	25;"	d	file:
+MAX_FRAC	particle.C	339;"	d	file:
+M_PI	particle.C	29;"	d	file:
+ONE_EV	particle.C	24;"	d	file:
+ONE_EV	particle.C	341;"	d	file:
+PARTICLES_PER_LINE	particle.C	338;"	d	file:
+PARTICLES_PER_LINE	particle.C	33;"	d	file:
+Particle_List	particle.C	/^static particle **Particle_List;$/;"	v	file:
+PickShell	particle.C	/^PickShell (vector *v, real radius)$/;"	f
+PrintAllParticles	particle.C	/^PrintAllParticles ()$/;"	f
+PrintParticle	particle.C	/^PrintParticle (particle *p)$/;"	f
+PrintParticleArrayIds	particle.C	/^PrintParticleArrayIds (particle **p_array, long num_particles)$/;"	f
+RANDOM_SIZE	particle.C	26;"	d	file:
+RANDOM_SIZE	particle.C	340;"	d	file:
+Total_Particles	particle.C	/^long Total_Particles;$/;"	v
+XRand	particle.C	/^XRand (real low, real high)$/;"	f
+ONE_CLUSTER	particle.H	/^typedef enum { ONE_CLUSTER, TWO_CLUSTER } cluster_type;$/;"	e	enum:__anon9
+PLUMMER	particle.H	/^typedef enum { UNIFORM, PLUMMER } model_type;$/;"	e	enum:__anon10
+TWO_CLUSTER	particle.H	/^typedef enum { ONE_CLUSTER, TWO_CLUSTER } cluster_type;$/;"	e	enum:__anon9
+UNIFORM	particle.H	/^typedef enum { UNIFORM, PLUMMER } model_type;$/;"	e	enum:__anon10
+_Particle	particle.H	/^struct _Particle$/;"	s
+_Particle_H	particle.H	18;"	d
+_Particle_Node	particle.H	/^struct _Particle_Node$/;"	s
+acc	particle.H	/^  vector acc;$/;"	m	struct:_Particle
+box	particle.H	/^  real box;$/;"	m	struct:_Particle
+charge	particle.H	/^  real charge;$/;"	m	struct:_Particle
+cluster_type	particle.H	/^typedef enum { ONE_CLUSTER, TWO_CLUSTER } cluster_type;$/;"	t	typeref:enum:__anon9
+cost	particle.H	/^  long cost;$/;"	m	struct:_Particle
+data	particle.H	/^  particle *data;$/;"	m	struct:_Particle_Node
+field	particle.H	/^  complex field;$/;"	m	struct:_Particle
+id	particle.H	/^  long id;$/;"	m	struct:_Particle
+mass	particle.H	/^  real mass;$/;"	m	struct:_Particle
+model_type	particle.H	/^typedef enum { UNIFORM, PLUMMER } model_type;$/;"	t	typeref:enum:__anon10
+next	particle.H	/^  particle_node *next;$/;"	m	struct:_Particle_Node
+particle	particle.H	/^typedef struct _Particle particle;$/;"	t	typeref:struct:_Particle
+particle_node	particle.H	/^typedef struct _Particle_Node particle_node;$/;"	t	typeref:struct:_Particle_Node
+pos	particle.H	/^  vector pos;$/;"	m	struct:_Particle
+vel	particle.H	/^  vector vel;$/;"	m	struct:_Particle
+CreateDistribution	particle.c	/^CreateDistribution (cluster_type cluster, model_type model)$/;"	f
+CreateParticleList	particle.c	/^CreateParticleList (long my_id, long length)$/;"	f
+InitParticle	particle.c	/^InitParticle (real charge, real mass)$/;"	f
+InitParticleList	particle.c	/^InitParticleList (long my_id, long num_assigned, long starting_id)$/;"	f
+MAX_FRAC	particle.c	28;"	d	file:
+MAX_FRAC	particle.c	344;"	d	file:
+M_PI	particle.c	32;"	d	file:
+ONE_EV	particle.c	27;"	d	file:
+ONE_EV	particle.c	346;"	d	file:
+PARTICLES_PER_LINE	particle.c	343;"	d	file:
+PARTICLES_PER_LINE	particle.c	36;"	d	file:
+Particle_List	particle.c	/^static particle **Particle_List;$/;"	v	file:
+PickShell	particle.c	/^PickShell (vector *v, real radius)$/;"	f
+PrintAllParticles	particle.c	/^PrintAllParticles ()$/;"	f
+PrintParticle	particle.c	/^PrintParticle (particle *p)$/;"	f
+PrintParticleArrayIds	particle.c	/^PrintParticleArrayIds (particle **p_array, long num_particles)$/;"	f
+RANDOM_SIZE	particle.c	29;"	d	file:
+RANDOM_SIZE	particle.c	345;"	d	file:
+Total_Particles	particle.c	/^long Total_Particles;$/;"	v
+XRand	particle.c	/^XRand (real low, real high)$/;"	f
+ONE_CLUSTER	particle.h	/^typedef enum { ONE_CLUSTER, TWO_CLUSTER } cluster_type;$/;"	e	enum:__anon11
+PLUMMER	particle.h	/^typedef enum { UNIFORM, PLUMMER } model_type;$/;"	e	enum:__anon12
+TWO_CLUSTER	particle.h	/^typedef enum { ONE_CLUSTER, TWO_CLUSTER } cluster_type;$/;"	e	enum:__anon11
+UNIFORM	particle.h	/^typedef enum { UNIFORM, PLUMMER } model_type;$/;"	e	enum:__anon12
+_Particle	particle.h	/^struct _Particle$/;"	s
+_Particle_H	particle.h	21;"	d
+_Particle_Node	particle.h	/^struct _Particle_Node$/;"	s
+acc	particle.h	/^  vector acc;$/;"	m	struct:_Particle
+box	particle.h	/^  real box;$/;"	m	struct:_Particle
+charge	particle.h	/^  real charge;$/;"	m	struct:_Particle
+cluster_type	particle.h	/^typedef enum { ONE_CLUSTER, TWO_CLUSTER } cluster_type;$/;"	t	typeref:enum:__anon11
+cost	particle.h	/^  long cost;$/;"	m	struct:_Particle
+data	particle.h	/^  particle *data;$/;"	m	struct:_Particle_Node
+field	particle.h	/^  complex field;$/;"	m	struct:_Particle
+id	particle.h	/^  long id;$/;"	m	struct:_Particle
+mass	particle.h	/^  real mass;$/;"	m	struct:_Particle
+model_type	particle.h	/^typedef enum { UNIFORM, PLUMMER } model_type;$/;"	t	typeref:enum:__anon12
+next	particle.h	/^  particle_node *next;$/;"	m	struct:_Particle_Node
+particle	particle.h	/^typedef struct _Particle particle;$/;"	t	typeref:struct:_Particle
+particle_node	particle.h	/^typedef struct _Particle_Node particle_node;$/;"	t	typeref:struct:_Particle_Node
+pos	particle.h	/^  vector pos;$/;"	m	struct:_Particle
+vel	particle.h	/^  vector vel;$/;"	m	struct:_Particle
+CheckBox	partition_grid.C	/^CheckBox (long my_id, box *b, long partition_level)$/;"	f
+CheckPartition	partition_grid.C	/^CheckPartition (long my_id)$/;"	f
+ComputeCostOfBox	partition_grid.C	/^ComputeCostOfBox (box *b)$/;"	f
+DIVISOR	partition_grid.C	25;"	d	file:
+DIVISOR	partition_grid.C	373;"	d	file:
+InitPartition	partition_grid.C	/^InitPartition (long my_id)$/;"	f
+InsertBoxInPartition	partition_grid.C	/^InsertBoxInPartition (long my_id, box *b)$/;"	f
+PartitionIterate	partition_grid.C	/^PartitionIterate (long my_id, partition_function function,$/;"	f
+RemoveBoxFromPartition	partition_grid.C	/^RemoveBoxFromPartition (long my_id, box *b)$/;"	f
+_Cost_Info	partition_grid.C	/^struct _Cost_Info$/;"	s	file:
+_Id_Info	partition_grid.C	/^struct _Id_Info$/;"	s	file:
+cost	partition_grid.C	/^   long cost;$/;"	m	struct:_Cost_Info	file:
+cost_info	partition_grid.C	/^typedef struct _Cost_Info cost_info;$/;"	t	typeref:struct:_Cost_Info	file:
+id	partition_grid.C	/^   long id;$/;"	m	struct:_Id_Info	file:
+id_info	partition_grid.C	/^typedef struct _Id_Info id_info;$/;"	t	typeref:struct:_Id_Info	file:
+num	partition_grid.C	/^   long num;$/;"	m	struct:_Cost_Info	file:
+num	partition_grid.C	/^   long num;$/;"	m	struct:_Id_Info	file:
+BOTTOM	partition_grid.H	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	e	enum:__anon13
+CHILDREN	partition_grid.H	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	e	enum:__anon13
+COST_ZONES	partition_grid.H	/^typedef enum { ORB, COST_ZONES } partition_alg;$/;"	e	enum:__anon14
+ORB	partition_grid.H	/^typedef enum { ORB, COST_ZONES } partition_alg;$/;"	e	enum:__anon14
+TOP	partition_grid.H	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	e	enum:__anon13
+_Partition_H	partition_grid.H	18;"	d
+partition_alg	partition_grid.H	/^typedef enum { ORB, COST_ZONES } partition_alg;$/;"	t	typeref:enum:__anon14
+partition_function	partition_grid.H	/^typedef void (*partition_function)(long my_id, box *b);$/;"	t
+partition_start	partition_grid.H	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	t	typeref:enum:__anon13
+CheckBox	partition_grid.c	/^CheckBox (long my_id, box *b, long partition_level)$/;"	f
+CheckPartition	partition_grid.c	/^CheckPartition (long my_id)$/;"	f
+ComputeCostOfBox	partition_grid.c	/^ComputeCostOfBox (box *b)$/;"	f
+DIVISOR	partition_grid.c	28;"	d	file:
+DIVISOR	partition_grid.c	376;"	d	file:
+InitPartition	partition_grid.c	/^InitPartition (long my_id)$/;"	f
+InsertBoxInPartition	partition_grid.c	/^InsertBoxInPartition (long my_id, box *b)$/;"	f
+PartitionIterate	partition_grid.c	/^PartitionIterate (long my_id, partition_function function,$/;"	f
+RemoveBoxFromPartition	partition_grid.c	/^RemoveBoxFromPartition (long my_id, box *b)$/;"	f
+_Cost_Info	partition_grid.c	/^struct _Cost_Info$/;"	s	file:
+_Id_Info	partition_grid.c	/^struct _Id_Info$/;"	s	file:
+cost	partition_grid.c	/^   long cost;$/;"	m	struct:_Cost_Info	file:
+cost_info	partition_grid.c	/^typedef struct _Cost_Info cost_info;$/;"	t	typeref:struct:_Cost_Info	file:
+id	partition_grid.c	/^   long id;$/;"	m	struct:_Id_Info	file:
+id_info	partition_grid.c	/^typedef struct _Id_Info id_info;$/;"	t	typeref:struct:_Id_Info	file:
+num	partition_grid.c	/^   long num;$/;"	m	struct:_Cost_Info	file:
+num	partition_grid.c	/^   long num;$/;"	m	struct:_Id_Info	file:
+BOTTOM	partition_grid.h	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	e	enum:__anon7
+CHILDREN	partition_grid.h	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	e	enum:__anon7
+COST_ZONES	partition_grid.h	/^typedef enum { ORB, COST_ZONES } partition_alg;$/;"	e	enum:__anon8
+ORB	partition_grid.h	/^typedef enum { ORB, COST_ZONES } partition_alg;$/;"	e	enum:__anon8
+TOP	partition_grid.h	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	e	enum:__anon7
+_Partition_H	partition_grid.h	21;"	d
+partition_alg	partition_grid.h	/^typedef enum { ORB, COST_ZONES } partition_alg;$/;"	t	typeref:enum:__anon8
+partition_function	partition_grid.h	/^typedef void (*partition_function)(long my_id, box *b);$/;"	t
+partition_start	partition_grid.h	/^typedef enum { TOP, BOTTOM, CHILDREN } partition_start;$/;"	t	typeref:enum:__anon7
