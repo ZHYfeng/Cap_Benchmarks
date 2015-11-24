@@ -1,0 +1,449 @@
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          43323           27650            1657
+
+                 TIMING INFORMATION
+Start time                        : 1447982464896418
+Initialization finish time        : 1447982465144671
+Overall finish time               : 1447982465187994
+Total time with initialization    :           291576
+Total time without initialization :            43323
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          57908           32969            1670
+
+                 TIMING INFORMATION
+Start time                        : 1447982465808512
+Initialization finish time        : 1447982466049754
+Overall finish time               : 1447982466107662
+Total time with initialization    :           299150
+Total time without initialization :            57908
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          43722           29303             389
+
+                 TIMING INFORMATION
+Start time                        : 1447982466720423
+Initialization finish time        : 1447982466966418
+Overall finish time               : 1447982467010140
+Total time with initialization    :           289717
+Total time without initialization :            43722
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          43705           27453            1861
+
+                 TIMING INFORMATION
+Start time                        : 1447982467631728
+Initialization finish time        : 1447982467877102
+Overall finish time               : 1447982467920807
+Total time with initialization    :           289079
+Total time without initialization :            43705
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          52136           34871             397
+
+                 TIMING INFORMATION
+Start time                        : 1447982468556966
+Initialization finish time        : 1447982468796340
+Overall finish time               : 1447982468848476
+Total time with initialization    :           291510
+Total time without initialization :            52136
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          44647           29110            1663
+
+                 TIMING INFORMATION
+Start time                        : 1447982469466732
+Initialization finish time        : 1447982469713621
+Overall finish time               : 1447982469758268
+Total time with initialization    :           291536
+Total time without initialization :            44647
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          51701           35172            1683
+
+                 TIMING INFORMATION
+Start time                        : 1447982470386520
+Initialization finish time        : 1447982470628782
+Overall finish time               : 1447982470680483
+Total time with initialization    :           293963
+Total time without initialization :            51701
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          51827           35420            1672
+
+                 TIMING INFORMATION
+Start time                        : 1447982471294658
+Initialization finish time        : 1447982471534575
+Overall finish time               : 1447982471586402
+Total time with initialization    :           291744
+Total time without initialization :            51827
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          52995           27790             394
+
+                 TIMING INFORMATION
+Start time                        : 1447982472227751
+Initialization finish time        : 1447982472476968
+Overall finish time               : 1447982472529963
+Total time with initialization    :           302212
+Total time without initialization :            52995
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          53526           28042             388
+
+                 TIMING INFORMATION
+Start time                        : 1447982473144547
+Initialization finish time        : 1447982473394421
+Overall finish time               : 1447982473447947
+Total time with initialization    :           303400
+Total time without initialization :            53526
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          45406           27699             418
+
+                 TIMING INFORMATION
+Start time                        : 1447982474147552
+Initialization finish time        : 1447982474393665
+Overall finish time               : 1447982474439071
+Total time with initialization    :           291519
+Total time without initialization :            45406
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          43891           28116             426
+
+                 TIMING INFORMATION
+Start time                        : 1447982475065125
+Initialization finish time        : 1447982475315578
+Overall finish time               : 1447982475359469
+Total time with initialization    :           294344
+Total time without initialization :            43891
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          50134           30321            1685
+
+                 TIMING INFORMATION
+Start time                        : 1447982475975803
+Initialization finish time        : 1447982476216871
+Overall finish time               : 1447982476267005
+Total time with initialization    :           291202
+Total time without initialization :            50134
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          51607           34634            1753
+
+                 TIMING INFORMATION
+Start time                        : 1447982476899503
+Initialization finish time        : 1447982477138860
+Overall finish time               : 1447982477190467
+Total time with initialization    :           290964
+Total time without initialization :            51607
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          51244           30737            1745
+
+                 TIMING INFORMATION
+Start time                        : 1447982477810965
+Initialization finish time        : 1447982478051138
+Overall finish time               : 1447982478102382
+Total time with initialization    :           291417
+Total time without initialization :            51244
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+
+Integer Radix Sort
+     2 Keys
+     2 Processors
+     Radix = 2
+     Max key = 2
+
+
+                 PROCESS STATISTICS
+               Total            Rank            Sort
+ Proc          Time             Time            Time
+    0          50692           34281            1688
+
+                 TIMING INFORMATION
+Start time                        : 1447982478731416
+Initialization finish time        : 1447982478972240
+Overall finish time               : 1447982479022932
+Total time with initialization    :           291516
+Total time without initialization :            50692
+
+
+                 SORTED KEY VALUES
+       0        1 
+
+                  TESTING RESULTS
+PASSED: All keys in place.
+
+[MAPLE] === profile iteration 1 done === (0.902838) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 2 done === (0.902653) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 3 done === (0.902663) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 4 done === (0.902581) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 5 done === (0.902772) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 6 done === (0.902360) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 7 done === (0.902585) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 8 done === (0.902375) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 9 done === (0.902724) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 10 done === (1.002522) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 11 done === (0.902473) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 12 done === (0.902588) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 13 done === (0.902580) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 14 done === (0.902762) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 15 done === (0.902703) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] === profile iteration 16 done === (0.902731) (/home/zhy/Benchmarks/radix/radix_bug1)
+[MAPLE] profile threshold reached
