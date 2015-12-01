@@ -99,7 +99,6 @@ long rowsperproc;
 double ck1;
 double ck3;                        /* checksums for testing answer */
 long pad_length;
-long ass = 0;
 
 void SlaveStart(void);
 double TouchArray(double *x, double *scratch, double *u, double *upriv, long MyFirst, long MyLast);
@@ -435,6 +434,7 @@ void SlaveStart()
     Global->id++;
   UNLOCK(Global->idlock); 
 
+    
   BARINCLUDE(Global->start);
 
 /* POSSIBLE ENHANCEMENT:  Here is where one might pin processes to
@@ -599,7 +599,7 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
   long n1;
   unsigned long clocktime1;
   unsigned long clocktime2;
-  long id;
+
   m1 = M/2;
   n1 = 1<<m1;
 
@@ -623,8 +623,6 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
     TwiddleOneCol(direction, n1, j, umain2, &scratch[2*j*(n1+pad_length)], pad_length);
   }  
 
-  id=ass;
-  assert(id == ass);
   BARRIER(Global->start, P);
 
   if ((MyNum == 0) || (dostats)) {
@@ -645,7 +643,6 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
       Scale(n1, N, &x[2*j*(n1+pad_length)]);
   }
 
-  ass++;
   BARRIER(Global->start, P);
 
   if ((MyNum == 0) || (dostats)) {

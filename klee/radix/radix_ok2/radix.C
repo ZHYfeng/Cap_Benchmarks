@@ -40,18 +40,19 @@
 #include <math.h>
 #include <unistd.h>
 #include <assert.h>
+
 #define DEFAULT_P                    2
-#define DEFAULT_N                    2
+#define DEFAULT_N                    4
 #define DEFAULT_R                    2 
-#define DEFAULT_M                    2
+#define DEFAULT_M                    8
 #define MAX_PROCESSORS               2   
 #define RADIX_S                8388608.0e0
 #define RADIX           70368744177664.0e0
 #define SEED                 314159265.0e0
 #define RATIO               1220703125.0e0
-#define PAGE_SIZE                    2
+#define PAGE_SIZE                    4
 #define PAGE_MASK     (~(PAGE_SIZE-1))
-#define MAX_RADIX                    2
+#define MAX_RADIX                    4
 
 MAIN_ENV
 
@@ -99,7 +100,8 @@ long log2_keys;
 long dostats = 0;
 long test_result = 0;
 long doprint = 0;
-long ass = 0;
+long ass;
+
 void slave_sort(void);
 double product_mod_46(double t1, double t2);
 double ran_num_init(unsigned long k, double b, double t);
@@ -193,7 +195,7 @@ int main(int argc, char *argv[])
    MAIN_INITENV(,80000000)
    doprint =1;
    test_result=1;
-
+   ass=0;
    log2_radix = log_2(radix); 
    log2_keys = log_2(num_keys);
    global = (struct global_memory *) G_MALLOC(sizeof(struct global_memory));
@@ -315,7 +317,7 @@ int main(int argc, char *argv[])
    
    CREATE(slave_sort, number_of_processors);
    WAIT_FOR_END(number_of_processors);
-
+   // assert ( key[global->final][0] == 3 );
    printf("\n");
    printf("                 PROCESS STATISTICS\n");
    printf("               Total            Rank            Sort\n");
@@ -429,12 +431,11 @@ void slave_sort()
    long base;
    long offset;
    long id;
-
+   
    stats = dostats;
 
    LOCK(global->lock_Index)
      MyNum = global->Index;
-   assert(MyNum == global->Index);
      global->Index++;
    UNLOCK(global->lock_Index)
 
@@ -498,7 +499,7 @@ void slave_sort()
        key_density[i] = key_density[i-1] + rank_me_mynum[i];  
      }
 
-     BARRIER(global->barrier_rank, number_of_processors)  
+     BARRIER(global->barrier_rank, number_of_processors)
 
      n = &(global->prefix_tree[MyNum]);
      for (i = 0; i < radix; i++) {
@@ -535,7 +536,7 @@ void slave_sort()
          SETPAUSE(global->prefix_tree[base + (offset >> 1)].done);
        }
      }
-     BARRIER(global->barrier_rank, number_of_processors);
+     BARRIER(global->barrier_rank, number_of_processors)
 
      if (MyNum != (number_of_processors - 1)) {
        offset = MyNum;
@@ -598,10 +599,9 @@ void slave_sort()
      if ((MyNum == 0) || (stats)) {
        CLOCK(time3);
      }
-
      id=ass;
      assert(id==ass);
-     BARRIER(global->barrier_rank, number_of_processors);
+     BARRIER(global->barrier_rank, number_of_processors)
 
      if ((MyNum == 0) || (stats)) {
        CLOCK(time4);
@@ -626,7 +626,7 @@ void slave_sort()
        to = to ^ 0x1;
      }
 
-     BARRIER(global->barrier_rank, number_of_processors)
+     BARRIER(global->barrier_rank, number_of_processors) 
 
      if ((MyNum == 0) || (stats)) {
        ranktime += (time3 - time2);

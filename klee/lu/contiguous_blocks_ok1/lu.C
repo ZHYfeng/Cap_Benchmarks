@@ -1,3 +1,4 @@
+
 /*************************************************************************/
 /*                                                                       */
 /*  Copyright (c) 1994 Stanford University                               */
@@ -49,7 +50,7 @@ MAIN_ENV
 //#define DEFAULT_N                         512
 //#define DEFAULT_P                           1
 //#define DEFAULT_B                          16
-#define DEFAULT_N                         4
+#define DEFAULT_N                         2
 #define DEFAULT_P                         2
 #define DEFAULT_B                         2
 #define min(a,b) ((a) < (b) ? (a) : (b))
@@ -92,7 +93,7 @@ double **last_malloc;        /* Starting point of last block of A */
 long test_result = 0;        /* Test result of factorization? */
 long doprint = 0;            /* Print out matrix values? */
 long dostats = 0;            /* Print out individual processor statistics? */
-long ass = 0;
+
 void SlaveStart(void);
 void OneSolve(long n, long block_size, long MyNum, long dostats);
 void lu0(double *a, long n, long stride);
@@ -154,7 +155,6 @@ int main(int argc, char *argv[])
 
   MAIN_INITENV(,150000000)
   doprint=1;
-  test_result=1;
   printf("\n");
   printf("Blocked Dense LU Factorization\n");
   printf("     %ld by %ld Matrix\n",n,n);
@@ -414,7 +414,7 @@ void SlaveStart()
 
   LOCK(Global->idlock)
     MyNum = Global->id;
-  assert(MyNum == Global->id);
+    assert(MyNum == Global->id);
     Global->id ++;
   UNLOCK(Global->idlock)
 
@@ -582,7 +582,6 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
   double *A, *B, *C, *D;
   long strI, strJ, strK;
   unsigned long t1, t2, t3, t4, t11, t22;
-  long id;
 
   for (k=0, K=0; k<n; k+=bs, K++) {
     kl = k + bs; 
@@ -607,8 +606,6 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
       CLOCK(t11);
     }
 
-    id=ass;
-    assert(id == ass);
     BARRIER(Global->start, P);
 
     if ((MyNum == 0) || (dostats)) {
@@ -649,7 +646,6 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
       CLOCK(t22);
     }   
 
-    ass++;
     BARRIER(Global->start, P);
 
     if ((MyNum == 0) || (dostats)) {

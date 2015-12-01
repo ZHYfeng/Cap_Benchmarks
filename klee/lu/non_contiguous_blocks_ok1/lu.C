@@ -87,7 +87,7 @@ long *proc_bytes;            /* Bytes to malloc per processor to hold blocks of 
 long test_result = 0;        /* Test result of factorization? */
 long doprint = 0;            /* Print out matrix values? */
 long dostats = 0;            /* Print out individual processor statistics? */
-long ass=0;
+
 void SlaveStart(void);
 void OneSolve(long n, long block_size, long MyNum, long dostats);
 void lu0(double *a, long n, long stride);
@@ -324,7 +324,7 @@ void SlaveStart()
 
   LOCK(Global->idlock)
     MyNum = Global->id;
-  assert(MyNum == Global->id);
+    assert(MyNum == Global->id);
     Global->id ++;
   UNLOCK(Global->idlock)
 
@@ -482,7 +482,6 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
   double *A, *B, *C, *D;
   long strI;
   unsigned long t1, t2, t3, t4, t11, t22;
-  long id;
 
   strI = n;
   for (k=0, K=0; k<n; k+=bs, K++) {
@@ -505,8 +504,6 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
       CLOCK(t11);
     }
 
-    id=ass;
-    assert(id == ass);
     BARRIER(Global->start, P);
 
     if ((MyNum == 0) || (dostats)) {
@@ -543,7 +540,6 @@ void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)
       CLOCK(t22);
     }
 
-    ass++;
     BARRIER(Global->start, P);
 
     if ((MyNum == 0) || (dostats)) {
