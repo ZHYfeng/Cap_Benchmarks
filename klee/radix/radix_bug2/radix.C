@@ -44,7 +44,7 @@
 #define DEFAULT_P                    2
 #define DEFAULT_N                    4
 #define DEFAULT_R                    2 
-#define DEFAULT_M                    8
+#define DEFAULT_M                    4
 #define MAX_PROCESSORS               2   
 #define RADIX_S                8388608.0e0
 #define RADIX           70368744177664.0e0
