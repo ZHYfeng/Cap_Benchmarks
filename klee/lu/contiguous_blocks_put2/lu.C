@@ -49,7 +49,7 @@ MAIN_ENV
 //#define DEFAULT_N                         512
 //#define DEFAULT_P                           1
 //#define DEFAULT_B                          16
-#define DEFAULT_N                         4
+#define DEFAULT_N                         3
 #define DEFAULT_P                         2
 #define DEFAULT_B                         2
 #define min(a,b) ((a) < (b) ? (a) : (b))
