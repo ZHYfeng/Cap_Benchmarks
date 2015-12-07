@@ -1,0 +1,121 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+OBJS	Makefile	/^OBJS = lu.o$/;"	m
+TARGET	Makefile	/^TARGET = LU$/;"	m
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+BlockOwner	lu.C	/^long BlockOwner(long I, long J)$/;"	f
+BlockOwnerColumn	lu.C	/^long BlockOwnerColumn(long I, long J)$/;"	f
+BlockOwnerRow	lu.C	/^long BlockOwnerRow(long I, long J)$/;"	f
+CheckResult	lu.C	/^void CheckResult(long n, double **a, double *rhs)$/;"	f
+DEFAULT_B	lu.C	53;"	d	file:
+DEFAULT_N	lu.C	51;"	d	file:
+DEFAULT_P	lu.C	52;"	d	file:
+Global	lu.C	/^} *Global;$/;"	v	typeref:struct:GlobalMemory
+GlobalMemory	lu.C	/^struct GlobalMemory {$/;"	s	file:
+InitA	lu.C	/^void InitA(double *rhs)$/;"	f
+LocalCopies	lu.C	/^struct LocalCopies {$/;"	s	file:
+MAXRAND	lu.C	47;"	d	file:
+OneSolve	lu.C	/^void OneSolve(long n, long block_size, long MyNum, long dostats)$/;"	f
+P	lu.C	/^long P = DEFAULT_P;          \/* Number of processors *\/$/;"	v
+PAGE_SIZE	lu.C	56;"	d	file:
+PrintA	lu.C	/^void PrintA()$/;"	f
+SlaveStart	lu.C	/^void SlaveStart()$/;"	f
+TouchA	lu.C	/^double TouchA(long bs, long MyNum)$/;"	f
+a	lu.C	/^double **a;                  \/* a = lu; l and u both placed back in a *\/$/;"	v
+bdiv	lu.C	/^void bdiv(double *a, double *diag, long stride_a, long stride_diag, long dimi, long dimk)$/;"	f
+block_size	lu.C	/^long block_size = DEFAULT_B; \/* Block dimension *\/$/;"	v
+bmod	lu.C	/^void bmod(double *a, double *b, double *c, long dimi, long dimj, long dimk, long stridea, long strideb, long stridec)$/;"	f
+bmodd	lu.C	/^void bmodd(double *a, double *c, long dimi, long dimj, long stride_a, long stride_c)$/;"	f
+completion	lu.C	/^  double *completion;$/;"	m	struct:GlobalMemory	file:
+daxpy	lu.C	/^void daxpy(double *a, double *b, long n, double alpha)$/;"	f
+done	lu.C	/^  unsigned long done;$/;"	m	struct:GlobalMemory	file:
+doprint	lu.C	/^long doprint = 0;            \/* Print out matrix values? *\/$/;"	v
+dostats	lu.C	/^long dostats = 0;            \/* Print out individual processor statistics? *\/$/;"	v
+id	lu.C	/^  long id;$/;"	m	struct:GlobalMemory	file:
+last_malloc	lu.C	/^double **last_malloc;        \/* Starting point of last block of A *\/$/;"	v
+lu	lu.C	/^void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)$/;"	f
+lu0	lu.C	/^void lu0(double *a, long n, long stride)$/;"	f
+main	lu.C	/^int main(int argc, char *argv[])$/;"	f
+min	lu.C	54;"	d	file:
+n	lu.C	/^long n = DEFAULT_N;          \/* The size of the matrix *\/$/;"	v
+nblocks	lu.C	/^long nblocks;                \/* Number of blocks in each dimension *\/$/;"	v
+num_cols	lu.C	/^long num_cols;               \/* Number of processors per col of processor grid *\/$/;"	v
+num_rows	lu.C	/^long num_rows;               \/* Number of processors per row of processor grid *\/$/;"	v
+printerr	lu.C	/^void printerr(char *s)$/;"	f
+proc_bytes	lu.C	/^long *proc_bytes;            \/* Bytes to malloc per processor to hold blocks of A*\/$/;"	v
+rf	lu.C	/^  unsigned long rf; $/;"	m	struct:GlobalMemory	file:
+rhs	lu.C	/^double *rhs;$/;"	v
+rs	lu.C	/^  unsigned long rs; $/;"	m	struct:GlobalMemory	file:
+starttime	lu.C	/^  unsigned long starttime; $/;"	m	struct:GlobalMemory	file:
+t_in_bar	lu.C	/^  double *t_in_bar;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	lu.C	/^  double t_in_bar;$/;"	m	struct:LocalCopies	file:
+t_in_fac	lu.C	/^  double *t_in_fac;   $/;"	m	struct:GlobalMemory	file:
+t_in_fac	lu.C	/^  double t_in_fac;$/;"	m	struct:LocalCopies	file:
+t_in_mod	lu.C	/^  double *t_in_mod; $/;"	m	struct:GlobalMemory	file:
+t_in_mod	lu.C	/^  double t_in_mod;$/;"	m	struct:LocalCopies	file:
+t_in_solve	lu.C	/^  double *t_in_solve;$/;"	m	struct:GlobalMemory	file:
+t_in_solve	lu.C	/^  double t_in_solve;$/;"	m	struct:LocalCopies	file:
+test_result	lu.C	/^long test_result = 0;        \/* Test result of factorization? *\/$/;"	v
+BlockOwner	lu.c	/^long BlockOwner(long I, long J)$/;"	f
+BlockOwnerColumn	lu.c	/^long BlockOwnerColumn(long I, long J)$/;"	f
+BlockOwnerRow	lu.c	/^long BlockOwnerRow(long I, long J)$/;"	f
+CheckResult	lu.c	/^void CheckResult(long n, double **a, double *rhs)$/;"	f
+DEFAULT_B	lu.c	70;"	d	file:
+DEFAULT_N	lu.c	68;"	d	file:
+DEFAULT_P	lu.c	69;"	d	file:
+Global	lu.c	/^} *Global;$/;"	v	typeref:struct:GlobalMemory
+GlobalMemory	lu.c	/^struct GlobalMemory {$/;"	s	file:
+InitA	lu.c	/^void InitA(double *rhs)$/;"	f
+LocalCopies	lu.c	/^struct LocalCopies {$/;"	s	file:
+MAXRAND	lu.c	64;"	d	file:
+MAX_THREADS	lu.c	58;"	d	file:
+OneSolve	lu.c	/^void OneSolve(long n, long block_size, long MyNum, long dostats)$/;"	f
+P	lu.c	/^long P = DEFAULT_P;          \/* Number of processors *\/$/;"	v
+PAGE_SIZE	lu.c	73;"	d	file:
+PThreadTable	lu.c	/^pthread_t PThreadTable[MAX_THREADS];$/;"	v
+PrintA	lu.c	/^void PrintA()$/;"	f
+SlaveStart	lu.c	/^void SlaveStart()$/;"	f
+TouchA	lu.c	/^double TouchA(long bs, long MyNum)$/;"	f
+a	lu.c	/^double **a;                  \/* a = lu; l and u both placed back in a *\/$/;"	v
+bdiv	lu.c	/^void bdiv(double *a, double *diag, long stride_a, long stride_diag, long dimi, long dimk)$/;"	f
+block_size	lu.c	/^long block_size = DEFAULT_B; \/* Block dimension *\/$/;"	v
+bmod	lu.c	/^void bmod(double *a, double *b, double *c, long dimi, long dimj, long dimk, long stridea, long strideb, long stridec)$/;"	f
+bmodd	lu.c	/^void bmodd(double *a, double *c, long dimi, long dimj, long stride_a, long stride_c)$/;"	f
+completion	lu.c	/^  double *completion;$/;"	m	struct:GlobalMemory	file:
+counter	lu.c	/^	unsigned long	counter;$/;"	m	struct:GlobalMemory::__anon1	file:
+cv	lu.c	/^	pthread_cond_t	cv;$/;"	m	struct:GlobalMemory::__anon1	file:
+cycle	lu.c	/^	unsigned long	cycle;$/;"	m	struct:GlobalMemory::__anon1	file:
+daxpy	lu.c	/^void daxpy(double *a, double *b, long n, double alpha)$/;"	f
+done	lu.c	/^  unsigned long done;$/;"	m	struct:GlobalMemory	file:
+doprint	lu.c	/^long doprint = 0;            \/* Print out matrix values? *\/$/;"	v
+dostats	lu.c	/^long dostats = 0;            \/* Print out individual processor statistics? *\/$/;"	v
+id	lu.c	/^  long id;$/;"	m	struct:GlobalMemory	file:
+last_malloc	lu.c	/^double **last_malloc;        \/* Starting point of last block of A *\/$/;"	v
+lu	lu.c	/^void lu(long n, long bs, long MyNum, struct LocalCopies *lc, long dostats)$/;"	f
+lu0	lu.c	/^void lu0(double *a, long n, long stride)$/;"	f
+main	lu.c	/^int main(int argc, char *argv[])$/;"	f
+min	lu.c	71;"	d	file:
+mutex	lu.c	/^	pthread_mutex_t	mutex;$/;"	m	struct:GlobalMemory::__anon1	file:
+n	lu.c	/^long n = DEFAULT_N;          \/* The size of the matrix *\/$/;"	v
+nblocks	lu.c	/^long nblocks;                \/* Number of blocks in each dimension *\/$/;"	v
+num_cols	lu.c	/^long num_cols;               \/* Number of processors per col of processor grid *\/$/;"	v
+num_rows	lu.c	/^long num_rows;               \/* Number of processors per row of processor grid *\/$/;"	v
+printerr	lu.c	/^void printerr(char *s)$/;"	f
+proc_bytes	lu.c	/^long *proc_bytes;            \/* Bytes to malloc per processor to hold blocks of A*\/$/;"	v
+rf	lu.c	/^  unsigned long rf; $/;"	m	struct:GlobalMemory	file:
+rhs	lu.c	/^double *rhs;$/;"	v
+rs	lu.c	/^  unsigned long rs; $/;"	m	struct:GlobalMemory	file:
+start	lu.c	/^} (start);$/;"	m	struct:GlobalMemory	typeref:struct:GlobalMemory::__anon1	file:
+starttime	lu.c	/^  unsigned long starttime; $/;"	m	struct:GlobalMemory	file:
+t_in_bar	lu.c	/^  double *t_in_bar;$/;"	m	struct:GlobalMemory	file:
+t_in_bar	lu.c	/^  double t_in_bar;$/;"	m	struct:LocalCopies	file:
+t_in_fac	lu.c	/^  double *t_in_fac;   $/;"	m	struct:GlobalMemory	file:
+t_in_fac	lu.c	/^  double t_in_fac;$/;"	m	struct:LocalCopies	file:
+t_in_mod	lu.c	/^  double *t_in_mod; $/;"	m	struct:GlobalMemory	file:
+t_in_mod	lu.c	/^  double t_in_mod;$/;"	m	struct:LocalCopies	file:
+t_in_solve	lu.c	/^  double *t_in_solve;$/;"	m	struct:GlobalMemory	file:
+t_in_solve	lu.c	/^  double t_in_solve;$/;"	m	struct:LocalCopies	file:
+test_result	lu.c	/^long test_result = 0;        \/* Test result of factorization? *\/$/;"	v
