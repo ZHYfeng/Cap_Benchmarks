@@ -42,14 +42,19 @@ recurrence(){
 		elif [ $file == "test.sh" ]
 			then
 			make
-			for((i=0;i<1;i++))
+			for((i=0;i<30;i++))
 			do 
+				j=`expr $i % 3`
+				if [ $j -eq 0 ]	
+					then 			
+					rm coverage iroot.db memo.db pct.histo sinfo.db sinst.db stat.out test.histo result.txt
+				fi
 				getmemory &
 				./$file
 				pwd | awk -F"/" '{ printf("%s ",$NF); }' >> ${all}/DATE.txt
 				getmaple
 				sleep 1
-				rm coverage iroot.db memo.db pct.histo sinfo.db sinst.db stat.out test.histo result.txt
+
 			done
 		fi
 	done
