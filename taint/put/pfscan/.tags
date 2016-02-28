@@ -1,0 +1,138 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BM	pfscan-1.0.c	/^} BM;$/;"	t	typeref:struct:__anon4	file:
+BM	pfscan-1.00.c	/^} BM;$/;"	t	typeref:struct:__anon2	file:
+BM_ASIZE	pfscan-1.0.c	74;"	d	file:
+BM_ASIZE	pfscan-1.00.c	74;"	d	file:
+MAX	pfscan-1.0.c	188;"	d	file:
+MAX	pfscan-1.00.c	188;"	d	file:
+PQUEUE	pfscan-1.0.c	/^} PQUEUE;$/;"	t	typeref:struct:__anon3	file:
+PQUEUE	pfscan-1.00.c	/^} PQUEUE;$/;"	t	typeref:struct:__anon1	file:
+argv0	pfscan-1.0.c	/^char *argv0 = "pfscan";$/;"	v
+argv0	pfscan-1.00.c	/^char *argv0 = "pfscan";$/;"	v
+aworker_cv	pfscan-1.0.c	/^pthread_cond_t  aworker_cv;$/;"	v
+aworker_cv	pfscan-1.00.c	/^pthread_cond_t  aworker_cv;$/;"	v
+aworker_lock	pfscan-1.0.c	/^pthread_mutex_t aworker_lock;$/;"	v
+aworker_lock	pfscan-1.00.c	/^pthread_mutex_t aworker_lock;$/;"	v
+aworkers	pfscan-1.0.c	/^int aworkers = 0;$/;"	v
+aworkers	pfscan-1.00.c	/^int aworkers = 0;$/;"	v
+bmBc	pfscan-1.0.c	/^  int bmBc[BM_ASIZE];$/;"	m	struct:__anon4	file:
+bmBc	pfscan-1.00.c	/^    int bmBc[BM_ASIZE];$/;"	m	struct:__anon2	file:
+bmGs	pfscan-1.0.c	/^  int *bmGs;$/;"	m	struct:__anon4	file:
+bmGs	pfscan-1.00.c	/^    int *bmGs;$/;"	m	struct:__anon2	file:
+bm_destroy	pfscan-1.0.c	/^      bm_destroy(BM *bmp)$/;"	f
+bm_destroy	pfscan-1.00.c	/^bm_destroy(BM *bmp)$/;"	f
+bm_init	pfscan-1.0.c	/^      int bm_init(BM *bmp, unsigned char *x,  int m,  int icase)$/;"	f
+bm_init	pfscan-1.00.c	/^int bm_init(BM *bmp, unsigned char *x,  int m,  int icase)$/;"	f
+bm_search	pfscan-1.0.c	/^int bm_search(BM *bmp,$/;"	f
+bm_search	pfscan-1.00.c	/^int bm_search(BM *bmp,$/;"	f
+bmb	pfscan-1.0.c	/^BM bmb;$/;"	v
+bmb	pfscan-1.00.c	/^BM bmb;$/;"	v
+buf	pfscan-1.0.c	/^  void **buf;$/;"	m	struct:__anon3	file:
+buf	pfscan-1.00.c	/^    void **buf;$/;"	m	struct:__anon1	file:
+closed	pfscan-1.0.c	/^  int closed;$/;"	m	struct:__anon3	file:
+closed	pfscan-1.00.c	/^    int closed;$/;"	m	struct:__anon1	file:
+createFullName	pfscan-1.0.c	/^  char* createFullName(const char* a, const char* b) {$/;"	f
+createFullName	pfscan-1.00.c	/^char* createFullName(const char* a, const char* b) {$/;"	f
+debug	pfscan-1.0.c	/^int debug = 0;$/;"	v
+debug	pfscan-1.0.c	/^int debug;$/;"	v
+debug	pfscan-1.00.c	/^int debug = 0;$/;"	v
+debug	pfscan-1.00.c	/^int debug;$/;"	v
+dehex	pfscan-1.0.c	/^dehex(unsigned char *str)$/;"	f
+dehex	pfscan-1.00.c	/^dehex(unsigned char *str)$/;"	f
+deslash	pfscan-1.0.c	/^deslash(unsigned char *str)$/;"	f
+deslash	pfscan-1.00.c	/^deslash(unsigned char *str)$/;"	f
+do_ftw	pfscan-1.0.c	/^  do_ftw(char *path)$/;"	f
+do_ftw	pfscan-1.00.c	/^do_ftw(char *path)$/;"	f
+foreach_path	pfscan-1.0.c	/^  foreach_path(const char *path,$/;"	f
+foreach_path	pfscan-1.00.c	/^foreach_path(const char *path,$/;"	f
+get_char_code	pfscan-1.0.c	/^get_char_code(unsigned char **cp,$/;"	f
+get_char_code	pfscan-1.00.c	/^get_char_code(unsigned char **cp,$/;"	f
+icase	pfscan-1.0.c	/^  int icase;$/;"	m	struct:__anon4	file:
+icase	pfscan-1.00.c	/^    int icase;$/;"	m	struct:__anon2	file:
+ignore_case	pfscan-1.0.c	/^int ignore_case = 0;$/;"	v
+ignore_case	pfscan-1.00.c	/^int ignore_case = 0;$/;"	v
+is_text	pfscan-1.0.c	/^is_text(unsigned char *cp, int slen)$/;"	f
+is_text	pfscan-1.00.c	/^is_text(unsigned char *cp, int slen)$/;"	f
+less	pfscan-1.0.c	/^  pthread_cond_t less;$/;"	m	struct:__anon3	file:
+less	pfscan-1.00.c	/^    pthread_cond_t less;$/;"	m	struct:__anon1	file:
+line_f	pfscan-1.0.c	/^int line_f  = 0;$/;"	v
+line_f	pfscan-1.00.c	/^int line_f  = 0;$/;"	v
+main	pfscan-1.0.c	/^  int main(int argc, char *argv[])$/;"	f
+main	pfscan-1.00.c	/^int main(int argc, char *argv[])$/;"	f
+matches_lock	pfscan-1.0.c	/^pthread_mutex_t matches_lock;$/;"	v
+matches_lock	pfscan-1.00.c	/^pthread_mutex_t matches_lock;$/;"	v
+matchfun	pfscan-1.0.c	/^matchfun(unsigned char *buf,$/;"	f
+matchfun	pfscan-1.00.c	/^matchfun(unsigned char *buf,$/;"	f
+max_depth	pfscan-1.0.c	/^int max_depth = 64;$/;"	v
+max_depth	pfscan-1.00.c	/^int max_depth = 64;$/;"	v
+maxlen	pfscan-1.0.c	/^int maxlen  = 64;$/;"	v
+maxlen	pfscan-1.00.c	/^int maxlen  = 64;$/;"	v
+more	pfscan-1.0.c	/^  pthread_cond_t more;$/;"	m	struct:__anon3	file:
+more	pfscan-1.00.c	/^    pthread_cond_t more;$/;"	m	struct:__anon1	file:
+mtx	pfscan-1.0.c	/^  pthread_mutex_t mtx;$/;"	m	struct:__anon3	file:
+mtx	pfscan-1.00.c	/^    pthread_mutex_t mtx;$/;"	m	struct:__anon1	file:
+n_bytes	pfscan-1.0.c	/^size_t n_bytes = 0;$/;"	v
+n_bytes	pfscan-1.00.c	/^size_t n_bytes = 0;$/;"	v
+n_files	pfscan-1.0.c	/^int n_files = 0;$/;"	v
+n_files	pfscan-1.00.c	/^int n_files = 0;$/;"	v
+n_matches	pfscan-1.0.c	/^int n_matches = 0;$/;"	v
+n_matches	pfscan-1.00.c	/^int n_matches = 0;$/;"	v
+nextin	pfscan-1.0.c	/^  int nextin;$/;"	m	struct:__anon3	file:
+nextin	pfscan-1.00.c	/^    int nextin;$/;"	m	struct:__anon1	file:
+nextout	pfscan-1.0.c	/^  int nextout;$/;"	m	struct:__anon3	file:
+nextout	pfscan-1.00.c	/^    int nextout;$/;"	m	struct:__anon1	file:
+nworkers	pfscan-1.0.c	/^int nworkers = 0;$/;"	v
+nworkers	pfscan-1.00.c	/^int nworkers = 0;$/;"	v
+occupied	pfscan-1.0.c	/^  int occupied;$/;"	m	struct:__anon3	file:
+occupied	pfscan-1.00.c	/^    int occupied;$/;"	m	struct:__anon1	file:
+pqb	pfscan-1.0.c	/^PQUEUE pqb;$/;"	v
+pqb	pfscan-1.00.c	/^PQUEUE pqb;$/;"	v
+pqueue_close	pfscan-1.0.c	/^void pqueue_close(PQUEUE *qp)$/;"	f
+pqueue_close	pfscan-1.00.c	/^void pqueue_close(PQUEUE *qp)$/;"	f
+pqueue_destroy	pfscan-1.0.c	/^void pqueue_destroy(PQUEUE *qp)$/;"	f
+pqueue_destroy	pfscan-1.00.c	/^void pqueue_destroy(PQUEUE *qp)$/;"	f
+pqueue_get	pfscan-1.0.c	/^int pqueue_get(PQUEUE *qp, void **item)$/;"	f
+pqueue_get	pfscan-1.00.c	/^int pqueue_get(PQUEUE *qp, void **item)$/;"	f
+pqueue_init	pfscan-1.0.c	/^int pqueue_init(PQUEUE *qp, int qsize)$/;"	f
+pqueue_init	pfscan-1.00.c	/^int pqueue_init(PQUEUE *qp, int qsize)$/;"	f
+pqueue_put	pfscan-1.0.c	/^int pqueue_put(PQUEUE *qp, void *item)$/;"	f
+pqueue_put	pfscan-1.00.c	/^int pqueue_put(PQUEUE *qp, void *item)$/;"	f
+preBmBc	pfscan-1.0.c	/^static void preBmBc(unsigned char *x, int m, int bmBc[])$/;"	f	file:
+preBmBc	pfscan-1.00.c	/^static void preBmBc(unsigned char *x, int m, int bmBc[])$/;"	f	file:
+preBmGs	pfscan-1.0.c	/^static int preBmGs(unsigned char *x, int m, int bmGs[])$/;"	f	file:
+preBmGs	pfscan-1.00.c	/^static int preBmGs(unsigned char *x, int m, int bmGs[])$/;"	f	file:
+print_lock	pfscan-1.0.c	/^pthread_mutex_t print_lock;$/;"	v
+print_lock	pfscan-1.00.c	/^pthread_mutex_t print_lock;$/;"	v
+print_output	pfscan-1.0.c	/^print_output(unsigned char *str,$/;"	f
+print_output	pfscan-1.00.c	/^print_output(unsigned char *str,$/;"	f
+print_version	pfscan-1.0.c	/^print_version(FILE *fp)$/;"	f
+print_version	pfscan-1.00.c	/^print_version(FILE *fp)$/;"	f
+qsize	pfscan-1.0.c	/^  int qsize;$/;"	m	struct:__anon3	file:
+qsize	pfscan-1.00.c	/^    int qsize;$/;"	m	struct:__anon1	file:
+rlen	pfscan-1.0.c	/^int rlen = 0;$/;"	v
+rlen	pfscan-1.00.c	/^int rlen = 0;$/;"	v
+rstr	pfscan-1.0.c	/^unsigned char *rstr = NULL;$/;"	v
+rstr	pfscan-1.00.c	/^unsigned char *rstr = NULL;$/;"	v
+saved_m	pfscan-1.0.c	/^  int saved_m;$/;"	m	struct:__anon4	file:
+saved_m	pfscan-1.00.c	/^    int saved_m;$/;"	m	struct:__anon2	file:
+saved_x	pfscan-1.0.c	/^  unsigned char *saved_x;$/;"	m	struct:__anon4	file:
+saved_x	pfscan-1.00.c	/^    unsigned char *saved_x;$/;"	m	struct:__anon2	file:
+scan_file	pfscan-1.0.c	/^  scan_file(char *pathname)$/;"	f
+scan_file	pfscan-1.00.c	/^scan_file(char *pathname)$/;"	f
+scan_root	pfscan-1.0.c	/^void scan_root(char *dir, char* dirFullPath, int* depth, int maxDepth)   \/\/ 定义目录扫描函数  $/;"	f
+scan_root	pfscan-1.00.c	/^void scan_root(char *dir, char* dirFullPath, int* depth, int maxDepth)   \/\/ 定义目录扫描函数  $/;"	f
+suffixes	pfscan-1.0.c	/^suffixes(unsigned char *x, int m, int *suff)$/;"	f	file:
+suffixes	pfscan-1.00.c	/^suffixes(unsigned char *x, int m, int *suff)$/;"	f	file:
+usage	pfscan-1.0.c	/^  usage(FILE *out)$/;"	f
+usage	pfscan-1.00.c	/^usage(FILE *out)$/;"	f
+verbose	pfscan-1.0.c	/^int verbose = 0;$/;"	v
+verbose	pfscan-1.00.c	/^int verbose = 0;$/;"	v
+version	pfscan-1.0.c	/^char version[] = "1.0";$/;"	v
+version	pfscan-1.00.c	/^char version[] = "1.0";$/;"	v
+worker	pfscan-1.0.c	/^  worker(void *arg)$/;"	f
+worker	pfscan-1.00.c	/^worker(void *arg)$/;"	f

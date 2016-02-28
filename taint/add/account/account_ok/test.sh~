@@ -1,0 +1,6 @@
+#!/bin/bash -x
+set -e
+preklee.sh twostage_10_bad
+klee -search=dfs -use-call-paths=false twostage_10_bad.o
+bash
+
