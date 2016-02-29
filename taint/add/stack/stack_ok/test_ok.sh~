@@ -1,6 +1,0 @@
-#!/bin/bash -x
-set -e
-preklee.sh stack_bad
-klee -search=dfs -use-call-paths=false stack_bad.o
-bash
-

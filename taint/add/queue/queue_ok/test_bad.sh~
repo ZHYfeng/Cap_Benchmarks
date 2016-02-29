@@ -1,6 +1,0 @@
-#!/bin/bash -x
-set -e
-preklee.sh queue_ok
-klee -search=dfs -use-call-paths=false queue_ok.o
-bash
-

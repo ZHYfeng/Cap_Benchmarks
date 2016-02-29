@@ -58,6 +58,7 @@ int main(void)
 {
   pthread_t  t1, t2;
 
+make_taint(&num);
   num = 0;
   total = 0;
 

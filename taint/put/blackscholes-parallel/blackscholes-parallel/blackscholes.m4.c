@@ -460,6 +460,15 @@ int main (int argc, char **argv)
           fclose(file);
           return 1;
         }
+        // make_taint(&data[loopnum].s);
+        // make_taint(&data[loopnum].strike);
+        // make_taint(&data[loopnum].r);
+        // make_taint(&data[loopnum].divq);
+        // make_taint(&data[loopnum].v);
+        // make_taint(&data[loopnum].t);
+        make_taint(&data[loopnum].OptionType);
+        // make_taint(&data[loopnum].divs);
+        // make_taint(&data[loopnum].DGrefval);
     }
     rv = fclose(file);
     if(rv != 0) {

@@ -535,6 +535,7 @@ void InitX(double *x)
     for (i=0;i<rootN;i++) {
       x[2*(k+i)] = drand48();
       x[2*(k+i)+1] = drand48();
+      make_taint(x+2*(k+i));
     }
   }
 }
