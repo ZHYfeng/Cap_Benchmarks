@@ -1,0 +1,5068 @@
+KLEE: output directory is "/home/zhy/Test/taint/lu/contiguous_blocks_put/klee-out-0"
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: fabs
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: getopt
+KLEE: WARNING: undefined reference to function: lrand48
+KLEE: WARNING: undefined reference to function: make_taint
+KLEE: WARNING: undefined reference to variable: optarg
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_destroy
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: sqrt
+KLEE: WARNING: undefined reference to function: srand48
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: valloc
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: gettimeofday(28620640, 0)
+KLEE: WARNING ONCE: calling external: getopt(1, 27529328, 28524800)
+KLEE: WARNING ONCE: calling external: printf(28533856)
+KLEE: WARNING ONCE: calling external: sqrt(4611686018427387904)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(29089184, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(29089224, 0)
+KLEE: WARNING ONCE: calling external: srand48(1)
+KLEE: WARNING ONCE: calling external: lrand48()
+KLEE: WARNING ONCE: calling external: fflush(140616477238272)
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -62024.6 122253.8      0.4 
+ 22019.9  35000.2 -51161.0 103007.7 
+KLEE: WARNING ONCE: calling external: fabs(13823293382203152912)
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0         13815          2751          3597          3502          1572
+
+                            TIMING INFORMATION
+Start time                        : 1457258822237173
+Initialization finish time        : 1457258822281489
+Overall finish time               : 1457258822296259
+Total time with initialization    :            59086
+Total time without initialization :            14770
+
+                             TESTING RESULTS
+TEST FAILED: (0.52704 diff)
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -62024.6 122253.8      0.4 
+ 22019.9  35000.2 -51161.0 103007.7 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          3562          2751          3597          3502          1572
+
+                            TIMING INFORMATION
+Start time                        : 1457258822331171
+Initialization finish time        : 1457258822344291
+Overall finish time               : 1457258822348010
+Total time with initialization    :            59086
+Total time without initialization :            14770
+
+                             TESTING RESULTS
+TEST FAILED: (0.52704 diff)
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 876
+Verifying branch 1 @Trace1#169#E83#1-0: CCost : 8e-06
+NNo!
+Verifying branch 2 @Trace1#174#E98#0-1: CCost : 2e-06
+Cost : 0.534724
+No!
+Verifying branch 3 @Trace1#179#E102#1-0: CCost : 7e-06
+NNo!
+Verifying branch 4 @Trace1#193#E135#1-0: CCost : 1e-06
+NNo!
+Verifying branch 5 @Trace1#193#E151#1-0: CCost : 1e-06
+NNo!
+Verifying branch 6 @Trace1#193#E167#0-1: CCost : 1e-06
+NNo!
+Verifying branch 7 @Trace1#197#E173#1-0: CCost : 3e-06
+Cost : 0.348635
+No!
+Verifying branch 8 @Trace1#198#E179#1-0: CCost : 8e-06
+Cost : 0.3553
+No!
+Verifying branch 9 @Trace1#200#E202#0-1: CCost : 8e-06
+Cost : 0.4845
+No!
+Verifying branch 10 @Trace1#202#E207#0-1: CCost : 9e-06
+Cost : 0.498318
+No!
+Verifying branch 11 @Trace1#202#E212#0-1: CCost : 6e-06
+Cost : 0.471085
+No!
+Verifying branch 12 @Trace1#207#E224#1-0: CCost : 5e-06
+NNo!
+Verifying branch 13 @Trace1#198#E234#1-0: CCost : 3e-06
+Cost : 0.401337
+No!
+Verifying branch 14 @Trace1#200#E257#0-1: CCost : 6e-06
+Cost : 0.452735
+No!
+Verifying branch 15 @Trace1#202#E262#0-1: CCost : 7e-06
+Cost : 0.421456
+No!
+Verifying branch 16 @Trace1#202#E267#1-0: CCost : 6e-06
+Cost : 0.345517
+No!
+Verifying branch 17 @Trace1#207#E279#1-0: CCost : 4e-06
+NNo!
+Verifying branch 18 @Trace1#198#E289#0-1: CCost : 3e-06
+Cost : 0.376566
+No!
+Verifying branch 19 @Trace1#197#E297#1-0: CCost : 7e-06
+Cost : 0.375732
+No!
+Verifying branch 20 @Trace1#198#E303#1-0: CCost : 6e-06
+Cost : 0.380805
+No!
+Verifying branch 21 @Trace1#200#E326#1-0: CCost : 6e-06
+Cost : 0.379057
+No!
+Verifying branch 22 @Trace1#200#E331#0-1: CCost : 7e-06
+Cost : 0.478899
+No!
+Verifying branch 23 @Trace1#202#E336#1-0: CCost : 6e-06
+Cost : 0.364572
+No!
+Verifying branch 24 @Trace1#207#E348#1-0: CCost : 5e-06
+NNo!
+Verifying branch 25 @Trace1#198#E358#1-0: CCost : 3e-06
+Cost : 0.395869
+No!
+Verifying branch 26 @Trace1#200#E381#1-0: CCost : 7e-06
+Cost : 0.39641
+No!
+Verifying branch 27 @Trace1#200#E386#1-0: CCost : 7e-06
+Cost : 0.40275
+No!
+Verifying branch 28 @Trace1#207#E398#1-0: CCost : 5e-06
+NNo!
+Verifying branch 29 @Trace1#198#E408#0-1: CCost : 3e-06
+Cost : 0.430495
+No!
+Verifying branch 30 @Trace1#197#E416#0-1: CCost : 7e-06
+Cost : 0.433762
+No!
+Verifying branch 31 @Trace1#210#E422#1-0: CCost : 5e-06
+NNo!
+Verifying branch 32 @Trace1#210#E470#1-0: CCost : 1e-06
+NNo!
+Verifying branch 33 @Trace1#210#E518#0-1: CCost : 1e-06
+NNo!
+Verifying branch 34 @Trace1#229#E534#1-0: CCost : 3e-06
+Cost : 0.419285
+No!
+Verifying branch 35 @Trace1#230#E540#1-0: CCost : 7e-06
+Cost : 0.429671
+No!
+Verifying branch 36 @Trace1#232#E563#1-0: CCost : 5e-06
+NNo!
+Verifying branch 37 @Trace1#233#E575#0-1: CCost : 3e-06
+Cost : 0.583062
+No!
+Verifying branch 38 @Trace1#235#E580#0-1: CCost : 6e-06
+Cost : 0.593047
+No!
+Verifying branch 39 @Trace1#235#E585#0-1: CCost : 7e-06
+Cost : 0.556895
+No!
+Verifying branch 40 @Trace1#240#E596#1-0: CCost : 5e-06
+NNo!
+Verifying branch 41 @Trace1#240#E598#1-0: CCost : 1e-06
+NNo!
+Verifying branch 42 @Trace1#230#E606#1-0: CCost : 3e-06
+Cost : 0.466922
+No!
+Verifying branch 43 @Trace1#232#E629#1-0: CCost : 5e-06
+NNo!
+Verifying branch 44 @Trace1#232#E637#1-0: CCost : 3e-06
+Cost : 0.509399
+No!
+Verifying branch 45 @Trace1#233#E641#0-1: CCost : 6e-06
+Cost : 0.622431
+No!
+Verifying branch 46 @Trace1#235#E646#0-1: CCost : 7e-06
+Cost : 0.649933
+No!
+Verifying branch 47 @Trace1#235#E651#1-0: CCost : 7e-06
+Cost : 0.487204
+No!
+Verifying branch 48 @Trace1#240#E662#1-0: CCost : 5e-06
+NNo!
+Verifying branch 49 @Trace1#240#E664#1-0: CCost : 1e-06
+NNo!
+Verifying branch 50 @Trace1#230#E672#0-1: CCost : 2e-06
+Cost : 0.530106
+No!
+Verifying branch 51 @Trace1#229#E680#1-0: CCost : 7e-06
+Cost : 0.504918
+No!
+Verifying branch 52 @Trace1#230#E686#1-0: CCost : 6e-06
+Cost : 0.532623
+No!
+Verifying branch 53 @Trace1#232#E709#1-0: CCost : 4e-06
+NNo!
+Verifying branch 54 @Trace1#233#E721#1-0: CCost : 3e-06
+Cost : 0.53615
+No!
+Verifying branch 55 @Trace1#233#E726#0-1: CCost : 7e-06
+Cost : 0.749773
+No!
+Verifying branch 56 @Trace1#235#E731#1-0: CCost : 6e-06
+Cost : 0.53639
+No!
+Verifying branch 57 @Trace1#240#E742#1-0: CCost : 5e-06
+NNo!
+Verifying branch 58 @Trace1#240#E744#1-0: CCost : 1e-06
+NNo!
+Verifying branch 59 @Trace1#230#E752#1-0: CCost : 3e-06
+Cost : 0.594008
+No!
+Verifying branch 60 @Trace1#232#E775#1-0: CCost : 5e-06
+NNo!
+Verifying branch 61 @Trace1#232#E783#1-0: CCost : 2e-06
+Cost : 0.590661
+No!
+Verifying branch 62 @Trace1#233#E787#1-0: CCost : 7e-06
+Cost : 0.589093
+No!
+Verifying branch 63 @Trace1#233#E792#1-0: CCost : 7e-06
+Cost : 0.588662
+No!
+Verifying branch 64 @Trace1#240#E803#1-0: CCost : 5e-06
+NNo!
+Verifying branch 65 @Trace1#240#E805#1-0: CCost : 1e-06
+NNo!
+Verifying branch 66 @Trace1#230#E813#0-1: CCost : 2e-06
+Cost : 0.608163
+No!
+Verifying branch 67 @Trace1#229#E821#0-1: CCost : 6e-06
+Cost : 0.605312
+No!
+Verifying branch 68 @Trace1#715#E955#1-0: CCost : 4e-06
+NNo!
+Verifying branch 69 @Trace1#716#E961#1-0: CCost : 1e-06
+NNo!
+Verifying branch 70 @Trace1#717#E964#0-1: CCost : 2e-06
+NNo!
+Verifying branch 71 @Trace1#725#E975#0-1: CCost : 1e-06
+NNo!
+Verifying branch 72 @Trace1#733#E1029#1-0: CCost : 3e-06
+Cost : 0.849357
+No!
+Verifying branch 73 @Trace1#733#E1031#1-0: CCost : 5e-06
+NNo!
+Verifying branch 74 @Trace1#735#E1040#1-0: CCost : 3e-06
+Cost : 0.000501
+No!
+Verifying branch 75 @Trace1#735#E1042#1-0: CCost : 2e-06
+NNo!
+Verifying branch 76 @Trace1#716#E1053#1-0: CCost : 1e-06
+NNo!
+Verifying branch 77 @Trace1#717#E1056#0-1: CCost : 2e-06
+NNo!
+Verifying branch 78 @Trace1#725#E1067#0-1: CCost : 1e-06
+NNo!
+Verifying branch 79 @Trace1#733#E1121#1-0: CCost : 2e-06
+Cost : 0.98378
+No!
+Verifying branch 80 @Trace1#733#E1123#1-0: CCost : 6e-06
+NNo!
+Verifying branch 81 @Trace1#716#E1135#1-0: CCost : 1e-06
+NNo!
+Verifying branch 82 @Trace1#717#E1138#0-1: CCost : 1e-06
+NNo!
+Verifying branch 83 @Trace1#725#E1149#0-1: CCost : 2e-06
+NNo!
+Verifying branch 84 @Trace1#733#E1203#1-0: CCost : 3e-06
+Cost : 1.19003
+No!
+Verifying branch 85 @Trace1#733#E1205#1-0: CCost : 5e-06
+NNo!
+Verifying branch 86 @Trace1#716#E1217#1-0: CCost : 1e-06
+NNo!
+Verifying branch 87 @Trace1#717#E1220#0-1: CCost : 2e-06
+NNo!
+Verifying branch 88 @Trace1#725#E1231#0-1: CCost : 1e-06
+NNo!
+Verifying branch 89 @Trace1#733#E1285#1-0: CCost : 2e-06
+Cost : 1.44636
+No!
+Verifying branch 90 @Trace1#733#E1287#1-0: CCost : 5e-06
+NNo!
+Verifying branch 91 @Trace1#716#E1299#0-1: CCost : 1e-06
+NNo!
+Verifying branch 92 @Trace1#715#E1307#1-0: CCost : 0
+NNo!
+Verifying branch 93 @Trace1#716#E1313#1-0: CCost : 1e-06
+NNo!
+Verifying branch 94 @Trace1#717#E1316#0-1: CCost : 2e-06
+NNo!
+Verifying branch 95 @Trace1#725#E1327#0-1: CCost : 1e-06
+NNo!
+Verifying branch 96 @Trace1#733#E1381#1-0: CCost : 4e-06
+Cost : 1.64539
+No!
+Verifying branch 97 @Trace1#733#E1383#1-0: CCost : 8e-06
+NNo!
+Verifying branch 98 @Trace1#716#E1395#1-0: CCost : 2e-06
+NNo!
+Verifying branch 99 @Trace1#717#E1398#0-1: CCost : 3e-06
+NNo!
+Verifying branch 100 @Trace1#725#E1409#0-1: CCost : 2e-06
+NNo!
+Verifying branch 101 @Trace1#733#E1463#1-0: CCost : 6e-06
+Cost : 1.60143
+No!
+Verifying branch 102 @Trace1#733#E1465#1-0: CCost : 5e-06
+NNo!
+Verifying branch 103 @Trace1#735#E1474#1-0: CCost : 4e-06
+Cost : 0.00058
+No!
+Verifying branch 104 @Trace1#735#E1476#1-0: CCost : 2e-06
+NNo!
+Verifying branch 105 @Trace1#716#E1487#1-0: CCost : 1e-06
+NNo!
+Verifying branch 106 @Trace1#717#E1490#0-1: CCost : 1e-06
+NNo!
+Verifying branch 107 @Trace1#725#E1501#0-1: CCost : 1e-06
+NNo!
+Verifying branch 108 @Trace1#733#E1555#1-0: CCost : 2e-06
+Cost : 1.70308
+No!
+Verifying branch 109 @Trace1#733#E1557#1-0: CCost : 5e-06
+NNo!
+Verifying branch 110 @Trace1#716#E1569#1-0: CCost : 1e-06
+NNo!
+Verifying branch 111 @Trace1#717#E1572#0-1: CCost : 1e-06
+NNo!
+Verifying branch 112 @Trace1#725#E1583#0-1: CCost : 1e-06
+NNo!
+Verifying branch 113 @Trace1#733#E1637#1-0: CCost : 3e-06
+Cost : 1.90701
+No!
+Verifying branch 114 @Trace1#733#E1639#1-0: CCost : 5e-06
+NNo!
+Verifying branch 115 @Trace1#716#E1651#0-1: CCost : 1e-06
+NNo!
+Verifying branch 116 @Trace1#715#E1659#1-0: CCost : 1e-06
+NNo!
+Verifying branch 117 @Trace1#716#E1665#1-0: CCost : 1e-06
+NNo!
+Verifying branch 118 @Trace1#717#E1668#0-1: CCost : 1e-06
+NNo!
+Verifying branch 119 @Trace1#725#E1679#0-1: CCost : 1e-06
+NNo!
+Verifying branch 120 @Trace1#733#E1733#1-0: CCost : 3e-06
+Cost : 2.10081
+No!
+Verifying branch 121 @Trace1#733#E1735#1-0: CCost : 5e-06
+NNo!
+Verifying branch 122 @Trace1#716#E1747#1-0: CCost : 1e-06
+NNo!
+Verifying branch 123 @Trace1#717#E1750#0-1: CCost : 2e-06
+NNo!
+Verifying branch 124 @Trace1#725#E1761#0-1: CCost : 1e-06
+NNo!
+Verifying branch 125 @Trace1#733#E1815#1-0: CCost : 3e-06
+Cost : 2.32338
+No!
+Verifying branch 126 @Trace1#733#E1817#1-0: CCost : 5e-06
+NNo!
+Verifying branch 127 @Trace1#716#E1829#1-0: CCost : 1e-06
+NNo!
+Verifying branch 128 @Trace1#717#E1832#0-1: CCost : 1e-06
+NNo!
+Verifying branch 129 @Trace1#725#E1843#0-1: CCost : 1e-06
+NNo!
+Verifying branch 130 @Trace1#733#E1897#1-0: CCost : 2e-06
+Cost : 2.57138
+No!
+Verifying branch 131 @Trace1#733#E1899#1-0: CCost : 5e-06
+NNo!
+Verifying branch 132 @Trace1#735#E1908#1-0: CCost : 3e-06
+Cost : 0.000622
+No!
+Verifying branch 133 @Trace1#735#E1910#1-0: CCost : 1e-06
+NNo!
+Verifying branch 134 @Trace1#716#E1921#1-0: CCost : 1e-06
+NNo!
+Verifying branch 135 @Trace1#717#E1924#0-1: CCost : 1e-06
+NNo!
+Verifying branch 136 @Trace1#725#E1935#0-1: CCost : 1e-06
+NNo!
+Verifying branch 137 @Trace1#733#E1989#1-0: CCost : 2e-06
+Cost : 2.6773
+No!
+Verifying branch 138 @Trace1#733#E1991#1-0: CCost : 5e-06
+NNo!
+Verifying branch 139 @Trace1#716#E2003#0-1: CCost : 1e-06
+NNo!
+Verifying branch 140 @Trace1#715#E2011#1-0: CCost : 1e-06
+NNo!
+Verifying branch 141 @Trace1#716#E2017#1-0: CCost : 1e-06
+NNo!
+Verifying branch 142 @Trace1#717#E2020#0-1: CCost : 2e-06
+NNo!
+Verifying branch 143 @Trace1#725#E2031#0-1: CCost : 1e-06
+NNo!
+Verifying branch 144 @Trace1#733#E2085#1-0: CCost : 3e-06
+Cost : 2.55855
+No!
+Verifying branch 145 @Trace1#733#E2087#1-0: CCost : 5e-06
+NNo!
+Verifying branch 146 @Trace1#716#E2099#1-0: CCost : 1e-06
+NNo!
+Verifying branch 147 @Trace1#717#E2102#0-1: CCost : 2e-06
+NNo!
+Verifying branch 148 @Trace1#725#E2113#0-1: CCost : 1e-06
+NNo!
+Verifying branch 149 @Trace1#733#E2167#1-0: CCost : 3e-06
+Cost : 2.73337
+No!
+Verifying branch 150 @Trace1#733#E2169#1-0: CCost : 5e-06
+NNo!
+Verifying branch 151 @Trace1#716#E2181#1-0: CCost : 1e-06
+NNo!
+Verifying branch 152 @Trace1#717#E2184#0-1: CCost : 2e-06
+NNo!
+Verifying branch 153 @Trace1#725#E2195#0-1: CCost : 1e-06
+NNo!
+Verifying branch 154 @Trace1#733#E2249#1-0: CCost : 3e-06
+Cost : 2.90239
+No!
+Verifying branch 155 @Trace1#733#E2251#1-0: CCost : 5e-06
+NNo!
+Verifying branch 156 @Trace1#716#E2263#1-0: CCost : 0
+NNo!
+Verifying branch 157 @Trace1#717#E2266#0-1: CCost : 1e-06
+NNo!
+Verifying branch 158 @Trace1#725#E2277#0-1: CCost : 1e-06
+NNo!
+Verifying branch 159 @Trace1#733#E2331#1-0: CCost : 2e-06
+Cost : 3.08583
+No!
+Verifying branch 160 @Trace1#733#E2333#1-0: CCost : 6e-06
+NNo!
+Verifying branch 161 @Trace1#735#E2342#1-0: CCost : 3e-06
+Cost : 0.00068
+No!
+Verifying branch 162 @Trace1#735#E2344#1-0: CCost : 2e-06
+NNo!
+Verifying branch 163 @Trace1#716#E2355#0-1: CCost : 1e-06
+NNo!
+Verifying branch 164 @Trace1#715#E2363#0-1: CCost : 1e-06
+NNo!
+Verifying branch 165 @Trace1#740#E2369#1-0: CCost : 1e-06
+NNo!
+Verifying branch 166 @Trace1#740#E2381#1-0: CCost : 0
+NNo!
+Verifying branch 167 @Trace1#740#E2393#1-0: CCost : 0
+NNo!
+Verifying branch 168 @Trace1#740#E2405#1-0: CCost : 1e-06
+NNo!
+Verifying branch 169 @Trace1#740#E2417#0-1: CCost : 0
+NNo!
+Verifying branch 170 @Trace1#743#E2423#1-0: CCost : 1e-06
+NNo!
+Verifying branch 171 @Trace1#744#E2429#1-0: CCost : 1e-06
+NNo!
+Verifying branch 172 @Trace1#745#E2432#0-1: CCost : 1e-06
+NNo!
+Verifying branch 173 @Trace1#753#E2443#0-1: CCost : 1e-06
+NNo!
+Verifying branch 174 @Trace1#761#E2494#1-0: CCost : 2e-06
+Cost : 3.62222
+No!
+Verifying branch 175 @Trace1#761#E2496#1-0: CCost : 5e-06
+NNo!
+Verifying branch 176 @Trace1#744#E2510#1-0: CCost : 1e-06
+NNo!
+Verifying branch 177 @Trace1#745#E2513#0-1: CCost : 1e-06
+NNo!
+Verifying branch 178 @Trace1#753#E2524#0-1: CCost : 1e-06
+NNo!
+Verifying branch 179 @Trace1#761#E2575#1-0: CCost : 3e-06
+Cost : 3.40716
+No!
+Verifying branch 180 @Trace1#761#E2577#1-0: CCost : 6e-06
+NNo!
+Verifying branch 181 @Trace1#744#E2591#1-0: CCost : 0
+NNo!
+Verifying branch 182 @Trace1#745#E2594#0-1: CCost : 2e-06
+NNo!
+Verifying branch 183 @Trace1#753#E2605#0-1: CCost : 1e-06
+NNo!
+Verifying branch 184 @Trace1#761#E2656#1-0: CCost : 2e-06
+Cost : 3.60389
+No!
+Verifying branch 185 @Trace1#761#E2658#1-0: CCost : 5e-06
+NNo!
+Verifying branch 186 @Trace1#744#E2672#1-0: CCost : 1e-06
+NNo!
+Verifying branch 187 @Trace1#745#E2675#0-1: CCost : 1e-06
+NNo!
+Verifying branch 188 @Trace1#753#E2686#0-1: CCost : 1e-06
+NNo!
+Verifying branch 189 @Trace1#761#E2737#1-0: CCost : 3e-06
+Cost : 3.83987
+No!
+Verifying branch 190 @Trace1#761#E2739#1-0: CCost : 6e-06
+NNo!
+Verifying branch 191 @Trace1#744#E2753#0-1: CCost : 1e-06
+NNo!
+Verifying branch 192 @Trace1#743#E2761#1-0: CCost : 1e-06
+NNo!
+Verifying branch 193 @Trace1#744#E2767#1-0: CCost : 1e-06
+NNo!
+Verifying branch 194 @Trace1#745#E2770#0-1: CCost : 1e-06
+NNo!
+Verifying branch 195 @Trace1#753#E2781#0-1: CCost : 1e-06
+NNo!
+Verifying branch 196 @Trace1#761#E2832#1-0: CCost : 2e-06
+Cost : 3.9883
+No!
+Verifying branch 197 @Trace1#761#E2834#1-0: CCost : 5e-06
+NNo!
+Verifying branch 198 @Trace1#744#E2848#1-0: CCost : 1e-06
+NNo!
+Verifying branch 199 @Trace1#745#E2851#0-1: CCost : 2e-06
+NNo!
+Verifying branch 200 @Trace1#753#E2862#0-1: CCost : 2e-06
+NNo!
+Verifying branch 201 @Trace1#761#E2913#1-0: CCost : 2e-06
+Cost : 4.18452
+No!
+Verifying branch 202 @Trace1#761#E2915#1-0: CCost : 4e-06
+NNo!
+Verifying branch 203 @Trace1#744#E2929#1-0: CCost : 1e-06
+NNo!
+Verifying branch 204 @Trace1#745#E2932#0-1: CCost : 1e-06
+NNo!
+Verifying branch 205 @Trace1#753#E2943#0-1: CCost : 1e-06
+NNo!
+Verifying branch 206 @Trace1#761#E2994#1-0: CCost : 3e-06
+Cost : 4.39708
+No!
+Verifying branch 207 @Trace1#761#E2996#1-0: CCost : 5e-06
+NNo!
+Verifying branch 208 @Trace1#744#E3010#1-0: CCost : 1e-06
+NNo!
+Verifying branch 209 @Trace1#745#E3013#0-1: CCost : 2e-06
+NNo!
+Verifying branch 210 @Trace1#753#E3024#0-1: CCost : 1e-06
+NNo!
+Verifying branch 211 @Trace1#761#E3075#1-0: CCost : 2e-06
+Cost : 4.61714
+No!
+Verifying branch 212 @Trace1#761#E3077#1-0: CCost : 6e-06
+NNo!
+Verifying branch 213 @Trace1#744#E3091#0-1: CCost : 1e-06
+NNo!
+Verifying branch 214 @Trace1#743#E3099#1-0: CCost : 1e-06
+NNo!
+Verifying branch 215 @Trace1#744#E3105#1-0: CCost : 1e-06
+NNo!
+Verifying branch 216 @Trace1#745#E3108#0-1: CCost : 1e-06
+NNo!
+Verifying branch 217 @Trace1#753#E3119#0-1: CCost : 1e-06
+NNo!
+Verifying branch 218 @Trace1#761#E3170#1-0: CCost : 3e-06
+Cost : 4.85003
+No!
+Verifying branch 219 @Trace1#761#E3172#1-0: CCost : 6e-06
+NNo!
+Verifying branch 220 @Trace1#744#E3186#1-0: CCost : 1e-06
+NNo!
+Verifying branch 221 @Trace1#745#E3189#0-1: CCost : 2e-06
+NNo!
+Verifying branch 222 @Trace1#753#E3200#0-1: CCost : 1e-06
+NNo!
+Verifying branch 223 @Trace1#761#E3251#1-0: CCost : 3e-06
+Cost : 5.11519
+No!
+Verifying branch 224 @Trace1#761#E3253#1-0: CCost : 5e-06
+NNo!
+Verifying branch 225 @Trace1#744#E3267#1-0: CCost : 1e-06
+NNo!
+Verifying branch 226 @Trace1#745#E3270#0-1: CCost : 1e-06
+NNo!
+Verifying branch 227 @Trace1#753#E3281#0-1: CCost : 1e-06
+NNo!
+Verifying branch 228 @Trace1#761#E3332#1-0: CCost : 4e-06
+Cost : 5.16058
+No!
+Verifying branch 229 @Trace1#761#E3334#1-0: CCost : 6e-06
+NNo!
+Verifying branch 230 @Trace1#744#E3348#1-0: CCost : 1e-06
+NNo!
+Verifying branch 231 @Trace1#745#E3351#0-1: CCost : 1e-06
+NNo!
+Verifying branch 232 @Trace1#753#E3362#0-1: CCost : 1e-06
+NNo!
+Verifying branch 233 @Trace1#761#E3413#1-0: CCost : 3e-06
+Cost : 4.78174
+No!
+Verifying branch 234 @Trace1#761#E3415#1-0: CCost : 6e-06
+NNo!
+Verifying branch 235 @Trace1#744#E3429#0-1: CCost : 1e-06
+NNo!
+Verifying branch 236 @Trace1#743#E3437#1-0: CCost : 1e-06
+NNo!
+Verifying branch 237 @Trace1#744#E3443#1-0: CCost : 1e-06
+NNo!
+Verifying branch 238 @Trace1#745#E3446#0-1: CCost : 2e-06
+NNo!
+Verifying branch 239 @Trace1#753#E3457#0-1: CCost : 1e-06
+NNo!
+Verifying branch 240 @Trace1#761#E3508#1-0: CCost : 3e-06
+Cost : 4.94679
+No!
+Verifying branch 241 @Trace1#761#E3510#1-0: CCost : 6e-06
+NNo!
+Verifying branch 242 @Trace1#744#E3524#1-0: CCost : 1e-06
+NNo!
+Verifying branch 243 @Trace1#745#E3527#0-1: CCost : 1e-06
+NNo!
+Verifying branch 244 @Trace1#753#E3538#0-1: CCost : 1e-06
+NNo!
+Verifying branch 245 @Trace1#761#E3589#1-0: CCost : 3e-06
+Cost : 5.11918
+No!
+Verifying branch 246 @Trace1#761#E3591#1-0: CCost : 6e-06
+NNo!
+Verifying branch 247 @Trace1#744#E3605#1-0: CCost : 1e-06
+NNo!
+Verifying branch 248 @Trace1#745#E3608#0-1: CCost : 2e-06
+NNo!
+Verifying branch 249 @Trace1#753#E3619#0-1: CCost : 1e-06
+NNo!
+Verifying branch 250 @Trace1#761#E3670#1-0: CCost : 2e-06
+Cost : 5.2981
+No!
+Verifying branch 251 @Trace1#761#E3672#1-0: CCost : 5e-06
+NNo!
+Verifying branch 252 @Trace1#744#E3686#1-0: CCost : 1e-06
+NNo!
+Verifying branch 253 @Trace1#745#E3689#0-1: CCost : 2e-06
+NNo!
+Verifying branch 254 @Trace1#753#E3700#0-1: CCost : 1e-06
+NNo!
+Verifying branch 255 @Trace1#761#E3751#1-0: CCost : 3e-06
+Cost : 5.47191
+No!
+Verifying branch 256 @Trace1#761#E3753#1-0: CCost : 5e-06
+NNo!
+Verifying branch 257 @Trace1#744#E3767#0-1: CCost : 1e-06
+NNo!
+Verifying branch 258 @Trace1#743#E3775#0-1: CCost : 1e-06
+NNo!
+Verifying branch 259 @Trace1#305#E3779#1-0: CCost : 2e-06
+NNo!
+Verifying branch 260 @Trace1#817#E3804#1-0: CCost : 1e-06
+NNo!
+Verifying branch 261 @Trace1#818#E3810#1-0: CCost : 1e-06
+NNo!
+Verifying branch 262 @Trace1#819#E3813#0-1: CCost : 1e-06
+NNo!
+Verifying branch 263 @Trace1#827#E3824#0-1: CCost : 1e-06
+NNo!
+Verifying branch 264 @Trace1#835#E3875#1-0: CCost : 2e-06
+Cost : 5.75451
+No!
+Verifying branch 265 @Trace1#835#E3877#1-0: CCost : 5e-06
+NNo!
+Verifying branch 266 @Trace1#818#E3886#1-0: CCost : 1e-06
+NNo!
+Verifying branch 267 @Trace1#819#E3889#0-1: CCost : 2e-06
+NNo!
+Verifying branch 268 @Trace1#827#E3900#0-1: CCost : 1e-06
+NNo!
+Verifying branch 269 @Trace1#835#E3951#1-0: CCost : 3e-06
+Cost : 5.86841
+No!
+Verifying branch 270 @Trace1#835#E3953#1-0: CCost : 5e-06
+NNo!
+Verifying branch 271 @Trace1#818#E3962#1-0: CCost : 1e-06
+NNo!
+Verifying branch 272 @Trace1#819#E3965#0-1: CCost : 1e-06
+NNo!
+Verifying branch 273 @Trace1#827#E3976#0-1: CCost : 1e-06
+NNo!
+Verifying branch 274 @Trace1#835#E4027#1-0: CCost : 3e-06
+Cost : 6.05552
+No!
+Verifying branch 275 @Trace1#835#E4029#1-0: CCost : 6e-06
+NNo!
+Verifying branch 276 @Trace1#818#E4038#1-0: CCost : 1e-06
+NNo!
+Verifying branch 277 @Trace1#819#E4041#0-1: CCost : 1e-06
+NNo!
+Verifying branch 278 @Trace1#827#E4052#0-1: CCost : 1e-06
+NNo!
+Verifying branch 279 @Trace1#835#E4103#1-0: CCost : 3e-06
+Cost : 6.25174
+No!
+Verifying branch 280 @Trace1#835#E4105#1-0: CCost : 5e-06
+NNo!
+Verifying branch 281 @Trace1#818#E4114#0-1: CCost : 0
+NNo!
+Verifying branch 282 @Trace1#817#E4123#1-0: CCost : 0
+NNo!
+Verifying branch 283 @Trace1#818#E4129#1-0: CCost : 1e-06
+NNo!
+Verifying branch 284 @Trace1#819#E4132#0-1: CCost : 1e-06
+NNo!
+Verifying branch 285 @Trace1#827#E4143#0-1: CCost : 1e-06
+NNo!
+Verifying branch 286 @Trace1#835#E4194#1-0: CCost : 3e-06
+Cost : 6.42374
+No!
+Verifying branch 287 @Trace1#835#E4196#1-0: CCost : 5e-06
+NNo!
+Verifying branch 288 @Trace1#818#E4205#1-0: CCost : 1e-06
+NNo!
+Verifying branch 289 @Trace1#819#E4208#0-1: CCost : 1e-06
+NNo!
+Verifying branch 290 @Trace1#827#E4219#0-1: CCost : 1e-06
+NNo!
+Verifying branch 291 @Trace1#835#E4270#1-0: CCost : 2e-06
+Cost : 6.63278
+No!
+Verifying branch 292 @Trace1#835#E4272#1-0: CCost : 5e-06
+NNo!
+Verifying branch 293 @Trace1#818#E4281#1-0: CCost : 0
+NNo!
+Verifying branch 294 @Trace1#819#E4284#0-1: CCost : 1e-06
+NNo!
+Verifying branch 295 @Trace1#827#E4295#0-1: CCost : 1e-06
+NNo!
+Verifying branch 296 @Trace1#835#E4346#1-0: CCost : 2e-06
+Cost : 6.80499
+No!
+Verifying branch 297 @Trace1#835#E4348#1-0: CCost : 5e-06
+NNo!
+Verifying branch 298 @Trace1#818#E4357#1-0: CCost : 1e-06
+NNo!
+Verifying branch 299 @Trace1#819#E4360#0-1: CCost : 1e-06
+NNo!
+Verifying branch 300 @Trace1#827#E4371#0-1: CCost : 1e-06
+NNo!
+Verifying branch 301 @Trace1#835#E4422#1-0: CCost : 3e-06
+Cost : 7.00068
+No!
+Verifying branch 302 @Trace1#835#E4424#1-0: CCost : 6e-06
+NNo!
+Verifying branch 303 @Trace1#818#E4433#0-1: CCost : 2e-06
+NNo!
+Verifying branch 304 @Trace1#817#E4442#1-0: CCost : 0
+NNo!
+Verifying branch 305 @Trace1#818#E4448#1-0: CCost : 0
+NNo!
+Verifying branch 306 @Trace1#819#E4451#0-1: CCost : 2e-06
+NNo!
+Verifying branch 307 @Trace1#827#E4462#0-1: CCost : 1e-06
+NNo!
+Verifying branch 308 @Trace1#835#E4513#1-0: CCost : 3e-06
+Cost : 7.95304
+No!
+Verifying branch 309 @Trace1#835#E4515#1-0: CCost : 6e-06
+NNo!
+Verifying branch 310 @Trace1#818#E4524#1-0: CCost : 1e-06
+NNo!
+Verifying branch 311 @Trace1#819#E4527#0-1: CCost : 1e-06
+NNo!
+Verifying branch 312 @Trace1#827#E4538#0-1: CCost : 1e-06
+NNo!
+Verifying branch 313 @Trace1#835#E4589#1-0: CCost : 3e-06
+Cost : 7.25514
+No!
+Verifying branch 314 @Trace1#835#E4591#1-0: CCost : 6e-06
+NNo!
+Verifying branch 315 @Trace1#818#E4600#1-0: CCost : 2e-06
+NNo!
+Verifying branch 316 @Trace1#819#E4603#0-1: CCost : 2e-06
+NNo!
+Verifying branch 317 @Trace1#827#E4614#0-1: CCost : 1e-06
+NNo!
+Verifying branch 318 @Trace1#835#E4665#1-0: CCost : 4e-06
+Cost : 7.46139
+No!
+Verifying branch 319 @Trace1#835#E4667#1-0: CCost : 5e-06
+NNo!
+Verifying branch 320 @Trace1#818#E4676#1-0: CCost : 1e-06
+NNo!
+Verifying branch 321 @Trace1#819#E4679#0-1: CCost : 1e-06
+NNo!
+Verifying branch 322 @Trace1#827#E4690#0-1: CCost : 0
+NNo!
+Verifying branch 323 @Trace1#835#E4741#1-0: CCost : 3e-06
+Cost : 7.65577
+No!
+Verifying branch 324 @Trace1#835#E4743#1-0: CCost : 5e-06
+NNo!
+Verifying branch 325 @Trace1#818#E4752#0-1: CCost : 0
+NNo!
+Verifying branch 326 @Trace1#817#E4761#1-0: CCost : 1e-06
+NNo!
+Verifying branch 327 @Trace1#818#E4767#1-0: CCost : 1e-06
+NNo!
+Verifying branch 328 @Trace1#819#E4770#0-1: CCost : 1e-06
+NNo!
+Verifying branch 329 @Trace1#827#E4781#0-1: CCost : 1e-06
+NNo!
+Verifying branch 330 @Trace1#835#E4832#1-0: CCost : 3e-06
+Cost : 7.85921
+No!
+Verifying branch 331 @Trace1#835#E4834#1-0: CCost : 4e-06
+NNo!
+Verifying branch 332 @Trace1#818#E4843#1-0: CCost : 1e-06
+NNo!
+Verifying branch 333 @Trace1#819#E4846#0-1: CCost : 1e-06
+NNo!
+Verifying branch 334 @Trace1#827#E4857#0-1: CCost : 1e-06
+NNo!
+Verifying branch 335 @Trace1#835#E4908#1-0: CCost : 2e-06
+Cost : 8.0709
+No!
+Verifying branch 336 @Trace1#835#E4910#1-0: CCost : 5e-06
+NNo!
+Verifying branch 337 @Trace1#818#E4919#1-0: CCost : 1e-06
+NNo!
+Verifying branch 338 @Trace1#819#E4922#0-1: CCost : 1e-06
+NNo!
+Verifying branch 339 @Trace1#827#E4933#0-1: CCost : 1e-06
+NNo!
+Verifying branch 340 @Trace1#835#E4984#1-0: CCost : 3e-06
+Cost : 8.29507
+No!
+Verifying branch 341 @Trace1#835#E4986#1-0: CCost : 6e-06
+NNo!
+Verifying branch 342 @Trace1#818#E4995#1-0: CCost : 1e-06
+NNo!
+Verifying branch 343 @Trace1#819#E4998#0-1: CCost : 2e-06
+NNo!
+Verifying branch 344 @Trace1#827#E5009#0-1: CCost : 1e-06
+NNo!
+Verifying branch 345 @Trace1#835#E5060#1-0: CCost : 3e-06
+Cost : 8.48822
+No!
+Verifying branch 346 @Trace1#835#E5062#1-0: CCost : 5e-06
+NNo!
+Verifying branch 347 @Trace1#818#E5071#0-1: CCost : 1e-06
+NNo!
+Verifying branch 348 @Trace1#817#E5080#0-1: CCost : 0
+NNo!
+Verifying branch 349 @Trace1#310#E5090#1-0: CCost : 1e-06
+NNo!
+Verifying branch 350 @Trace1#310#E5107#0-1: CCost : 1e-06
+NNo!
+Verifying branch 351 @Trace1#422#E5133#0-1: CCost : 1e-06
+Cost : 8.78431
+Yes!
+Verifying branch 352 @Trace1#776#E5199#1-0: CCost : 6e-06
+Cost : 6.71433
+No!
+Verifying branch 353 @Trace1#777#E5205#1-0: CCost : 7e-06
+Cost : 6.71822
+No!
+Verifying branch 354 @Trace1#778#E5218#1-0: CCost : 6e-06
+Cost : 8.62942
+No!
+Verifying branch 355 @Trace1#779#E5230#0-1: CCost : 6e-06
+Cost : 8.63951
+No!
+Verifying branch 356 @Trace1#787#E5238#0-1: CCost : 6e-06
+Cost : 8.63971
+No!
+Verifying branch 357 @Trace1#795#E5238#1-0: CCost : 4e-06
+NNo!
+Verifying branch 358 @Trace1#796#E5238#1-0: CCost : 1e-06
+NNo!
+Verifying branch 359 @Trace1#796#E5319#1-0: CCost : 1e-06
+NNo!
+Verifying branch 360 @Trace1#796#E5390#0-1: CCost : 1e-06
+NNo!
+Verifying branch 361 @Trace1#795#E5390#1-0: CCost : 0
+NNo!
+Verifying branch 362 @Trace1#796#E5390#1-0: CCost : 1e-06
+NNo!
+Verifying branch 363 @Trace1#797#E5425#1-0: CCost : 0
+NNo!
+Verifying branch 364 @Trace1#798#E5443#1-0: CCost : 1e-06
+NNo!
+Verifying branch 365 @Trace1#798#E5458#1-0: CCost : 0
+NNo!
+Verifying branch 366 @Trace1#799#E5473#1-0: CCost : 1e-06
+NNo!
+Verifying branch 367 @Trace1#796#E5475#1-0: CCost : 1e-06
+NNo!
+Verifying branch 368 @Trace1#797#E5496#1-0: CCost : 1e-06
+NNo!
+Verifying branch 369 @Trace1#798#E5514#1-0: CCost : 1e-06
+NNo!
+Verifying branch 370 @Trace1#798#E5529#1-0: CCost : 1e-06
+NNo!
+Verifying branch 371 @Trace1#799#E5544#1-0: CCost : 0
+NNo!
+Verifying branch 372 @Trace1#796#E5546#0-1: CCost : 1e-06
+NNo!
+Verifying branch 373 @Trace1#795#E5546#0-1: CCost : 1e-06
+NNo!
+Verifying branch 374 @Trace1#777#E5568#1-0: CCost : 3e-06
+Cost : 6.68852
+No!
+Verifying branch 375 @Trace1#778#E5581#0-1: CCost : 6e-06
+Cost : 8.50154
+No!
+Verifying branch 376 @Trace1#777#E5597#0-1: CCost : 7e-06
+Cost : 6.68474
+No!
+Verifying branch 377 @Trace1#776#E5605#1-0: CCost : 8e-06
+Cost : 6.68926
+No!
+Verifying branch 378 @Trace1#777#E5611#1-0: CCost : 6e-06
+Cost : 6.69254
+No!
+Verifying branch 379 @Trace1#778#E5624#0-1: CCost : 7e-06
+Cost : 8.54164
+No!
+Verifying branch 380 @Trace1#777#E5640#1-0: CCost : 6e-06
+Cost : 6.71454
+No!
+Verifying branch 381 @Trace1#778#E5653#1-0: CCost : 6e-06
+Cost : 8.69031
+No!
+Verifying branch 382 @Trace1#779#E5665#1-0: CCost : 6e-06
+Cost : 6.72224
+No!
+Verifying branch 383 @Trace1#781#E5669#1-0: CCost : 6e-06
+NNo!
+Verifying branch 384 @Trace1#787#E5685#1-0: CCost : 2e-06
+Cost : 6.75344
+No!
+Verifying branch 385 @Trace1#789#E5689#1-0: CCost : 6e-06
+NNo!
+Verifying branch 386 @Trace1#795#E5689#1-0: CCost : 1e-06
+NNo!
+Verifying branch 387 @Trace1#796#E5689#1-0: CCost : 0
+NNo!
+Verifying branch 388 @Trace1#797#E5726#1-0: CCost : 2e-06
+Cost : 6.77914
+No!
+Verifying branch 389 @Trace1#798#E5744#1-0: CCost : 6e-06
+Cost : 6.78584
+No!
+Verifying branch 390 @Trace1#798#E5759#1-0: CCost : 7e-06
+Cost : 6.7607
+No!
+Verifying branch 391 @Trace1#799#E5774#1-0: CCost : 7e-06
+Cost : 6.76431
+No!
+Verifying branch 392 @Trace1#796#E5778#1-0: CCost : 5e-06
+NNo!
+Verifying branch 393 @Trace1#797#E5797#1-0: CCost : 3e-06
+Cost : 6.7683
+No!
+Verifying branch 394 @Trace1#798#E5815#1-0: CCost : 7e-06
+Cost : 6.76955
+No!
+Verifying branch 395 @Trace1#798#E5830#1-0: CCost : 7e-06
+Cost : 6.76681
+No!
+Verifying branch 396 @Trace1#799#E5845#1-0: CCost : 7e-06
+Cost : 6.77215
+No!
+Verifying branch 397 @Trace1#796#E5849#0-1: CCost : 6e-06
+NNo!
+Verifying branch 398 @Trace1#795#E5849#1-0: CCost : 1e-06
+NNo!
+Verifying branch 399 @Trace1#796#E5849#1-0: CCost : 1e-06
+NNo!
+Verifying branch 400 @Trace1#797#E5882#1-0: CCost : 3e-06
+Cost : 6.76536
+No!
+Verifying branch 401 @Trace1#797#E5884#1-0: CCost : 5e-06
+NNo!
+Verifying branch 402 @Trace1#798#E5900#1-0: CCost : 3e-06
+Cost : 6.76077
+No!
+Verifying branch 403 @Trace1#798#E5902#1-0: CCost : 5e-06
+NNo!
+Verifying branch 404 @Trace1#798#E5915#1-0: CCost : 3e-06
+Cost : 6.76307
+No!
+Verifying branch 405 @Trace1#798#E5917#1-0: CCost : 6e-06
+NNo!
+Verifying branch 406 @Trace1#799#E5930#1-0: CCost : 3e-06
+Cost : 6.7603
+No!
+Verifying branch 407 @Trace1#799#E5932#1-0: CCost : 5e-06
+NNo!
+Verifying branch 408 @Trace1#796#E5934#1-0: CCost : 1e-06
+NNo!
+Verifying branch 409 @Trace1#797#E5953#1-0: CCost : 3e-06
+Cost : 6.76312
+No!
+Verifying branch 410 @Trace1#797#E5955#1-0: CCost : 5e-06
+NNo!
+Verifying branch 411 @Trace1#798#E5971#1-0: CCost : 2e-06
+Cost : 6.76179
+No!
+Verifying branch 412 @Trace1#798#E5973#1-0: CCost : 5e-06
+NNo!
+Verifying branch 413 @Trace1#798#E5986#1-0: CCost : 2e-06
+Cost : 6.76335
+No!
+Verifying branch 414 @Trace1#798#E5988#1-0: CCost : 6e-06
+NNo!
+Verifying branch 415 @Trace1#799#E6001#1-0: CCost : 2e-06
+Cost : 6.76335
+No!
+Verifying branch 416 @Trace1#799#E6003#1-0: CCost : 6e-06
+NNo!
+Verifying branch 417 @Trace1#796#E6005#0-1: CCost : 1e-06
+NNo!
+Verifying branch 418 @Trace1#795#E6005#0-1: CCost : 1e-06
+NNo!
+Verifying branch 419 @Trace1#777#E6027#0-1: CCost : 2e-06
+Cost : 6.73735
+No!
+Verifying branch 420 @Trace1#776#E6035#0-1: CCost : 7e-06
+Cost : 6.73734
+No!
+Verifying branch 421 @Trace1#568#E6035#1-0: CCost : 7e-06
+Cost : 6.52751
+No!
+Verifying branch 422 @Trace1#594#E6035#1-0: CCost : 4e-06
+NNo!
+Verifying branch 423 @Trace1#596#E6035#0-1: CCost : 2e-06
+NNo!
+Verifying branch 424 @Trace1#603#E6035#1-0: CCost : 2e-06
+Cost : 0.001317
+No!
+Verifying branch 425 @Trace1#608#E6137#1-0: CCost : 3e-06
+Cost : 8.66971
+No!
+Verifying branch 426 @Trace1#499#E6162#1-0: CCost : 6e-06
+NNo!
+Verifying branch 427 @Trace1#501#E6162#1-0: CCost : 1e-06
+NNo!
+Verifying branch 428 @Trace1#502#E6198#1-0: CCost : 1e-06
+NNo!
+Verifying branch 429 @Trace1#503#E6208#1-0: CCost : 0
+NNo!
+Verifying branch 430 @Trace1#505#E6216#1-0: CCost : 1e-06
+NNo!
+Verifying branch 431 @Trace1#563#E6216#1-0: CCost : 0
+NNo!
+Verifying branch 432 @Trace1#563#E6272#0-1: CCost : 1e-06
+NNo!
+Verifying branch 433 @Trace1#501#E6272#0-1: CCost : 0
+NNo!
+Verifying branch 434 @Trace1#499#E6272#1-0: CCost : 0
+NNo!
+Verifying branch 435 @Trace1#501#E6272#0-1: CCost : 0
+NNo!
+Verifying branch 436 @Trace1#499#E6272#0-1: CCost : 0
+NNo!
+Verifying branch 437 @Trace1#615#E6272#1-0: CCost : 2e-06
+Cost : 0.001343
+No!
+Verifying branch 438 @Trace1#675#E6328#1-0: CCost : 2e-06
+Cost : 0.001303
+No!
+Verifying branch 439 @Trace1#629#E6349#1-0: CCost : 2e-06
+NNo!
+Verifying branch 440 @Trace1#630#E6369#0-1: CCost : 2e-06
+Cost : 8.70939
+No!
+Verifying branch 441 @Trace1#629#E6369#0-1: CCost : 5e-06
+NNo!
+Verifying branch 442 @Trace1#643#E6369#1-0: CCost : 1e-06
+NNo!
+Verifying branch 443 @Trace1#644#E6425#1-0: CCost : 2e-06
+Cost : 8.84655
+No!
+Verifying branch 444 @Trace1#646#E6425#0-1: CCost : 6e-06
+NNo!
+Verifying branch 445 @Trace1#652#E6452#1-0: CCost : 2e-06
+Cost : 6.55342
+No!
+Verifying branch 446 @Trace1#533#E6454#1-0: CCost : 5e-06
+NNo!
+Verifying branch 447 @Trace1#534#E6454#1-0: CCost : 1e-06
+NNo!
+Verifying branch 448 @Trace1#563#E6516#1-0: CCost : 1e-06
+NNo!
+Verifying branch 449 @Trace1#563#E6572#0-1: CCost : 1e-06
+NNo!
+Verifying branch 450 @Trace1#534#E6572#1-0: CCost : 1e-06
+NNo!
+Verifying branch 451 @Trace1#535#E6597#1-0: CCost : 1e-06
+NNo!
+Verifying branch 452 @Trace1#536#E6607#1-0: CCost : 1e-06
+NNo!
+Verifying branch 453 @Trace1#538#E6615#1-0: CCost : 1e-06
+NNo!
+Verifying branch 454 @Trace1#563#E6615#1-0: CCost : 0
+NNo!
+Verifying branch 455 @Trace1#563#E6671#0-1: CCost : 1e-06
+NNo!
+Verifying branch 456 @Trace1#534#E6671#0-1: CCost : 1e-06
+NNo!
+Verifying branch 457 @Trace1#533#E6671#1-0: CCost : 1e-06
+NNo!
+Verifying branch 458 @Trace1#534#E6671#1-0: CCost : 1e-06
+NNo!
+Verifying branch 459 @Trace1#535#E6671#1-0: CCost : 1e-06
+NNo!
+Verifying branch 460 @Trace1#538#E6728#1-0: CCost : 0
+NNo!
+Verifying branch 461 @Trace1#563#E6728#0-1: CCost : 1e-06
+NNo!
+Verifying branch 462 @Trace1#534#E6728#1-0: CCost : 0
+NNo!
+Verifying branch 463 @Trace1#535#E6728#1-0: CCost : 1e-06
+NNo!
+Verifying branch 464 @Trace1#535#E6789#1-0: CCost : 0
+NNo!
+Verifying branch 465 @Trace1#536#E6799#1-0: CCost : 1e-06
+NNo!
+Verifying branch 466 @Trace1#538#E6807#1-0: CCost : 1e-06
+NNo!
+Verifying branch 467 @Trace1#538#E6807#1-0: CCost : 1e-06
+NNo!
+Verifying branch 468 @Trace1#563#E6807#0-1: CCost : 0
+NNo!
+Verifying branch 469 @Trace1#534#E6807#0-1: CCost : 0
+NNo!
+Verifying branch 470 @Trace1#533#E6807#0-1: CCost : 1e-06
+NNo!
+Verifying branch 471 @Trace1#643#E6807#0-1: CCost : 1e-06
+NNo!
+Verifying branch 472 @Trace1#657#E6807#1-0: CCost : 2e-06
+Cost : 0.001503
+No!
+Verifying branch 473 @Trace1#716#E6897#1-0: CCost : 2e-06
+Cost : 0.001322
+No!
+Verifying branch 474 @Trace1#669#E6897#1-0: CCost : 2e-06
+NNo!
+Verifying branch 475 @Trace1#671#E6897#0-1: CCost : 1e-06
+NNo!
+Verifying branch 476 @Trace1#678#E6938#1-0: CCost : 1e-06
+NNo!
+Verifying branch 477 @Trace1#680#E6938#0-1: CCost : 1e-06
+NNo!
+Verifying branch 478 @Trace1#686#E6971#1-0: CCost : 1e-06
+Cost : 8.86838
+No!
+Verifying branch 479 @Trace1#687#E6987#1-0: CCost : 6e-06
+Cost : 6.55791
+No!
+Verifying branch 480 @Trace1#688#E6996#1-0: CCost : 7e-06
+Cost : 6.56334
+No!
+Verifying branch 481 @Trace1#550#E6998#1-0: CCost : 5e-06
+NNo!
+Verifying branch 482 @Trace1#551#E6998#1-0: CCost : 1e-06
+NNo!
+Verifying branch 483 @Trace1#563#E7050#1-0: CCost : 1e-06
+NNo!
+Verifying branch 484 @Trace1#563#E7092#1-0: CCost : 0
+NNo!
+Verifying branch 485 @Trace1#563#E7112#0-1: CCost : 2e-06
+NNo!
+Verifying branch 486 @Trace1#551#E7112#1-0: CCost : 1e-06
+NNo!
+Verifying branch 487 @Trace1#552#E7112#1-0: CCost : 1e-06
+NNo!
+Verifying branch 488 @Trace1#553#E7137#1-0: CCost : 1e-06
+NNo!
+Verifying branch 489 @Trace1#563#E7137#1-0: CCost : 1e-06
+NNo!
+Verifying branch 490 @Trace1#563#E7179#1-0: CCost : 1e-06
+NNo!
+Verifying branch 491 @Trace1#563#E7199#0-1: CCost : 1e-06
+NNo!
+Verifying branch 492 @Trace1#551#E7199#0-1: CCost : 1e-06
+NNo!
+Verifying branch 493 @Trace1#550#E7199#1-0: CCost : 1e-06
+NNo!
+Verifying branch 494 @Trace1#551#E7199#1-0: CCost : 1e-06
+NNo!
+Verifying branch 495 @Trace1#553#E7238#1-0: CCost : 0
+NNo!
+Verifying branch 496 @Trace1#563#E7238#1-0: CCost : 1e-06
+NNo!
+Verifying branch 497 @Trace1#563#E7280#1-0: CCost : 1e-06
+NNo!
+Verifying branch 498 @Trace1#563#E7300#0-1: CCost : 1e-06
+NNo!
+Verifying branch 499 @Trace1#551#E7300#1-0: CCost : 1e-06
+NNo!
+Verifying branch 500 @Trace1#552#E7300#1-0: CCost : 1e-06
+NNo!
+Verifying branch 501 @Trace1#553#E7325#1-0: CCost : 1e-06
+NNo!
+Verifying branch 502 @Trace1#553#E7325#1-0: CCost : 1e-06
+NNo!
+Verifying branch 503 @Trace1#563#E7325#1-0: CCost : 1e-06
+NNo!
+Verifying branch 504 @Trace1#563#E7367#1-0: CCost : 1e-06
+NNo!
+Verifying branch 505 @Trace1#563#E7387#0-1: CCost : 1e-06
+NNo!
+Verifying branch 506 @Trace1#551#E7387#0-1: CCost : 1e-06
+NNo!
+Verifying branch 507 @Trace1#550#E7387#0-1: CCost : 1e-06
+NNo!
+Verifying branch 508 @Trace1#678#E7387#0-1: CCost : 2e-06
+NNo!
+Verifying branch 509 @Trace1#669#E7387#0-1: CCost : 1e-06
+NNo!
+Verifying branch 510 @Trace1#694#E7387#1-0: CCost : 1e-06
+Cost : 0.001383
+No!
+Verifying branch 511 @Trace1#594#E7489#1-0: CCost : 2e-06
+NNo!
+Verifying branch 512 @Trace1#596#E7489#0-1: CCost : 1e-06
+NNo!
+Verifying branch 513 @Trace1#603#E7489#1-0: CCost : 1e-06
+Cost : 0.00133
+No!
+Verifying branch 514 @Trace1#608#E7536#1-0: CCost : 3e-06
+Cost : 8.89697
+No!
+Verifying branch 515 @Trace1#609#E7552#1-0: CCost : 6e-06
+Cost : 6.55971
+No!
+Verifying branch 516 @Trace1#499#E7561#1-0: CCost : 5e-06
+NNo!
+Verifying branch 517 @Trace1#501#E7561#1-0: CCost : 1e-06
+NNo!
+Verifying branch 518 @Trace1#502#E7597#1-0: CCost : 1e-06
+NNo!
+Verifying branch 519 @Trace1#503#E7607#1-0: CCost : 1e-06
+NNo!
+Verifying branch 520 @Trace1#505#E7615#1-0: CCost : 1e-06
+NNo!
+Verifying branch 521 @Trace1#563#E7615#1-0: CCost : 0
+NNo!
+Verifying branch 522 @Trace1#563#E7671#0-1: CCost : 1e-06
+NNo!
+Verifying branch 523 @Trace1#501#E7671#0-1: CCost : 0
+NNo!
+Verifying branch 524 @Trace1#499#E7671#1-0: CCost : 1e-06
+NNo!
+Verifying branch 525 @Trace1#501#E7671#0-1: CCost : 1e-06
+NNo!
+Verifying branch 526 @Trace1#499#E7671#0-1: CCost : 0
+NNo!
+Verifying branch 527 @Trace1#615#E7671#1-0: CCost : 2e-06
+Cost : 0.001375
+No!
+Verifying branch 528 @Trace1#675#E7727#1-0: CCost : 2e-06
+Cost : 0.001338
+No!
+Verifying branch 529 @Trace1#628#E7746#1-0: CCost : 2e-06
+Cost : 6.55454
+No!
+Verifying branch 530 @Trace1#629#E7748#0-1: CCost : 5e-06
+NNo!
+Verifying branch 531 @Trace1#643#E7748#0-1: CCost : 1e-06
+NNo!
+Verifying branch 532 @Trace1#657#E7748#1-0: CCost : 1e-06
+Cost : 0.001374
+No!
+Verifying branch 533 @Trace1#716#E7784#1-0: CCost : 1e-06
+Cost : 0.00134
+No!
+Verifying branch 534 @Trace1#669#E7784#0-1: CCost : 2e-06
+NNo!
+Verifying branch 535 @Trace1#694#E7784#1-0: CCost : 2e-06
+Cost : 0.001333
+No!
+Verifying branch 536 @Trace1#594#E7857#0-1: CCost : 2e-06
+NNo!
+Verifying branch 537 @Trace1#470#E7857#1-0: CCost : 2e-06
+Cost : 0.001331
+No!
+Verifying branch 538 @Trace1#528#E7857#1-0: CCost : 2e-06
+Cost : 0.001331
+No!
+Verifying branch 539 @Trace1#529#E7893#1-0: CCost : 1e-06
+Cost : 0.001344
+No!
+Verifying branch 540 @Trace1#530#E7902#1-0: CCost : 2e-06
+Cost : 0.001343
+No!
+Verifying branch 541 @Trace1#531#E7911#1-0: CCost : 2e-06
+Cost : 0.001347
+No!
+Verifying branch 542 @Trace1#532#E7920#1-0: CCost : 2e-06
+Cost : 0.001338
+No!
+Verifying branch 543 @Trace1#533#E7930#1-0: CCost : 1e-06
+Cost : 0.001336
+No!
+Verifying branch 544 @Trace1#535#E7932#1-0: CCost : 2e-06
+Cost : 0.001425
+No!
+Verifying branch 545 @Trace1#311#E7963#1-0: CCost : 1e-06
+NNo!
+Verifying branch 546 @Trace1#422#E7992#1-0: CCost : 1e-06
+Cost : 16.6767
+Yes!
+Verifying branch 547 @Trace1#776#E8068#1-0: CCost : 7e-06
+Cost : 11.9087
+No!
+Verifying branch 548 @Trace1#777#E8074#1-0: CCost : 7e-06
+Cost : 11.8764
+No!
+Verifying branch 549 @Trace1#778#E8087#0-1: CCost : 7e-06
+Cost : 9.94208
+No!
+Verifying branch 550 @Trace1#777#E8103#1-0: CCost : 6e-06
+Cost : 12.2064
+No!
+Verifying branch 551 @Trace1#778#E8116#1-0: CCost : 6e-06
+Cost : 9.94596
+No!
+Verifying branch 552 @Trace1#779#E8128#0-1: CCost : 7e-06
+Cost : 11.8832
+No!
+Verifying branch 553 @Trace1#787#E8136#1-0: CCost : 6e-06
+Cost : 11.9701
+No!
+Verifying branch 554 @Trace1#789#E8140#1-0: CCost : 6e-06
+NNo!
+Verifying branch 555 @Trace1#795#E8140#1-0: CCost : 1e-06
+NNo!
+Verifying branch 556 @Trace1#796#E8140#1-0: CCost : 1e-06
+NNo!
+Verifying branch 557 @Trace1#796#E8229#1-0: CCost : 1e-06
+NNo!
+Verifying branch 558 @Trace1#796#E8300#0-1: CCost : 1e-06
+NNo!
+Verifying branch 559 @Trace1#795#E8300#1-0: CCost : 1e-06
+NNo!
+Verifying branch 560 @Trace1#796#E8300#1-0: CCost : 1e-06
+NNo!
+Verifying branch 561 @Trace1#797#E8335#1-0: CCost : 1e-06
+NNo!
+Verifying branch 562 @Trace1#798#E8353#1-0: CCost : 1e-06
+NNo!
+Verifying branch 563 @Trace1#798#E8368#1-0: CCost : 1e-06
+NNo!
+Verifying branch 564 @Trace1#799#E8383#1-0: CCost : 1e-06
+NNo!
+Verifying branch 565 @Trace1#796#E8385#1-0: CCost : 0
+NNo!
+Verifying branch 566 @Trace1#797#E8406#1-0: CCost : 1e-06
+NNo!
+Verifying branch 567 @Trace1#798#E8424#1-0: CCost : 1e-06
+NNo!
+Verifying branch 568 @Trace1#798#E8439#1-0: CCost : 0
+NNo!
+Verifying branch 569 @Trace1#799#E8454#1-0: CCost : 1e-06
+NNo!
+Verifying branch 570 @Trace1#796#E8456#0-1: CCost : 0
+NNo!
+Verifying branch 571 @Trace1#795#E8456#0-1: CCost : 1e-06
+NNo!
+Verifying branch 572 @Trace1#777#E8478#0-1: CCost : 2e-06
+Cost : 12.0045
+No!
+Verifying branch 573 @Trace1#776#E8486#1-0: CCost : 6e-06
+Cost : 12.0023
+No!
+Verifying branch 574 @Trace1#777#E8492#1-0: CCost : 6e-06
+Cost : 12.0016
+No!
+Verifying branch 575 @Trace1#778#E8505#1-0: CCost : 8e-06
+Cost : 9.72831
+No!
+Verifying branch 576 @Trace1#779#E8517#1-0: CCost : 7e-06
+Cost : 12.1905
+No!
+Verifying branch 577 @Trace1#781#E8521#1-0: CCost : 7e-06
+NNo!
+Verifying branch 578 @Trace1#787#E8537#0-1: CCost : 2e-06
+Cost : 12.0908
+No!
+Verifying branch 579 @Trace1#795#E8537#1-0: CCost : 6e-06
+NNo!
+Verifying branch 580 @Trace1#796#E8537#1-0: CCost : 1e-06
+NNo!
+Verifying branch 581 @Trace1#797#E8566#1-0: CCost : 2e-06
+Cost : 12.0913
+No!
+Verifying branch 582 @Trace1#798#E8584#1-0: CCost : 6e-06
+Cost : 12.0963
+No!
+Verifying branch 583 @Trace1#798#E8599#1-0: CCost : 7e-06
+Cost : 12.0957
+No!
+Verifying branch 584 @Trace1#799#E8614#1-0: CCost : 7e-06
+Cost : 12.103
+No!
+Verifying branch 585 @Trace1#796#E8618#1-0: CCost : 6e-06
+NNo!
+Verifying branch 586 @Trace1#797#E8637#1-0: CCost : 2e-06
+Cost : 12.1073
+No!
+Verifying branch 587 @Trace1#798#E8655#1-0: CCost : 7e-06
+Cost : 12.1059
+No!
+Verifying branch 588 @Trace1#798#E8670#1-0: CCost : 6e-06
+Cost : 12.1155
+No!
+Verifying branch 589 @Trace1#799#E8685#1-0: CCost : 6e-06
+Cost : 12.1074
+No!
+Verifying branch 590 @Trace1#796#E8689#0-1: CCost : 7e-06
+NNo!
+Verifying branch 591 @Trace1#795#E8689#1-0: CCost : 1e-06
+NNo!
+Verifying branch 592 @Trace1#796#E8689#1-0: CCost : 0
+NNo!
+Verifying branch 593 @Trace1#797#E8722#1-0: CCost : 2e-06
+Cost : 12.1117
+No!
+Verifying branch 594 @Trace1#797#E8724#1-0: CCost : 5e-06
+NNo!
+Verifying branch 595 @Trace1#798#E8740#1-0: CCost : 2e-06
+Cost : 12.1083
+No!
+Verifying branch 596 @Trace1#798#E8742#1-0: CCost : 6e-06
+NNo!
+Verifying branch 597 @Trace1#798#E8755#1-0: CCost : 3e-06
+Cost : 12.1252
+No!
+Verifying branch 598 @Trace1#798#E8757#1-0: CCost : 6e-06
+NNo!
+Verifying branch 599 @Trace1#799#E8770#1-0: CCost : 2e-06
+Cost : 12.121
+No!
+Verifying branch 600 @Trace1#799#E8772#1-0: CCost : 6e-06
+NNo!
+Verifying branch 601 @Trace1#796#E8774#1-0: CCost : 1e-06
+NNo!
+Verifying branch 602 @Trace1#797#E8793#1-0: CCost : 3e-06
+Cost : 12.1239
+No!
+Verifying branch 603 @Trace1#797#E8795#1-0: CCost : 6e-06
+NNo!
+Verifying branch 604 @Trace1#798#E8811#1-0: CCost : 2e-06
+Cost : 12.1226
+No!
+Verifying branch 605 @Trace1#798#E8813#1-0: CCost : 6e-06
+NNo!
+Verifying branch 606 @Trace1#798#E8826#1-0: CCost : 3e-06
+Cost : 12.1271
+No!
+Verifying branch 607 @Trace1#798#E8828#1-0: CCost : 5e-06
+NNo!
+Verifying branch 608 @Trace1#799#E8841#1-0: CCost : 3e-06
+Cost : 12.1435
+No!
+Verifying branch 609 @Trace1#799#E8843#1-0: CCost : 5e-06
+NNo!
+Verifying branch 610 @Trace1#796#E8845#0-1: CCost : 1e-06
+NNo!
+Verifying branch 611 @Trace1#795#E8845#0-1: CCost : 0
+NNo!
+Verifying branch 612 @Trace1#777#E8867#1-0: CCost : 2e-06
+Cost : 12.1337
+No!
+Verifying branch 613 @Trace1#778#E8880#0-1: CCost : 7e-06
+Cost : 9.47062
+No!
+Verifying branch 614 @Trace1#777#E8896#0-1: CCost : 7e-06
+Cost : 12.1715
+No!
+Verifying branch 615 @Trace1#776#E8904#0-1: CCost : 8e-06
+Cost : 12.173
+No!
+Verifying branch 616 @Trace1#568#E8904#0-1: CCost : 5e-06
+Cost : 0.006211
+No!
+Verifying branch 617 @Trace1#568#E8904#0-1: CCost : 3e-06
+NNo!
+Verifying branch 618 @Trace1#594#E8904#1-0: CCost : 1e-06
+NNo!
+Verifying branch 619 @Trace1#596#E8904#0-1: CCost : 2e-06
+NNo!
+Verifying branch 620 @Trace1#603#E8904#0-1: CCost : 2e-06
+Cost : 0.006236
+No!
+Verifying branch 621 @Trace1#603#E8904#0-1: CCost : 3e-06
+NNo!
+Verifying branch 622 @Trace1#608#E8994#0-1: CCost : 2e-06
+Cost : 9.45475
+No!
+Verifying branch 623 @Trace1#615#E8994#0-1: CCost : 6e-06
+Cost : 0.00626
+No!
+Verifying branch 624 @Trace1#615#E8994#0-1: CCost : 3e-06
+NNo!
+Verifying branch 625 @Trace1#675#E9011#0-1: CCost : 2e-06
+Cost : 0.006203
+No!
+Verifying branch 626 @Trace1#675#E9011#0-1: CCost : 3e-06
+NNo!
+Verifying branch 627 @Trace1#629#E9026#1-0: CCost : 2e-06
+NNo!
+Verifying branch 628 @Trace1#630#E9046#1-0: CCost : 2e-06
+Cost : 9.49338
+No!
+Verifying branch 629 @Trace1#632#E9046#0-1: CCost : 6e-06
+NNo!
+Verifying branch 630 @Trace1#517#E9075#1-0: CCost : 1e-06
+NNo!
+Verifying branch 631 @Trace1#518#E9075#1-0: CCost : 1e-06
+NNo!
+Verifying branch 632 @Trace1#519#E9075#1-0: CCost : 1e-06
+NNo!
+Verifying branch 633 @Trace1#520#E9120#1-0: CCost : 1e-06
+NNo!
+Verifying branch 634 @Trace1#563#E9120#1-0: CCost : 1e-06
+NNo!
+Verifying branch 635 @Trace1#563#E9162#1-0: CCost : 1e-06
+NNo!
+Verifying branch 636 @Trace1#563#E9182#0-1: CCost : 1e-06
+NNo!
+Verifying branch 637 @Trace1#518#E9182#0-1: CCost : 0
+NNo!
+Verifying branch 638 @Trace1#517#E9182#1-0: CCost : 0
+NNo!
+Verifying branch 639 @Trace1#518#E9182#0-1: CCost : 0
+NNo!
+Verifying branch 640 @Trace1#517#E9182#0-1: CCost : 1e-06
+NNo!
+Verifying branch 641 @Trace1#629#E9182#0-1: CCost : 1e-06
+NNo!
+Verifying branch 642 @Trace1#643#E9182#1-0: CCost : 1e-06
+NNo!
+Verifying branch 643 @Trace1#644#E9271#0-1: CCost : 2e-06
+Cost : 9.47341
+No!
+Verifying branch 644 @Trace1#643#E9271#0-1: CCost : 5e-06
+NNo!
+Verifying branch 645 @Trace1#657#E9271#0-1: CCost : 1e-06
+Cost : 0.006331
+No!
+Verifying branch 646 @Trace1#657#E9271#0-1: CCost : 3e-06
+NNo!
+Verifying branch 647 @Trace1#716#E9302#0-1: CCost : 1e-06
+Cost : 0.006246
+No!
+Verifying branch 648 @Trace1#716#E9302#0-1: CCost : 3e-06
+NNo!
+Verifying branch 649 @Trace1#669#E9302#1-0: CCost : 1e-06
+NNo!
+Verifying branch 650 @Trace1#671#E9302#0-1: CCost : 1e-06
+NNo!
+Verifying branch 651 @Trace1#678#E9337#1-0: CCost : 1e-06
+NNo!
+Verifying branch 652 @Trace1#680#E9337#0-1: CCost : 1e-06
+NNo!
+Verifying branch 653 @Trace1#686#E9370#0-1: CCost : 1e-06
+Cost : 9.50518
+No!
+Verifying branch 654 @Trace1#678#E9370#0-1: CCost : 6e-06
+NNo!
+Verifying branch 655 @Trace1#669#E9370#0-1: CCost : 1e-06
+NNo!
+Verifying branch 656 @Trace1#694#E9370#0-1: CCost : 2e-06
+Cost : 0.006393
+No!
+Verifying branch 657 @Trace1#694#E9370#0-1: CCost : 3e-06
+NNo!
+Verifying branch 658 @Trace1#594#E9370#1-0: CCost : 2e-06
+NNo!
+Verifying branch 659 @Trace1#596#E9370#0-1: CCost : 1e-06
+NNo!
+Verifying branch 660 @Trace1#603#E9370#0-1: CCost : 1e-06
+Cost : 0.006228
+No!
+Verifying branch 661 @Trace1#603#E9370#0-1: CCost : 3e-06
+NNo!
+Verifying branch 662 @Trace1#608#E9450#0-1: CCost : 2e-06
+Cost : 9.52391
+No!
+Verifying branch 663 @Trace1#615#E9450#0-1: CCost : 6e-06
+Cost : 0.006335
+No!
+Verifying branch 664 @Trace1#615#E9450#0-1: CCost : 3e-06
+NNo!
+Verifying branch 665 @Trace1#675#E9467#0-1: CCost : 2e-06
+Cost : 0.006263
+No!
+Verifying branch 666 @Trace1#675#E9467#0-1: CCost : 3e-06
+NNo!
+Verifying branch 667 @Trace1#628#E9480#1-0: CCost : 3e-06
+Cost : 12.5265
+No!
+Verifying branch 668 @Trace1#629#E9482#0-1: CCost : 6e-06
+NNo!
+Verifying branch 669 @Trace1#643#E9482#0-1: CCost : 2e-06
+NNo!
+Verifying branch 670 @Trace1#657#E9482#0-1: CCost : 1e-06
+Cost : 0.006212
+No!
+Verifying branch 671 @Trace1#657#E9482#0-1: CCost : 3e-06
+NNo!
+Verifying branch 672 @Trace1#716#E9512#0-1: CCost : 1e-06
+Cost : 0.006627
+No!
+Verifying branch 673 @Trace1#716#E9512#0-1: CCost : 3e-06
+NNo!
+Verifying branch 674 @Trace1#669#E9512#0-1: CCost : 1e-06
+NNo!
+Verifying branch 675 @Trace1#694#E9512#0-1: CCost : 2e-06
+Cost : 0.006588
+No!
+Verifying branch 676 @Trace1#694#E9512#0-1: CCost : 2e-06
+NNo!
+Verifying branch 677 @Trace1#594#E9512#0-1: CCost : 2e-06
+NNo!
+Verifying branch 678 @Trace1#470#E9512#0-1: CCost : 2e-06
+Cost : 0.006606
+No!
+Verifying branch 679 @Trace1#470#E9512#0-1: CCost : 3e-06
+NNo!
+Verifying branch 680 @Trace1#528#E9512#0-1: CCost : 2e-06
+Cost : 0.006545
+No!
+Verifying branch 681 @Trace1#528#E9512#0-1: CCost : 3e-06
+NNo!
+Verifying branch 682 @Trace1#535#E9512#0-1: CCost : 1e-06
+Cost : 0.006608
+No!
+Verifying branch 683 @Trace1#311#E9575#0-1: CCost : 3e-06
+NNo!
+Verifying branch 684 @Trace1#313#E9579#1-0: CCost : 2e-06
+NNo!
+Verifying branch 685 @Trace1#817#E9604#1-0: CCost : 1e-06
+NNo!
+Verifying branch 686 @Trace1#818#E9610#1-0: CCost : 1e-06
+NNo!
+Verifying branch 687 @Trace1#819#E9613#0-1: CCost : 1e-06
+NNo!
+Verifying branch 688 @Trace1#827#E9624#0-1: CCost : 1e-06
+NNo!
+Verifying branch 689 @Trace1#835#E9675#1-0: CCost : 3e-06
+Cost : 7.74022
+No!
+Verifying branch 690 @Trace1#835#E9677#1-0: CCost : 5e-06
+NNo!
+Verifying branch 691 @Trace1#818#E9686#1-0: CCost : 1e-06
+NNo!
+Verifying branch 692 @Trace1#819#E9689#0-1: CCost : 1e-06
+NNo!
+Verifying branch 693 @Trace1#827#E9700#0-1: CCost : 2e-06
+NNo!
+Verifying branch 694 @Trace1#835#E9751#1-0: CCost : 3e-06
+Cost : 7.92041
+No!
+Verifying branch 695 @Trace1#835#E9753#1-0: CCost : 5e-06
+NNo!
+Verifying branch 696 @Trace1#818#E9762#1-0: CCost : 1e-06
+NNo!
+Verifying branch 697 @Trace1#819#E9765#0-1: CCost : 2e-06
+NNo!
+Verifying branch 698 @Trace1#827#E9776#0-1: CCost : 1e-06
+NNo!
+Verifying branch 699 @Trace1#835#E9827#1-0: CCost : 3e-06
+Cost : 8.08103
+No!
+Verifying branch 700 @Trace1#835#E9829#1-0: CCost : 5e-06
+NNo!
+Verifying branch 701 @Trace1#818#E9838#1-0: CCost : 1e-06
+NNo!
+Verifying branch 702 @Trace1#819#E9841#0-1: CCost : 1e-06
+NNo!
+Verifying branch 703 @Trace1#827#E9852#0-1: CCost : 2e-06
+NNo!
+Verifying branch 704 @Trace1#835#E9903#1-0: CCost : 2e-06
+Cost : 8.24149
+No!
+Verifying branch 705 @Trace1#835#E9905#1-0: CCost : 6e-06
+NNo!
+Verifying branch 706 @Trace1#818#E9914#0-1: CCost : 1e-06
+NNo!
+Verifying branch 707 @Trace1#817#E9923#1-0: CCost : 1e-06
+NNo!
+Verifying branch 708 @Trace1#818#E9929#1-0: CCost : 0
+NNo!
+Verifying branch 709 @Trace1#819#E9932#0-1: CCost : 2e-06
+NNo!
+Verifying branch 710 @Trace1#827#E9943#0-1: CCost : 1e-06
+NNo!
+Verifying branch 711 @Trace1#835#E9994#1-0: CCost : 3e-06
+Cost : 8.39937
+No!
+Verifying branch 712 @Trace1#835#E9996#1-0: CCost : 5e-06
+NNo!
+Verifying branch 713 @Trace1#818#E10005#1-0: CCost : 1e-06
+NNo!
+Verifying branch 714 @Trace1#819#E10008#0-1: CCost : 1e-06
+NNo!
+Verifying branch 715 @Trace1#827#E10019#0-1: CCost : 1e-06
+NNo!
+Verifying branch 716 @Trace1#835#E10070#1-0: CCost : 3e-06
+Cost : 8.57121
+No!
+Verifying branch 717 @Trace1#835#E10072#1-0: CCost : 5e-06
+NNo!
+Verifying branch 718 @Trace1#818#E10081#1-0: CCost : 1e-06
+NNo!
+Verifying branch 719 @Trace1#819#E10084#0-1: CCost : 1e-06
+NNo!
+Verifying branch 720 @Trace1#827#E10095#0-1: CCost : 1e-06
+NNo!
+Verifying branch 721 @Trace1#835#E10146#1-0: CCost : 2e-06
+Cost : 8.72008
+No!
+Verifying branch 722 @Trace1#835#E10148#1-0: CCost : 5e-06
+NNo!
+Verifying branch 723 @Trace1#818#E10157#1-0: CCost : 1e-06
+NNo!
+Verifying branch 724 @Trace1#819#E10160#0-1: CCost : 1e-06
+NNo!
+Verifying branch 725 @Trace1#827#E10171#0-1: CCost : 1e-06
+NNo!
+Verifying branch 726 @Trace1#835#E10222#1-0: CCost : 3e-06
+Cost : 8.89389
+No!
+Verifying branch 727 @Trace1#835#E10224#1-0: CCost : 5e-06
+NNo!
+Verifying branch 728 @Trace1#818#E10233#0-1: CCost : 1e-06
+NNo!
+Verifying branch 729 @Trace1#817#E10242#1-0: CCost : 1e-06
+NNo!
+Verifying branch 730 @Trace1#818#E10248#1-0: CCost : 1e-06
+NNo!
+Verifying branch 731 @Trace1#819#E10251#0-1: CCost : 1e-06
+NNo!
+Verifying branch 732 @Trace1#827#E10262#0-1: CCost : 0
+NNo!
+Verifying branch 733 @Trace1#835#E10313#1-0: CCost : 3e-06
+Cost : 9.04796
+No!
+Verifying branch 734 @Trace1#835#E10315#1-0: CCost : 6e-06
+NNo!
+Verifying branch 735 @Trace1#818#E10324#1-0: CCost : 1e-06
+NNo!
+Verifying branch 736 @Trace1#819#E10327#0-1: CCost : 1e-06
+NNo!
+Verifying branch 737 @Trace1#827#E10338#0-1: CCost : 1e-06
+NNo!
+Verifying branch 738 @Trace1#835#E10389#1-0: CCost : 3e-06
+Cost : 9.22076
+No!
+Verifying branch 739 @Trace1#835#E10391#1-0: CCost : 5e-06
+NNo!
+Verifying branch 740 @Trace1#818#E10400#1-0: CCost : 0
+NNo!
+Verifying branch 741 @Trace1#819#E10403#0-1: CCost : 2e-06
+NNo!
+Verifying branch 742 @Trace1#827#E10414#0-1: CCost : 1e-06
+NNo!
+Verifying branch 743 @Trace1#835#E10465#1-0: CCost : 2e-06
+Cost : 9.38382
+No!
+Verifying branch 744 @Trace1#835#E10467#1-0: CCost : 5e-06
+NNo!
+Verifying branch 745 @Trace1#818#E10476#1-0: CCost : 1e-06
+NNo!
+Verifying branch 746 @Trace1#819#E10479#0-1: CCost : 1e-06
+NNo!
+Verifying branch 747 @Trace1#827#E10490#0-1: CCost : 1e-06
+NNo!
+Verifying branch 748 @Trace1#835#E10541#1-0: CCost : 3e-06
+Cost : 9.55635
+No!
+Verifying branch 749 @Trace1#835#E10543#1-0: CCost : 6e-06
+NNo!
+Verifying branch 750 @Trace1#818#E10552#0-1: CCost : 1e-06
+NNo!
+Verifying branch 751 @Trace1#817#E10561#1-0: CCost : 1e-06
+NNo!
+Verifying branch 752 @Trace1#818#E10567#1-0: CCost : 0
+NNo!
+Verifying branch 753 @Trace1#819#E10570#0-1: CCost : 1e-06
+NNo!
+Verifying branch 754 @Trace1#827#E10581#0-1: CCost : 1e-06
+NNo!
+Verifying branch 755 @Trace1#835#E10632#1-0: CCost : 2e-06
+Cost : 9.7311
+No!
+Verifying branch 756 @Trace1#835#E10634#1-0: CCost : 6e-06
+NNo!
+Verifying branch 757 @Trace1#818#E10643#1-0: CCost : 1e-06
+NNo!
+Verifying branch 758 @Trace1#819#E10646#0-1: CCost : 2e-06
+NNo!
+Verifying branch 759 @Trace1#827#E10657#0-1: CCost : 2e-06
+NNo!
+Verifying branch 760 @Trace1#835#E10708#1-0: CCost : 3e-06
+Cost : 9.89661
+No!
+Verifying branch 761 @Trace1#835#E10710#1-0: CCost : 5e-06
+NNo!
+Verifying branch 762 @Trace1#818#E10719#1-0: CCost : 0
+NNo!
+Verifying branch 763 @Trace1#819#E10722#0-1: CCost : 1e-06
+NNo!
+Verifying branch 764 @Trace1#827#E10733#0-1: CCost : 1e-06
+NNo!
+Verifying branch 765 @Trace1#835#E10784#1-0: CCost : 3e-06
+Cost : 10.0567
+No!
+Verifying branch 766 @Trace1#835#E10786#1-0: CCost : 6e-06
+NNo!
+Verifying branch 767 @Trace1#818#E10795#1-0: CCost : 1e-06
+NNo!
+Verifying branch 768 @Trace1#819#E10798#0-1: CCost : 1e-06
+NNo!
+Verifying branch 769 @Trace1#827#E10809#0-1: CCost : 1e-06
+NNo!
+Verifying branch 770 @Trace1#835#E10860#1-0: CCost : 3e-06
+Cost : 10.2276
+No!
+Verifying branch 771 @Trace1#835#E10862#1-0: CCost : 5e-06
+NNo!
+Verifying branch 772 @Trace1#818#E10871#0-1: CCost : 1e-06
+NNo!
+Verifying branch 773 @Trace1#817#E10880#0-1: CCost : 1e-06
+NNo!
+Verifying branch 774 @Trace1#318#E10887#0-1: CCost : 1e-06
+NNo!
+Verifying branch 775 @Trace1#378#E10919#0-1: CCost : 0
+NNo!
+Verifying branch 776 @Trace1#402#E10957#1-0: CCost : 1e-06
+NNo!
+Verifying branch 777 @Trace1#857#E10985#1-0: CCost : 1e-06
+NNo!
+Verifying branch 778 @Trace1#857#E11014#1-0: CCost : 0
+NNo!
+Verifying branch 779 @Trace1#857#E11030#1-0: CCost : 0
+NNo!
+Verifying branch 780 @Trace1#857#E11046#1-0: CCost : 0
+NNo!
+Verifying branch 781 @Trace1#857#E11062#0-1: CCost : 0
+NNo!
+Verifying branch 782 @Trace1#860#E11062#1-0: CCost : 1e-06
+NNo!
+Verifying branch 783 @Trace1#861#E11062#0-1: CCost : 1e-06
+NNo!
+Verifying branch 784 @Trace1#872#E11131#1-0: CCost : 3e-06
+Cost : 10.4272
+No!
+Verifying branch 785 @Trace1#872#E11136#1-0: CCost : 5e-06
+NNo!
+Verifying branch 786 @Trace1#873#E11143#1-0: CCost : 1e-06
+NNo!
+Verifying branch 787 @Trace1#874#E11143#0-1: CCost : 2e-06
+NNo!
+Verifying branch 788 @Trace1#885#E11179#1-0: CCost : 4e-06
+Cost : 10.5759
+No!
+Verifying branch 789 @Trace1#885#E11207#1-0: CCost : 5e-06
+NNo!
+Verifying branch 790 @Trace1#873#E11220#1-0: CCost : 1e-06
+NNo!
+Verifying branch 791 @Trace1#874#E11220#0-1: CCost : 1e-06
+NNo!
+Verifying branch 792 @Trace1#885#E11256#1-0: CCost : 3e-06
+Cost : 10.7005
+No!
+Verifying branch 793 @Trace1#885#E11284#1-0: CCost : 5e-06
+NNo!
+Verifying branch 794 @Trace1#873#E11297#1-0: CCost : 1e-06
+NNo!
+Verifying branch 795 @Trace1#874#E11297#0-1: CCost : 1e-06
+NNo!
+Verifying branch 796 @Trace1#885#E11333#1-0: CCost : 3e-06
+Cost : 10.683
+No!
+Verifying branch 797 @Trace1#885#E11361#1-0: CCost : 5e-06
+NNo!
+Verifying branch 798 @Trace1#873#E11374#0-1: CCost : 1e-06
+NNo!
+Verifying branch 799 @Trace1#860#E11374#1-0: CCost : 1e-06
+NNo!
+Verifying branch 800 @Trace1#861#E11374#0-1: CCost : 1e-06
+NNo!
+Verifying branch 801 @Trace1#872#E11445#1-0: CCost : 2e-06
+Cost : 10.6953
+No!
+Verifying branch 802 @Trace1#872#E11450#1-0: CCost : 4e-06
+NNo!
+Verifying branch 803 @Trace1#873#E11457#1-0: CCost : 0
+NNo!
+Verifying branch 804 @Trace1#874#E11457#0-1: CCost : 1e-06
+NNo!
+Verifying branch 805 @Trace1#885#E11493#1-0: CCost : 3e-06
+Cost : 10.8333
+No!
+Verifying branch 806 @Trace1#885#E11521#1-0: CCost : 5e-06
+NNo!
+Verifying branch 807 @Trace1#873#E11534#1-0: CCost : 1e-06
+NNo!
+Verifying branch 808 @Trace1#874#E11534#0-1: CCost : 2e-06
+NNo!
+Verifying branch 809 @Trace1#885#E11570#1-0: CCost : 2e-06
+Cost : 10.9692
+No!
+Verifying branch 810 @Trace1#885#E11598#1-0: CCost : 5e-06
+NNo!
+Verifying branch 811 @Trace1#873#E11611#0-1: CCost : 1e-06
+NNo!
+Verifying branch 812 @Trace1#860#E11611#1-0: CCost : 0
+NNo!
+Verifying branch 813 @Trace1#861#E11611#0-1: CCost : 1e-06
+NNo!
+Verifying branch 814 @Trace1#872#E11682#1-0: CCost : 3e-06
+Cost : 11.0998
+No!
+Verifying branch 815 @Trace1#872#E11687#1-0: CCost : 5e-06
+NNo!
+Verifying branch 816 @Trace1#873#E11694#1-0: CCost : 1e-06
+NNo!
+Verifying branch 817 @Trace1#874#E11694#0-1: CCost : 2e-06
+NNo!
+Verifying branch 818 @Trace1#885#E11730#1-0: CCost : 3e-06
+Cost : 11.2433
+No!
+Verifying branch 819 @Trace1#885#E11758#1-0: CCost : 6e-06
+NNo!
+Verifying branch 820 @Trace1#873#E11771#0-1: CCost : 0
+NNo!
+Verifying branch 821 @Trace1#860#E11771#1-0: CCost : 0
+NNo!
+Verifying branch 822 @Trace1#861#E11771#0-1: CCost : 2e-06
+NNo!
+Verifying branch 823 @Trace1#872#E11842#1-0: CCost : 3e-06
+Cost : 11.384
+No!
+Verifying branch 824 @Trace1#872#E11847#1-0: CCost : 5e-06
+NNo!
+Verifying branch 825 @Trace1#873#E11854#0-1: CCost : 2e-06
+NNo!
+Verifying branch 826 @Trace1#860#E11854#0-1: CCost : 0
+NNo!
+Verifying branch 827 @Trace1#889#E11854#1-0: CCost : 1e-06
+NNo!
+Verifying branch 828 @Trace1#890#E11854#1-0: CCost : 1e-06
+NNo!
+Verifying branch 829 @Trace1#891#E11854#0-1: CCost : 1e-06
+NNo!
+Verifying branch 830 @Trace1#899#E11892#0-1: CCost : 1e-06
+NNo!
+Verifying branch 831 @Trace1#907#E11920#1-0: CCost : 3e-06
+Cost : 11.5291
+No!
+Verifying branch 832 @Trace1#907#E11948#1-0: CCost : 6e-06
+NNo!
+Verifying branch 833 @Trace1#907#E11950#1-0: CCost : 1e-06
+NNo!
+Verifying branch 834 @Trace1#890#E11961#1-0: CCost : 0
+NNo!
+Verifying branch 835 @Trace1#891#E11961#0-1: CCost : 1e-06
+NNo!
+Verifying branch 836 @Trace1#899#E11978#0-1: CCost : 1e-06
+NNo!
+Verifying branch 837 @Trace1#907#E12006#1-0: CCost : 3e-06
+Cost : 11.6994
+No!
+Verifying branch 838 @Trace1#907#E12034#1-0: CCost : 7e-06
+NNo!
+Verifying branch 839 @Trace1#907#E12036#1-0: CCost : 1e-06
+NNo!
+Verifying branch 840 @Trace1#890#E12047#1-0: CCost : 1e-06
+NNo!
+Verifying branch 841 @Trace1#891#E12047#0-1: CCost : 1e-06
+NNo!
+Verifying branch 842 @Trace1#899#E12064#0-1: CCost : 1e-06
+NNo!
+Verifying branch 843 @Trace1#907#E12092#1-0: CCost : 3e-06
+Cost : 11.8665
+No!
+Verifying branch 844 @Trace1#907#E12120#1-0: CCost : 6e-06
+NNo!
+Verifying branch 845 @Trace1#907#E12122#1-0: CCost : 1e-06
+NNo!
+Verifying branch 846 @Trace1#890#E12133#0-1: CCost : 1e-06
+NNo!
+Verifying branch 847 @Trace1#889#E12133#1-0: CCost : 0
+NNo!
+Verifying branch 848 @Trace1#890#E12133#1-0: CCost : 1e-06
+NNo!
+Verifying branch 849 @Trace1#891#E12133#0-1: CCost : 1e-06
+NNo!
+Verifying branch 850 @Trace1#899#E12163#0-1: CCost : 1e-06
+NNo!
+Verifying branch 851 @Trace1#907#E12191#1-0: CCost : 3e-06
+Cost : 12.0507
+No!
+Verifying branch 852 @Trace1#907#E12219#1-0: CCost : 6e-06
+NNo!
+Verifying branch 853 @Trace1#907#E12221#1-0: CCost : 1e-06
+NNo!
+Verifying branch 854 @Trace1#890#E12232#1-0: CCost : 1e-06
+NNo!
+Verifying branch 855 @Trace1#891#E12232#0-1: CCost : 1e-06
+NNo!
+Verifying branch 856 @Trace1#899#E12249#0-1: CCost : 1e-06
+NNo!
+Verifying branch 857 @Trace1#907#E12277#1-0: CCost : 3e-06
+Cost : 12.2131
+No!
+Verifying branch 858 @Trace1#907#E12305#1-0: CCost : 6e-06
+NNo!
+Verifying branch 859 @Trace1#907#E12307#1-0: CCost : 1e-06
+NNo!
+Verifying branch 860 @Trace1#890#E12318#0-1: CCost : 1e-06
+NNo!
+Verifying branch 861 @Trace1#889#E12318#1-0: CCost : 0
+NNo!
+Verifying branch 862 @Trace1#890#E12318#1-0: CCost : 1e-06
+NNo!
+Verifying branch 863 @Trace1#891#E12318#0-1: CCost : 2e-06
+NNo!
+Verifying branch 864 @Trace1#899#E12348#0-1: CCost : 1e-06
+NNo!
+Verifying branch 865 @Trace1#907#E12376#1-0: CCost : 3e-06
+Cost : 12.3992
+No!
+Verifying branch 866 @Trace1#907#E12404#1-0: CCost : 6e-06
+NNo!
+Verifying branch 867 @Trace1#907#E12406#1-0: CCost : 1e-06
+NNo!
+Verifying branch 868 @Trace1#890#E12417#0-1: CCost : 1e-06
+NNo!
+Verifying branch 869 @Trace1#889#E12417#1-0: CCost : 1e-06
+NNo!
+Verifying branch 870 @Trace1#890#E12417#0-1: CCost : 0
+NNo!
+Verifying branch 871 @Trace1#889#E12417#0-1: CCost : 1e-06
+NNo!
+Verifying branch 872 @Trace1#912#E12417#1-0: CCost : 0
+NNo!
+Verifying branch 873 @Trace1#912#E12456#1-0: CCost : 0
+NNo!
+Verifying branch 874 @Trace1#912#E12478#1-0: CCost : 0
+NNo!
+Verifying branch 875 @Trace1#912#E12500#1-0: CCost : 0
+NNo!
+Verifying branch 876 @Trace1#912#E12522#0-1: CCost : 0
+NNo!
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -62024.6 122253.8      0.4 
+ 22019.9  35000.2 -51161.0 103007.7 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          3314          2751          3597          3502          1572
+
+                            TIMING INFORMATION
+Start time                        : 1457260486225047
+Initialization finish time        : 1457260486235937
+Overall finish time               : 1457260486239391
+Total time with initialization    :            59086
+Total time without initialization :            14770
+
+                             TESTING RESULTS
+TEST FAILED: (0.52704 diff)
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 153
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G1000_29086480L1
+DTAMhybrid not find
+noTaintPTS : G1000_29086480L2
+DTAMhybrid not find
+noTaintPTS : G1000_29086480L3
+DTAMhybrid not find
+noTaintPTS : G1000_29086480L4
+DTAMhybrid not find
+noTaintPTS : G1000_29086480L5
+DTAMhybrid not find
+noTaintPTS : G1000_29086480S2
+DTAMhybrid not find
+noTaintPTS : G1000_29086480S3
+DTAMhybrid not find
+noTaintPTS : G1000_29086480S4
+DTAMhybrid not find
+noTaintPTS : G1000_29086480S5
+DTAMhybrid not find
+noTaintPTS : G1000_29086488L1
+DTAMhybrid not find
+noTaintPTS : G1000_29086488L2
+DTAMhybrid not find
+noTaintPTS : G1000_29086488L3
+DTAMhybrid not find
+noTaintPTS : G1000_29086488L4
+DTAMhybrid not find
+noTaintPTS : G1000_29086488L5
+DTAMhybrid not find
+noTaintPTS : G1000_29086488S2
+DTAMhybrid not find
+noTaintPTS : G1000_29086488S3
+DTAMhybrid not find
+noTaintPTS : G1000_29086488S4
+DTAMhybrid not find
+noTaintPTS : G1000_29086488S5
+DTAMhybrid not find
+noTaintPTS : G1000_29086496L1
+DTAMhybrid not find
+noTaintPTS : G1000_29086496L2
+DTAMhybrid not find
+noTaintPTS : G1000_29086496L3
+DTAMhybrid not find
+noTaintPTS : G1000_29086496L4
+DTAMhybrid not find
+noTaintPTS : G1000_29086496L5
+DTAMhybrid not find
+noTaintPTS : G1000_29086496S2
+DTAMhybrid not find
+noTaintPTS : G1000_29086496S3
+DTAMhybrid not find
+noTaintPTS : G1000_29086496S4
+DTAMhybrid not find
+noTaintPTS : G1000_29086496S5
+DTAMhybrid not find
+noTaintPTS : G1000_29086504L1
+DTAMhybrid not find
+noTaintPTS : G1000_29086504L2
+DTAMhybrid not find
+noTaintPTS : G1000_29086504L3
+DTAMhybrid not find
+noTaintPTS : G1000_29086504L4
+DTAMhybrid not find
+noTaintPTS : G1000_29086504L5
+DTAMhybrid not find
+noTaintPTS : G1000_29086504S2
+DTAMhybrid not find
+noTaintPTS : G1000_29086504S3
+DTAMhybrid not find
+noTaintPTS : G1000_29086504S4
+DTAMhybrid not find
+noTaintPTS : G1000_29086504S5
+DTAMhybrid not find
+noTaintPTS : G11166_32713024S1
+DTAMhybrid not find
+noTaintPTS : G11166_32713032S1
+DTAMhybrid not find
+noTaintPTS : G11166_32713040S1
+DTAMhybrid not find
+noTaintPTS : G11166_32713048S1
+DTAMhybrid not find
+noTaintPTS : G590_28941312L1
+DTAMhybrid not find
+noTaintPTS : G590_28941312L2
+DTAMhybrid not find
+noTaintPTS : G590_28941312L3
+DTAMhybrid not find
+noTaintPTS : G590_28941312S2
+DTAMhybrid not find
+noTaintPTS : G590_28941328L1
+DTAMhybrid not find
+noTaintPTS : G590_28941328L2
+DTAMhybrid not find
+noTaintPTS : G590_28941336L1
+DTAMhybrid not find
+noTaintPTS : G590_28941336L2
+DTAMhybrid not find
+noTaintPTS : G590_28941336L3
+DTAMhybrid not find
+noTaintPTS : G590_28941336S2
+DTAMhybrid not find
+noTaintPTS : G590_28941344L1
+DTAMhybrid not find
+noTaintPTS : G590_28941344L2
+DTAMhybrid not find
+noTaintPTS : G590_28941344L3
+DTAMhybrid not find
+noTaintPTS : G590_28941344S2
+DTAMhybrid not find
+noTaintPTS : G590_28941352L1
+DTAMhybrid not find
+noTaintPTS : G590_28941352L2
+DTAMhybrid not find
+noTaintPTS : G590_28941360L1
+DTAMhybrid not find
+noTaintPTS : G590_28941360L2
+DTAMhybrid not find
+noTaintPTS : G590_28941368L1
+DTAMhybrid not find
+noTaintPTS : G590_28941368L2
+DTAMhybrid not find
+noTaintPTS : G590_28941368L3
+DTAMhybrid not find
+noTaintPTS : G590_28941368S2
+DTAMhybrid not find
+noTaintPTS : G636_28959744L1
+DTAMhybrid not find
+noTaintPTS : G636_28959744L2
+DTAMhybrid not find
+noTaintPTS : G636_28959752L1
+DTAMhybrid not find
+noTaintPTS : G636_28959752L2
+DTAMhybrid not find
+noTaintPTS : G636_28959760L1
+DTAMhybrid not find
+noTaintPTS : G636_28959760L2
+DTAMhybrid not find
+noTaintPTS : G636_28959768L1
+DTAMhybrid not find
+noTaintPTS : G636_28959768L2
+DTAMhybrid not find
+noTaintPTS : G636_28959792L1
+DTAMhybrid not find
+noTaintPTS : G636_28959792L2
+DTAMhybrid not find
+noTaintPTS : G636_28959800L1
+DTAMhybrid not find
+noTaintPTS : G636_28959800L2
+DTAMhybrid not find
+
+ size : 178
+DTAMSerial name : G1005_29089176L9
+DTAMSerial name : G1005_29089176S8
+DTAMSerial name : G11166_32713024L2
+DTAMSerial name : G11166_32713024L3
+DTAMSerial name : G11166_32713024L4
+DTAMSerial name : G11166_32713024L5
+DTAMSerial name : G11166_32713024L6
+DTAMSerial name : G11166_32713024L7
+DTAMSerial name : G11166_32713024L8
+DTAMSerial name : G11166_32713024S2
+DTAMSerial name : G11166_32713024S3
+DTAMSerial name : G11166_32713024S4
+DTAMSerial name : G11166_32713024S5
+DTAMSerial name : G11166_32713032L2
+DTAMSerial name : G11166_32713032L3
+DTAMSerial name : G11166_32713032L4
+DTAMSerial name : G11166_32713032L5
+DTAMSerial name : G11166_32713032L6
+DTAMSerial name : G11166_32713032L7
+DTAMSerial name : G11166_32713032L8
+DTAMSerial name : G11166_32713032S2
+DTAMSerial name : G11166_32713032S3
+DTAMSerial name : G11166_32713032S4
+DTAMSerial name : G11166_32713032S5
+DTAMSerial name : G11166_32713040L2
+DTAMSerial name : G11166_32713040L3
+DTAMSerial name : G11166_32713040L4
+DTAMSerial name : G11166_32713040L5
+DTAMSerial name : G11166_32713040L6
+DTAMSerial name : G11166_32713040L7
+DTAMSerial name : G11166_32713040L8
+DTAMSerial name : G11166_32713040S2
+DTAMSerial name : G11166_32713040S3
+DTAMSerial name : G11166_32713040S4
+DTAMSerial name : G11166_32713040S5
+DTAMSerial name : G11166_32713048L2
+DTAMSerial name : G11166_32713048L3
+DTAMSerial name : G11166_32713048L4
+DTAMSerial name : G11166_32713048L5
+DTAMSerial name : G11166_32713048L6
+DTAMSerial name : G11166_32713048L7
+DTAMSerial name : G11166_32713048L8
+DTAMSerial name : G11166_32713048S2
+DTAMSerial name : G11166_32713048S3
+DTAMSerial name : G11166_32713048S4
+DTAMSerial name : G11166_32713048S5
+DTAMSerial name : G590_28941312L10
+DTAMSerial name : G590_28941312L11
+DTAMSerial name : G590_28941312L6
+DTAMSerial name : G590_28941312L7
+DTAMSerial name : G590_28941312L8
+DTAMSerial name : G590_28941312L9
+DTAMSerial name : G590_28941312S4
+DTAMSerial name : G590_28941320L5
+DTAMSerial name : G590_28941320L6
+DTAMSerial name : G590_28941320L7
+DTAMSerial name : G590_28941320L8
+DTAMSerial name : G590_28941320L9
+DTAMSerial name : G590_28941328L5
+DTAMSerial name : G590_28941328L6
+DTAMSerial name : G590_28941328L7
+DTAMSerial name : G590_28941328L8
+DTAMSerial name : G590_28941328L9
+DTAMSerial name : G590_28941328S3
+DTAMSerial name : G590_28941336L10
+DTAMSerial name : G590_28941336L6
+DTAMSerial name : G590_28941336L7
+DTAMSerial name : G590_28941336L8
+DTAMSerial name : G590_28941336L9
+DTAMSerial name : G590_28941336S4
+DTAMSerial name : G590_28941344L10
+DTAMSerial name : G590_28941344L11
+DTAMSerial name : G590_28941344L6
+DTAMSerial name : G590_28941344L7
+DTAMSerial name : G590_28941344L8
+DTAMSerial name : G590_28941344L9
+DTAMSerial name : G590_28941344S4
+DTAMSerial name : G590_28941344S5
+DTAMSerial name : G590_28941344S6
+DTAMSerial name : G590_28941352L5
+DTAMSerial name : G590_28941352L6
+DTAMSerial name : G590_28941352L7
+DTAMSerial name : G590_28941352L8
+DTAMSerial name : G590_28941352L9
+DTAMSerial name : G590_28941352S3
+DTAMSerial name : G590_28941352S4
+DTAMSerial name : G590_28941360L10
+DTAMSerial name : G590_28941360L5
+DTAMSerial name : G590_28941360L6
+DTAMSerial name : G590_28941360L7
+DTAMSerial name : G590_28941360L8
+DTAMSerial name : G590_28941360L9
+DTAMSerial name : G590_28941360S3
+DTAMSerial name : G590_28941360S4
+DTAMSerial name : G590_28941360S5
+DTAMSerial name : G590_28941368L10
+DTAMSerial name : G590_28941368L6
+DTAMSerial name : G590_28941368L7
+DTAMSerial name : G590_28941368L8
+DTAMSerial name : G590_28941368L9
+DTAMSerial name : G590_28941368S4
+DTAMSerial name : G590_28941368S5
+DTAMSerial name : G590_28941368S6
+DTAMSerial name : G636_28959744L4
+DTAMSerial name : G636_28959744L5
+DTAMSerial name : G636_28959744L6
+DTAMSerial name : G636_28959744L7
+DTAMSerial name : G636_28959744L8
+DTAMSerial name : G636_28959744L9
+DTAMSerial name : G636_28959744S2
+DTAMSerial name : G636_28959744S3
+DTAMSerial name : G636_28959752L10
+DTAMSerial name : G636_28959752L4
+DTAMSerial name : G636_28959752L5
+DTAMSerial name : G636_28959752L6
+DTAMSerial name : G636_28959752L7
+DTAMSerial name : G636_28959752L8
+DTAMSerial name : G636_28959752L9
+DTAMSerial name : G636_28959752S2
+DTAMSerial name : G636_28959752S3
+DTAMSerial name : G636_28959752S4
+DTAMSerial name : G636_28959760L4
+DTAMSerial name : G636_28959760L5
+DTAMSerial name : G636_28959760L6
+DTAMSerial name : G636_28959760L7
+DTAMSerial name : G636_28959760L8
+DTAMSerial name : G636_28959760L9
+DTAMSerial name : G636_28959760S2
+DTAMSerial name : G636_28959760S3
+DTAMSerial name : G636_28959768L10
+DTAMSerial name : G636_28959768L4
+DTAMSerial name : G636_28959768L5
+DTAMSerial name : G636_28959768L6
+DTAMSerial name : G636_28959768L7
+DTAMSerial name : G636_28959768L8
+DTAMSerial name : G636_28959768L9
+DTAMSerial name : G636_28959768S2
+DTAMSerial name : G636_28959768S3
+DTAMSerial name : G636_28959768S4
+DTAMSerial name : G636_28959776L7
+DTAMSerial name : G636_28959776L8
+DTAMSerial name : G636_28959776L9
+DTAMSerial name : G636_28959784L7
+DTAMSerial name : G636_28959784L8
+DTAMSerial name : G636_28959784L9
+DTAMSerial name : G636_28959792L7
+DTAMSerial name : G636_28959792L8
+DTAMSerial name : G636_28959792L9
+DTAMSerial name : G636_28959792S3
+DTAMSerial name : G636_28959800L7
+DTAMSerial name : G636_28959800L8
+DTAMSerial name : G636_28959800L9
+DTAMSerial name : G636_28959800S3
+taintPTS name : G1005_29089176L1
+taintPTS name : G1005_29089176L2
+taintPTS name : G1005_29089176L3
+taintPTS name : G1005_29089176L4
+taintPTS name : G1005_29089176S2
+taintPTS name : G1005_29089176S3
+taintPTS name : G1005_29089176S4
+taintPTS name : G1005_29089176S7
+taintPTS name : G590_28941312S3
+taintPTS name : G590_28941328S2
+taintPTS name : G590_28941336S3
+taintPTS name : G590_28941344S3
+taintPTS name : G590_28941352S2
+taintPTS name : G590_28941360S2
+taintPTS name : G590_28941368S3
+taintPTS name : G636_28959744L3
+taintPTS name : G636_28959752L3
+taintPTS name : G636_28959760L3
+taintPTS name : G636_28959768L3
+taintPTS name : G636_28959792L3
+taintPTS name : G636_28959792L4
+taintPTS name : G636_28959792S2
+taintPTS name : G636_28959800L3
+taintPTS name : G636_28959800L4
+taintPTS name : G636_28959800S2
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#422#E5133#0-1.txt
+************************************************************************
+
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -2027680873.9 1532044348.9      0.2 
+ 22019.9 -816013821.5 616496283.8  85350.1 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          6208          1355          1929          1876           278
+
+                            TIMING INFORMATION
+Start time                        : 1457260489203143
+Initialization finish time        : 1457260489227203
+Overall finish time               : 1457260489233661
+Total time with initialization    :            30518
+Total time without initialization :             6458
+
+                             TESTING RESULTS
+TEST FAILED: (1.55629 diff)
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -2027680873.9 1532044348.9      0.2 
+ 22019.9 -816013821.5 616496283.8  85350.1 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          2865          1355          1929          1876           278
+
+                            TIMING INFORMATION
+Start time                        : 1457260489248934
+Initialization finish time        : 1457260489261673
+Overall finish time               : 1457260489264665
+Total time with initialization    :            30518
+Total time without initialization :             6458
+
+                             TESTING RESULTS
+TEST FAILED: (1.55629 diff)
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 876
+Verifying branch 1 @Trace2#169#E83#1-0: CCost : 7e-06
+NNo!
+Verifying branch 2 @Trace2#174#E98#0-1: CCost : 4e-06
+Cost : 0.495943
+No!
+Verifying branch 3 @Trace2#179#E102#1-0: CCost : 6e-06
+NNo!
+Verifying branch 4 @Trace2#193#E135#1-0: CCost : 1e-06
+NNo!
+Verifying branch 5 @Trace2#193#E151#1-0: CCost : 1e-06
+NNo!
+Verifying branch 6 @Trace2#193#E167#0-1: CCost : 1e-06
+NNo!
+Verifying branch 7 @Trace2#197#E173#1-0: CCost : 3e-06
+Cost : 0.358444
+No!
+Verifying branch 8 @Trace2#198#E179#1-0: CCost : 6e-06
+Cost : 0.362484
+No!
+Verifying branch 9 @Trace2#200#E202#0-1: CCost : 6e-06
+Cost : 0.469608
+No!
+Verifying branch 10 @Trace2#202#E207#0-1: CCost : 7e-06
+Cost : 0.477411
+No!
+Verifying branch 11 @Trace2#202#E212#0-1: CCost : 6e-06
+Cost : 0.481487
+No!
+Verifying branch 12 @Trace2#207#E224#1-0: CCost : 4e-06
+NNo!
+Verifying branch 13 @Trace2#198#E234#1-0: CCost : 3e-06
+Cost : 0.420451
+No!
+Verifying branch 14 @Trace2#200#E257#0-1: CCost : 6e-06
+Cost : 0.464756
+No!
+Verifying branch 15 @Trace2#202#E262#0-1: CCost : 7e-06
+Cost : 0.435124
+No!
+Verifying branch 16 @Trace2#202#E267#1-0: CCost : 7e-06
+Cost : 0.359903
+No!
+Verifying branch 17 @Trace2#207#E279#1-0: CCost : 4e-06
+NNo!
+Verifying branch 18 @Trace2#198#E289#0-1: CCost : 3e-06
+Cost : 0.393059
+No!
+Verifying branch 19 @Trace2#197#E297#1-0: CCost : 6e-06
+Cost : 0.392988
+No!
+Verifying branch 20 @Trace2#198#E303#1-0: CCost : 7e-06
+Cost : 0.397933
+No!
+Verifying branch 21 @Trace2#200#E326#1-0: CCost : 7e-06
+Cost : 0.397632
+No!
+Verifying branch 22 @Trace2#200#E331#0-1: CCost : 7e-06
+Cost : 0.500798
+No!
+Verifying branch 23 @Trace2#202#E336#1-0: CCost : 7e-06
+Cost : 0.38262
+No!
+Verifying branch 24 @Trace2#207#E348#1-0: CCost : 5e-06
+NNo!
+Verifying branch 25 @Trace2#198#E358#1-0: CCost : 3e-06
+Cost : 0.414372
+No!
+Verifying branch 26 @Trace2#200#E381#1-0: CCost : 6e-06
+Cost : 0.415522
+No!
+Verifying branch 27 @Trace2#200#E386#1-0: CCost : 6e-06
+Cost : 0.42037
+No!
+Verifying branch 28 @Trace2#207#E398#1-0: CCost : 4e-06
+NNo!
+Verifying branch 29 @Trace2#198#E408#0-1: CCost : 4e-06
+Cost : 0.452309
+No!
+Verifying branch 30 @Trace2#197#E416#0-1: CCost : 7e-06
+Cost : 0.44004
+No!
+Verifying branch 31 @Trace2#210#E422#1-0: CCost : 4e-06
+NNo!
+Verifying branch 32 @Trace2#210#E470#1-0: CCost : 1e-06
+NNo!
+Verifying branch 33 @Trace2#210#E518#0-1: CCost : 0
+NNo!
+Verifying branch 34 @Trace2#229#E534#1-0: CCost : 3e-06
+Cost : 0.442575
+No!
+Verifying branch 35 @Trace2#230#E540#1-0: CCost : 7e-06
+Cost : 0.451468
+No!
+Verifying branch 36 @Trace2#232#E563#1-0: CCost : 4e-06
+NNo!
+Verifying branch 37 @Trace2#233#E575#0-1: CCost : 3e-06
+Cost : 0.611869
+No!
+Verifying branch 38 @Trace2#235#E580#0-1: CCost : 6e-06
+Cost : 0.579634
+No!
+Verifying branch 39 @Trace2#235#E585#0-1: CCost : 7e-06
+Cost : 0.597157
+No!
+Verifying branch 40 @Trace2#240#E596#1-0: CCost : 5e-06
+NNo!
+Verifying branch 41 @Trace2#240#E598#1-0: CCost : 1e-06
+NNo!
+Verifying branch 42 @Trace2#230#E606#1-0: CCost : 3e-06
+Cost : 0.497704
+No!
+Verifying branch 43 @Trace2#232#E629#1-0: CCost : 4e-06
+NNo!
+Verifying branch 44 @Trace2#232#E637#1-0: CCost : 3e-06
+Cost : 0.510456
+No!
+Verifying branch 45 @Trace2#233#E641#0-1: CCost : 7e-06
+Cost : 0.686691
+No!
+Verifying branch 46 @Trace2#235#E646#0-1: CCost : 7e-06
+Cost : 0.639893
+No!
+Verifying branch 47 @Trace2#235#E651#1-0: CCost : 7e-06
+Cost : 0.520143
+No!
+Verifying branch 48 @Trace2#240#E662#1-0: CCost : 4e-06
+NNo!
+Verifying branch 49 @Trace2#240#E664#1-0: CCost : 1e-06
+NNo!
+Verifying branch 50 @Trace2#230#E672#0-1: CCost : 3e-06
+Cost : 0.524831
+No!
+Verifying branch 51 @Trace2#229#E680#1-0: CCost : 7e-06
+Cost : 0.546193
+No!
+Verifying branch 52 @Trace2#230#E686#1-0: CCost : 7e-06
+Cost : 0.52043
+No!
+Verifying branch 53 @Trace2#232#E709#1-0: CCost : 4e-06
+NNo!
+Verifying branch 54 @Trace2#233#E721#1-0: CCost : 3e-06
+Cost : 0.582354
+No!
+Verifying branch 55 @Trace2#233#E726#0-1: CCost : 6e-06
+Cost : 0.723631
+No!
+Verifying branch 56 @Trace2#235#E731#1-0: CCost : 7e-06
+Cost : 0.586402
+No!
+Verifying branch 57 @Trace2#240#E742#1-0: CCost : 5e-06
+NNo!
+Verifying branch 58 @Trace2#240#E744#1-0: CCost : 1e-06
+NNo!
+Verifying branch 59 @Trace2#230#E752#1-0: CCost : 3e-06
+Cost : 0.570671
+No!
+Verifying branch 60 @Trace2#232#E775#1-0: CCost : 5e-06
+NNo!
+Verifying branch 61 @Trace2#232#E783#1-0: CCost : 3e-06
+Cost : 0.608603
+No!
+Verifying branch 62 @Trace2#233#E787#1-0: CCost : 6e-06
+Cost : 0.606015
+No!
+Verifying branch 63 @Trace2#233#E792#1-0: CCost : 7e-06
+Cost : 0.607102
+No!
+Verifying branch 64 @Trace2#240#E803#1-0: CCost : 5e-06
+NNo!
+Verifying branch 65 @Trace2#240#E805#1-0: CCost : 1e-06
+NNo!
+Verifying branch 66 @Trace2#230#E813#0-1: CCost : 3e-06
+Cost : 0.630228
+No!
+Verifying branch 67 @Trace2#229#E821#0-1: CCost : 7e-06
+Cost : 0.629064
+No!
+Verifying branch 68 @Trace2#715#E955#1-0: CCost : 4e-06
+NNo!
+Verifying branch 69 @Trace2#716#E961#1-0: CCost : 1e-06
+NNo!
+Verifying branch 70 @Trace2#717#E964#0-1: CCost : 2e-06
+NNo!
+Verifying branch 71 @Trace2#725#E975#0-1: CCost : 1e-06
+NNo!
+Verifying branch 72 @Trace2#733#E1029#1-0: CCost : 3e-06
+Cost : 0.888042
+No!
+Verifying branch 73 @Trace2#733#E1031#1-0: CCost : 4e-06
+NNo!
+Verifying branch 74 @Trace2#735#E1040#1-0: CCost : 4e-06
+Cost : 0.000712
+No!
+Verifying branch 75 @Trace2#735#E1042#1-0: CCost : 1e-06
+NNo!
+Verifying branch 76 @Trace2#716#E1053#1-0: CCost : 1e-06
+NNo!
+Verifying branch 77 @Trace2#717#E1056#0-1: CCost : 2e-06
+NNo!
+Verifying branch 78 @Trace2#725#E1067#0-1: CCost : 2e-06
+NNo!
+Verifying branch 79 @Trace2#733#E1121#1-0: CCost : 2e-06
+Cost : 1.01772
+No!
+Verifying branch 80 @Trace2#733#E1123#1-0: CCost : 5e-06
+NNo!
+Verifying branch 81 @Trace2#716#E1135#1-0: CCost : 1e-06
+NNo!
+Verifying branch 82 @Trace2#717#E1138#0-1: CCost : 2e-06
+NNo!
+Verifying branch 83 @Trace2#725#E1149#0-1: CCost : 1e-06
+NNo!
+Verifying branch 84 @Trace2#733#E1203#1-0: CCost : 2e-06
+Cost : 1.2195
+No!
+Verifying branch 85 @Trace2#733#E1205#1-0: CCost : 5e-06
+NNo!
+Verifying branch 86 @Trace2#716#E1217#1-0: CCost : 1e-06
+NNo!
+Verifying branch 87 @Trace2#717#E1220#0-1: CCost : 1e-06
+NNo!
+Verifying branch 88 @Trace2#725#E1231#0-1: CCost : 1e-06
+NNo!
+Verifying branch 89 @Trace2#733#E1285#1-0: CCost : 2e-06
+Cost : 1.47514
+No!
+Verifying branch 90 @Trace2#733#E1287#1-0: CCost : 4e-06
+NNo!
+Verifying branch 91 @Trace2#716#E1299#0-1: CCost : 1e-06
+NNo!
+Verifying branch 92 @Trace2#715#E1307#1-0: CCost : 1e-06
+NNo!
+Verifying branch 93 @Trace2#716#E1313#1-0: CCost : 0
+NNo!
+Verifying branch 94 @Trace2#717#E1316#0-1: CCost : 2e-06
+NNo!
+Verifying branch 95 @Trace2#725#E1327#0-1: CCost : 1e-06
+NNo!
+Verifying branch 96 @Trace2#733#E1381#1-0: CCost : 3e-06
+Cost : 1.67179
+No!
+Verifying branch 97 @Trace2#733#E1383#1-0: CCost : 5e-06
+NNo!
+Verifying branch 98 @Trace2#716#E1395#1-0: CCost : 1e-06
+NNo!
+Verifying branch 99 @Trace2#717#E1398#0-1: CCost : 2e-06
+NNo!
+Verifying branch 100 @Trace2#725#E1409#0-1: CCost : 2e-06
+NNo!
+Verifying branch 101 @Trace2#733#E1463#1-0: CCost : 3e-06
+Cost : 1.59051
+No!
+Verifying branch 102 @Trace2#733#E1465#1-0: CCost : 5e-06
+NNo!
+Verifying branch 103 @Trace2#735#E1474#1-0: CCost : 4e-06
+Cost : 0.000752
+No!
+Verifying branch 104 @Trace2#735#E1476#1-0: CCost : 1e-06
+NNo!
+Verifying branch 105 @Trace2#716#E1487#1-0: CCost : 1e-06
+NNo!
+Verifying branch 106 @Trace2#717#E1490#0-1: CCost : 2e-06
+NNo!
+Verifying branch 107 @Trace2#725#E1501#0-1: CCost : 1e-06
+NNo!
+Verifying branch 108 @Trace2#733#E1555#1-0: CCost : 2e-06
+Cost : 1.75113
+No!
+Verifying branch 109 @Trace2#733#E1557#1-0: CCost : 5e-06
+NNo!
+Verifying branch 110 @Trace2#716#E1569#1-0: CCost : 1e-06
+NNo!
+Verifying branch 111 @Trace2#717#E1572#0-1: CCost : 2e-06
+NNo!
+Verifying branch 112 @Trace2#725#E1583#0-1: CCost : 1e-06
+NNo!
+Verifying branch 113 @Trace2#733#E1637#1-0: CCost : 3e-06
+Cost : 1.95592
+No!
+Verifying branch 114 @Trace2#733#E1639#1-0: CCost : 5e-06
+NNo!
+Verifying branch 115 @Trace2#716#E1651#0-1: CCost : 1e-06
+NNo!
+Verifying branch 116 @Trace2#715#E1659#1-0: CCost : 1e-06
+NNo!
+Verifying branch 117 @Trace2#716#E1665#1-0: CCost : 1e-06
+NNo!
+Verifying branch 118 @Trace2#717#E1668#0-1: CCost : 1e-06
+NNo!
+Verifying branch 119 @Trace2#725#E1679#0-1: CCost : 1e-06
+NNo!
+Verifying branch 120 @Trace2#733#E1733#1-0: CCost : 3e-06
+Cost : 2.16599
+No!
+Verifying branch 121 @Trace2#733#E1735#1-0: CCost : 5e-06
+NNo!
+Verifying branch 122 @Trace2#716#E1747#1-0: CCost : 1e-06
+NNo!
+Verifying branch 123 @Trace2#717#E1750#0-1: CCost : 1e-06
+NNo!
+Verifying branch 124 @Trace2#725#E1761#0-1: CCost : 2e-06
+NNo!
+Verifying branch 125 @Trace2#733#E1815#1-0: CCost : 3e-06
+Cost : 2.39077
+No!
+Verifying branch 126 @Trace2#733#E1817#1-0: CCost : 5e-06
+NNo!
+Verifying branch 127 @Trace2#716#E1829#1-0: CCost : 1e-06
+NNo!
+Verifying branch 128 @Trace2#717#E1832#0-1: CCost : 2e-06
+NNo!
+Verifying branch 129 @Trace2#725#E1843#0-1: CCost : 1e-06
+NNo!
+Verifying branch 130 @Trace2#733#E1897#1-0: CCost : 3e-06
+Cost : 2.65458
+No!
+Verifying branch 131 @Trace2#733#E1899#1-0: CCost : 5e-06
+NNo!
+Verifying branch 132 @Trace2#735#E1908#1-0: CCost : 4e-06
+Cost : 0.000802
+No!
+Verifying branch 133 @Trace2#735#E1910#1-0: CCost : 1e-06
+NNo!
+Verifying branch 134 @Trace2#716#E1921#1-0: CCost : 1e-06
+NNo!
+Verifying branch 135 @Trace2#717#E1924#0-1: CCost : 1e-06
+NNo!
+Verifying branch 136 @Trace2#725#E1935#0-1: CCost : 1e-06
+NNo!
+Verifying branch 137 @Trace2#733#E1989#1-0: CCost : 2e-06
+Cost : 2.75067
+No!
+Verifying branch 138 @Trace2#733#E1991#1-0: CCost : 4e-06
+NNo!
+Verifying branch 139 @Trace2#716#E2003#0-1: CCost : 1e-06
+NNo!
+Verifying branch 140 @Trace2#715#E2011#1-0: CCost : 1e-06
+NNo!
+Verifying branch 141 @Trace2#716#E2017#1-0: CCost : 1e-06
+NNo!
+Verifying branch 142 @Trace2#717#E2020#0-1: CCost : 2e-06
+NNo!
+Verifying branch 143 @Trace2#725#E2031#0-1: CCost : 1e-06
+NNo!
+Verifying branch 144 @Trace2#733#E2085#1-0: CCost : 3e-06
+Cost : 2.61067
+No!
+Verifying branch 145 @Trace2#733#E2087#1-0: CCost : 5e-06
+NNo!
+Verifying branch 146 @Trace2#716#E2099#1-0: CCost : 0
+NNo!
+Verifying branch 147 @Trace2#717#E2102#0-1: CCost : 2e-06
+NNo!
+Verifying branch 148 @Trace2#725#E2113#0-1: CCost : 1e-06
+NNo!
+Verifying branch 149 @Trace2#733#E2167#1-0: CCost : 3e-06
+Cost : 2.80647
+No!
+Verifying branch 150 @Trace2#733#E2169#1-0: CCost : 4e-06
+NNo!
+Verifying branch 151 @Trace2#716#E2181#1-0: CCost : 1e-06
+NNo!
+Verifying branch 152 @Trace2#717#E2184#0-1: CCost : 1e-06
+NNo!
+Verifying branch 153 @Trace2#725#E2195#0-1: CCost : 1e-06
+NNo!
+Verifying branch 154 @Trace2#733#E2249#1-0: CCost : 3e-06
+Cost : 2.97552
+No!
+Verifying branch 155 @Trace2#733#E2251#1-0: CCost : 5e-06
+NNo!
+Verifying branch 156 @Trace2#716#E2263#1-0: CCost : 1e-06
+NNo!
+Verifying branch 157 @Trace2#717#E2266#0-1: CCost : 1e-06
+NNo!
+Verifying branch 158 @Trace2#725#E2277#0-1: CCost : 1e-06
+NNo!
+Verifying branch 159 @Trace2#733#E2331#1-0: CCost : 3e-06
+Cost : 3.46861
+No!
+Verifying branch 160 @Trace2#733#E2333#1-0: CCost : 5e-06
+NNo!
+Verifying branch 161 @Trace2#735#E2342#1-0: CCost : 3e-06
+Cost : 0.00085
+No!
+Verifying branch 162 @Trace2#735#E2344#1-0: CCost : 2e-06
+NNo!
+Verifying branch 163 @Trace2#716#E2355#0-1: CCost : 1e-06
+NNo!
+Verifying branch 164 @Trace2#715#E2363#0-1: CCost : 0
+NNo!
+Verifying branch 165 @Trace2#740#E2369#1-0: CCost : 0
+NNo!
+Verifying branch 166 @Trace2#740#E2381#1-0: CCost : 1e-06
+NNo!
+Verifying branch 167 @Trace2#740#E2393#1-0: CCost : 1e-06
+NNo!
+Verifying branch 168 @Trace2#740#E2405#1-0: CCost : 1e-06
+NNo!
+Verifying branch 169 @Trace2#740#E2417#0-1: CCost : 1e-06
+NNo!
+Verifying branch 170 @Trace2#743#E2423#1-0: CCost : 1e-06
+NNo!
+Verifying branch 171 @Trace2#744#E2429#1-0: CCost : 1e-06
+NNo!
+Verifying branch 172 @Trace2#745#E2432#0-1: CCost : 1e-06
+NNo!
+Verifying branch 173 @Trace2#753#E2443#0-1: CCost : 1e-06
+NNo!
+Verifying branch 174 @Trace2#761#E2494#1-0: CCost : 2e-06
+Cost : 3.29854
+No!
+Verifying branch 175 @Trace2#761#E2496#1-0: CCost : 5e-06
+NNo!
+Verifying branch 176 @Trace2#744#E2510#1-0: CCost : 1e-06
+NNo!
+Verifying branch 177 @Trace2#745#E2513#0-1: CCost : 1e-06
+NNo!
+Verifying branch 178 @Trace2#753#E2524#0-1: CCost : 1e-06
+NNo!
+Verifying branch 179 @Trace2#761#E2575#1-0: CCost : 3e-06
+Cost : 3.48257
+No!
+Verifying branch 180 @Trace2#761#E2577#1-0: CCost : 4e-06
+NNo!
+Verifying branch 181 @Trace2#744#E2591#1-0: CCost : 1e-06
+NNo!
+Verifying branch 182 @Trace2#745#E2594#0-1: CCost : 1e-06
+NNo!
+Verifying branch 183 @Trace2#753#E2605#0-1: CCost : 2e-06
+NNo!
+Verifying branch 184 @Trace2#761#E2656#1-0: CCost : 3e-06
+Cost : 3.66754
+No!
+Verifying branch 185 @Trace2#761#E2658#1-0: CCost : 6e-06
+NNo!
+Verifying branch 186 @Trace2#744#E2672#1-0: CCost : 1e-06
+NNo!
+Verifying branch 187 @Trace2#745#E2675#0-1: CCost : 1e-06
+NNo!
+Verifying branch 188 @Trace2#753#E2686#0-1: CCost : 2e-06
+NNo!
+Verifying branch 189 @Trace2#761#E2737#1-0: CCost : 3e-06
+Cost : 3.91247
+No!
+Verifying branch 190 @Trace2#761#E2739#1-0: CCost : 4e-06
+NNo!
+Verifying branch 191 @Trace2#744#E2753#0-1: CCost : 1e-06
+NNo!
+Verifying branch 192 @Trace2#743#E2761#1-0: CCost : 1e-06
+NNo!
+Verifying branch 193 @Trace2#744#E2767#1-0: CCost : 1e-06
+NNo!
+Verifying branch 194 @Trace2#745#E2770#0-1: CCost : 2e-06
+NNo!
+Verifying branch 195 @Trace2#753#E2781#0-1: CCost : 1e-06
+NNo!
+Verifying branch 196 @Trace2#761#E2832#1-0: CCost : 3e-06
+Cost : 4.0867
+No!
+Verifying branch 197 @Trace2#761#E2834#1-0: CCost : 4e-06
+NNo!
+Verifying branch 198 @Trace2#744#E2848#1-0: CCost : 1e-06
+NNo!
+Verifying branch 199 @Trace2#745#E2851#0-1: CCost : 1e-06
+NNo!
+Verifying branch 200 @Trace2#753#E2862#0-1: CCost : 2e-06
+NNo!
+Verifying branch 201 @Trace2#761#E2913#1-0: CCost : 3e-06
+Cost : 4.30494
+No!
+Verifying branch 202 @Trace2#761#E2915#1-0: CCost : 4e-06
+NNo!
+Verifying branch 203 @Trace2#744#E2929#1-0: CCost : 1e-06
+NNo!
+Verifying branch 204 @Trace2#745#E2932#0-1: CCost : 1e-06
+NNo!
+Verifying branch 205 @Trace2#753#E2943#0-1: CCost : 1e-06
+NNo!
+Verifying branch 206 @Trace2#761#E2994#1-0: CCost : 3e-06
+Cost : 4.49385
+No!
+Verifying branch 207 @Trace2#761#E2996#1-0: CCost : 1.3e-05
+NNo!
+Verifying branch 208 @Trace2#744#E3010#1-0: CCost : 1e-06
+NNo!
+Verifying branch 209 @Trace2#745#E3013#0-1: CCost : 2e-06
+NNo!
+Verifying branch 210 @Trace2#753#E3024#0-1: CCost : 1e-06
+NNo!
+Verifying branch 211 @Trace2#761#E3075#1-0: CCost : 3e-06
+Cost : 4.7315
+No!
+Verifying branch 212 @Trace2#761#E3077#1-0: CCost : 5e-06
+NNo!
+Verifying branch 213 @Trace2#744#E3091#0-1: CCost : 1e-06
+NNo!
+Verifying branch 214 @Trace2#743#E3099#1-0: CCost : 1e-06
+NNo!
+Verifying branch 215 @Trace2#744#E3105#1-0: CCost : 1e-06
+NNo!
+Verifying branch 216 @Trace2#745#E3108#0-1: CCost : 1e-06
+NNo!
+Verifying branch 217 @Trace2#753#E3119#0-1: CCost : 1e-06
+NNo!
+Verifying branch 218 @Trace2#761#E3170#1-0: CCost : 3e-06
+Cost : 4.96764
+No!
+Verifying branch 219 @Trace2#761#E3172#1-0: CCost : 4e-06
+NNo!
+Verifying branch 220 @Trace2#744#E3186#1-0: CCost : 1e-06
+NNo!
+Verifying branch 221 @Trace2#745#E3189#0-1: CCost : 2e-06
+NNo!
+Verifying branch 222 @Trace2#753#E3200#0-1: CCost : 1e-06
+NNo!
+Verifying branch 223 @Trace2#761#E3251#1-0: CCost : 3e-06
+Cost : 5.2172
+No!
+Verifying branch 224 @Trace2#761#E3253#1-0: CCost : 5e-06
+NNo!
+Verifying branch 225 @Trace2#744#E3267#1-0: CCost : 1e-06
+NNo!
+Verifying branch 226 @Trace2#745#E3270#0-1: CCost : 2e-06
+NNo!
+Verifying branch 227 @Trace2#753#E3281#0-1: CCost : 1e-06
+NNo!
+Verifying branch 228 @Trace2#761#E3332#1-0: CCost : 3e-06
+Cost : 5.23139
+No!
+Verifying branch 229 @Trace2#761#E3334#1-0: CCost : 5e-06
+NNo!
+Verifying branch 230 @Trace2#744#E3348#1-0: CCost : 1e-06
+NNo!
+Verifying branch 231 @Trace2#745#E3351#0-1: CCost : 2e-06
+NNo!
+Verifying branch 232 @Trace2#753#E3362#0-1: CCost : 2e-06
+NNo!
+Verifying branch 233 @Trace2#761#E3413#1-0: CCost : 3e-06
+Cost : 4.90678
+No!
+Verifying branch 234 @Trace2#761#E3415#1-0: CCost : 4e-06
+NNo!
+Verifying branch 235 @Trace2#744#E3429#0-1: CCost : 1e-06
+NNo!
+Verifying branch 236 @Trace2#743#E3437#1-0: CCost : 1e-06
+NNo!
+Verifying branch 237 @Trace2#744#E3443#1-0: CCost : 1e-06
+NNo!
+Verifying branch 238 @Trace2#745#E3446#0-1: CCost : 1e-06
+NNo!
+Verifying branch 239 @Trace2#753#E3457#0-1: CCost : 1e-06
+NNo!
+Verifying branch 240 @Trace2#761#E3508#1-0: CCost : 3e-06
+Cost : 5.08352
+No!
+Verifying branch 241 @Trace2#761#E3510#1-0: CCost : 5e-06
+NNo!
+Verifying branch 242 @Trace2#744#E3524#1-0: CCost : 1e-06
+NNo!
+Verifying branch 243 @Trace2#745#E3527#0-1: CCost : 1e-06
+NNo!
+Verifying branch 244 @Trace2#753#E3538#0-1: CCost : 1e-06
+NNo!
+Verifying branch 245 @Trace2#761#E3589#1-0: CCost : 3e-06
+Cost : 5.27095
+No!
+Verifying branch 246 @Trace2#761#E3591#1-0: CCost : 5e-06
+NNo!
+Verifying branch 247 @Trace2#744#E3605#1-0: CCost : 1e-06
+NNo!
+Verifying branch 248 @Trace2#745#E3608#0-1: CCost : 2e-06
+NNo!
+Verifying branch 249 @Trace2#753#E3619#0-1: CCost : 2e-06
+NNo!
+Verifying branch 250 @Trace2#761#E3670#1-0: CCost : 3e-06
+Cost : 5.43352
+No!
+Verifying branch 251 @Trace2#761#E3672#1-0: CCost : 4e-06
+NNo!
+Verifying branch 252 @Trace2#744#E3686#1-0: CCost : 1e-06
+NNo!
+Verifying branch 253 @Trace2#745#E3689#0-1: CCost : 2e-06
+NNo!
+Verifying branch 254 @Trace2#753#E3700#0-1: CCost : 1e-06
+NNo!
+Verifying branch 255 @Trace2#761#E3751#1-0: CCost : 4e-06
+Cost : 5.63718
+No!
+Verifying branch 256 @Trace2#761#E3753#1-0: CCost : 5e-06
+NNo!
+Verifying branch 257 @Trace2#744#E3767#0-1: CCost : 1e-06
+NNo!
+Verifying branch 258 @Trace2#743#E3775#0-1: CCost : 1e-06
+NNo!
+Verifying branch 259 @Trace2#305#E3779#1-0: CCost : 1e-06
+NNo!
+Verifying branch 260 @Trace2#817#E3804#1-0: CCost : 1e-06
+NNo!
+Verifying branch 261 @Trace2#818#E3810#1-0: CCost : 1e-06
+NNo!
+Verifying branch 262 @Trace2#819#E3813#0-1: CCost : 1e-06
+NNo!
+Verifying branch 263 @Trace2#827#E3824#0-1: CCost : 1e-06
+NNo!
+Verifying branch 264 @Trace2#835#E3875#1-0: CCost : 2e-06
+Cost : 5.92138
+No!
+Verifying branch 265 @Trace2#835#E3877#1-0: CCost : 5e-06
+NNo!
+Verifying branch 266 @Trace2#818#E3886#1-0: CCost : 1e-06
+NNo!
+Verifying branch 267 @Trace2#819#E3889#0-1: CCost : 1e-06
+NNo!
+Verifying branch 268 @Trace2#827#E3900#0-1: CCost : 1e-06
+NNo!
+Verifying branch 269 @Trace2#835#E3951#1-0: CCost : 3e-06
+Cost : 5.9868
+No!
+Verifying branch 270 @Trace2#835#E3953#1-0: CCost : 4e-06
+NNo!
+Verifying branch 271 @Trace2#818#E3962#1-0: CCost : 1e-06
+NNo!
+Verifying branch 272 @Trace2#819#E3965#0-1: CCost : 1e-06
+NNo!
+Verifying branch 273 @Trace2#827#E3976#0-1: CCost : 1e-06
+NNo!
+Verifying branch 274 @Trace2#835#E4027#1-0: CCost : 3e-06
+Cost : 6.15249
+No!
+Verifying branch 275 @Trace2#835#E4029#1-0: CCost : 5e-06
+NNo!
+Verifying branch 276 @Trace2#818#E4038#1-0: CCost : 2e-06
+NNo!
+Verifying branch 277 @Trace2#819#E4041#0-1: CCost : 2e-06
+NNo!
+Verifying branch 278 @Trace2#827#E4052#0-1: CCost : 1e-06
+NNo!
+Verifying branch 279 @Trace2#835#E4103#1-0: CCost : 3e-06
+Cost : 6.34605
+No!
+Verifying branch 280 @Trace2#835#E4105#1-0: CCost : 5e-06
+NNo!
+Verifying branch 281 @Trace2#818#E4114#0-1: CCost : 1e-06
+NNo!
+Verifying branch 282 @Trace2#817#E4123#1-0: CCost : 0
+NNo!
+Verifying branch 283 @Trace2#818#E4129#1-0: CCost : 1e-06
+NNo!
+Verifying branch 284 @Trace2#819#E4132#0-1: CCost : 1e-06
+NNo!
+Verifying branch 285 @Trace2#827#E4143#0-1: CCost : 1e-06
+NNo!
+Verifying branch 286 @Trace2#835#E4194#1-0: CCost : 3e-06
+Cost : 6.534
+No!
+Verifying branch 287 @Trace2#835#E4196#1-0: CCost : 4e-06
+NNo!
+Verifying branch 288 @Trace2#818#E4205#1-0: CCost : 1e-06
+NNo!
+Verifying branch 289 @Trace2#819#E4208#0-1: CCost : 1e-06
+NNo!
+Verifying branch 290 @Trace2#827#E4219#0-1: CCost : 1e-06
+NNo!
+Verifying branch 291 @Trace2#835#E4270#1-0: CCost : 3e-06
+Cost : 6.73184
+No!
+Verifying branch 292 @Trace2#835#E4272#1-0: CCost : 5e-06
+NNo!
+Verifying branch 293 @Trace2#818#E4281#1-0: CCost : 1e-06
+NNo!
+Verifying branch 294 @Trace2#819#E4284#0-1: CCost : 2e-06
+NNo!
+Verifying branch 295 @Trace2#827#E4295#0-1: CCost : 1e-06
+NNo!
+Verifying branch 296 @Trace2#835#E4346#1-0: CCost : 2e-06
+Cost : 6.90733
+No!
+Verifying branch 297 @Trace2#835#E4348#1-0: CCost : 4e-06
+NNo!
+Verifying branch 298 @Trace2#818#E4357#1-0: CCost : 1e-06
+NNo!
+Verifying branch 299 @Trace2#819#E4360#0-1: CCost : 1e-06
+NNo!
+Verifying branch 300 @Trace2#827#E4371#0-1: CCost : 1e-06
+NNo!
+Verifying branch 301 @Trace2#835#E4422#1-0: CCost : 3e-06
+Cost : 7.10365
+No!
+Verifying branch 302 @Trace2#835#E4424#1-0: CCost : 5e-06
+NNo!
+Verifying branch 303 @Trace2#818#E4433#0-1: CCost : 1e-06
+NNo!
+Verifying branch 304 @Trace2#817#E4442#1-0: CCost : 0
+NNo!
+Verifying branch 305 @Trace2#818#E4448#1-0: CCost : 1e-06
+NNo!
+Verifying branch 306 @Trace2#819#E4451#0-1: CCost : 1e-06
+NNo!
+Verifying branch 307 @Trace2#827#E4462#0-1: CCost : 1e-06
+NNo!
+Verifying branch 308 @Trace2#835#E4513#1-0: CCost : 3e-06
+Cost : 8.09589
+No!
+Verifying branch 309 @Trace2#835#E4515#1-0: CCost : 5e-06
+NNo!
+Verifying branch 310 @Trace2#818#E4524#1-0: CCost : 1e-06
+NNo!
+Verifying branch 311 @Trace2#819#E4527#0-1: CCost : 1e-06
+NNo!
+Verifying branch 312 @Trace2#827#E4538#0-1: CCost : 1e-06
+NNo!
+Verifying branch 313 @Trace2#835#E4589#1-0: CCost : 2e-06
+Cost : 7.38396
+No!
+Verifying branch 314 @Trace2#835#E4591#1-0: CCost : 5e-06
+NNo!
+Verifying branch 315 @Trace2#818#E4600#1-0: CCost : 2e-06
+NNo!
+Verifying branch 316 @Trace2#819#E4603#0-1: CCost : 2e-06
+NNo!
+Verifying branch 317 @Trace2#827#E4614#0-1: CCost : 2e-06
+NNo!
+Verifying branch 318 @Trace2#835#E4665#1-0: CCost : 3e-06
+Cost : 7.58919
+No!
+Verifying branch 319 @Trace2#835#E4667#1-0: CCost : 5e-06
+NNo!
+Verifying branch 320 @Trace2#818#E4676#1-0: CCost : 1e-06
+NNo!
+Verifying branch 321 @Trace2#819#E4679#0-1: CCost : 2e-06
+NNo!
+Verifying branch 322 @Trace2#827#E4690#0-1: CCost : 1e-06
+NNo!
+Verifying branch 323 @Trace2#835#E4741#1-0: CCost : 3e-06
+Cost : 7.7943
+No!
+Verifying branch 324 @Trace2#835#E4743#1-0: CCost : 5e-06
+NNo!
+Verifying branch 325 @Trace2#818#E4752#0-1: CCost : 1e-06
+NNo!
+Verifying branch 326 @Trace2#817#E4761#1-0: CCost : 1e-06
+NNo!
+Verifying branch 327 @Trace2#818#E4767#1-0: CCost : 1e-06
+NNo!
+Verifying branch 328 @Trace2#819#E4770#0-1: CCost : 2e-06
+NNo!
+Verifying branch 329 @Trace2#827#E4781#0-1: CCost : 2e-06
+NNo!
+Verifying branch 330 @Trace2#835#E4832#1-0: CCost : 3e-06
+Cost : 8.00159
+No!
+Verifying branch 331 @Trace2#835#E4834#1-0: CCost : 4e-06
+NNo!
+Verifying branch 332 @Trace2#818#E4843#1-0: CCost : 1e-06
+NNo!
+Verifying branch 333 @Trace2#819#E4846#0-1: CCost : 2e-06
+NNo!
+Verifying branch 334 @Trace2#827#E4857#0-1: CCost : 1e-06
+NNo!
+Verifying branch 335 @Trace2#835#E4908#1-0: CCost : 3e-06
+Cost : 8.22475
+No!
+Verifying branch 336 @Trace2#835#E4910#1-0: CCost : 8e-06
+NNo!
+Verifying branch 337 @Trace2#818#E4919#1-0: CCost : 1e-06
+NNo!
+Verifying branch 338 @Trace2#819#E4922#0-1: CCost : 1e-06
+NNo!
+Verifying branch 339 @Trace2#827#E4933#0-1: CCost : 1e-06
+NNo!
+Verifying branch 340 @Trace2#835#E4984#1-0: CCost : 4e-06
+Cost : 8.43074
+No!
+Verifying branch 341 @Trace2#835#E4986#1-0: CCost : 4e-06
+NNo!
+Verifying branch 342 @Trace2#818#E4995#1-0: CCost : 1e-06
+NNo!
+Verifying branch 343 @Trace2#819#E4998#0-1: CCost : 2e-06
+NNo!
+Verifying branch 344 @Trace2#827#E5009#0-1: CCost : 1e-06
+NNo!
+Verifying branch 345 @Trace2#835#E5060#1-0: CCost : 3e-06
+Cost : 8.66783
+No!
+Verifying branch 346 @Trace2#835#E5062#1-0: CCost : 4e-06
+NNo!
+Verifying branch 347 @Trace2#818#E5071#0-1: CCost : 1e-06
+NNo!
+Verifying branch 348 @Trace2#817#E5080#0-1: CCost : 0
+NNo!
+Verifying branch 349 @Trace2#310#E5090#1-0: CCost : 1e-06
+NNo!
+Verifying branch 350 @Trace2#310#E5109#0-1: CCost : 1e-06
+NNo!
+Verifying branch 351 @Trace2#422#E5155#1-0: CCost : 2e-06
+Cost : 9.0246
+Yes!
+Verifying branch 352 @Trace2#776#E5231#1-0: CCost : 6e-06
+Cost : 6.74262
+No!
+Verifying branch 353 @Trace2#777#E5237#1-0: CCost : 7e-06
+Cost : 6.74503
+No!
+Verifying branch 354 @Trace2#778#E5250#0-1: CCost : 7e-06
+Cost : 8.67001
+No!
+Verifying branch 355 @Trace2#777#E5266#1-0: CCost : 8e-06
+Cost : 6.73996
+No!
+Verifying branch 356 @Trace2#778#E5279#1-0: CCost : 7e-06
+Cost : 8.72456
+No!
+Verifying branch 357 @Trace2#779#E5291#0-1: CCost : 7e-06
+Cost : 8.82692
+No!
+Verifying branch 358 @Trace2#787#E5299#1-0: CCost : 7e-06
+Cost : 6.75688
+No!
+Verifying branch 359 @Trace2#789#E5303#1-0: CCost : 6e-06
+NNo!
+Verifying branch 360 @Trace2#795#E5303#1-0: CCost : 1e-06
+NNo!
+Verifying branch 361 @Trace2#796#E5303#1-0: CCost : 1e-06
+NNo!
+Verifying branch 362 @Trace2#796#E5392#1-0: CCost : 1e-06
+NNo!
+Verifying branch 363 @Trace2#796#E5463#0-1: CCost : 0
+NNo!
+Verifying branch 364 @Trace2#795#E5463#1-0: CCost : 1e-06
+NNo!
+Verifying branch 365 @Trace2#796#E5463#1-0: CCost : 1e-06
+NNo!
+Verifying branch 366 @Trace2#797#E5498#1-0: CCost : 0
+NNo!
+Verifying branch 367 @Trace2#798#E5516#1-0: CCost : 1e-06
+NNo!
+Verifying branch 368 @Trace2#798#E5531#1-0: CCost : 0
+NNo!
+Verifying branch 369 @Trace2#799#E5546#1-0: CCost : 1e-06
+NNo!
+Verifying branch 370 @Trace2#796#E5548#1-0: CCost : 0
+NNo!
+Verifying branch 371 @Trace2#797#E5569#1-0: CCost : 1e-06
+NNo!
+Verifying branch 372 @Trace2#798#E5587#1-0: CCost : 1e-06
+NNo!
+Verifying branch 373 @Trace2#798#E5602#1-0: CCost : 1e-06
+NNo!
+Verifying branch 374 @Trace2#799#E5617#1-0: CCost : 1e-06
+NNo!
+Verifying branch 375 @Trace2#796#E5619#0-1: CCost : 0
+NNo!
+Verifying branch 376 @Trace2#795#E5619#0-1: CCost : 1e-06
+NNo!
+Verifying branch 377 @Trace2#777#E5641#0-1: CCost : 3e-06
+Cost : 6.73396
+No!
+Verifying branch 378 @Trace2#776#E5649#1-0: CCost : 7e-06
+Cost : 6.73442
+No!
+Verifying branch 379 @Trace2#777#E5655#1-0: CCost : 6e-06
+Cost : 6.74432
+No!
+Verifying branch 380 @Trace2#778#E5668#1-0: CCost : 7e-06
+Cost : 8.82329
+No!
+Verifying branch 381 @Trace2#779#E5680#1-0: CCost : 7e-06
+Cost : 6.74332
+No!
+Verifying branch 382 @Trace2#781#E5684#1-0: CCost : 5e-06
+NNo!
+Verifying branch 383 @Trace2#787#E5700#0-1: CCost : 3e-06
+Cost : 8.83287
+No!
+Verifying branch 384 @Trace2#795#E5700#1-0: CCost : 6e-06
+NNo!
+Verifying branch 385 @Trace2#796#E5700#1-0: CCost : 1e-06
+NNo!
+Verifying branch 386 @Trace2#797#E5729#1-0: CCost : 3e-06
+Cost : 6.74837
+No!
+Verifying branch 387 @Trace2#798#E5747#1-0: CCost : 7e-06
+Cost : 6.74865
+No!
+Verifying branch 388 @Trace2#798#E5762#1-0: CCost : 7e-06
+Cost : 6.76518
+No!
+Verifying branch 389 @Trace2#799#E5777#1-0: CCost : 7e-06
+Cost : 6.73773
+No!
+Verifying branch 390 @Trace2#796#E5781#1-0: CCost : 4e-06
+NNo!
+Verifying branch 391 @Trace2#797#E5800#1-0: CCost : 3e-06
+Cost : 6.743
+No!
+Verifying branch 392 @Trace2#798#E5818#1-0: CCost : 8e-06
+Cost : 6.7515
+No!
+Verifying branch 393 @Trace2#798#E5833#1-0: CCost : 7e-06
+Cost : 6.7397
+No!
+Verifying branch 394 @Trace2#799#E5848#1-0: CCost : 7e-06
+Cost : 6.74927
+No!
+Verifying branch 395 @Trace2#796#E5852#0-1: CCost : 4e-06
+NNo!
+Verifying branch 396 @Trace2#795#E5852#1-0: CCost : 1e-06
+NNo!
+Verifying branch 397 @Trace2#796#E5852#1-0: CCost : 1e-06
+NNo!
+Verifying branch 398 @Trace2#797#E5885#1-0: CCost : 3e-06
+Cost : 6.7543
+No!
+Verifying branch 399 @Trace2#797#E5887#1-0: CCost : 5e-06
+NNo!
+Verifying branch 400 @Trace2#798#E5903#1-0: CCost : 3e-06
+Cost : 6.74948
+No!
+Verifying branch 401 @Trace2#798#E5905#1-0: CCost : 5e-06
+NNo!
+Verifying branch 402 @Trace2#798#E5918#1-0: CCost : 3e-06
+Cost : 6.75934
+No!
+Verifying branch 403 @Trace2#798#E5920#1-0: CCost : 5e-06
+NNo!
+Verifying branch 404 @Trace2#799#E5933#1-0: CCost : 3e-06
+Cost : 6.75236
+No!
+Verifying branch 405 @Trace2#799#E5935#1-0: CCost : 4e-06
+NNo!
+Verifying branch 406 @Trace2#796#E5937#1-0: CCost : 1e-06
+NNo!
+Verifying branch 407 @Trace2#797#E5956#1-0: CCost : 3e-06
+Cost : 6.75209
+No!
+Verifying branch 408 @Trace2#797#E5958#1-0: CCost : 5e-06
+NNo!
+Verifying branch 409 @Trace2#798#E5974#1-0: CCost : 3e-06
+Cost : 6.75576
+No!
+Verifying branch 410 @Trace2#798#E5976#1-0: CCost : 6e-06
+NNo!
+Verifying branch 411 @Trace2#798#E5989#1-0: CCost : 3e-06
+Cost : 6.72758
+No!
+Verifying branch 412 @Trace2#798#E5991#1-0: CCost : 4e-06
+NNo!
+Verifying branch 413 @Trace2#799#E6004#1-0: CCost : 3e-06
+Cost : 6.73766
+No!
+Verifying branch 414 @Trace2#799#E6006#1-0: CCost : 5e-06
+NNo!
+Verifying branch 415 @Trace2#796#E6008#0-1: CCost : 0
+NNo!
+Verifying branch 416 @Trace2#795#E6008#0-1: CCost : 1e-06
+NNo!
+Verifying branch 417 @Trace2#777#E6030#1-0: CCost : 3e-06
+Cost : 6.70224
+No!
+Verifying branch 418 @Trace2#778#E6043#0-1: CCost : 7e-06
+Cost : 8.87401
+No!
+Verifying branch 419 @Trace2#777#E6059#0-1: CCost : 7e-06
+Cost : 6.68427
+No!
+Verifying branch 420 @Trace2#776#E6067#0-1: CCost : 7e-06
+Cost : 6.65452
+No!
+Verifying branch 421 @Trace2#568#E6067#0-1: CCost : 5e-06
+Cost : 0.001657
+No!
+Verifying branch 422 @Trace2#568#E6067#0-1: CCost : 2e-06
+NNo!
+Verifying branch 423 @Trace2#594#E6067#1-0: CCost : 1e-06
+NNo!
+Verifying branch 424 @Trace2#596#E6067#0-1: CCost : 1e-06
+NNo!
+Verifying branch 425 @Trace2#603#E6067#0-1: CCost : 2e-06
+Cost : 0.001597
+No!
+Verifying branch 426 @Trace2#603#E6067#0-1: CCost : 2e-06
+NNo!
+Verifying branch 427 @Trace2#608#E6157#0-1: CCost : 2e-06
+Cost : 8.91433
+No!
+Verifying branch 428 @Trace2#615#E6157#0-1: CCost : 5e-06
+Cost : 0.001691
+No!
+Verifying branch 429 @Trace2#615#E6157#0-1: CCost : 2e-06
+NNo!
+Verifying branch 430 @Trace2#675#E6174#0-1: CCost : 2e-06
+Cost : 0.001635
+No!
+Verifying branch 431 @Trace2#675#E6174#0-1: CCost : 2e-06
+NNo!
+Verifying branch 432 @Trace2#629#E6189#1-0: CCost : 1e-06
+NNo!
+Verifying branch 433 @Trace2#630#E6209#1-0: CCost : 2e-06
+Cost : 8.95157
+No!
+Verifying branch 434 @Trace2#632#E6209#0-1: CCost : 5e-06
+NNo!
+Verifying branch 435 @Trace2#517#E6238#1-0: CCost : 1e-06
+NNo!
+Verifying branch 436 @Trace2#518#E6238#1-0: CCost : 1e-06
+NNo!
+Verifying branch 437 @Trace2#519#E6238#1-0: CCost : 1e-06
+NNo!
+Verifying branch 438 @Trace2#520#E6283#1-0: CCost : 1e-06
+NNo!
+Verifying branch 439 @Trace2#563#E6283#1-0: CCost : 0
+NNo!
+Verifying branch 440 @Trace2#563#E6325#1-0: CCost : 0
+NNo!
+Verifying branch 441 @Trace2#563#E6345#0-1: CCost : 1e-06
+NNo!
+Verifying branch 442 @Trace2#518#E6345#0-1: CCost : 1e-06
+NNo!
+Verifying branch 443 @Trace2#517#E6345#1-0: CCost : 1e-06
+NNo!
+Verifying branch 444 @Trace2#518#E6345#0-1: CCost : 1e-06
+NNo!
+Verifying branch 445 @Trace2#517#E6345#0-1: CCost : 0
+NNo!
+Verifying branch 446 @Trace2#629#E6345#0-1: CCost : 1e-06
+NNo!
+Verifying branch 447 @Trace2#643#E6345#1-0: CCost : 1e-06
+NNo!
+Verifying branch 448 @Trace2#644#E6434#0-1: CCost : 3e-06
+Cost : 9.0828
+No!
+Verifying branch 449 @Trace2#643#E6434#0-1: CCost : 6e-06
+NNo!
+Verifying branch 450 @Trace2#657#E6434#0-1: CCost : 2e-06
+Cost : 0.001734
+No!
+Verifying branch 451 @Trace2#657#E6434#0-1: CCost : 2e-06
+NNo!
+Verifying branch 452 @Trace2#716#E6465#0-1: CCost : 2e-06
+Cost : 0.001677
+No!
+Verifying branch 453 @Trace2#716#E6465#0-1: CCost : 3e-06
+NNo!
+Verifying branch 454 @Trace2#669#E6465#1-0: CCost : 1e-06
+NNo!
+Verifying branch 455 @Trace2#671#E6465#0-1: CCost : 1e-06
+NNo!
+Verifying branch 456 @Trace2#678#E6500#1-0: CCost : 1e-06
+NNo!
+Verifying branch 457 @Trace2#680#E6500#0-1: CCost : 1e-06
+NNo!
+Verifying branch 458 @Trace2#686#E6533#0-1: CCost : 2e-06
+Cost : 9.13257
+No!
+Verifying branch 459 @Trace2#678#E6533#0-1: CCost : 5e-06
+NNo!
+Verifying branch 460 @Trace2#669#E6533#0-1: CCost : 1e-06
+NNo!
+Verifying branch 461 @Trace2#694#E6533#0-1: CCost : 2e-06
+Cost : 0.001696
+No!
+Verifying branch 462 @Trace2#694#E6533#0-1: CCost : 2e-06
+NNo!
+Verifying branch 463 @Trace2#594#E6533#1-0: CCost : 1e-06
+NNo!
+Verifying branch 464 @Trace2#596#E6533#0-1: CCost : 1e-06
+NNo!
+Verifying branch 465 @Trace2#603#E6533#0-1: CCost : 1e-06
+Cost : 0.001642
+No!
+Verifying branch 466 @Trace2#603#E6533#0-1: CCost : 2e-06
+NNo!
+Verifying branch 467 @Trace2#608#E6613#0-1: CCost : 2e-06
+Cost : 9.18401
+No!
+Verifying branch 468 @Trace2#615#E6613#0-1: CCost : 6e-06
+Cost : 0.001755
+No!
+Verifying branch 469 @Trace2#615#E6613#0-1: CCost : 2e-06
+NNo!
+Verifying branch 470 @Trace2#675#E6630#0-1: CCost : 1e-06
+Cost : 0.001651
+No!
+Verifying branch 471 @Trace2#675#E6630#0-1: CCost : 1e-06
+NNo!
+Verifying branch 472 @Trace2#628#E6643#1-0: CCost : 3e-06
+Cost : 6.62167
+No!
+Verifying branch 473 @Trace2#629#E6645#0-1: CCost : 6e-06
+NNo!
+Verifying branch 474 @Trace2#643#E6645#0-1: CCost : 1e-06
+NNo!
+Verifying branch 475 @Trace2#657#E6645#0-1: CCost : 2e-06
+Cost : 0.001703
+No!
+Verifying branch 476 @Trace2#657#E6645#0-1: CCost : 2e-06
+NNo!
+Verifying branch 477 @Trace2#716#E6675#0-1: CCost : 2e-06
+Cost : 0.001641
+No!
+Verifying branch 478 @Trace2#716#E6675#0-1: CCost : 2e-06
+NNo!
+Verifying branch 479 @Trace2#669#E6675#0-1: CCost : 2e-06
+NNo!
+Verifying branch 480 @Trace2#694#E6675#0-1: CCost : 2e-06
+Cost : 0.001628
+No!
+Verifying branch 481 @Trace2#694#E6675#0-1: CCost : 1e-06
+NNo!
+Verifying branch 482 @Trace2#594#E6675#0-1: CCost : 1e-06
+NNo!
+Verifying branch 483 @Trace2#470#E6675#0-1: CCost : 2e-06
+Cost : 0.001631
+No!
+Verifying branch 484 @Trace2#470#E6675#0-1: CCost : 1e-06
+NNo!
+Verifying branch 485 @Trace2#528#E6675#0-1: CCost : 2e-06
+Cost : 0.001647
+No!
+Verifying branch 486 @Trace2#528#E6675#0-1: CCost : 2e-06
+NNo!
+Verifying branch 487 @Trace2#535#E6675#0-1: CCost : 1e-06
+Cost : 0.001625
+No!
+Verifying branch 488 @Trace2#311#E6731#1-0: CCost : 2e-06
+NNo!
+Verifying branch 489 @Trace2#422#E6738#0-1: CCost : 2e-06
+Cost : 16.1843
+Yes!
+Verifying branch 490 @Trace2#776#E6804#1-0: CCost : 7e-06
+Cost : 12.4456
+No!
+Verifying branch 491 @Trace2#777#E6810#1-0: CCost : 8e-06
+Cost : 12.5576
+No!
+Verifying branch 492 @Trace2#778#E6823#1-0: CCost : 7e-06
+Cost : 12.1914
+No!
+Verifying branch 493 @Trace2#779#E6835#0-1: CCost : 8e-06
+Cost : 12.0837
+No!
+Verifying branch 494 @Trace2#787#E6843#0-1: CCost : 8e-06
+Cost : 12.0612
+No!
+Verifying branch 495 @Trace2#795#E6843#1-0: CCost : 5e-06
+NNo!
+Verifying branch 496 @Trace2#796#E6843#1-0: CCost : 1e-06
+NNo!
+Verifying branch 497 @Trace2#796#E6924#1-0: CCost : 1e-06
+NNo!
+Verifying branch 498 @Trace2#796#E6995#0-1: CCost : 1e-06
+NNo!
+Verifying branch 499 @Trace2#795#E6995#1-0: CCost : 0
+NNo!
+Verifying branch 500 @Trace2#796#E6995#1-0: CCost : 1e-06
+NNo!
+Verifying branch 501 @Trace2#797#E7030#1-0: CCost : 0
+NNo!
+Verifying branch 502 @Trace2#798#E7048#1-0: CCost : 1e-06
+NNo!
+Verifying branch 503 @Trace2#798#E7063#1-0: CCost : 0
+NNo!
+Verifying branch 504 @Trace2#799#E7078#1-0: CCost : 1e-06
+NNo!
+Verifying branch 505 @Trace2#796#E7080#1-0: CCost : 1e-06
+NNo!
+Verifying branch 506 @Trace2#797#E7101#1-0: CCost : 0
+NNo!
+Verifying branch 507 @Trace2#798#E7119#1-0: CCost : 1e-06
+NNo!
+Verifying branch 508 @Trace2#798#E7134#1-0: CCost : 1e-06
+NNo!
+Verifying branch 509 @Trace2#799#E7149#1-0: CCost : 1e-06
+NNo!
+Verifying branch 510 @Trace2#796#E7151#0-1: CCost : 1e-06
+NNo!
+Verifying branch 511 @Trace2#795#E7151#0-1: CCost : 0
+NNo!
+Verifying branch 512 @Trace2#777#E7173#1-0: CCost : 2e-06
+Cost : 12.0774
+No!
+Verifying branch 513 @Trace2#778#E7186#0-1: CCost : 7e-06
+Cost : 9.84578
+No!
+Verifying branch 514 @Trace2#777#E7202#0-1: CCost : 8e-06
+Cost : 12.106
+No!
+Verifying branch 515 @Trace2#776#E7210#1-0: CCost : 8e-06
+Cost : 12.1173
+No!
+Verifying branch 516 @Trace2#777#E7216#1-0: CCost : 7e-06
+Cost : 12.2502
+No!
+Verifying branch 517 @Trace2#778#E7229#0-1: CCost : 7e-06
+Cost : 9.86019
+No!
+Verifying branch 518 @Trace2#777#E7245#1-0: CCost : 8e-06
+Cost : 12.3373
+No!
+Verifying branch 519 @Trace2#778#E7258#1-0: CCost : 8e-06
+Cost : 11.6023
+No!
+Verifying branch 520 @Trace2#779#E7270#1-0: CCost : 7e-06
+Cost : 12.2023
+No!
+Verifying branch 521 @Trace2#781#E7274#1-0: CCost : 6e-06
+NNo!
+Verifying branch 522 @Trace2#787#E7290#1-0: CCost : 3e-06
+Cost : 12.3503
+No!
+Verifying branch 523 @Trace2#789#E7294#1-0: CCost : 5e-06
+NNo!
+Verifying branch 524 @Trace2#795#E7294#1-0: CCost : 1e-06
+NNo!
+Verifying branch 525 @Trace2#796#E7294#1-0: CCost : 1e-06
+NNo!
+Verifying branch 526 @Trace2#797#E7331#1-0: CCost : 3e-06
+Cost : 12.2704
+No!
+Verifying branch 527 @Trace2#798#E7349#1-0: CCost : 7e-06
+Cost : 12.2827
+No!
+Verifying branch 528 @Trace2#798#E7364#1-0: CCost : 7e-06
+Cost : 12.2776
+No!
+Verifying branch 529 @Trace2#799#E7379#1-0: CCost : 8e-06
+Cost : 12.2803
+No!
+Verifying branch 530 @Trace2#796#E7383#1-0: CCost : 5e-06
+NNo!
+Verifying branch 531 @Trace2#797#E7402#1-0: CCost : 3e-06
+Cost : 12.2862
+No!
+Verifying branch 532 @Trace2#798#E7420#1-0: CCost : 7e-06
+Cost : 12.2809
+No!
+Verifying branch 533 @Trace2#798#E7435#1-0: CCost : 7e-06
+Cost : 12.2934
+No!
+Verifying branch 534 @Trace2#799#E7450#1-0: CCost : 8e-06
+Cost : 12.3346
+No!
+Verifying branch 535 @Trace2#796#E7454#0-1: CCost : 5e-06
+NNo!
+Verifying branch 536 @Trace2#795#E7454#1-0: CCost : 1e-06
+NNo!
+Verifying branch 537 @Trace2#796#E7454#1-0: CCost : 1e-06
+NNo!
+Verifying branch 538 @Trace2#797#E7487#1-0: CCost : 3e-06
+Cost : 12.3392
+No!
+Verifying branch 539 @Trace2#797#E7489#1-0: CCost : 6e-06
+NNo!
+Verifying branch 540 @Trace2#798#E7505#1-0: CCost : 3e-06
+Cost : 12.3241
+No!
+Verifying branch 541 @Trace2#798#E7507#1-0: CCost : 5e-06
+NNo!
+Verifying branch 542 @Trace2#798#E7520#1-0: CCost : 3e-06
+Cost : 12.3401
+No!
+Verifying branch 543 @Trace2#798#E7522#1-0: CCost : 5e-06
+NNo!
+Verifying branch 544 @Trace2#799#E7535#1-0: CCost : 3e-06
+Cost : 12.3413
+No!
+Verifying branch 545 @Trace2#799#E7537#1-0: CCost : 6e-06
+NNo!
+Verifying branch 546 @Trace2#796#E7539#1-0: CCost : 0
+NNo!
+Verifying branch 547 @Trace2#797#E7558#1-0: CCost : 2e-06
+Cost : 12.3515
+No!
+Verifying branch 548 @Trace2#797#E7560#1-0: CCost : 5e-06
+NNo!
+Verifying branch 549 @Trace2#798#E7576#1-0: CCost : 3e-06
+Cost : 12.3519
+No!
+Verifying branch 550 @Trace2#798#E7578#1-0: CCost : 4e-06
+NNo!
+Verifying branch 551 @Trace2#798#E7591#1-0: CCost : 3e-06
+Cost : 12.3508
+No!
+Verifying branch 552 @Trace2#798#E7593#1-0: CCost : 5e-06
+NNo!
+Verifying branch 553 @Trace2#799#E7606#1-0: CCost : 4e-06
+Cost : 12.3524
+No!
+Verifying branch 554 @Trace2#799#E7608#1-0: CCost : 5e-06
+NNo!
+Verifying branch 555 @Trace2#796#E7610#0-1: CCost : 0
+NNo!
+Verifying branch 556 @Trace2#795#E7610#0-1: CCost : 1e-06
+NNo!
+Verifying branch 557 @Trace2#777#E7632#0-1: CCost : 3e-06
+Cost : 12.3541
+No!
+Verifying branch 558 @Trace2#776#E7640#0-1: CCost : 7e-06
+Cost : 12.3602
+No!
+Verifying branch 559 @Trace2#568#E7640#1-0: CCost : 6e-06
+Cost : 10.6823
+No!
+Verifying branch 560 @Trace2#594#E7640#1-0: CCost : 5e-06
+NNo!
+Verifying branch 561 @Trace2#596#E7640#0-1: CCost : 2e-06
+NNo!
+Verifying branch 562 @Trace2#603#E7640#1-0: CCost : 2e-06
+Cost : 0.006199
+No!
+Verifying branch 563 @Trace2#608#E7742#1-0: CCost : 5e-06
+Cost : 9.69725
+No!
+Verifying branch 564 @Trace2#499#E7767#1-0: CCost : 5e-06
+NNo!
+Verifying branch 565 @Trace2#501#E7767#1-0: CCost : 1e-06
+NNo!
+Verifying branch 566 @Trace2#502#E7803#1-0: CCost : 1e-06
+NNo!
+Verifying branch 567 @Trace2#503#E7813#1-0: CCost : 1e-06
+NNo!
+Verifying branch 568 @Trace2#505#E7821#1-0: CCost : 0
+NNo!
+Verifying branch 569 @Trace2#563#E7821#1-0: CCost : 1e-06
+NNo!
+Verifying branch 570 @Trace2#563#E7877#0-1: CCost : 1e-06
+NNo!
+Verifying branch 571 @Trace2#501#E7877#0-1: CCost : 0
+NNo!
+Verifying branch 572 @Trace2#499#E7877#1-0: CCost : 0
+NNo!
+Verifying branch 573 @Trace2#501#E7877#0-1: CCost : 0
+NNo!
+Verifying branch 574 @Trace2#499#E7877#0-1: CCost : 1e-06
+NNo!
+Verifying branch 575 @Trace2#615#E7877#1-0: CCost : 2e-06
+Cost : 0.006261
+No!
+Verifying branch 576 @Trace2#675#E7933#1-0: CCost : 4e-06
+Cost : 0.00624
+No!
+Verifying branch 577 @Trace2#629#E7954#1-0: CCost : 3e-06
+NNo!
+Verifying branch 578 @Trace2#630#E7974#0-1: CCost : 3e-06
+Cost : 9.58422
+No!
+Verifying branch 579 @Trace2#629#E7974#0-1: CCost : 6e-06
+NNo!
+Verifying branch 580 @Trace2#643#E7974#1-0: CCost : 3e-06
+NNo!
+Verifying branch 581 @Trace2#644#E8030#1-0: CCost : 3e-06
+Cost : 9.62382
+No!
+Verifying branch 582 @Trace2#646#E8030#0-1: CCost : 5e-06
+NNo!
+Verifying branch 583 @Trace2#652#E8057#1-0: CCost : 3e-06
+Cost : 12.6156
+No!
+Verifying branch 584 @Trace2#533#E8059#1-0: CCost : 5e-06
+NNo!
+Verifying branch 585 @Trace2#534#E8059#1-0: CCost : 1e-06
+NNo!
+Verifying branch 586 @Trace2#563#E8121#1-0: CCost : 1e-06
+NNo!
+Verifying branch 587 @Trace2#563#E8177#0-1: CCost : 1e-06
+NNo!
+Verifying branch 588 @Trace2#534#E8177#1-0: CCost : 1e-06
+NNo!
+Verifying branch 589 @Trace2#535#E8202#1-0: CCost : 1e-06
+NNo!
+Verifying branch 590 @Trace2#536#E8212#1-0: CCost : 1e-06
+NNo!
+Verifying branch 591 @Trace2#538#E8220#1-0: CCost : 0
+NNo!
+Verifying branch 592 @Trace2#563#E8220#1-0: CCost : 1e-06
+NNo!
+Verifying branch 593 @Trace2#563#E8276#0-1: CCost : 1e-06
+NNo!
+Verifying branch 594 @Trace2#534#E8276#0-1: CCost : 1e-06
+NNo!
+Verifying branch 595 @Trace2#533#E8276#1-0: CCost : 1e-06
+NNo!
+Verifying branch 596 @Trace2#534#E8276#1-0: CCost : 0
+NNo!
+Verifying branch 597 @Trace2#535#E8276#1-0: CCost : 1e-06
+NNo!
+Verifying branch 598 @Trace2#538#E8333#1-0: CCost : 0
+NNo!
+Verifying branch 599 @Trace2#563#E8333#0-1: CCost : 0
+NNo!
+Verifying branch 600 @Trace2#534#E8333#1-0: CCost : 1e-06
+NNo!
+Verifying branch 601 @Trace2#535#E8333#1-0: CCost : 0
+NNo!
+Verifying branch 602 @Trace2#535#E8394#1-0: CCost : 1e-06
+NNo!
+Verifying branch 603 @Trace2#536#E8404#1-0: CCost : 0
+NNo!
+Verifying branch 604 @Trace2#538#E8412#1-0: CCost : 0
+NNo!
+Verifying branch 605 @Trace2#538#E8412#1-0: CCost : 1e-06
+NNo!
+Verifying branch 606 @Trace2#563#E8412#0-1: CCost : 1e-06
+NNo!
+Verifying branch 607 @Trace2#534#E8412#0-1: CCost : 0
+NNo!
+Verifying branch 608 @Trace2#533#E8412#0-1: CCost : 1e-06
+NNo!
+Verifying branch 609 @Trace2#643#E8412#0-1: CCost : 1e-06
+NNo!
+Verifying branch 610 @Trace2#657#E8412#1-0: CCost : 2e-06
+Cost : 0.006279
+No!
+Verifying branch 611 @Trace2#716#E8502#1-0: CCost : 4e-06
+Cost : 0.006161
+No!
+Verifying branch 612 @Trace2#669#E8502#1-0: CCost : 3e-06
+NNo!
+Verifying branch 613 @Trace2#671#E8502#0-1: CCost : 2e-06
+NNo!
+Verifying branch 614 @Trace2#678#E8543#1-0: CCost : 1e-06
+NNo!
+Verifying branch 615 @Trace2#680#E8543#0-1: CCost : 1e-06
+NNo!
+Verifying branch 616 @Trace2#686#E8576#1-0: CCost : 2e-06
+Cost : 9.34226
+No!
+Verifying branch 617 @Trace2#687#E8592#1-0: CCost : 7e-06
+Cost : 12.5235
+No!
+Verifying branch 618 @Trace2#688#E8601#1-0: CCost : 7e-06
+Cost : 12.52
+No!
+Verifying branch 619 @Trace2#550#E8603#1-0: CCost : 5e-06
+NNo!
+Verifying branch 620 @Trace2#551#E8603#1-0: CCost : 1e-06
+NNo!
+Verifying branch 621 @Trace2#563#E8655#1-0: CCost : 1e-06
+NNo!
+Verifying branch 622 @Trace2#563#E8697#1-0: CCost : 1e-06
+NNo!
+Verifying branch 623 @Trace2#563#E8717#0-1: CCost : 1e-06
+NNo!
+Verifying branch 624 @Trace2#551#E8717#1-0: CCost : 0
+NNo!
+Verifying branch 625 @Trace2#552#E8717#1-0: CCost : 1e-06
+NNo!
+Verifying branch 626 @Trace2#553#E8742#1-0: CCost : 1e-06
+NNo!
+Verifying branch 627 @Trace2#563#E8742#1-0: CCost : 1e-06
+NNo!
+Verifying branch 628 @Trace2#563#E8784#1-0: CCost : 1e-06
+NNo!
+Verifying branch 629 @Trace2#563#E8804#0-1: CCost : 0
+NNo!
+Verifying branch 630 @Trace2#551#E8804#0-1: CCost : 1e-06
+NNo!
+Verifying branch 631 @Trace2#550#E8804#1-0: CCost : 0
+NNo!
+Verifying branch 632 @Trace2#551#E8804#1-0: CCost : 0
+NNo!
+Verifying branch 633 @Trace2#553#E8843#1-0: CCost : 1e-06
+NNo!
+Verifying branch 634 @Trace2#563#E8843#1-0: CCost : 1e-06
+NNo!
+Verifying branch 635 @Trace2#563#E8885#1-0: CCost : 1e-06
+NNo!
+Verifying branch 636 @Trace2#563#E8905#0-1: CCost : 1e-06
+NNo!
+Verifying branch 637 @Trace2#551#E8905#1-0: CCost : 1e-06
+NNo!
+Verifying branch 638 @Trace2#552#E8905#1-0: CCost : 0
+NNo!
+Verifying branch 639 @Trace2#553#E8930#1-0: CCost : 1e-06
+NNo!
+Verifying branch 640 @Trace2#553#E8930#1-0: CCost : 1e-06
+NNo!
+Verifying branch 641 @Trace2#563#E8930#1-0: CCost : 1e-06
+NNo!
+Verifying branch 642 @Trace2#563#E8972#1-0: CCost : 0
+NNo!
+Verifying branch 643 @Trace2#563#E8992#0-1: CCost : 1e-06
+NNo!
+Verifying branch 644 @Trace2#551#E8992#0-1: CCost : 1e-06
+NNo!
+Verifying branch 645 @Trace2#550#E8992#0-1: CCost : 1e-06
+NNo!
+Verifying branch 646 @Trace2#678#E8992#0-1: CCost : 2e-06
+NNo!
+Verifying branch 647 @Trace2#669#E8992#0-1: CCost : 1e-06
+NNo!
+Verifying branch 648 @Trace2#694#E8992#1-0: CCost : 2e-06
+Cost : 0.006132
+No!
+Verifying branch 649 @Trace2#594#E9094#1-0: CCost : 4e-06
+NNo!
+Verifying branch 650 @Trace2#596#E9094#0-1: CCost : 1e-06
+NNo!
+Verifying branch 651 @Trace2#603#E9094#1-0: CCost : 2e-06
+Cost : 0.006176
+No!
+Verifying branch 652 @Trace2#608#E9141#1-0: CCost : 5e-06
+Cost : 8.99275
+No!
+Verifying branch 653 @Trace2#609#E9157#1-0: CCost : 7e-06
+Cost : 12.5666
+No!
+Verifying branch 654 @Trace2#499#E9166#1-0: CCost : 4e-06
+NNo!
+Verifying branch 655 @Trace2#501#E9166#1-0: CCost : 1e-06
+NNo!
+Verifying branch 656 @Trace2#502#E9202#1-0: CCost : 1e-06
+NNo!
+Verifying branch 657 @Trace2#503#E9212#1-0: CCost : 1e-06
+NNo!
+Verifying branch 658 @Trace2#505#E9220#1-0: CCost : 1e-06
+NNo!
+Verifying branch 659 @Trace2#563#E9220#1-0: CCost : 0
+NNo!
+Verifying branch 660 @Trace2#563#E9276#0-1: CCost : 1e-06
+NNo!
+Verifying branch 661 @Trace2#501#E9276#0-1: CCost : 1e-06
+NNo!
+Verifying branch 662 @Trace2#499#E9276#1-0: CCost : 0
+NNo!
+Verifying branch 663 @Trace2#501#E9276#0-1: CCost : 0
+NNo!
+Verifying branch 664 @Trace2#499#E9276#0-1: CCost : 0
+NNo!
+Verifying branch 665 @Trace2#615#E9276#1-0: CCost : 2e-06
+Cost : 0.00616
+No!
+Verifying branch 666 @Trace2#675#E9332#1-0: CCost : 4e-06
+Cost : 0.006199
+No!
+Verifying branch 667 @Trace2#628#E9351#1-0: CCost : 5e-06
+Cost : 12.5668
+No!
+Verifying branch 668 @Trace2#629#E9353#0-1: CCost : 6e-06
+NNo!
+Verifying branch 669 @Trace2#643#E9353#0-1: CCost : 1e-06
+NNo!
+Verifying branch 670 @Trace2#657#E9353#1-0: CCost : 3e-06
+Cost : 0.006252
+No!
+Verifying branch 671 @Trace2#716#E9389#1-0: CCost : 4e-06
+Cost : 0.006205
+No!
+Verifying branch 672 @Trace2#669#E9389#0-1: CCost : 3e-06
+NNo!
+Verifying branch 673 @Trace2#694#E9389#1-0: CCost : 2e-06
+Cost : 0.006118
+No!
+Verifying branch 674 @Trace2#594#E9462#0-1: CCost : 3e-06
+NNo!
+Verifying branch 675 @Trace2#470#E9462#1-0: CCost : 2e-06
+Cost : 0.006167
+No!
+Verifying branch 676 @Trace2#528#E9462#1-0: CCost : 4e-06
+Cost : 0.006132
+No!
+Verifying branch 677 @Trace2#529#E9498#1-0: CCost : 3e-06
+Cost : 0.006218
+No!
+Verifying branch 678 @Trace2#530#E9507#1-0: CCost : 4e-06
+Cost : 0.006252
+No!
+Verifying branch 679 @Trace2#531#E9516#1-0: CCost : 4e-06
+Cost : 0.006148
+No!
+Verifying branch 680 @Trace2#532#E9525#1-0: CCost : 4e-06
+Cost : 0.00621
+No!
+Verifying branch 681 @Trace2#533#E9535#1-0: CCost : 4e-06
+Cost : 0.006174
+No!
+Verifying branch 682 @Trace2#535#E9537#1-0: CCost : 4e-06
+Cost : 0.006163
+No!
+Verifying branch 683 @Trace2#311#E9575#0-1: CCost : 3e-06
+NNo!
+Verifying branch 684 @Trace2#313#E9579#1-0: CCost : 2e-06
+NNo!
+Verifying branch 685 @Trace2#817#E9604#1-0: CCost : 0
+NNo!
+Verifying branch 686 @Trace2#818#E9610#1-0: CCost : 1e-06
+NNo!
+Verifying branch 687 @Trace2#819#E9613#0-1: CCost : 2e-06
+NNo!
+Verifying branch 688 @Trace2#827#E9624#0-1: CCost : 1e-06
+NNo!
+Verifying branch 689 @Trace2#835#E9675#1-0: CCost : 3e-06
+Cost : 7.95311
+No!
+Verifying branch 690 @Trace2#835#E9677#1-0: CCost : 4e-06
+NNo!
+Verifying branch 691 @Trace2#818#E9686#1-0: CCost : 1e-06
+NNo!
+Verifying branch 692 @Trace2#819#E9689#0-1: CCost : 1e-06
+NNo!
+Verifying branch 693 @Trace2#827#E9700#0-1: CCost : 1e-06
+NNo!
+Verifying branch 694 @Trace2#835#E9751#1-0: CCost : 3e-06
+Cost : 8.11764
+No!
+Verifying branch 695 @Trace2#835#E9753#1-0: CCost : 4e-06
+NNo!
+Verifying branch 696 @Trace2#818#E9762#1-0: CCost : 0
+NNo!
+Verifying branch 697 @Trace2#819#E9765#0-1: CCost : 1e-06
+NNo!
+Verifying branch 698 @Trace2#827#E9776#0-1: CCost : 0
+NNo!
+Verifying branch 699 @Trace2#835#E9827#1-0: CCost : 2e-06
+Cost : 8.29757
+No!
+Verifying branch 700 @Trace2#835#E9829#1-0: CCost : 5e-06
+NNo!
+Verifying branch 701 @Trace2#818#E9838#1-0: CCost : 1e-06
+NNo!
+Verifying branch 702 @Trace2#819#E9841#0-1: CCost : 1e-06
+NNo!
+Verifying branch 703 @Trace2#827#E9852#0-1: CCost : 1e-06
+NNo!
+Verifying branch 704 @Trace2#835#E9903#1-0: CCost : 3e-06
+Cost : 8.45555
+No!
+Verifying branch 705 @Trace2#835#E9905#1-0: CCost : 5e-06
+NNo!
+Verifying branch 706 @Trace2#818#E9914#0-1: CCost : 1e-06
+NNo!
+Verifying branch 707 @Trace2#817#E9923#1-0: CCost : 0
+NNo!
+Verifying branch 708 @Trace2#818#E9929#1-0: CCost : 0
+NNo!
+Verifying branch 709 @Trace2#819#E9932#0-1: CCost : 1e-06
+NNo!
+Verifying branch 710 @Trace2#827#E9943#0-1: CCost : 1e-06
+NNo!
+Verifying branch 711 @Trace2#835#E9994#1-0: CCost : 4e-06
+Cost : 8.63969
+No!
+Verifying branch 712 @Trace2#835#E9996#1-0: CCost : 4e-06
+NNo!
+Verifying branch 713 @Trace2#818#E10005#1-0: CCost : 1e-06
+NNo!
+Verifying branch 714 @Trace2#819#E10008#0-1: CCost : 1e-06
+NNo!
+Verifying branch 715 @Trace2#827#E10019#0-1: CCost : 1e-06
+NNo!
+Verifying branch 716 @Trace2#835#E10070#1-0: CCost : 3e-06
+Cost : 8.7977
+No!
+Verifying branch 717 @Trace2#835#E10072#1-0: CCost : 5e-06
+NNo!
+Verifying branch 718 @Trace2#818#E10081#1-0: CCost : 1e-06
+NNo!
+Verifying branch 719 @Trace2#819#E10084#0-1: CCost : 2e-06
+NNo!
+Verifying branch 720 @Trace2#827#E10095#0-1: CCost : 1e-06
+NNo!
+Verifying branch 721 @Trace2#835#E10146#1-0: CCost : 3e-06
+Cost : 8.98533
+No!
+Verifying branch 722 @Trace2#835#E10148#1-0: CCost : 5e-06
+NNo!
+Verifying branch 723 @Trace2#818#E10157#1-0: CCost : 1e-06
+NNo!
+Verifying branch 724 @Trace2#819#E10160#0-1: CCost : 1e-06
+NNo!
+Verifying branch 725 @Trace2#827#E10171#0-1: CCost : 1e-06
+NNo!
+Verifying branch 726 @Trace2#835#E10222#1-0: CCost : 3e-06
+Cost : 9.14507
+No!
+Verifying branch 727 @Trace2#835#E10224#1-0: CCost : 5e-06
+NNo!
+Verifying branch 728 @Trace2#818#E10233#0-1: CCost : 1e-06
+NNo!
+Verifying branch 729 @Trace2#817#E10242#1-0: CCost : 0
+NNo!
+Verifying branch 730 @Trace2#818#E10248#1-0: CCost : 1e-06
+NNo!
+Verifying branch 731 @Trace2#819#E10251#0-1: CCost : 1e-06
+NNo!
+Verifying branch 732 @Trace2#827#E10262#0-1: CCost : 1e-06
+NNo!
+Verifying branch 733 @Trace2#835#E10313#1-0: CCost : 4e-06
+Cost : 9.32985
+No!
+Verifying branch 734 @Trace2#835#E10315#1-0: CCost : 4e-06
+NNo!
+Verifying branch 735 @Trace2#818#E10324#1-0: CCost : 1e-06
+NNo!
+Verifying branch 736 @Trace2#819#E10327#0-1: CCost : 1e-06
+NNo!
+Verifying branch 737 @Trace2#827#E10338#0-1: CCost : 1e-06
+NNo!
+Verifying branch 738 @Trace2#835#E10389#1-0: CCost : 3e-06
+Cost : 9.49362
+No!
+Verifying branch 739 @Trace2#835#E10391#1-0: CCost : 5e-06
+NNo!
+Verifying branch 740 @Trace2#818#E10400#1-0: CCost : 1e-06
+NNo!
+Verifying branch 741 @Trace2#819#E10403#0-1: CCost : 1e-06
+NNo!
+Verifying branch 742 @Trace2#827#E10414#0-1: CCost : 1e-06
+NNo!
+Verifying branch 743 @Trace2#835#E10465#1-0: CCost : 3e-06
+Cost : 9.681
+No!
+Verifying branch 744 @Trace2#835#E10467#1-0: CCost : 4e-06
+NNo!
+Verifying branch 745 @Trace2#818#E10476#1-0: CCost : 1e-06
+NNo!
+Verifying branch 746 @Trace2#819#E10479#0-1: CCost : 1e-06
+NNo!
+Verifying branch 747 @Trace2#827#E10490#0-1: CCost : 1e-06
+NNo!
+Verifying branch 748 @Trace2#835#E10541#1-0: CCost : 3e-06
+Cost : 9.84926
+No!
+Verifying branch 749 @Trace2#835#E10543#1-0: CCost : 5e-06
+NNo!
+Verifying branch 750 @Trace2#818#E10552#0-1: CCost : 1e-06
+NNo!
+Verifying branch 751 @Trace2#817#E10561#1-0: CCost : 1e-06
+NNo!
+Verifying branch 752 @Trace2#818#E10567#1-0: CCost : 1e-06
+NNo!
+Verifying branch 753 @Trace2#819#E10570#0-1: CCost : 2e-06
+NNo!
+Verifying branch 754 @Trace2#827#E10581#0-1: CCost : 1e-06
+NNo!
+Verifying branch 755 @Trace2#835#E10632#1-0: CCost : 3e-06
+Cost : 10.0389
+No!
+Verifying branch 756 @Trace2#835#E10634#1-0: CCost : 5e-06
+NNo!
+Verifying branch 757 @Trace2#818#E10643#1-0: CCost : 1e-06
+NNo!
+Verifying branch 758 @Trace2#819#E10646#0-1: CCost : 1e-06
+NNo!
+Verifying branch 759 @Trace2#827#E10657#0-1: CCost : 1e-06
+NNo!
+Verifying branch 760 @Trace2#835#E10708#1-0: CCost : 3e-06
+Cost : 10.1917
+No!
+Verifying branch 761 @Trace2#835#E10710#1-0: CCost : 5e-06
+NNo!
+Verifying branch 762 @Trace2#818#E10719#1-0: CCost : 1e-06
+NNo!
+Verifying branch 763 @Trace2#819#E10722#0-1: CCost : 2e-06
+NNo!
+Verifying branch 764 @Trace2#827#E10733#0-1: CCost : 1e-06
+NNo!
+Verifying branch 765 @Trace2#835#E10784#1-0: CCost : 3e-06
+Cost : 10.3903
+No!
+Verifying branch 766 @Trace2#835#E10786#1-0: CCost : 5e-06
+NNo!
+Verifying branch 767 @Trace2#818#E10795#1-0: CCost : 1e-06
+NNo!
+Verifying branch 768 @Trace2#819#E10798#0-1: CCost : 1e-06
+NNo!
+Verifying branch 769 @Trace2#827#E10809#0-1: CCost : 1e-06
+NNo!
+Verifying branch 770 @Trace2#835#E10860#1-0: CCost : 3e-06
+Cost : 10.5566
+No!
+Verifying branch 771 @Trace2#835#E10862#1-0: CCost : 5e-06
+NNo!
+Verifying branch 772 @Trace2#818#E10871#0-1: CCost : 1e-06
+NNo!
+Verifying branch 773 @Trace2#817#E10880#0-1: CCost : 1e-06
+NNo!
+Verifying branch 774 @Trace2#318#E10887#0-1: CCost : 1e-06
+NNo!
+Verifying branch 775 @Trace2#378#E10919#0-1: CCost : 0
+NNo!
+Verifying branch 776 @Trace2#402#E10957#1-0: CCost : 1e-06
+NNo!
+Verifying branch 777 @Trace2#857#E10985#1-0: CCost : 1e-06
+NNo!
+Verifying branch 778 @Trace2#857#E11014#1-0: CCost : 1e-06
+NNo!
+Verifying branch 779 @Trace2#857#E11030#1-0: CCost : 1e-06
+NNo!
+Verifying branch 780 @Trace2#857#E11046#1-0: CCost : 1e-06
+NNo!
+Verifying branch 781 @Trace2#857#E11062#0-1: CCost : 1e-06
+NNo!
+Verifying branch 782 @Trace2#860#E11062#1-0: CCost : 0
+NNo!
+Verifying branch 783 @Trace2#861#E11062#0-1: CCost : 1e-06
+NNo!
+Verifying branch 784 @Trace2#872#E11131#1-0: CCost : 3e-06
+Cost : 10.7733
+No!
+Verifying branch 785 @Trace2#872#E11136#1-0: CCost : 5e-06
+NNo!
+Verifying branch 786 @Trace2#873#E11143#1-0: CCost : 1e-06
+NNo!
+Verifying branch 787 @Trace2#874#E11143#0-1: CCost : 2e-06
+NNo!
+Verifying branch 788 @Trace2#885#E11179#1-0: CCost : 3e-06
+Cost : 10.9248
+No!
+Verifying branch 789 @Trace2#885#E11207#1-0: CCost : 5e-06
+NNo!
+Verifying branch 790 @Trace2#873#E11220#1-0: CCost : 1e-06
+NNo!
+Verifying branch 791 @Trace2#874#E11220#0-1: CCost : 1e-06
+NNo!
+Verifying branch 792 @Trace2#885#E11256#1-0: CCost : 3e-06
+Cost : 11.0694
+No!
+Verifying branch 793 @Trace2#885#E11284#1-0: CCost : 5e-06
+NNo!
+Verifying branch 794 @Trace2#873#E11297#1-0: CCost : 0
+NNo!
+Verifying branch 795 @Trace2#874#E11297#0-1: CCost : 1e-06
+NNo!
+Verifying branch 796 @Trace2#885#E11333#1-0: CCost : 3e-06
+Cost : 11.2171
+No!
+Verifying branch 797 @Trace2#885#E11361#1-0: CCost : 4e-06
+NNo!
+Verifying branch 798 @Trace2#873#E11374#0-1: CCost : 1e-06
+NNo!
+Verifying branch 799 @Trace2#860#E11374#1-0: CCost : 1e-06
+NNo!
+Verifying branch 800 @Trace2#861#E11374#0-1: CCost : 1e-06
+NNo!
+Verifying branch 801 @Trace2#872#E11445#1-0: CCost : 3e-06
+Cost : 11.3614
+No!
+Verifying branch 802 @Trace2#872#E11450#1-0: CCost : 6e-06
+NNo!
+Verifying branch 803 @Trace2#873#E11457#1-0: CCost : 1e-06
+NNo!
+Verifying branch 804 @Trace2#874#E11457#0-1: CCost : 1e-06
+NNo!
+Verifying branch 805 @Trace2#885#E11493#1-0: CCost : 3e-06
+Cost : 11.5151
+No!
+Verifying branch 806 @Trace2#885#E11521#1-0: CCost : 5e-06
+NNo!
+Verifying branch 807 @Trace2#873#E11534#1-0: CCost : 0
+NNo!
+Verifying branch 808 @Trace2#874#E11534#0-1: CCost : 1e-06
+NNo!
+Verifying branch 809 @Trace2#885#E11570#1-0: CCost : 3e-06
+Cost : 11.6664
+No!
+Verifying branch 810 @Trace2#885#E11598#1-0: CCost : 5e-06
+NNo!
+Verifying branch 811 @Trace2#873#E11611#0-1: CCost : 1e-06
+NNo!
+Verifying branch 812 @Trace2#860#E11611#1-0: CCost : 1e-06
+NNo!
+Verifying branch 813 @Trace2#861#E11611#0-1: CCost : 1e-06
+NNo!
+Verifying branch 814 @Trace2#872#E11682#1-0: CCost : 3e-06
+Cost : 11.8249
+No!
+Verifying branch 815 @Trace2#872#E11687#1-0: CCost : 4e-06
+NNo!
+Verifying branch 816 @Trace2#873#E11694#1-0: CCost : 1e-06
+NNo!
+Verifying branch 817 @Trace2#874#E11694#0-1: CCost : 1e-06
+NNo!
+Verifying branch 818 @Trace2#885#E11730#1-0: CCost : 3e-06
+Cost : 11.9711
+No!
+Verifying branch 819 @Trace2#885#E11758#1-0: CCost : 5e-06
+NNo!
+Verifying branch 820 @Trace2#873#E11771#0-1: CCost : 1e-06
+NNo!
+Verifying branch 821 @Trace2#860#E11771#1-0: CCost : 1e-06
+NNo!
+Verifying branch 822 @Trace2#861#E11771#0-1: CCost : 1e-06
+NNo!
+Verifying branch 823 @Trace2#872#E11842#1-0: CCost : 3e-06
+Cost : 12.1113
+No!
+Verifying branch 824 @Trace2#872#E11847#1-0: CCost : 4e-06
+NNo!
+Verifying branch 825 @Trace2#873#E11854#0-1: CCost : 1e-06
+NNo!
+Verifying branch 826 @Trace2#860#E11854#0-1: CCost : 0
+NNo!
+Verifying branch 827 @Trace2#889#E11854#1-0: CCost : 1e-06
+NNo!
+Verifying branch 828 @Trace2#890#E11854#1-0: CCost : 1e-06
+NNo!
+Verifying branch 829 @Trace2#891#E11854#0-1: CCost : 1e-06
+NNo!
+Verifying branch 830 @Trace2#899#E11892#0-1: CCost : 1e-06
+NNo!
+Verifying branch 831 @Trace2#907#E11920#1-0: CCost : 4e-06
+Cost : 12.2817
+No!
+Verifying branch 832 @Trace2#907#E11948#1-0: CCost : 6e-06
+NNo!
+Verifying branch 833 @Trace2#907#E11950#1-0: CCost : 1e-06
+NNo!
+Verifying branch 834 @Trace2#890#E11961#1-0: CCost : 1e-06
+NNo!
+Verifying branch 835 @Trace2#891#E11961#0-1: CCost : 1e-06
+NNo!
+Verifying branch 836 @Trace2#899#E11978#0-1: CCost : 1e-06
+NNo!
+Verifying branch 837 @Trace2#907#E12006#1-0: CCost : 4e-06
+Cost : 12.4678
+No!
+Verifying branch 838 @Trace2#907#E12034#1-0: CCost : 5e-06
+NNo!
+Verifying branch 839 @Trace2#907#E12036#1-0: CCost : 1e-06
+NNo!
+Verifying branch 840 @Trace2#890#E12047#1-0: CCost : 0
+NNo!
+Verifying branch 841 @Trace2#891#E12047#0-1: CCost : 1e-06
+NNo!
+Verifying branch 842 @Trace2#899#E12064#0-1: CCost : 1e-06
+NNo!
+Verifying branch 843 @Trace2#907#E12092#1-0: CCost : 4e-06
+Cost : 12.6557
+No!
+Verifying branch 844 @Trace2#907#E12120#1-0: CCost : 6e-06
+NNo!
+Verifying branch 845 @Trace2#907#E12122#1-0: CCost : 1e-06
+NNo!
+Verifying branch 846 @Trace2#890#E12133#0-1: CCost : 1e-06
+NNo!
+Verifying branch 847 @Trace2#889#E12133#1-0: CCost : 1e-06
+NNo!
+Verifying branch 848 @Trace2#890#E12133#1-0: CCost : 1e-06
+NNo!
+Verifying branch 849 @Trace2#891#E12133#0-1: CCost : 1e-06
+NNo!
+Verifying branch 850 @Trace2#899#E12163#0-1: CCost : 1e-06
+NNo!
+Verifying branch 851 @Trace2#907#E12191#1-0: CCost : 4e-06
+Cost : 12.8616
+No!
+Verifying branch 852 @Trace2#907#E12219#1-0: CCost : 5e-06
+NNo!
+Verifying branch 853 @Trace2#907#E12221#1-0: CCost : 1e-06
+NNo!
+Verifying branch 854 @Trace2#890#E12232#1-0: CCost : 1e-06
+NNo!
+Verifying branch 855 @Trace2#891#E12232#0-1: CCost : 1e-06
+NNo!
+Verifying branch 856 @Trace2#899#E12249#0-1: CCost : 1e-06
+NNo!
+Verifying branch 857 @Trace2#907#E12277#1-0: CCost : 3e-06
+Cost : 13.0578
+No!
+Verifying branch 858 @Trace2#907#E12305#1-0: CCost : 5e-06
+NNo!
+Verifying branch 859 @Trace2#907#E12307#1-0: CCost : 1e-06
+NNo!
+Verifying branch 860 @Trace2#890#E12318#0-1: CCost : 1e-06
+NNo!
+Verifying branch 861 @Trace2#889#E12318#1-0: CCost : 1e-06
+NNo!
+Verifying branch 862 @Trace2#890#E12318#1-0: CCost : 1e-06
+NNo!
+Verifying branch 863 @Trace2#891#E12318#0-1: CCost : 1e-06
+NNo!
+Verifying branch 864 @Trace2#899#E12348#0-1: CCost : 1e-06
+NNo!
+Verifying branch 865 @Trace2#907#E12376#1-0: CCost : 3e-06
+Cost : 13.2505
+No!
+Verifying branch 866 @Trace2#907#E12404#1-0: CCost : 7e-06
+NNo!
+Verifying branch 867 @Trace2#907#E12406#1-0: CCost : 1e-06
+NNo!
+Verifying branch 868 @Trace2#890#E12417#0-1: CCost : 1e-06
+NNo!
+Verifying branch 869 @Trace2#889#E12417#1-0: CCost : 1e-06
+NNo!
+Verifying branch 870 @Trace2#890#E12417#0-1: CCost : 1e-06
+NNo!
+Verifying branch 871 @Trace2#889#E12417#0-1: CCost : 1e-06
+NNo!
+Verifying branch 872 @Trace2#912#E12417#1-0: CCost : 0
+NNo!
+Verifying branch 873 @Trace2#912#E12456#1-0: CCost : 1e-06
+NNo!
+Verifying branch 874 @Trace2#912#E12478#1-0: CCost : 1e-06
+NNo!
+Verifying branch 875 @Trace2#912#E12500#1-0: CCost : 1e-06
+NNo!
+Verifying branch 876 @Trace2#912#E12522#0-1: CCost : 0
+NNo!
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -2027680873.9 1532044348.9      0.2 
+ 22019.9 -816013821.5 616496283.8  85350.1 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          3427          1355          1929          1876           278
+
+                            TIMING INFORMATION
+Start time                        : 1457262218018603
+Initialization finish time        : 1457262218034949
+Overall finish time               : 1457262218038525
+Total time with initialization    :            30518
+Total time without initialization :             6458
+
+                             TESTING RESULTS
+TEST FAILED: (1.55629 diff)
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 154
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G32111_762997760L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997760L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997760L3
+DTAMhybrid not find
+noTaintPTS : G32111_762997760S2
+DTAMhybrid not find
+noTaintPTS : G32111_762997776L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997776L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997784L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997784L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997784L3
+DTAMhybrid not find
+noTaintPTS : G32111_762997784S2
+DTAMhybrid not find
+noTaintPTS : G32111_762997792L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997792L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997792L3
+DTAMhybrid not find
+noTaintPTS : G32111_762997792S2
+DTAMhybrid not find
+noTaintPTS : G32111_762997800L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997800L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997808L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997808L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997816L1
+DTAMhybrid not find
+noTaintPTS : G32111_762997816L2
+DTAMhybrid not find
+noTaintPTS : G32111_762997816L3
+DTAMhybrid not find
+noTaintPTS : G32111_762997816S2
+DTAMhybrid not find
+noTaintPTS : G32157_327461888L1
+DTAMhybrid not find
+noTaintPTS : G32157_327461888L2
+DTAMhybrid not find
+noTaintPTS : G32157_327461896L1
+DTAMhybrid not find
+noTaintPTS : G32157_327461896L2
+DTAMhybrid not find
+noTaintPTS : G32157_327461904L1
+DTAMhybrid not find
+noTaintPTS : G32157_327461904L2
+DTAMhybrid not find
+noTaintPTS : G32157_327461912L1
+DTAMhybrid not find
+noTaintPTS : G32157_327461912L2
+DTAMhybrid not find
+noTaintPTS : G32157_327461936L1
+DTAMhybrid not find
+noTaintPTS : G32157_327461936L2
+DTAMhybrid not find
+noTaintPTS : G32157_327461944L1
+DTAMhybrid not find
+noTaintPTS : G32157_327461944L2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896L1
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896L2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896L3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896L4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896L5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896S2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896S3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896S4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858896S5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904L1
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904L2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904L3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904L4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904L5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904S2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904S3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904S4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858904S5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912L1
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912L2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912L3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912L4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912L5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912S2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912S3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912S4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858912S5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920L1
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920L2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920L3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920L4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920L5
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920S2
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920S3
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920S4
+DTAMhybrid not find
+noTaintPTS : G32521_1820858920S5
+DTAMhybrid not find
+noTaintPTS : G42687_243613152S1
+DTAMhybrid not find
+noTaintPTS : G42687_243613160S1
+DTAMhybrid not find
+noTaintPTS : G42687_243613168S1
+DTAMhybrid not find
+noTaintPTS : G42687_243613176S1
+DTAMhybrid not find
+
+ size : 182
+DTAMSerial name : G32111_762997760L10
+DTAMSerial name : G32111_762997760L11
+DTAMSerial name : G32111_762997760L6
+DTAMSerial name : G32111_762997760L7
+DTAMSerial name : G32111_762997760L8
+DTAMSerial name : G32111_762997760L9
+DTAMSerial name : G32111_762997760S4
+DTAMSerial name : G32111_762997768L5
+DTAMSerial name : G32111_762997768L6
+DTAMSerial name : G32111_762997768L7
+DTAMSerial name : G32111_762997768L8
+DTAMSerial name : G32111_762997768L9
+DTAMSerial name : G32111_762997776L6
+DTAMSerial name : G32111_762997776L7
+DTAMSerial name : G32111_762997776L8
+DTAMSerial name : G32111_762997776L9
+DTAMSerial name : G32111_762997776S3
+DTAMSerial name : G32111_762997784L10
+DTAMSerial name : G32111_762997784L6
+DTAMSerial name : G32111_762997784L7
+DTAMSerial name : G32111_762997784L8
+DTAMSerial name : G32111_762997784L9
+DTAMSerial name : G32111_762997784S4
+DTAMSerial name : G32111_762997792L10
+DTAMSerial name : G32111_762997792L11
+DTAMSerial name : G32111_762997792L6
+DTAMSerial name : G32111_762997792L7
+DTAMSerial name : G32111_762997792L8
+DTAMSerial name : G32111_762997792L9
+DTAMSerial name : G32111_762997792S4
+DTAMSerial name : G32111_762997792S5
+DTAMSerial name : G32111_762997792S6
+DTAMSerial name : G32111_762997800L5
+DTAMSerial name : G32111_762997800L6
+DTAMSerial name : G32111_762997800L7
+DTAMSerial name : G32111_762997800L8
+DTAMSerial name : G32111_762997800L9
+DTAMSerial name : G32111_762997800S3
+DTAMSerial name : G32111_762997800S4
+DTAMSerial name : G32111_762997808L10
+DTAMSerial name : G32111_762997808L5
+DTAMSerial name : G32111_762997808L6
+DTAMSerial name : G32111_762997808L7
+DTAMSerial name : G32111_762997808L8
+DTAMSerial name : G32111_762997808L9
+DTAMSerial name : G32111_762997808S3
+DTAMSerial name : G32111_762997808S4
+DTAMSerial name : G32111_762997808S5
+DTAMSerial name : G32111_762997816L10
+DTAMSerial name : G32111_762997816L6
+DTAMSerial name : G32111_762997816L7
+DTAMSerial name : G32111_762997816L8
+DTAMSerial name : G32111_762997816L9
+DTAMSerial name : G32111_762997816S4
+DTAMSerial name : G32111_762997816S5
+DTAMSerial name : G32111_762997816S6
+DTAMSerial name : G32157_327461888L5
+DTAMSerial name : G32157_327461888L6
+DTAMSerial name : G32157_327461888L7
+DTAMSerial name : G32157_327461888L8
+DTAMSerial name : G32157_327461888L9
+DTAMSerial name : G32157_327461888S3
+DTAMSerial name : G32157_327461896L10
+DTAMSerial name : G32157_327461896L5
+DTAMSerial name : G32157_327461896L6
+DTAMSerial name : G32157_327461896L7
+DTAMSerial name : G32157_327461896L8
+DTAMSerial name : G32157_327461896L9
+DTAMSerial name : G32157_327461896S3
+DTAMSerial name : G32157_327461896S4
+DTAMSerial name : G32157_327461904L5
+DTAMSerial name : G32157_327461904L6
+DTAMSerial name : G32157_327461904L7
+DTAMSerial name : G32157_327461904L8
+DTAMSerial name : G32157_327461904L9
+DTAMSerial name : G32157_327461904S3
+DTAMSerial name : G32157_327461912L10
+DTAMSerial name : G32157_327461912L5
+DTAMSerial name : G32157_327461912L6
+DTAMSerial name : G32157_327461912L7
+DTAMSerial name : G32157_327461912L8
+DTAMSerial name : G32157_327461912L9
+DTAMSerial name : G32157_327461912S3
+DTAMSerial name : G32157_327461912S4
+DTAMSerial name : G32157_327461920L5
+DTAMSerial name : G32157_327461920L6
+DTAMSerial name : G32157_327461920L7
+DTAMSerial name : G32157_327461920L8
+DTAMSerial name : G32157_327461920L9
+DTAMSerial name : G32157_327461928L5
+DTAMSerial name : G32157_327461928L6
+DTAMSerial name : G32157_327461928L7
+DTAMSerial name : G32157_327461928L8
+DTAMSerial name : G32157_327461928L9
+DTAMSerial name : G32157_327461936L5
+DTAMSerial name : G32157_327461936L6
+DTAMSerial name : G32157_327461936L7
+DTAMSerial name : G32157_327461936L8
+DTAMSerial name : G32157_327461936L9
+DTAMSerial name : G32157_327461936S3
+DTAMSerial name : G32157_327461944L5
+DTAMSerial name : G32157_327461944L6
+DTAMSerial name : G32157_327461944L7
+DTAMSerial name : G32157_327461944L8
+DTAMSerial name : G32157_327461944L9
+DTAMSerial name : G32157_327461944S3
+DTAMSerial name : G32526_576530104L8
+DTAMSerial name : G32526_576530104L9
+DTAMSerial name : G32526_576530104S7
+DTAMSerial name : G32526_576530104S8
+DTAMSerial name : G42687_243613152L2
+DTAMSerial name : G42687_243613152L3
+DTAMSerial name : G42687_243613152L4
+DTAMSerial name : G42687_243613152L5
+DTAMSerial name : G42687_243613152L6
+DTAMSerial name : G42687_243613152L7
+DTAMSerial name : G42687_243613152L8
+DTAMSerial name : G42687_243613152S2
+DTAMSerial name : G42687_243613152S3
+DTAMSerial name : G42687_243613152S4
+DTAMSerial name : G42687_243613152S5
+DTAMSerial name : G42687_243613160L2
+DTAMSerial name : G42687_243613160L3
+DTAMSerial name : G42687_243613160L4
+DTAMSerial name : G42687_243613160L5
+DTAMSerial name : G42687_243613160L6
+DTAMSerial name : G42687_243613160L7
+DTAMSerial name : G42687_243613160L8
+DTAMSerial name : G42687_243613160S2
+DTAMSerial name : G42687_243613160S3
+DTAMSerial name : G42687_243613160S4
+DTAMSerial name : G42687_243613160S5
+DTAMSerial name : G42687_243613168L2
+DTAMSerial name : G42687_243613168L3
+DTAMSerial name : G42687_243613168L4
+DTAMSerial name : G42687_243613168L5
+DTAMSerial name : G42687_243613168L6
+DTAMSerial name : G42687_243613168L7
+DTAMSerial name : G42687_243613168L8
+DTAMSerial name : G42687_243613168S2
+DTAMSerial name : G42687_243613168S3
+DTAMSerial name : G42687_243613168S4
+DTAMSerial name : G42687_243613168S5
+DTAMSerial name : G42687_243613176L2
+DTAMSerial name : G42687_243613176L3
+DTAMSerial name : G42687_243613176L4
+DTAMSerial name : G42687_243613176L5
+DTAMSerial name : G42687_243613176L6
+DTAMSerial name : G42687_243613176L7
+DTAMSerial name : G42687_243613176L8
+DTAMSerial name : G42687_243613176S2
+DTAMSerial name : G42687_243613176S3
+DTAMSerial name : G42687_243613176S4
+DTAMSerial name : G42687_243613176S5
+taintPTS name : G32111_762997760S3
+taintPTS name : G32111_762997776L3
+taintPTS name : G32111_762997776S2
+taintPTS name : G32111_762997784S3
+taintPTS name : G32111_762997792S3
+taintPTS name : G32111_762997800S2
+taintPTS name : G32111_762997808S2
+taintPTS name : G32111_762997816S3
+taintPTS name : G32157_327461888L3
+taintPTS name : G32157_327461888L4
+taintPTS name : G32157_327461888S2
+taintPTS name : G32157_327461896L3
+taintPTS name : G32157_327461896L4
+taintPTS name : G32157_327461896S2
+taintPTS name : G32157_327461904L3
+taintPTS name : G32157_327461904L4
+taintPTS name : G32157_327461904S2
+taintPTS name : G32157_327461912L3
+taintPTS name : G32157_327461912L4
+taintPTS name : G32157_327461912S2
+taintPTS name : G32157_327461936S2
+taintPTS name : G32157_327461944S2
+taintPTS name : G32526_576530104L1
+taintPTS name : G32526_576530104L2
+taintPTS name : G32526_576530104L3
+taintPTS name : G32526_576530104S2
+taintPTS name : G32526_576530104S3
+taintPTS name : G32526_576530104S6
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixTrace1#422#E7992#1-0.txt
+************************************************************************
+
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -2027680873.9 1532044348.9      0.2 
+ 22019.9 -816013821.5 616496283.8  85350.1 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          6388          1458          1920          1911           276
+
+                            TIMING INFORMATION
+Start time                        : 1457262249928169
+Initialization finish time        : 1457262249952316
+Overall finish time               : 1457262249958949
+Total time with initialization    :            30780
+Total time without initialization :             6633
+
+                             TESTING RESULTS
+TEST FAILED: (1.55629 diff)
+######################本条路径为旧路径####################
+
+************************************************************************
+第4次执行,路径文件为trace4.txt 前缀执行,前缀文件为prefixTrace2#422#E5155#1-0.txt
+************************************************************************
+
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -62024.6 122253.8      0.4 
+ 22019.9  35000.2 -51161.0 103007.7 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          6129          1312          1887          1872           281
+
+                            TIMING INFORMATION
+Start time                        : 1457262249974467
+Initialization finish time        : 1457262249993404
+Overall finish time               : 1457262249999781
+Total time with initialization    :            25314
+Total time without initialization :             6377
+
+                             TESTING RESULTS
+TEST FAILED: (0.52704 diff)
+######################本条路径为旧路径####################
+
+************************************************************************
+第5次执行,路径文件为trace5.txt 前缀执行,前缀文件为prefixTrace2#422#E6738#0-1.txt
+************************************************************************
+
+
+Blocked Dense LU Factorization
+     4 by 4 Matrix
+     2 Processors
+     2 by 2 Element Blocks
+
+
+Matrix before decomposition:
+ 27283.7  37061.0  49186.1   8687.3 
+ 29786.5   1158.0  24004.8   4205.3 
+ 54712.3  12294.2 230175.4  62317.1 
+ 22019.9  64911.1  37575.9 100640.2 
+
+Matrix after decomposition:
+ 27283.7      1.4      1.8      0.3 
+ 29786.5 -39302.8      0.8      0.1 
+ 54712.3 -62024.6 122253.8      0.4 
+ 22019.9  35000.2 -51161.0 103007.7 
+                            PROCESS STATISTICS
+              Total      Diagonal     Perimeter      Interior       Barrier
+ Proc         Time         Time         Time           Time          Time
+    0          6137          1308          1905          1872           281
+
+                            TIMING INFORMATION
+Start time                        : 1457262250019859
+Initialization finish time        : 1457262250038741
+Overall finish time               : 1457262250045129
+Total time with initialization    :            25270
+Total time without initialization :             6388
+
+                             TESTING RESULTS
+TEST FAILED: (0.52704 diff)
+######################本条路径为旧路径####################
+
+KLEE: done: total instructions = 112968
+KLEE: done: completed paths = 9
+KLEE: done: generated tests = 0

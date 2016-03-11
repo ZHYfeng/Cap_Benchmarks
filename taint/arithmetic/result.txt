@@ -1,0 +1,1445 @@
+KLEE: output directory is "/home/zhy/Test/taint/arithmetic/arithmetic_put/klee-out-0"
+KLEE: WARNING: undefined reference to function: make_taint
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_signal
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(45734304, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(45837920, 0)
+KLEE: WARNING ONCE: calling external: printf(45970064, 0)
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 15
+Verifying branch 1 @Trace1#19#E26#0-1: CCost : 4e-06
+Cost : 0.111419
+No!
+Verifying branch 2 @Trace1#19#E45#1-0: CCost : 4e-06
+Cost : 0.055561
+Yes!
+Verifying branch 3 @Trace1#42#E64#0-1: CCost : 4e-06
+Cost : 0.064164
+Yes!
+Verifying branch 4 @Trace1#42#E90#1-0: CCost : 4e-06
+Cost : 0.064501
+Yes!
+Verifying branch 5 @Trace1#19#E96#0-1: CCost : 4e-06
+Cost : 0.182089
+No!
+Verifying branch 6 @Trace1#19#E115#1-0: CCost : 4e-06
+Cost : 0.132907
+Yes!
+Verifying branch 7 @Trace1#42#E121#0-1: CCost : 4e-06
+Cost : 0.111927
+Yes!
+Verifying branch 8 @Trace1#42#E147#1-0: CCost : 3e-06
+Cost : 0.087146
+Yes!
+Verifying branch 9 @Trace1#19#E153#0-1: CCost : 3e-06
+Cost : 0.087972
+No!
+Verifying branch 10 @Trace1#19#E172#1-0: CCost : 5e-06
+Cost : 0.028625
+Yes!
+Verifying branch 11 @Trace1#42#E178#0-1: CCost : 4e-06
+Cost : 0.055499
+No!
+Verifying branch 12 @Trace1#42#E204#1-0: CCost : 5e-06
+Cost : 0.071768
+Yes!
+Verifying branch 13 @Trace1#19#E210#0-1: CCost : 4e-06
+Cost : 0.074118
+No!
+Verifying branch 14 @Trace1#42#E230#0-1: CCost : 4e-06
+Cost : 0.041859
+No!
+Verifying branch 15 @Trace1#77#E266#1-0: CCost : 4e-06
+Cost : 0.001771
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 26
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+taintPTS : G8_45977232L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G8_45977232L2
+DTAMhybrid find
+getLine : 22
+taintPTS : G8_45977232L3
+DTAMhybrid find
+getLine : 19
+noTaintPTS : G8_45977232L4
+DTAMhybrid find
+getLine : 38
+taintPTS : G8_45977232S2
+DTAMhybrid find
+getLine : 22
+taintPTS : G8_45977232S3
+DTAMhybrid find
+getLine : 38
+
+ size : 31
+DTAMSerial name : G8_45977232L10 getLine : 19
+DTAMSerial name : G8_45977232L11 getLine : 42
+DTAMSerial name : G8_45977232L12 getLine : 47
+DTAMSerial name : G8_45977232L13 getLine : 42
+DTAMSerial name : G8_45977232L14 getLine : 19
+DTAMSerial name : G8_45977232L15 getLine : 22
+DTAMSerial name : G8_45977232L16 getLine : 19
+DTAMSerial name : G8_45977232L17 getLine : 42
+DTAMSerial name : G8_45977232L18 getLine : 47
+DTAMSerial name : G8_45977232L19 getLine : 42
+DTAMSerial name : G8_45977232L20 getLine : 19
+DTAMSerial name : G8_45977232L21 getLine : 22
+DTAMSerial name : G8_45977232L22 getLine : 42
+DTAMSerial name : G8_45977232L23 getLine : 47
+DTAMSerial name : G8_45977232L5 getLine : 42
+DTAMSerial name : G8_45977232L6 getLine : 47
+DTAMSerial name : G8_45977232L7 getLine : 42
+DTAMSerial name : G8_45977232L8 getLine : 19
+DTAMSerial name : G8_45977232L9 getLine : 22
+DTAMSerial name : G8_45977232S10 getLine : 47
+DTAMSerial name : G8_45977232S4 getLine : 47
+DTAMSerial name : G8_45977232S5 getLine : 22
+DTAMSerial name : G8_45977232S6 getLine : 47
+DTAMSerial name : G8_45977232S7 getLine : 22
+DTAMSerial name : G8_45977232S8 getLine : 47
+DTAMSerial name : G8_45977232S9 getLine : 22
+taintPTS name : G8_45977232L1 getLine : 19
+taintPTS name : G8_45977232L2 getLine : 22
+taintPTS name : G8_45977232L3 getLine : 19
+taintPTS name : G8_45977232S2 getLine : 22
+taintPTS name : G8_45977232S3 getLine : 38
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#19#E45#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 13
+Verifying branch 1 @Trace2#19#E31#0-1: CCost : 4e-06
+Cost : 0.079246
+No!
+Verifying branch 2 @Trace2#42#E48#0-1: CCost : 5e-06
+Cost : 0.08167
+Yes!
+Verifying branch 3 @Trace2#19#E73#0-1: CCost : 4e-06
+Cost : 0.368832
+Yes!
+Verifying branch 4 @Trace2#19#E94#1-0: CCost : 4e-06
+Cost : 0.103399
+Yes!
+Verifying branch 5 @Trace2#42#E109#0-1: CCost : 5e-06
+Cost : 0.015508
+Yes!
+Verifying branch 6 @Trace2#42#E135#1-0: CCost : 3e-06
+Cost : 0.083558
+Yes!
+Verifying branch 7 @Trace2#19#E141#0-1: CCost : 4e-06
+Cost : 0.192772
+Yes!
+Verifying branch 8 @Trace2#19#E160#1-0: CCost : 3e-06
+Cost : 0.036356
+Yes!
+Verifying branch 9 @Trace2#42#E166#0-1: CCost : 4e-06
+Cost : 0.032053
+Yes!
+Verifying branch 10 @Trace2#42#E192#1-0: CCost : 3e-06
+Cost : 0.083718
+Yes!
+Verifying branch 11 @Trace2#19#E198#0-1: CCost : 3e-06
+Cost : 0.120102
+No!
+Verifying branch 12 @Trace2#42#E218#0-1: CCost : 4e-06
+Cost : 0.028144
+No!
+Verifying branch 13 @Trace2#77#E254#1-0: CCost : 5e-06
+Cost : 0.00146
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 0
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+
+ size : 0
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixTrace1#42#E64#0-1.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 16
+Verifying branch 1 @Trace3#42#E27#1-0: CCost : 3e-06
+Cost : 0.022564
+Yes!
+Verifying branch 2 @Trace3#19#E45#0-1: CCost : 4e-06
+Cost : 0.039525
+No!
+Verifying branch 3 @Trace3#19#E64#1-0: CCost : 4e-06
+Cost : 0.109549
+Yes!
+Verifying branch 4 @Trace3#42#E70#0-1: CCost : 4e-06
+Cost : 0.158352
+Yes!
+Verifying branch 5 @Trace3#42#E96#1-0: CCost : 4e-06
+Cost : 0.113165
+Yes!
+Verifying branch 6 @Trace3#19#E102#0-1: CCost : 3e-06
+Cost : 0.060703
+No!
+Verifying branch 7 @Trace3#19#E121#1-0: CCost : 3e-06
+Cost : 0.058938
+Yes!
+Verifying branch 8 @Trace3#42#E127#0-1: CCost : 3e-06
+Cost : 0.097857
+No!
+Verifying branch 9 @Trace3#42#E153#1-0: CCost : 4e-06
+Cost : 0.039888
+Yes!
+Verifying branch 10 @Trace3#19#E159#0-1: CCost : 3e-06
+Cost : 0.061267
+No!
+Verifying branch 11 @Trace3#19#E178#1-0: CCost : 4e-06
+Cost : 0.02783
+Yes!
+Verifying branch 12 @Trace3#42#E184#0-1: CCost : 4e-06
+Cost : 0.05483
+No!
+Verifying branch 13 @Trace3#42#E210#1-0: CCost : 4e-06
+Cost : 0.030894
+Yes!
+Verifying branch 14 @Trace3#19#E216#0-1: CCost : 3e-06
+Cost : 0.078725
+No!
+Verifying branch 15 @Trace3#42#E236#0-1: CCost : 3e-06
+Cost : 0.028994
+No!
+Verifying branch 16 @Trace3#77#E272#1-0: CCost : 4e-06
+Cost : 0.001883
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 31
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G1312_73415184L1
+DTAMhybrid find
+getLine : 38
+taintPTS : G1312_73415184S2
+DTAMhybrid find
+getLine : 38
+
+ size : 32
+DTAMSerial name : G1312_73415184L10 getLine : 22
+DTAMSerial name : G1312_73415184L11 getLine : 19
+DTAMSerial name : G1312_73415184L12 getLine : 42
+DTAMSerial name : G1312_73415184L13 getLine : 47
+DTAMSerial name : G1312_73415184L14 getLine : 42
+DTAMSerial name : G1312_73415184L15 getLine : 19
+DTAMSerial name : G1312_73415184L16 getLine : 22
+DTAMSerial name : G1312_73415184L17 getLine : 19
+DTAMSerial name : G1312_73415184L18 getLine : 42
+DTAMSerial name : G1312_73415184L19 getLine : 47
+DTAMSerial name : G1312_73415184L2 getLine : 42
+DTAMSerial name : G1312_73415184L20 getLine : 42
+DTAMSerial name : G1312_73415184L21 getLine : 19
+DTAMSerial name : G1312_73415184L22 getLine : 22
+DTAMSerial name : G1312_73415184L23 getLine : 42
+DTAMSerial name : G1312_73415184L24 getLine : 47
+DTAMSerial name : G1312_73415184L3 getLine : 19
+DTAMSerial name : G1312_73415184L4 getLine : 22
+DTAMSerial name : G1312_73415184L5 getLine : 19
+DTAMSerial name : G1312_73415184L6 getLine : 42
+DTAMSerial name : G1312_73415184L7 getLine : 47
+DTAMSerial name : G1312_73415184L8 getLine : 42
+DTAMSerial name : G1312_73415184L9 getLine : 19
+DTAMSerial name : G1312_73415184S10 getLine : 47
+DTAMSerial name : G1312_73415184S3 getLine : 22
+DTAMSerial name : G1312_73415184S4 getLine : 47
+DTAMSerial name : G1312_73415184S5 getLine : 22
+DTAMSerial name : G1312_73415184S6 getLine : 47
+DTAMSerial name : G1312_73415184S7 getLine : 22
+DTAMSerial name : G1312_73415184S8 getLine : 47
+DTAMSerial name : G1312_73415184S9 getLine : 22
+taintPTS name : G1312_73415184S2 getLine : 38
+
+************************************************************************
+第4次执行,路径文件为trace4.txt 前缀执行,前缀文件为prefixTrace1#42#E90#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 13
+Verifying branch 1 @Trace4#19#E23#0-1: CCost : 4e-06
+Cost : 0.064318
+No!
+Verifying branch 2 @Trace4#19#E51#1-0: CCost : 4e-06
+Cost : 0.03999
+Yes!
+Verifying branch 3 @Trace4#42#E62#0-1: CCost : 3e-06
+Cost : 0.085882
+Yes!
+Verifying branch 4 @Trace4#19#E80#0-1: CCost : 3e-06
+Cost : 0.18065
+No!
+Verifying branch 5 @Trace4#42#E98#0-1: CCost : 5e-06
+Cost : 0.054648
+Yes!
+Verifying branch 6 @Trace4#42#E126#1-0: CCost : 4e-06
+Cost : 0.122679
+Yes!
+Verifying branch 7 @Trace4#19#E141#0-1: CCost : 4e-06
+Cost : 0.089382
+Yes!
+Verifying branch 8 @Trace4#19#E160#1-0: CCost : 3e-06
+Cost : 0.031199
+Yes!
+Verifying branch 9 @Trace4#42#E166#0-1: CCost : 4e-06
+Cost : 0.034306
+Yes!
+Verifying branch 10 @Trace4#42#E192#1-0: CCost : 3e-06
+Cost : 0.199322
+Yes!
+Verifying branch 11 @Trace4#19#E198#0-1: CCost : 3e-06
+Cost : 0.125881
+No!
+Verifying branch 12 @Trace4#42#E218#0-1: CCost : 4e-06
+Cost : 0.059773
+Yes!
+Verifying branch 13 @Trace4#77#E254#1-0: CCost : 4e-06
+Cost : 0.001498
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 24
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+taintPTS : G1978_105659408L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G1978_105659408L2
+DTAMhybrid find
+getLine : 22
+noTaintPTS : G1978_105659408L3
+DTAMhybrid find
+getLine : 38
+taintPTS : G1978_105659408L4
+DTAMhybrid find
+getLine : 19
+taintPTS : G1978_105659408S2
+DTAMhybrid find
+getLine : 22
+taintPTS : G1978_105659408S3
+DTAMhybrid find
+getLine : 38
+
+ size : 29
+DTAMSerial name : G1978_105659408L10 getLine : 47
+DTAMSerial name : G1978_105659408L11 getLine : 42
+DTAMSerial name : G1978_105659408L12 getLine : 19
+DTAMSerial name : G1978_105659408L13 getLine : 22
+DTAMSerial name : G1978_105659408L14 getLine : 19
+DTAMSerial name : G1978_105659408L15 getLine : 42
+DTAMSerial name : G1978_105659408L16 getLine : 47
+DTAMSerial name : G1978_105659408L17 getLine : 42
+DTAMSerial name : G1978_105659408L18 getLine : 19
+DTAMSerial name : G1978_105659408L19 getLine : 22
+DTAMSerial name : G1978_105659408L20 getLine : 42
+DTAMSerial name : G1978_105659408L21 getLine : 47
+DTAMSerial name : G1978_105659408L5 getLine : 42
+DTAMSerial name : G1978_105659408L6 getLine : 47
+DTAMSerial name : G1978_105659408L7 getLine : 19
+DTAMSerial name : G1978_105659408L8 getLine : 22
+DTAMSerial name : G1978_105659408L9 getLine : 42
+DTAMSerial name : G1978_105659408S10 getLine : 47
+DTAMSerial name : G1978_105659408S4 getLine : 47
+DTAMSerial name : G1978_105659408S5 getLine : 22
+DTAMSerial name : G1978_105659408S6 getLine : 47
+DTAMSerial name : G1978_105659408S7 getLine : 22
+DTAMSerial name : G1978_105659408S8 getLine : 47
+DTAMSerial name : G1978_105659408S9 getLine : 22
+taintPTS name : G1978_105659408L1 getLine : 19
+taintPTS name : G1978_105659408L2 getLine : 22
+taintPTS name : G1978_105659408L4 getLine : 19
+taintPTS name : G1978_105659408S2 getLine : 22
+taintPTS name : G1978_105659408S3 getLine : 38
+
+************************************************************************
+第5次执行,路径文件为trace5.txt 前缀执行,前缀文件为prefixTrace1#19#E115#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 13
+Verifying branch 1 @Trace5#19#E24#0-1: CCost : 3e-06
+Cost : 0.034084
+No!
+Verifying branch 2 @Trace5#19#E51#1-0: CCost : 4e-06
+Cost : 0.011547
+Yes!
+Verifying branch 3 @Trace5#42#E62#0-1: CCost : 3e-06
+Cost : 0.221018
+Yes!
+Verifying branch 4 @Trace5#42#E88#1-0: CCost : 5e-06
+Cost : 0.120997
+Yes!
+Verifying branch 5 @Trace5#19#E94#0-1: CCost : 4e-06
+Cost : 0.234823
+No!
+Verifying branch 6 @Trace5#42#E105#0-1: CCost : 4e-06
+Cost : 0.024913
+Yes!
+Verifying branch 7 @Trace5#19#E130#0-1: CCost : 3e-06
+Cost : 0.053904
+Yes!
+Verifying branch 8 @Trace5#19#E151#1-0: CCost : 4e-06
+Cost : 0.122687
+Yes!
+Verifying branch 9 @Trace5#42#E166#0-1: CCost : 4e-06
+Cost : 0.038139
+Yes!
+Verifying branch 10 @Trace5#42#E192#1-0: CCost : 3e-06
+Cost : 0.080005
+Yes!
+Verifying branch 11 @Trace5#19#E198#0-1: CCost : 3e-06
+Cost : 0.077891
+Yes!
+Verifying branch 12 @Trace5#42#E218#0-1: CCost : 4e-06
+Cost : 0.084111
+Yes!
+Verifying branch 13 @Trace5#77#E254#1-0: CCost : 3e-06
+Cost : 0.00139
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 25
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G2623_128978800L1
+DTAMhybrid find
+getLine : 19
+noTaintPTS : G2623_128978800L2
+DTAMhybrid find
+getLine : 22
+taintPTS : G2623_128978800L3
+DTAMhybrid find
+getLine : 38
+taintPTS : G2623_128978800S2
+DTAMhybrid find
+getLine : 38
+taintPTS : G2623_128978800S3
+DTAMhybrid find
+getLine : 22
+
+ size : 28
+DTAMSerial name : G2623_128978800L10 getLine : 42
+DTAMSerial name : G2623_128978800L11 getLine : 47
+DTAMSerial name : G2623_128978800L12 getLine : 19
+DTAMSerial name : G2623_128978800L13 getLine : 22
+DTAMSerial name : G2623_128978800L14 getLine : 19
+DTAMSerial name : G2623_128978800L15 getLine : 42
+DTAMSerial name : G2623_128978800L16 getLine : 47
+DTAMSerial name : G2623_128978800L17 getLine : 42
+DTAMSerial name : G2623_128978800L18 getLine : 19
+DTAMSerial name : G2623_128978800L19 getLine : 22
+DTAMSerial name : G2623_128978800L20 getLine : 42
+DTAMSerial name : G2623_128978800L21 getLine : 47
+DTAMSerial name : G2623_128978800L4 getLine : 19
+DTAMSerial name : G2623_128978800L5 getLine : 42
+DTAMSerial name : G2623_128978800L6 getLine : 47
+DTAMSerial name : G2623_128978800L7 getLine : 42
+DTAMSerial name : G2623_128978800L8 getLine : 19
+DTAMSerial name : G2623_128978800L9 getLine : 22
+DTAMSerial name : G2623_128978800S10 getLine : 47
+DTAMSerial name : G2623_128978800S4 getLine : 47
+DTAMSerial name : G2623_128978800S5 getLine : 22
+DTAMSerial name : G2623_128978800S6 getLine : 47
+DTAMSerial name : G2623_128978800S7 getLine : 22
+DTAMSerial name : G2623_128978800S8 getLine : 47
+DTAMSerial name : G2623_128978800S9 getLine : 22
+taintPTS name : G2623_128978800L3 getLine : 38
+taintPTS name : G2623_128978800S2 getLine : 38
+taintPTS name : G2623_128978800S3 getLine : 22
+
+************************************************************************
+第6次执行,路径文件为trace6.txt 前缀执行,前缀文件为prefixTrace1#42#E121#0-1.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 15
+Verifying branch 1 @Trace6#19#E24#0-1: CCost : 4e-06
+Cost : 0.08823
+No!
+Verifying branch 2 @Trace6#42#E47#0-1: CCost : 4e-06
+Cost : 0.03132
+Yes!
+Verifying branch 3 @Trace6#42#E73#1-0: CCost : 4e-06
+Cost : 0.089459
+No!
+Verifying branch 4 @Trace6#42#E80#1-0: CCost : 4e-06
+Cost : 0.063056
+Yes!
+Verifying branch 5 @Trace6#19#E96#0-1: CCost : 4e-06
+Cost : 0.064333
+No!
+Verifying branch 6 @Trace6#19#E115#1-0: CCost : 4e-06
+Cost : 0.094281
+Yes!
+Verifying branch 7 @Trace6#42#E121#0-1: CCost : 3e-06
+Cost : 0.080505
+No!
+Verifying branch 8 @Trace6#42#E147#1-0: CCost : 5e-06
+Cost : 0.04456
+Yes!
+Verifying branch 9 @Trace6#19#E153#0-1: CCost : 4e-06
+Cost : 0.136574
+No!
+Verifying branch 10 @Trace6#19#E172#1-0: CCost : 7e-06
+Cost : 0.059411
+Yes!
+Verifying branch 11 @Trace6#42#E178#0-1: CCost : 4e-06
+Cost : 0.046952
+No!
+Verifying branch 12 @Trace6#42#E204#1-0: CCost : 4e-06
+Cost : 0.022893
+Yes!
+Verifying branch 13 @Trace6#19#E210#0-1: CCost : 3e-06
+Cost : 0.031996
+No!
+Verifying branch 14 @Trace6#42#E230#0-1: CCost : 4e-06
+Cost : 0.031049
+No!
+Verifying branch 15 @Trace6#77#E266#1-0: CCost : 4e-06
+Cost : 0.001571
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 27
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+taintPTS : G3268_151361136L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G3268_151361136L2
+DTAMhybrid find
+getLine : 22
+noTaintPTS : G3268_151361136L3
+DTAMhybrid find
+getLine : 38
+taintPTS : G3268_151361136S2
+DTAMhybrid find
+getLine : 22
+taintPTS : G3268_151361136S3
+DTAMhybrid find
+getLine : 38
+
+ size : 31
+DTAMSerial name : G3268_151361136L10 getLine : 19
+DTAMSerial name : G3268_151361136L11 getLine : 42
+DTAMSerial name : G3268_151361136L12 getLine : 47
+DTAMSerial name : G3268_151361136L13 getLine : 42
+DTAMSerial name : G3268_151361136L14 getLine : 19
+DTAMSerial name : G3268_151361136L15 getLine : 22
+DTAMSerial name : G3268_151361136L16 getLine : 19
+DTAMSerial name : G3268_151361136L17 getLine : 42
+DTAMSerial name : G3268_151361136L18 getLine : 47
+DTAMSerial name : G3268_151361136L19 getLine : 42
+DTAMSerial name : G3268_151361136L20 getLine : 19
+DTAMSerial name : G3268_151361136L21 getLine : 22
+DTAMSerial name : G3268_151361136L22 getLine : 42
+DTAMSerial name : G3268_151361136L23 getLine : 47
+DTAMSerial name : G3268_151361136L4 getLine : 42
+DTAMSerial name : G3268_151361136L5 getLine : 47
+DTAMSerial name : G3268_151361136L6 getLine : 42
+DTAMSerial name : G3268_151361136L7 getLine : 42
+DTAMSerial name : G3268_151361136L8 getLine : 19
+DTAMSerial name : G3268_151361136L9 getLine : 22
+DTAMSerial name : G3268_151361136S10 getLine : 47
+DTAMSerial name : G3268_151361136S4 getLine : 47
+DTAMSerial name : G3268_151361136S5 getLine : 22
+DTAMSerial name : G3268_151361136S6 getLine : 47
+DTAMSerial name : G3268_151361136S7 getLine : 22
+DTAMSerial name : G3268_151361136S8 getLine : 47
+DTAMSerial name : G3268_151361136S9 getLine : 22
+taintPTS name : G3268_151361136L1 getLine : 19
+taintPTS name : G3268_151361136L2 getLine : 22
+taintPTS name : G3268_151361136S2 getLine : 22
+taintPTS name : G3268_151361136S3 getLine : 38
+
+************************************************************************
+第7次执行,路径文件为trace7.txt 前缀执行,前缀文件为prefixTrace1#42#E147#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 13
+Verifying branch 1 @Trace7#19#E24#0-1: CCost : 4e-06
+Cost : 0.063535
+No!
+Verifying branch 2 @Trace7#19#E50#1-0: CCost : 4e-06
+Cost : 0.034625
+Yes!
+Verifying branch 3 @Trace7#42#E62#0-1: CCost : 3e-06
+Cost : 0.058145
+Yes!
+Verifying branch 4 @Trace7#42#E88#1-0: CCost : 3e-06
+Cost : 0.11759
+Yes!
+Verifying branch 5 @Trace7#19#E94#0-1: CCost : 4e-06
+Cost : 0.173335
+No!
+Verifying branch 6 @Trace7#19#E113#1-0: CCost : 4e-06
+Cost : 0.038091
+Yes!
+Verifying branch 7 @Trace7#42#E119#0-1: CCost : 3e-06
+Cost : 0.031585
+Yes!
+Verifying branch 8 @Trace7#19#E137#0-1: CCost : 3e-06
+Cost : 0.084171
+No!
+Verifying branch 9 @Trace7#42#E155#0-1: CCost : 5e-06
+Cost : 0.117514
+Yes!
+Verifying branch 10 @Trace7#42#E183#1-0: CCost : 4e-06
+Cost : 0.127723
+Yes!
+Verifying branch 11 @Trace7#19#E198#0-1: CCost : 4e-06
+Cost : 0.069558
+Yes!
+Verifying branch 12 @Trace7#42#E218#0-1: CCost : 4e-06
+Cost : 0.030443
+Yes!
+Verifying branch 13 @Trace7#77#E254#1-0: CCost : 4e-06
+Cost : 0.001464
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 24
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+taintPTS : G3927_173395104L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G3927_173395104L2
+DTAMhybrid find
+getLine : 22
+noTaintPTS : G3927_173395104L3
+DTAMhybrid find
+getLine : 38
+taintPTS : G3927_173395104L4
+DTAMhybrid find
+getLine : 19
+taintPTS : G3927_173395104S2
+DTAMhybrid find
+getLine : 22
+taintPTS : G3927_173395104S3
+DTAMhybrid find
+getLine : 38
+
+ size : 29
+DTAMSerial name : G3927_173395104L10 getLine : 19
+DTAMSerial name : G3927_173395104L11 getLine : 42
+DTAMSerial name : G3927_173395104L12 getLine : 47
+DTAMSerial name : G3927_173395104L13 getLine : 19
+DTAMSerial name : G3927_173395104L14 getLine : 22
+DTAMSerial name : G3927_173395104L15 getLine : 42
+DTAMSerial name : G3927_173395104L16 getLine : 47
+DTAMSerial name : G3927_173395104L17 getLine : 42
+DTAMSerial name : G3927_173395104L18 getLine : 19
+DTAMSerial name : G3927_173395104L19 getLine : 22
+DTAMSerial name : G3927_173395104L20 getLine : 42
+DTAMSerial name : G3927_173395104L21 getLine : 47
+DTAMSerial name : G3927_173395104L5 getLine : 42
+DTAMSerial name : G3927_173395104L6 getLine : 47
+DTAMSerial name : G3927_173395104L7 getLine : 42
+DTAMSerial name : G3927_173395104L8 getLine : 19
+DTAMSerial name : G3927_173395104L9 getLine : 22
+DTAMSerial name : G3927_173395104S10 getLine : 47
+DTAMSerial name : G3927_173395104S4 getLine : 47
+DTAMSerial name : G3927_173395104S5 getLine : 22
+DTAMSerial name : G3927_173395104S6 getLine : 47
+DTAMSerial name : G3927_173395104S7 getLine : 22
+DTAMSerial name : G3927_173395104S8 getLine : 47
+DTAMSerial name : G3927_173395104S9 getLine : 22
+taintPTS name : G3927_173395104L1 getLine : 19
+taintPTS name : G3927_173395104L2 getLine : 22
+taintPTS name : G3927_173395104L4 getLine : 19
+taintPTS name : G3927_173395104S2 getLine : 22
+taintPTS name : G3927_173395104S3 getLine : 38
+
+************************************************************************
+第8次执行,路径文件为trace8.txt 前缀执行,前缀文件为prefixTrace1#19#E172#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 13
+Verifying branch 1 @Trace8#19#E24#0-1: CCost : 3e-06
+Cost : 0.027889
+No!
+Verifying branch 2 @Trace8#19#E51#1-0: CCost : 3e-06
+Cost : 0.276988
+Yes!
+Verifying branch 3 @Trace8#42#E62#0-1: CCost : 3e-06
+Cost : 0.247604
+Yes!
+Verifying branch 4 @Trace8#42#E88#1-0: CCost : 4e-06
+Cost : 0.460905
+Yes!
+Verifying branch 5 @Trace8#19#E94#0-1: CCost : 3e-06
+Cost : 0.046929
+No!
+Verifying branch 6 @Trace8#19#E113#1-0: CCost : 3e-06
+Cost : 0.020136
+Yes!
+Verifying branch 7 @Trace8#42#E119#0-1: CCost : 3e-06
+Cost : 0.14541
+Yes!
+Verifying branch 8 @Trace8#42#E145#1-0: CCost : 4e-06
+Cost : 0.048636
+Yes!
+Verifying branch 9 @Trace8#19#E151#0-1: CCost : 3e-06
+Cost : 0.060712
+No!
+Verifying branch 10 @Trace8#42#E162#0-1: CCost : 4e-06
+Cost : 0.057388
+No!
+Verifying branch 11 @Trace8#19#E187#0-1: CCost : 4e-06
+Cost : 0.034509
+Yes!
+Verifying branch 12 @Trace8#42#E218#0-1: CCost : 3e-06
+Cost : 0.081949
+Yes!
+Verifying branch 13 @Trace8#77#E254#1-0: CCost : 4e-06
+Cost : 0.001454
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 25
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+taintPTS : G4572_198625792L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G4572_198625792L2
+DTAMhybrid find
+getLine : 22
+noTaintPTS : G4572_198625792L3
+DTAMhybrid find
+getLine : 38
+taintPTS : G4572_198625792S2
+DTAMhybrid find
+getLine : 22
+taintPTS : G4572_198625792S3
+DTAMhybrid find
+getLine : 38
+
+ size : 29
+DTAMSerial name : G4572_198625792L10 getLine : 19
+DTAMSerial name : G4572_198625792L11 getLine : 42
+DTAMSerial name : G4572_198625792L12 getLine : 47
+DTAMSerial name : G4572_198625792L13 getLine : 42
+DTAMSerial name : G4572_198625792L14 getLine : 19
+DTAMSerial name : G4572_198625792L15 getLine : 22
+DTAMSerial name : G4572_198625792L16 getLine : 42
+DTAMSerial name : G4572_198625792L17 getLine : 47
+DTAMSerial name : G4572_198625792L18 getLine : 19
+DTAMSerial name : G4572_198625792L19 getLine : 22
+DTAMSerial name : G4572_198625792L20 getLine : 42
+DTAMSerial name : G4572_198625792L21 getLine : 47
+DTAMSerial name : G4572_198625792L4 getLine : 19
+DTAMSerial name : G4572_198625792L5 getLine : 42
+DTAMSerial name : G4572_198625792L6 getLine : 47
+DTAMSerial name : G4572_198625792L7 getLine : 42
+DTAMSerial name : G4572_198625792L8 getLine : 19
+DTAMSerial name : G4572_198625792L9 getLine : 22
+DTAMSerial name : G4572_198625792S10 getLine : 47
+DTAMSerial name : G4572_198625792S4 getLine : 47
+DTAMSerial name : G4572_198625792S5 getLine : 22
+DTAMSerial name : G4572_198625792S6 getLine : 47
+DTAMSerial name : G4572_198625792S7 getLine : 22
+DTAMSerial name : G4572_198625792S8 getLine : 47
+DTAMSerial name : G4572_198625792S9 getLine : 22
+taintPTS name : G4572_198625792L1 getLine : 19
+taintPTS name : G4572_198625792L2 getLine : 22
+taintPTS name : G4572_198625792S2 getLine : 22
+taintPTS name : G4572_198625792S3 getLine : 38
+
+************************************************************************
+第9次执行,路径文件为trace9.txt 前缀执行,前缀文件为prefixTrace1#42#E204#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 14
+Verifying branch 1 @Trace9#19#E24#0-1: CCost : 3e-06
+Cost : 0.030447
+No!
+Verifying branch 2 @Trace9#19#E50#1-0: CCost : 3e-06
+Cost : 0.156716
+Yes!
+Verifying branch 3 @Trace9#42#E62#0-1: CCost : 4e-06
+Cost : 2.62186
+Yes!
+Verifying branch 4 @Trace9#42#E88#1-0: CCost : 4e-06
+Cost : 0.056512
+Yes!
+Verifying branch 5 @Trace9#19#E94#0-1: CCost : 3e-06
+Cost : 0.284655
+No!
+Verifying branch 6 @Trace9#19#E113#1-0: CCost : 4e-06
+Cost : 0.123577
+Yes!
+Verifying branch 7 @Trace9#42#E119#0-1: CCost : 4e-06
+Cost : 0.202284
+Yes!
+Verifying branch 8 @Trace9#42#E145#1-0: CCost : 3e-06
+Cost : 0.043794
+Yes!
+Verifying branch 9 @Trace9#19#E151#0-1: CCost : 4e-06
+Cost : 0.043999
+No!
+Verifying branch 10 @Trace9#19#E170#1-0: CCost : 4e-06
+Cost : 0.043299
+Yes!
+Verifying branch 11 @Trace9#42#E176#0-1: CCost : 3e-06
+Cost : 0.064083
+No!
+Verifying branch 12 @Trace9#19#E194#0-1: CCost : 4e-06
+Cost : 0.031618
+No!
+Verifying branch 13 @Trace9#42#E212#0-1: CCost : 3e-06
+Cost : 0.052579
+Yes!
+Verifying branch 14 @Trace9#77#E260#1-0: CCost : 3e-06
+Cost : 0.001693
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 25
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+taintPTS : G5217_221252992L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G5217_221252992L2
+DTAMhybrid find
+getLine : 22
+noTaintPTS : G5217_221252992L3
+DTAMhybrid find
+getLine : 38
+taintPTS : G5217_221252992L4
+DTAMhybrid find
+getLine : 19
+taintPTS : G5217_221252992S2
+DTAMhybrid find
+getLine : 22
+taintPTS : G5217_221252992S3
+DTAMhybrid find
+getLine : 38
+
+ size : 30
+DTAMSerial name : G5217_221252992L10 getLine : 19
+DTAMSerial name : G5217_221252992L11 getLine : 42
+DTAMSerial name : G5217_221252992L12 getLine : 47
+DTAMSerial name : G5217_221252992L13 getLine : 42
+DTAMSerial name : G5217_221252992L14 getLine : 19
+DTAMSerial name : G5217_221252992L15 getLine : 22
+DTAMSerial name : G5217_221252992L16 getLine : 19
+DTAMSerial name : G5217_221252992L17 getLine : 42
+DTAMSerial name : G5217_221252992L18 getLine : 47
+DTAMSerial name : G5217_221252992L19 getLine : 19
+DTAMSerial name : G5217_221252992L20 getLine : 22
+DTAMSerial name : G5217_221252992L21 getLine : 42
+DTAMSerial name : G5217_221252992L22 getLine : 47
+DTAMSerial name : G5217_221252992L5 getLine : 42
+DTAMSerial name : G5217_221252992L6 getLine : 47
+DTAMSerial name : G5217_221252992L7 getLine : 42
+DTAMSerial name : G5217_221252992L8 getLine : 19
+DTAMSerial name : G5217_221252992L9 getLine : 22
+DTAMSerial name : G5217_221252992S10 getLine : 47
+DTAMSerial name : G5217_221252992S4 getLine : 47
+DTAMSerial name : G5217_221252992S5 getLine : 22
+DTAMSerial name : G5217_221252992S6 getLine : 47
+DTAMSerial name : G5217_221252992S7 getLine : 22
+DTAMSerial name : G5217_221252992S8 getLine : 47
+DTAMSerial name : G5217_221252992S9 getLine : 22
+taintPTS name : G5217_221252992L1 getLine : 19
+taintPTS name : G5217_221252992L2 getLine : 22
+taintPTS name : G5217_221252992L4 getLine : 19
+taintPTS name : G5217_221252992S2 getLine : 22
+taintPTS name : G5217_221252992S3 getLine : 38
+
+************************************************************************
+第10次执行,路径文件为trace10.txt 前缀执行,前缀文件为prefixTrace2#42#E48#0-1.txt
+************************************************************************
+
+produce ....0
+produce ....1
+total ....0
+consume ....0
+produce ....2
+total ....1
+consume ....1
+produce ....3
+total ....3
+consume ....2
+thread 1 unable to finish successfully, final state is 4
+function = main
+pos = /home/zhy/Test/taint/arithmetic/arithmetic_put/arithmetic_prog_ok.c : 75 call
+
+thread 3 unable to finish successfully, final state is 2
+function = thread2
+pos = /home/zhy/Test/taint/arithmetic/arithmetic_put/arithmetic_prog_ok.c : 43 call
+
+######################执行有错误,放弃本次执行####################
+
+KLEE: done: total instructions = 7256
+KLEE: done: completed paths = 28
+KLEE: done: generated tests = 0

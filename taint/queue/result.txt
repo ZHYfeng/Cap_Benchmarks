@@ -1,0 +1,237 @@
+KLEE: output directory is "/home/zhy/Test/taint/queue/queue_put/klee-out-0"
+KLEE: WARNING: undefined reference to function: make_taint
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: printf(25931680)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(25889920, 0)
+queue is empty
+queue is empty
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 23
+Verifying branch 1 @Trace1#32#E32#1-0: CCost : 5e-06
+Cost : 0.000609
+No!
+Verifying branch 2 @Trace1#90#E51#1-0: CCost : 1e-06
+Cost : 0.000687
+No!
+Verifying branch 3 @Trace1#54#E72#1-0: CCost : 2e-06
+Cost : 0.00056
+No!
+Verifying branch 4 @Trace1#57#E85#0-1: CCost : 1e-06
+Cost : 0.000605
+No!
+Verifying branch 5 @Trace1#54#E117#1-0: CCost : 1e-06
+Cost : 0.000591
+No!
+Verifying branch 6 @Trace1#57#E130#0-1: CCost : 1e-06
+Cost : 0.000612
+No!
+Verifying branch 7 @Trace1#54#E162#1-0: CCost : 2e-06
+Cost : 0.000651
+No!
+Verifying branch 8 @Trace1#57#E175#0-1: CCost : 1e-06
+Cost : 0.000651
+No!
+Verifying branch 9 @Trace1#54#E207#1-0: CCost : 1e-06
+Cost : 0.000691
+No!
+Verifying branch 10 @Trace1#57#E220#0-1: CCost : 1e-06
+Cost : 0.000715
+No!
+Verifying branch 11 @Trace1#114#E252#1-0: CCost : 2e-06
+Cost : 0.002988
+Yes!
+Verifying branch 12 @Trace1#32#E269#0-1: CCost : 2e-06
+Cost : 0.001564
+No!
+Verifying branch 13 @Trace1#73#E284#1-0: CCost : 2e-06
+Cost : 0.000573
+No!
+Verifying branch 14 @Trace1#75#E298#0-1: CCost : 2e-06
+Cost : 0.000581
+No!
+Verifying branch 15 @Trace1#32#E327#0-1: CCost : 2e-06
+Cost : 0.000957
+No!
+Verifying branch 16 @Trace1#73#E342#1-0: CCost : 2e-06
+Cost : 0.000617
+No!
+Verifying branch 17 @Trace1#75#E356#0-1: CCost : 1e-06
+Cost : 0.000632
+No!
+Verifying branch 18 @Trace1#32#E385#0-1: CCost : 2e-06
+Cost : 0.001132
+No!
+Verifying branch 19 @Trace1#73#E400#1-0: CCost : 2e-06
+Cost : 0.000685
+No!
+Verifying branch 20 @Trace1#75#E414#0-1: CCost : 1e-06
+Cost : 0.000668
+No!
+Verifying branch 21 @Trace1#32#E443#0-1: CCost : 1e-06
+Cost : 0.001083
+No!
+Verifying branch 22 @Trace1#73#E458#1-0: CCost : 2e-06
+Cost : 0.000707
+No!
+Verifying branch 23 @Trace1#75#E472#0-1: CCost : 1e-06
+Cost : 0.000706
+No!
+queue is empty
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 16
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G11_25783192L1
+DTAMhybrid find
+getLine : 92
+taintPTS : G11_25783192S2
+DTAMhybrid find
+getLine : 92
+
+ size : 17
+DTAMSerial name : G11_25783192L2 getLine : 56
+DTAMSerial name : G11_25783192L3 getLine : 56
+DTAMSerial name : G11_25783192L4 getLine : 56
+DTAMSerial name : G11_25783192L5 getLine : 56
+DTAMSerial name : G11_25783192L6 getLine : 74
+DTAMSerial name : G11_25783192L7 getLine : 74
+DTAMSerial name : G11_25783192L8 getLine : 74
+DTAMSerial name : G11_25783192L9 getLine : 74
+DTAMSerial name : G11_25783192S10 getLine : 74
+DTAMSerial name : G11_25783192S3 getLine : 56
+DTAMSerial name : G11_25783192S4 getLine : 56
+DTAMSerial name : G11_25783192S5 getLine : 56
+DTAMSerial name : G11_25783192S6 getLine : 56
+DTAMSerial name : G11_25783192S7 getLine : 74
+DTAMSerial name : G11_25783192S8 getLine : 74
+DTAMSerial name : G11_25783192S9 getLine : 74
+taintPTS name : G11_25783192S2 getLine : 92
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#114#E252#1-0.txt
+************************************************************************
+
+queue is empty
+queue is empty
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 11
+Verifying branch 1 @Trace2#32#E32#1-0: CCost : 6e-06
+Cost : 0.000444
+No!
+Verifying branch 2 @Trace2#114#E49#0-1: CCost : 2e-06
+Cost : 0.001376
+Yes!
+Verifying branch 3 @Trace2#90#E61#1-0: CCost : 1e-06
+Cost : 0.000134
+No!
+Verifying branch 4 @Trace2#54#E82#1-0: CCost : 2e-06
+Cost : 0.000121
+No!
+Verifying branch 5 @Trace2#57#E95#0-1: CCost : 2e-06
+Cost : 0.000135
+No!
+Verifying branch 6 @Trace2#54#E127#1-0: CCost : 2e-06
+Cost : 0.000143
+No!
+Verifying branch 7 @Trace2#57#E140#0-1: CCost : 2e-06
+Cost : 0.000143
+No!
+Verifying branch 8 @Trace2#54#E172#1-0: CCost : 1e-06
+Cost : 0.000164
+No!
+Verifying branch 9 @Trace2#57#E185#0-1: CCost : 1e-06
+Cost : 0.00016
+No!
+Verifying branch 10 @Trace2#54#E217#1-0: CCost : 1e-06
+Cost : 0.000184
+No!
+Verifying branch 11 @Trace2#57#E230#0-1: CCost : 1e-06
+Cost : 0.000183
+No!
+queue is empty
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 8
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G1367_40420568L1
+DTAMhybrid find
+getLine : 92
+taintPTS : G1367_40420568S2
+DTAMhybrid find
+getLine : 92
+
+ size : 9
+DTAMSerial name : G1367_40420568L2 getLine : 56
+DTAMSerial name : G1367_40420568L3 getLine : 56
+DTAMSerial name : G1367_40420568L4 getLine : 56
+DTAMSerial name : G1367_40420568L5 getLine : 56
+DTAMSerial name : G1367_40420568S3 getLine : 56
+DTAMSerial name : G1367_40420568S4 getLine : 56
+DTAMSerial name : G1367_40420568S5 getLine : 56
+DTAMSerial name : G1367_40420568S6 getLine : 56
+taintPTS name : G1367_40420568S2 getLine : 92
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixTrace2#114#E49#0-1.txt
+************************************************************************
+
+queue is empty
+######################本条路径为旧路径####################
+
+KLEE: done: total instructions = 2773
+KLEE: done: completed paths = 7
+KLEE: done: generated tests = 0

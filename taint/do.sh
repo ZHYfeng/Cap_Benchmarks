@@ -41,7 +41,7 @@ recurrence(){
 	cd $1
 	for file in `ls`
 	do
-		rm do.sh all.md DATE1.txt DATE2.txt
+		# rm do.sh all.md DATE1.txt DATE2.txt
 		if [ -d $file ]
 			then
 			recurrence $file
@@ -49,9 +49,10 @@ recurrence(){
 			then
 			now=$PWD
 			# echo "#"$now >> ${all}/all.md
-			make clean
-			rm -rf klee* output_info result.txt
-			rm do.sh all.md DATE1.txt DATE2.txt
+			# make clean
+			rm -rf klee* 
+			# output_info result.txt
+			# rm do.sh all.md DATE1.txt DATE2.txt
 			# make
 			# getmemory $now &
 			# ./$file
@@ -61,7 +62,7 @@ recurrence(){
 			# totalline
 			# pwd | awk -F"/" '{ printf("name:%s\n",$NF); }' >> ./output_info/statics.txt
 			# more ./output_info/statics.txt >> ${all}/all.md
-			# sleep 1
+			sleep 1
 			# awk -F":" '{ printf("%s ",$2); }' ./output_info/statics.txt >> ${all}/DATE1.txt
 			# echo "" >> ${all}/DATE1.txt
 			# echo "" >> ${all}/all.md
