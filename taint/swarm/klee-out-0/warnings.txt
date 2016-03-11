@@ -1,0 +1,38 @@
+KLEE: WARNING: undefined reference to function: fclose
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fopen
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: getopt
+KLEE: WARNING: undefined reference to function: make_taint
+KLEE: WARNING: undefined reference to variable: optarg
+KLEE: WARNING: undefined reference to variable: opterr
+KLEE: WARNING: undefined reference to variable: optind
+KLEE: WARNING: undefined reference to function: perror
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_broadcast
+KLEE: WARNING: undefined reference to function: pthread_cond_destroy
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_destroy
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_trylock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strdup
+KLEE: WARNING: undefined reference to function: strtol
+KLEE: WARNING: undefined reference to function: sysconf
+KLEE: WARNING: undefined reference to function: vsprintf
+KLEE: WARNING ONCE: calling external: sysconf(84)
+KLEE: WARNING ONCE: calling external: getopt(1, 24636848, 26102736)
+KLEE: WARNING ONCE: calling external: fprintf(140541015905280, 25890976, 4)
+KLEE: WARNING ONCE: calling external: fflush(140541015905280)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(29080944, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(29081000, 0)
+KLEE: WARNING ONCE: calling external: gettimeofday(29852448, 29698336)
+KLEE: WARNING ONCE: calling external: pthread_mutex_destroy(29171696)
+KLEE: WARNING ONCE: calling external: pthread_cond_destroy(29171760)
+KLEE: WARNING ONCE: calling external: fclose(140541015905280)
