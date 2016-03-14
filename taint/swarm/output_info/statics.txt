@@ -9,15 +9,15 @@ AllBranch:763
 satBranch:0
 satCost:0
 unSatBranch:763
-unSatCost:2.09358e-05
+unSatCost:1.48519e-05
 uunSatBranch:3
-SolvingCost:22.0657
-RunningCost:0.086457
-taintCost:0.039848
-PTSCost:18.8399
-DTAMCost:0.0159
-DTAMParallelCost:0.013269
-DTAMhybridCost:0.002021
+SolvingCost:21.8858
+RunningCost:0.087058
+taintCost:0.039456
+PTSCost:18.5389
+DTAMCost:0.019769
+DTAMParallelCost:0.014976
+DTAMhybridCost:0.003214
 DTAMSerial:224
 DTAMParallel:272
 DTAMhybrid:256
@@ -30,11 +30,11 @@ DTAMParallelMap:15
 DTAMhybridMap:15
 
 times:0
-allTaintCost:0.039848
-allPTSCost:18.8399
-allDTAMCost:0.0159
-allDTAMParallelCost:0.013269
-allDTAMhybridCost:0.002021
+allTaintCost:0.039456
+allPTSCost:18.5389
+allDTAMCost:0.019769
+allDTAMParallelCost:0.014976
+allDTAMhybridCost:0.003214
 allDTAMSerial:224
 allDTAMParallel:272
 allDTAMhybrid:256
@@ -46,6 +46,7 @@ allDTAMParallelMap:15
 allDTAMhybridMap:15
 allTaintMap:13
 
-TimeCost:4.108391e+01
+TimeCost:4.060710e+01
 Insts:44064
 totalline:2286
+name:swarm

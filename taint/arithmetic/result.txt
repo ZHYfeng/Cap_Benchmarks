@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/Test/taint/arithmetic/arithmetic_put/klee-out-0"
+KLEE: output directory is "/home/zhy/Test/taint/arithmetic/klee-out-0"
 KLEE: WARNING: undefined reference to function: make_taint
 KLEE: WARNING: undefined reference to function: printf
 KLEE: WARNING: undefined reference to function: pthread_cond_init
@@ -14,9 +14,9 @@ KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(45734304, 0)
-KLEE: WARNING ONCE: calling external: pthread_cond_init(45837920, 0)
-KLEE: WARNING ONCE: calling external: printf(45970064, 0)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(43226416, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(43263840, 0)
+KLEE: WARNING ONCE: calling external: printf(43206832, 0)
 produce ....0
 total ....0
 consume ....0
@@ -52,49 +52,49 @@ The number of assert: 0
 Verifying is over!
 Sum of branches: 15
 Verifying branch 1 @Trace1#19#E26#0-1: CCost : 4e-06
-Cost : 0.111419
+Cost : 0.127827
 No!
 Verifying branch 2 @Trace1#19#E45#1-0: CCost : 4e-06
-Cost : 0.055561
+Cost : 0.0628
 Yes!
 Verifying branch 3 @Trace1#42#E64#0-1: CCost : 4e-06
-Cost : 0.064164
+Cost : 0.07246
 Yes!
-Verifying branch 4 @Trace1#42#E90#1-0: CCost : 4e-06
-Cost : 0.064501
+Verifying branch 4 @Trace1#42#E90#1-0: CCost : 5e-06
+Cost : 0.077104
 Yes!
 Verifying branch 5 @Trace1#19#E96#0-1: CCost : 4e-06
-Cost : 0.182089
+Cost : 0.207719
 No!
-Verifying branch 6 @Trace1#19#E115#1-0: CCost : 4e-06
-Cost : 0.132907
+Verifying branch 6 @Trace1#19#E115#1-0: CCost : 5e-06
+Cost : 0.155678
 Yes!
 Verifying branch 7 @Trace1#42#E121#0-1: CCost : 4e-06
-Cost : 0.111927
+Cost : 0.130734
 Yes!
-Verifying branch 8 @Trace1#42#E147#1-0: CCost : 3e-06
-Cost : 0.087146
+Verifying branch 8 @Trace1#42#E147#1-0: CCost : 5e-06
+Cost : 0.102045
 Yes!
-Verifying branch 9 @Trace1#19#E153#0-1: CCost : 3e-06
-Cost : 0.087972
+Verifying branch 9 @Trace1#19#E153#0-1: CCost : 4e-06
+Cost : 0.101985
 No!
-Verifying branch 10 @Trace1#19#E172#1-0: CCost : 5e-06
-Cost : 0.028625
+Verifying branch 10 @Trace1#19#E172#1-0: CCost : 4e-06
+Cost : 0.03315
 Yes!
 Verifying branch 11 @Trace1#42#E178#0-1: CCost : 4e-06
-Cost : 0.055499
+Cost : 0.064219
 No!
-Verifying branch 12 @Trace1#42#E204#1-0: CCost : 5e-06
-Cost : 0.071768
+Verifying branch 12 @Trace1#42#E204#1-0: CCost : 4e-06
+Cost : 0.086613
 Yes!
 Verifying branch 13 @Trace1#19#E210#0-1: CCost : 4e-06
-Cost : 0.074118
+Cost : 0.087621
 No!
-Verifying branch 14 @Trace1#42#E230#0-1: CCost : 4e-06
-Cost : 0.041859
+Verifying branch 14 @Trace1#42#E230#0-1: CCost : 5e-06
+Cost : 0.049732
 No!
-Verifying branch 15 @Trace1#77#E266#1-0: CCost : 4e-06
-Cost : 0.001771
+Verifying branch 15 @Trace1#77#E266#1-0: CCost : 5e-06
+Cost : 0.001802
 No!
 produce ....0
 total ....0
@@ -113,14 +113,104 @@ total ....10
 
  DTAMSerial : 
 size : 26
+name : G8_43463072L10
+name : G8_43463072L11
+name : G8_43463072L12
+name : G8_43463072L13
+name : G8_43463072L14
+name : G8_43463072L15
+name : G8_43463072L16
+name : G8_43463072L17
+name : G8_43463072L18
+name : G8_43463072L19
+name : G8_43463072L20
+name : G8_43463072L21
+name : G8_43463072L22
+name : G8_43463072L23
+name : G8_43463072L5
+name : G8_43463072L6
+name : G8_43463072L7
+name : G8_43463072L8
+name : G8_43463072L9
+name : G8_43463072S10
+name : G8_43463072S4
+name : G8_43463072S5
+name : G8_43463072S6
+name : G8_43463072S7
+name : G8_43463072S8
+name : G8_43463072S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G8_43463072L1
+name : G8_43463072L10
+name : G8_43463072L11
+name : G8_43463072L12
+name : G8_43463072L13
+name : G8_43463072L14
+name : G8_43463072L15
+name : G8_43463072L16
+name : G8_43463072L17
+name : G8_43463072L18
+name : G8_43463072L19
+name : G8_43463072L2
+name : G8_43463072L20
+name : G8_43463072L21
+name : G8_43463072L22
+name : G8_43463072L23
+name : G8_43463072L3
+name : G8_43463072L4
+name : G8_43463072L5
+name : G8_43463072L6
+name : G8_43463072L7
+name : G8_43463072L8
+name : G8_43463072L9
+name : G8_43463072S10
+name : G8_43463072S2
+name : G8_43463072S3
+name : G8_43463072S4
+name : G8_43463072S5
+name : G8_43463072S6
+name : G8_43463072S7
+name : G8_43463072S8
+name : G8_43463072S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G8_43463072L1
+name : G8_43463072L10
+name : G8_43463072L11
+name : G8_43463072L12
+name : G8_43463072L13
+name : G8_43463072L14
+name : G8_43463072L15
+name : G8_43463072L16
+name : G8_43463072L17
+name : G8_43463072L18
+name : G8_43463072L19
+name : G8_43463072L2
+name : G8_43463072L20
+name : G8_43463072L21
+name : G8_43463072L22
+name : G8_43463072L23
+name : G8_43463072L3
+name : G8_43463072L4
+name : G8_43463072L5
+name : G8_43463072L6
+name : G8_43463072L7
+name : G8_43463072L8
+name : G8_43463072L9
+name : G8_43463072S10
+name : G8_43463072S2
+name : G8_43463072S3
+name : G8_43463072S4
+name : G8_43463072S5
+name : G8_43463072S6
+name : G8_43463072S7
+name : G8_43463072S8
+name : G8_43463072S9
 
 
 buildInitTaintFormula
@@ -129,57 +219,57 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-taintPTS : G8_45977232L1
+taintPTS : G8_43463072L1
 DTAMhybrid find
 getLine : 19
-taintPTS : G8_45977232L2
+taintPTS : G8_43463072L2
 DTAMhybrid find
 getLine : 22
-taintPTS : G8_45977232L3
+taintPTS : G8_43463072L3
 DTAMhybrid find
 getLine : 19
-noTaintPTS : G8_45977232L4
+noTaintPTS : G8_43463072L4
 DTAMhybrid find
 getLine : 38
-taintPTS : G8_45977232S2
+taintPTS : G8_43463072S2
 DTAMhybrid find
 getLine : 22
-taintPTS : G8_45977232S3
+taintPTS : G8_43463072S3
 DTAMhybrid find
 getLine : 38
 
  size : 31
-DTAMSerial name : G8_45977232L10 getLine : 19
-DTAMSerial name : G8_45977232L11 getLine : 42
-DTAMSerial name : G8_45977232L12 getLine : 47
-DTAMSerial name : G8_45977232L13 getLine : 42
-DTAMSerial name : G8_45977232L14 getLine : 19
-DTAMSerial name : G8_45977232L15 getLine : 22
-DTAMSerial name : G8_45977232L16 getLine : 19
-DTAMSerial name : G8_45977232L17 getLine : 42
-DTAMSerial name : G8_45977232L18 getLine : 47
-DTAMSerial name : G8_45977232L19 getLine : 42
-DTAMSerial name : G8_45977232L20 getLine : 19
-DTAMSerial name : G8_45977232L21 getLine : 22
-DTAMSerial name : G8_45977232L22 getLine : 42
-DTAMSerial name : G8_45977232L23 getLine : 47
-DTAMSerial name : G8_45977232L5 getLine : 42
-DTAMSerial name : G8_45977232L6 getLine : 47
-DTAMSerial name : G8_45977232L7 getLine : 42
-DTAMSerial name : G8_45977232L8 getLine : 19
-DTAMSerial name : G8_45977232L9 getLine : 22
-DTAMSerial name : G8_45977232S10 getLine : 47
-DTAMSerial name : G8_45977232S4 getLine : 47
-DTAMSerial name : G8_45977232S5 getLine : 22
-DTAMSerial name : G8_45977232S6 getLine : 47
-DTAMSerial name : G8_45977232S7 getLine : 22
-DTAMSerial name : G8_45977232S8 getLine : 47
-DTAMSerial name : G8_45977232S9 getLine : 22
-taintPTS name : G8_45977232L1 getLine : 19
-taintPTS name : G8_45977232L2 getLine : 22
-taintPTS name : G8_45977232L3 getLine : 19
-taintPTS name : G8_45977232S2 getLine : 22
-taintPTS name : G8_45977232S3 getLine : 38
+DTAMSerial name : G8_43463072L10 getLine : 19
+DTAMSerial name : G8_43463072L11 getLine : 42
+DTAMSerial name : G8_43463072L12 getLine : 47
+DTAMSerial name : G8_43463072L13 getLine : 42
+DTAMSerial name : G8_43463072L14 getLine : 19
+DTAMSerial name : G8_43463072L15 getLine : 22
+DTAMSerial name : G8_43463072L16 getLine : 19
+DTAMSerial name : G8_43463072L17 getLine : 42
+DTAMSerial name : G8_43463072L18 getLine : 47
+DTAMSerial name : G8_43463072L19 getLine : 42
+DTAMSerial name : G8_43463072L20 getLine : 19
+DTAMSerial name : G8_43463072L21 getLine : 22
+DTAMSerial name : G8_43463072L22 getLine : 42
+DTAMSerial name : G8_43463072L23 getLine : 47
+DTAMSerial name : G8_43463072L5 getLine : 42
+DTAMSerial name : G8_43463072L6 getLine : 47
+DTAMSerial name : G8_43463072L7 getLine : 42
+DTAMSerial name : G8_43463072L8 getLine : 19
+DTAMSerial name : G8_43463072L9 getLine : 22
+DTAMSerial name : G8_43463072S10 getLine : 47
+DTAMSerial name : G8_43463072S4 getLine : 47
+DTAMSerial name : G8_43463072S5 getLine : 22
+DTAMSerial name : G8_43463072S6 getLine : 47
+DTAMSerial name : G8_43463072S7 getLine : 22
+DTAMSerial name : G8_43463072S8 getLine : 47
+DTAMSerial name : G8_43463072S9 getLine : 22
+taintPTS name : G8_43463072L1 getLine : 19
+taintPTS name : G8_43463072L2 getLine : 22
+taintPTS name : G8_43463072L3 getLine : 19
+taintPTS name : G8_43463072S2 getLine : 22
+taintPTS name : G8_43463072S3 getLine : 38
 
 ************************************************************************
 第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#19#E45#1-0.txt
@@ -220,43 +310,43 @@ The number of assert: 0
 Verifying is over!
 Sum of branches: 13
 Verifying branch 1 @Trace2#19#E31#0-1: CCost : 4e-06
-Cost : 0.079246
+Cost : 0.096178
 No!
-Verifying branch 2 @Trace2#42#E48#0-1: CCost : 5e-06
-Cost : 0.08167
+Verifying branch 2 @Trace2#42#E48#0-1: CCost : 4e-06
+Cost : 0.170528
 Yes!
-Verifying branch 3 @Trace2#19#E73#0-1: CCost : 4e-06
-Cost : 0.368832
+Verifying branch 3 @Trace2#19#E73#0-1: CCost : 3e-06
+Cost : 0.163146
 Yes!
 Verifying branch 4 @Trace2#19#E94#1-0: CCost : 4e-06
-Cost : 0.103399
+Cost : 0.087808
 Yes!
-Verifying branch 5 @Trace2#42#E109#0-1: CCost : 5e-06
-Cost : 0.015508
+Verifying branch 5 @Trace2#42#E109#0-1: CCost : 6e-06
+Cost : 0.148978
 Yes!
-Verifying branch 6 @Trace2#42#E135#1-0: CCost : 3e-06
-Cost : 0.083558
+Verifying branch 6 @Trace2#42#E135#1-0: CCost : 6e-06
+Cost : 0.055451
 Yes!
 Verifying branch 7 @Trace2#19#E141#0-1: CCost : 4e-06
-Cost : 0.192772
+Cost : 0.326026
 Yes!
 Verifying branch 8 @Trace2#19#E160#1-0: CCost : 3e-06
-Cost : 0.036356
+Cost : 0.119882
 Yes!
-Verifying branch 9 @Trace2#42#E166#0-1: CCost : 4e-06
-Cost : 0.032053
+Verifying branch 9 @Trace2#42#E166#0-1: CCost : 5e-06
+Cost : 0.10068
 Yes!
-Verifying branch 10 @Trace2#42#E192#1-0: CCost : 3e-06
-Cost : 0.083718
+Verifying branch 10 @Trace2#42#E192#1-0: CCost : 4e-06
+Cost : 0.092595
 Yes!
 Verifying branch 11 @Trace2#19#E198#0-1: CCost : 3e-06
-Cost : 0.120102
+Cost : 0.107323
 No!
-Verifying branch 12 @Trace2#42#E218#0-1: CCost : 4e-06
-Cost : 0.028144
+Verifying branch 12 @Trace2#42#E218#0-1: CCost : 5e-06
+Cost : 0.075066
 No!
 Verifying branch 13 @Trace2#77#E254#1-0: CCost : 5e-06
-Cost : 0.00146
+Cost : 0.001516
 No!
 produce ....0
 total ....0
@@ -332,53 +422,53 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 16
-Verifying branch 1 @Trace3#42#E27#1-0: CCost : 3e-06
-Cost : 0.022564
+Verifying branch 1 @Trace3#42#E27#1-0: CCost : 4e-06
+Cost : 0.026007
 Yes!
-Verifying branch 2 @Trace3#19#E45#0-1: CCost : 4e-06
-Cost : 0.039525
+Verifying branch 2 @Trace3#19#E45#0-1: CCost : 6e-06
+Cost : 0.04476
 No!
 Verifying branch 3 @Trace3#19#E64#1-0: CCost : 4e-06
-Cost : 0.109549
+Cost : 0.126293
 Yes!
-Verifying branch 4 @Trace3#42#E70#0-1: CCost : 4e-06
-Cost : 0.158352
+Verifying branch 4 @Trace3#42#E70#0-1: CCost : 3e-06
+Cost : 0.181646
 Yes!
 Verifying branch 5 @Trace3#42#E96#1-0: CCost : 4e-06
-Cost : 0.113165
+Cost : 0.132948
 Yes!
-Verifying branch 6 @Trace3#19#E102#0-1: CCost : 3e-06
-Cost : 0.060703
+Verifying branch 6 @Trace3#19#E102#0-1: CCost : 5e-06
+Cost : 0.070015
 No!
 Verifying branch 7 @Trace3#19#E121#1-0: CCost : 3e-06
-Cost : 0.058938
+Cost : 0.066623
 Yes!
-Verifying branch 8 @Trace3#42#E127#0-1: CCost : 3e-06
-Cost : 0.097857
+Verifying branch 8 @Trace3#42#E127#0-1: CCost : 4e-06
+Cost : 0.113104
 No!
-Verifying branch 9 @Trace3#42#E153#1-0: CCost : 4e-06
-Cost : 0.039888
+Verifying branch 9 @Trace3#42#E153#1-0: CCost : 5e-06
+Cost : 0.04538
 Yes!
 Verifying branch 10 @Trace3#19#E159#0-1: CCost : 3e-06
-Cost : 0.061267
+Cost : 0.070885
 No!
-Verifying branch 11 @Trace3#19#E178#1-0: CCost : 4e-06
-Cost : 0.02783
+Verifying branch 11 @Trace3#19#E178#1-0: CCost : 5e-06
+Cost : 0.031606
 Yes!
 Verifying branch 12 @Trace3#42#E184#0-1: CCost : 4e-06
-Cost : 0.05483
+Cost : 0.06268
 No!
 Verifying branch 13 @Trace3#42#E210#1-0: CCost : 4e-06
-Cost : 0.030894
+Cost : 0.034739
 Yes!
-Verifying branch 14 @Trace3#19#E216#0-1: CCost : 3e-06
-Cost : 0.078725
+Verifying branch 14 @Trace3#19#E216#0-1: CCost : 4e-06
+Cost : 0.091596
 No!
-Verifying branch 15 @Trace3#42#E236#0-1: CCost : 3e-06
-Cost : 0.028994
+Verifying branch 15 @Trace3#42#E236#0-1: CCost : 4e-06
+Cost : 0.033789
 No!
-Verifying branch 16 @Trace3#77#E272#1-0: CCost : 4e-06
-Cost : 0.001883
+Verifying branch 16 @Trace3#77#E272#1-0: CCost : 5e-06
+Cost : 0.002162
 No!
 produce ....0
 total ....0
@@ -397,14 +487,111 @@ total ....10
 
  DTAMSerial : 
 size : 31
+name : G1312_83130928L10
+name : G1312_83130928L11
+name : G1312_83130928L12
+name : G1312_83130928L13
+name : G1312_83130928L14
+name : G1312_83130928L15
+name : G1312_83130928L16
+name : G1312_83130928L17
+name : G1312_83130928L18
+name : G1312_83130928L19
+name : G1312_83130928L2
+name : G1312_83130928L20
+name : G1312_83130928L21
+name : G1312_83130928L22
+name : G1312_83130928L23
+name : G1312_83130928L24
+name : G1312_83130928L3
+name : G1312_83130928L4
+name : G1312_83130928L5
+name : G1312_83130928L6
+name : G1312_83130928L7
+name : G1312_83130928L8
+name : G1312_83130928L9
+name : G1312_83130928S10
+name : G1312_83130928S3
+name : G1312_83130928S4
+name : G1312_83130928S5
+name : G1312_83130928S6
+name : G1312_83130928S7
+name : G1312_83130928S8
+name : G1312_83130928S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G1312_83130928L1
+name : G1312_83130928L10
+name : G1312_83130928L11
+name : G1312_83130928L12
+name : G1312_83130928L13
+name : G1312_83130928L14
+name : G1312_83130928L15
+name : G1312_83130928L16
+name : G1312_83130928L17
+name : G1312_83130928L18
+name : G1312_83130928L19
+name : G1312_83130928L2
+name : G1312_83130928L20
+name : G1312_83130928L21
+name : G1312_83130928L22
+name : G1312_83130928L23
+name : G1312_83130928L24
+name : G1312_83130928L3
+name : G1312_83130928L4
+name : G1312_83130928L5
+name : G1312_83130928L6
+name : G1312_83130928L7
+name : G1312_83130928L8
+name : G1312_83130928L9
+name : G1312_83130928S10
+name : G1312_83130928S2
+name : G1312_83130928S3
+name : G1312_83130928S4
+name : G1312_83130928S5
+name : G1312_83130928S6
+name : G1312_83130928S7
+name : G1312_83130928S8
+name : G1312_83130928S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G1312_83130928L1
+name : G1312_83130928L10
+name : G1312_83130928L11
+name : G1312_83130928L12
+name : G1312_83130928L13
+name : G1312_83130928L14
+name : G1312_83130928L15
+name : G1312_83130928L16
+name : G1312_83130928L17
+name : G1312_83130928L18
+name : G1312_83130928L19
+name : G1312_83130928L2
+name : G1312_83130928L20
+name : G1312_83130928L21
+name : G1312_83130928L22
+name : G1312_83130928L23
+name : G1312_83130928L24
+name : G1312_83130928L3
+name : G1312_83130928L4
+name : G1312_83130928L5
+name : G1312_83130928L6
+name : G1312_83130928L7
+name : G1312_83130928L8
+name : G1312_83130928L9
+name : G1312_83130928S10
+name : G1312_83130928S2
+name : G1312_83130928S3
+name : G1312_83130928S4
+name : G1312_83130928S5
+name : G1312_83130928S6
+name : G1312_83130928S7
+name : G1312_83130928S8
+name : G1312_83130928S9
 
 
 buildInitTaintFormula
@@ -413,46 +600,46 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-noTaintPTS : G1312_73415184L1
+noTaintPTS : G1312_83130928L1
 DTAMhybrid find
 getLine : 38
-taintPTS : G1312_73415184S2
+taintPTS : G1312_83130928S2
 DTAMhybrid find
 getLine : 38
 
  size : 32
-DTAMSerial name : G1312_73415184L10 getLine : 22
-DTAMSerial name : G1312_73415184L11 getLine : 19
-DTAMSerial name : G1312_73415184L12 getLine : 42
-DTAMSerial name : G1312_73415184L13 getLine : 47
-DTAMSerial name : G1312_73415184L14 getLine : 42
-DTAMSerial name : G1312_73415184L15 getLine : 19
-DTAMSerial name : G1312_73415184L16 getLine : 22
-DTAMSerial name : G1312_73415184L17 getLine : 19
-DTAMSerial name : G1312_73415184L18 getLine : 42
-DTAMSerial name : G1312_73415184L19 getLine : 47
-DTAMSerial name : G1312_73415184L2 getLine : 42
-DTAMSerial name : G1312_73415184L20 getLine : 42
-DTAMSerial name : G1312_73415184L21 getLine : 19
-DTAMSerial name : G1312_73415184L22 getLine : 22
-DTAMSerial name : G1312_73415184L23 getLine : 42
-DTAMSerial name : G1312_73415184L24 getLine : 47
-DTAMSerial name : G1312_73415184L3 getLine : 19
-DTAMSerial name : G1312_73415184L4 getLine : 22
-DTAMSerial name : G1312_73415184L5 getLine : 19
-DTAMSerial name : G1312_73415184L6 getLine : 42
-DTAMSerial name : G1312_73415184L7 getLine : 47
-DTAMSerial name : G1312_73415184L8 getLine : 42
-DTAMSerial name : G1312_73415184L9 getLine : 19
-DTAMSerial name : G1312_73415184S10 getLine : 47
-DTAMSerial name : G1312_73415184S3 getLine : 22
-DTAMSerial name : G1312_73415184S4 getLine : 47
-DTAMSerial name : G1312_73415184S5 getLine : 22
-DTAMSerial name : G1312_73415184S6 getLine : 47
-DTAMSerial name : G1312_73415184S7 getLine : 22
-DTAMSerial name : G1312_73415184S8 getLine : 47
-DTAMSerial name : G1312_73415184S9 getLine : 22
-taintPTS name : G1312_73415184S2 getLine : 38
+DTAMSerial name : G1312_83130928L10 getLine : 22
+DTAMSerial name : G1312_83130928L11 getLine : 19
+DTAMSerial name : G1312_83130928L12 getLine : 42
+DTAMSerial name : G1312_83130928L13 getLine : 47
+DTAMSerial name : G1312_83130928L14 getLine : 42
+DTAMSerial name : G1312_83130928L15 getLine : 19
+DTAMSerial name : G1312_83130928L16 getLine : 22
+DTAMSerial name : G1312_83130928L17 getLine : 19
+DTAMSerial name : G1312_83130928L18 getLine : 42
+DTAMSerial name : G1312_83130928L19 getLine : 47
+DTAMSerial name : G1312_83130928L2 getLine : 42
+DTAMSerial name : G1312_83130928L20 getLine : 42
+DTAMSerial name : G1312_83130928L21 getLine : 19
+DTAMSerial name : G1312_83130928L22 getLine : 22
+DTAMSerial name : G1312_83130928L23 getLine : 42
+DTAMSerial name : G1312_83130928L24 getLine : 47
+DTAMSerial name : G1312_83130928L3 getLine : 19
+DTAMSerial name : G1312_83130928L4 getLine : 22
+DTAMSerial name : G1312_83130928L5 getLine : 19
+DTAMSerial name : G1312_83130928L6 getLine : 42
+DTAMSerial name : G1312_83130928L7 getLine : 47
+DTAMSerial name : G1312_83130928L8 getLine : 42
+DTAMSerial name : G1312_83130928L9 getLine : 19
+DTAMSerial name : G1312_83130928S10 getLine : 47
+DTAMSerial name : G1312_83130928S3 getLine : 22
+DTAMSerial name : G1312_83130928S4 getLine : 47
+DTAMSerial name : G1312_83130928S5 getLine : 22
+DTAMSerial name : G1312_83130928S6 getLine : 47
+DTAMSerial name : G1312_83130928S7 getLine : 22
+DTAMSerial name : G1312_83130928S8 getLine : 47
+DTAMSerial name : G1312_83130928S9 getLine : 22
+taintPTS name : G1312_83130928S2 getLine : 38
 
 ************************************************************************
 第4次执行,路径文件为trace4.txt 前缀执行,前缀文件为prefixTrace1#42#E90#1-0.txt
@@ -493,43 +680,43 @@ The number of assert: 0
 Verifying is over!
 Sum of branches: 13
 Verifying branch 1 @Trace4#19#E23#0-1: CCost : 4e-06
-Cost : 0.064318
+Cost : 0.073745
 No!
-Verifying branch 2 @Trace4#19#E51#1-0: CCost : 4e-06
-Cost : 0.03999
+Verifying branch 2 @Trace4#19#E51#1-0: CCost : 6e-06
+Cost : 0.044349
 Yes!
-Verifying branch 3 @Trace4#42#E62#0-1: CCost : 3e-06
-Cost : 0.085882
+Verifying branch 3 @Trace4#42#E62#0-1: CCost : 4e-06
+Cost : 0.09626
 Yes!
-Verifying branch 4 @Trace4#19#E80#0-1: CCost : 3e-06
-Cost : 0.18065
+Verifying branch 4 @Trace4#19#E80#0-1: CCost : 5e-06
+Cost : 0.214933
 No!
 Verifying branch 5 @Trace4#42#E98#0-1: CCost : 5e-06
-Cost : 0.054648
+Cost : 0.064092
 Yes!
 Verifying branch 6 @Trace4#42#E126#1-0: CCost : 4e-06
-Cost : 0.122679
+Cost : 0.14145
 Yes!
-Verifying branch 7 @Trace4#19#E141#0-1: CCost : 4e-06
-Cost : 0.089382
+Verifying branch 7 @Trace4#19#E141#0-1: CCost : 6e-06
+Cost : 0.102205
 Yes!
-Verifying branch 8 @Trace4#19#E160#1-0: CCost : 3e-06
-Cost : 0.031199
+Verifying branch 8 @Trace4#19#E160#1-0: CCost : 4e-06
+Cost : 0.035841
 Yes!
 Verifying branch 9 @Trace4#42#E166#0-1: CCost : 4e-06
-Cost : 0.034306
+Cost : 0.040774
 Yes!
-Verifying branch 10 @Trace4#42#E192#1-0: CCost : 3e-06
-Cost : 0.199322
+Verifying branch 10 @Trace4#42#E192#1-0: CCost : 4e-06
+Cost : 0.23264
 Yes!
 Verifying branch 11 @Trace4#19#E198#0-1: CCost : 3e-06
-Cost : 0.125881
+Cost : 0.149796
 No!
 Verifying branch 12 @Trace4#42#E218#0-1: CCost : 4e-06
-Cost : 0.059773
+Cost : 0.069644
 Yes!
 Verifying branch 13 @Trace4#77#E254#1-0: CCost : 4e-06
-Cost : 0.001498
+Cost : 0.001566
 No!
 produce ....0
 total ....0
@@ -548,14 +735,98 @@ total ....10
 
  DTAMSerial : 
 size : 24
+name : G1978_101856400L10
+name : G1978_101856400L11
+name : G1978_101856400L12
+name : G1978_101856400L13
+name : G1978_101856400L14
+name : G1978_101856400L15
+name : G1978_101856400L16
+name : G1978_101856400L17
+name : G1978_101856400L18
+name : G1978_101856400L19
+name : G1978_101856400L20
+name : G1978_101856400L21
+name : G1978_101856400L5
+name : G1978_101856400L6
+name : G1978_101856400L7
+name : G1978_101856400L8
+name : G1978_101856400L9
+name : G1978_101856400S10
+name : G1978_101856400S4
+name : G1978_101856400S5
+name : G1978_101856400S6
+name : G1978_101856400S7
+name : G1978_101856400S8
+name : G1978_101856400S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G1978_101856400L1
+name : G1978_101856400L10
+name : G1978_101856400L11
+name : G1978_101856400L12
+name : G1978_101856400L13
+name : G1978_101856400L14
+name : G1978_101856400L15
+name : G1978_101856400L16
+name : G1978_101856400L17
+name : G1978_101856400L18
+name : G1978_101856400L19
+name : G1978_101856400L2
+name : G1978_101856400L20
+name : G1978_101856400L21
+name : G1978_101856400L3
+name : G1978_101856400L4
+name : G1978_101856400L5
+name : G1978_101856400L6
+name : G1978_101856400L7
+name : G1978_101856400L8
+name : G1978_101856400L9
+name : G1978_101856400S10
+name : G1978_101856400S2
+name : G1978_101856400S3
+name : G1978_101856400S4
+name : G1978_101856400S5
+name : G1978_101856400S6
+name : G1978_101856400S7
+name : G1978_101856400S8
+name : G1978_101856400S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G1978_101856400L1
+name : G1978_101856400L10
+name : G1978_101856400L11
+name : G1978_101856400L12
+name : G1978_101856400L13
+name : G1978_101856400L14
+name : G1978_101856400L15
+name : G1978_101856400L16
+name : G1978_101856400L17
+name : G1978_101856400L18
+name : G1978_101856400L19
+name : G1978_101856400L2
+name : G1978_101856400L20
+name : G1978_101856400L21
+name : G1978_101856400L3
+name : G1978_101856400L4
+name : G1978_101856400L5
+name : G1978_101856400L6
+name : G1978_101856400L7
+name : G1978_101856400L8
+name : G1978_101856400L9
+name : G1978_101856400S10
+name : G1978_101856400S2
+name : G1978_101856400S3
+name : G1978_101856400S4
+name : G1978_101856400S5
+name : G1978_101856400S6
+name : G1978_101856400S7
+name : G1978_101856400S8
+name : G1978_101856400S9
 
 
 buildInitTaintFormula
@@ -564,55 +835,55 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-taintPTS : G1978_105659408L1
+taintPTS : G1978_101856400L1
 DTAMhybrid find
 getLine : 19
-taintPTS : G1978_105659408L2
+taintPTS : G1978_101856400L2
 DTAMhybrid find
 getLine : 22
-noTaintPTS : G1978_105659408L3
+noTaintPTS : G1978_101856400L3
 DTAMhybrid find
 getLine : 38
-taintPTS : G1978_105659408L4
+taintPTS : G1978_101856400L4
 DTAMhybrid find
 getLine : 19
-taintPTS : G1978_105659408S2
+taintPTS : G1978_101856400S2
 DTAMhybrid find
 getLine : 22
-taintPTS : G1978_105659408S3
+taintPTS : G1978_101856400S3
 DTAMhybrid find
 getLine : 38
 
  size : 29
-DTAMSerial name : G1978_105659408L10 getLine : 47
-DTAMSerial name : G1978_105659408L11 getLine : 42
-DTAMSerial name : G1978_105659408L12 getLine : 19
-DTAMSerial name : G1978_105659408L13 getLine : 22
-DTAMSerial name : G1978_105659408L14 getLine : 19
-DTAMSerial name : G1978_105659408L15 getLine : 42
-DTAMSerial name : G1978_105659408L16 getLine : 47
-DTAMSerial name : G1978_105659408L17 getLine : 42
-DTAMSerial name : G1978_105659408L18 getLine : 19
-DTAMSerial name : G1978_105659408L19 getLine : 22
-DTAMSerial name : G1978_105659408L20 getLine : 42
-DTAMSerial name : G1978_105659408L21 getLine : 47
-DTAMSerial name : G1978_105659408L5 getLine : 42
-DTAMSerial name : G1978_105659408L6 getLine : 47
-DTAMSerial name : G1978_105659408L7 getLine : 19
-DTAMSerial name : G1978_105659408L8 getLine : 22
-DTAMSerial name : G1978_105659408L9 getLine : 42
-DTAMSerial name : G1978_105659408S10 getLine : 47
-DTAMSerial name : G1978_105659408S4 getLine : 47
-DTAMSerial name : G1978_105659408S5 getLine : 22
-DTAMSerial name : G1978_105659408S6 getLine : 47
-DTAMSerial name : G1978_105659408S7 getLine : 22
-DTAMSerial name : G1978_105659408S8 getLine : 47
-DTAMSerial name : G1978_105659408S9 getLine : 22
-taintPTS name : G1978_105659408L1 getLine : 19
-taintPTS name : G1978_105659408L2 getLine : 22
-taintPTS name : G1978_105659408L4 getLine : 19
-taintPTS name : G1978_105659408S2 getLine : 22
-taintPTS name : G1978_105659408S3 getLine : 38
+DTAMSerial name : G1978_101856400L10 getLine : 47
+DTAMSerial name : G1978_101856400L11 getLine : 42
+DTAMSerial name : G1978_101856400L12 getLine : 19
+DTAMSerial name : G1978_101856400L13 getLine : 22
+DTAMSerial name : G1978_101856400L14 getLine : 19
+DTAMSerial name : G1978_101856400L15 getLine : 42
+DTAMSerial name : G1978_101856400L16 getLine : 47
+DTAMSerial name : G1978_101856400L17 getLine : 42
+DTAMSerial name : G1978_101856400L18 getLine : 19
+DTAMSerial name : G1978_101856400L19 getLine : 22
+DTAMSerial name : G1978_101856400L20 getLine : 42
+DTAMSerial name : G1978_101856400L21 getLine : 47
+DTAMSerial name : G1978_101856400L5 getLine : 42
+DTAMSerial name : G1978_101856400L6 getLine : 47
+DTAMSerial name : G1978_101856400L7 getLine : 19
+DTAMSerial name : G1978_101856400L8 getLine : 22
+DTAMSerial name : G1978_101856400L9 getLine : 42
+DTAMSerial name : G1978_101856400S10 getLine : 47
+DTAMSerial name : G1978_101856400S4 getLine : 47
+DTAMSerial name : G1978_101856400S5 getLine : 22
+DTAMSerial name : G1978_101856400S6 getLine : 47
+DTAMSerial name : G1978_101856400S7 getLine : 22
+DTAMSerial name : G1978_101856400S8 getLine : 47
+DTAMSerial name : G1978_101856400S9 getLine : 22
+taintPTS name : G1978_101856400L1 getLine : 19
+taintPTS name : G1978_101856400L2 getLine : 22
+taintPTS name : G1978_101856400L4 getLine : 19
+taintPTS name : G1978_101856400S2 getLine : 22
+taintPTS name : G1978_101856400S3 getLine : 38
 
 ************************************************************************
 第5次执行,路径文件为trace5.txt 前缀执行,前缀文件为prefixTrace1#19#E115#1-0.txt
@@ -652,44 +923,44 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 13
-Verifying branch 1 @Trace5#19#E24#0-1: CCost : 3e-06
-Cost : 0.034084
+Verifying branch 1 @Trace5#19#E24#0-1: CCost : 4e-06
+Cost : 0.03823
 No!
-Verifying branch 2 @Trace5#19#E51#1-0: CCost : 4e-06
-Cost : 0.011547
+Verifying branch 2 @Trace5#19#E51#1-0: CCost : 7e-06
+Cost : 0.012826
 Yes!
-Verifying branch 3 @Trace5#42#E62#0-1: CCost : 3e-06
-Cost : 0.221018
+Verifying branch 3 @Trace5#42#E62#0-1: CCost : 5e-06
+Cost : 0.080275
 Yes!
-Verifying branch 4 @Trace5#42#E88#1-0: CCost : 5e-06
-Cost : 0.120997
+Verifying branch 4 @Trace5#42#E88#1-0: CCost : 4e-06
+Cost : 0.405913
 Yes!
-Verifying branch 5 @Trace5#19#E94#0-1: CCost : 4e-06
-Cost : 0.234823
+Verifying branch 5 @Trace5#19#E94#0-1: CCost : 5e-06
+Cost : 0.47572
 No!
-Verifying branch 6 @Trace5#42#E105#0-1: CCost : 4e-06
-Cost : 0.024913
+Verifying branch 6 @Trace5#42#E105#0-1: CCost : 5e-06
+Cost : 0.065488
 Yes!
-Verifying branch 7 @Trace5#19#E130#0-1: CCost : 3e-06
-Cost : 0.053904
+Verifying branch 7 @Trace5#19#E130#0-1: CCost : 4e-06
+Cost : 0.051168
 Yes!
-Verifying branch 8 @Trace5#19#E151#1-0: CCost : 4e-06
-Cost : 0.122687
+Verifying branch 8 @Trace5#19#E151#1-0: CCost : 5e-06
+Cost : 0.11764
 Yes!
-Verifying branch 9 @Trace5#42#E166#0-1: CCost : 4e-06
-Cost : 0.038139
+Verifying branch 9 @Trace5#42#E166#0-1: CCost : 3e-06
+Cost : 0.083071
 Yes!
-Verifying branch 10 @Trace5#42#E192#1-0: CCost : 3e-06
-Cost : 0.080005
+Verifying branch 10 @Trace5#42#E192#1-0: CCost : 4e-06
+Cost : 0.124009
 Yes!
 Verifying branch 11 @Trace5#19#E198#0-1: CCost : 3e-06
-Cost : 0.077891
+Cost : 0.204471
 Yes!
 Verifying branch 12 @Trace5#42#E218#0-1: CCost : 4e-06
-Cost : 0.084111
+Cost : 0.093154
 Yes!
-Verifying branch 13 @Trace5#77#E254#1-0: CCost : 3e-06
-Cost : 0.00139
+Verifying branch 13 @Trace5#77#E254#1-0: CCost : 4e-06
+Cost : 0.001565
 No!
 produce ....0
 total ....0
@@ -708,14 +979,99 @@ total ....10
 
  DTAMSerial : 
 size : 25
+name : G2623_124099472L10
+name : G2623_124099472L11
+name : G2623_124099472L12
+name : G2623_124099472L13
+name : G2623_124099472L14
+name : G2623_124099472L15
+name : G2623_124099472L16
+name : G2623_124099472L17
+name : G2623_124099472L18
+name : G2623_124099472L19
+name : G2623_124099472L20
+name : G2623_124099472L21
+name : G2623_124099472L4
+name : G2623_124099472L5
+name : G2623_124099472L6
+name : G2623_124099472L7
+name : G2623_124099472L8
+name : G2623_124099472L9
+name : G2623_124099472S10
+name : G2623_124099472S4
+name : G2623_124099472S5
+name : G2623_124099472S6
+name : G2623_124099472S7
+name : G2623_124099472S8
+name : G2623_124099472S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G2623_124099472L1
+name : G2623_124099472L10
+name : G2623_124099472L11
+name : G2623_124099472L12
+name : G2623_124099472L13
+name : G2623_124099472L14
+name : G2623_124099472L15
+name : G2623_124099472L16
+name : G2623_124099472L17
+name : G2623_124099472L18
+name : G2623_124099472L19
+name : G2623_124099472L2
+name : G2623_124099472L20
+name : G2623_124099472L21
+name : G2623_124099472L3
+name : G2623_124099472L4
+name : G2623_124099472L5
+name : G2623_124099472L6
+name : G2623_124099472L7
+name : G2623_124099472L8
+name : G2623_124099472L9
+name : G2623_124099472S10
+name : G2623_124099472S2
+name : G2623_124099472S3
+name : G2623_124099472S4
+name : G2623_124099472S5
+name : G2623_124099472S6
+name : G2623_124099472S7
+name : G2623_124099472S8
+name : G2623_124099472S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G2623_124099472L1
+name : G2623_124099472L10
+name : G2623_124099472L11
+name : G2623_124099472L12
+name : G2623_124099472L13
+name : G2623_124099472L14
+name : G2623_124099472L15
+name : G2623_124099472L16
+name : G2623_124099472L17
+name : G2623_124099472L18
+name : G2623_124099472L19
+name : G2623_124099472L2
+name : G2623_124099472L20
+name : G2623_124099472L21
+name : G2623_124099472L3
+name : G2623_124099472L4
+name : G2623_124099472L5
+name : G2623_124099472L6
+name : G2623_124099472L7
+name : G2623_124099472L8
+name : G2623_124099472L9
+name : G2623_124099472S10
+name : G2623_124099472S2
+name : G2623_124099472S3
+name : G2623_124099472S4
+name : G2623_124099472S5
+name : G2623_124099472S6
+name : G2623_124099472S7
+name : G2623_124099472S8
+name : G2623_124099472S9
 
 
 buildInitTaintFormula
@@ -724,51 +1080,51 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-noTaintPTS : G2623_128978800L1
+noTaintPTS : G2623_124099472L1
 DTAMhybrid find
 getLine : 19
-noTaintPTS : G2623_128978800L2
+noTaintPTS : G2623_124099472L2
 DTAMhybrid find
 getLine : 22
-taintPTS : G2623_128978800L3
+taintPTS : G2623_124099472L3
 DTAMhybrid find
 getLine : 38
-taintPTS : G2623_128978800S2
+taintPTS : G2623_124099472S2
 DTAMhybrid find
 getLine : 38
-taintPTS : G2623_128978800S3
+taintPTS : G2623_124099472S3
 DTAMhybrid find
 getLine : 22
 
  size : 28
-DTAMSerial name : G2623_128978800L10 getLine : 42
-DTAMSerial name : G2623_128978800L11 getLine : 47
-DTAMSerial name : G2623_128978800L12 getLine : 19
-DTAMSerial name : G2623_128978800L13 getLine : 22
-DTAMSerial name : G2623_128978800L14 getLine : 19
-DTAMSerial name : G2623_128978800L15 getLine : 42
-DTAMSerial name : G2623_128978800L16 getLine : 47
-DTAMSerial name : G2623_128978800L17 getLine : 42
-DTAMSerial name : G2623_128978800L18 getLine : 19
-DTAMSerial name : G2623_128978800L19 getLine : 22
-DTAMSerial name : G2623_128978800L20 getLine : 42
-DTAMSerial name : G2623_128978800L21 getLine : 47
-DTAMSerial name : G2623_128978800L4 getLine : 19
-DTAMSerial name : G2623_128978800L5 getLine : 42
-DTAMSerial name : G2623_128978800L6 getLine : 47
-DTAMSerial name : G2623_128978800L7 getLine : 42
-DTAMSerial name : G2623_128978800L8 getLine : 19
-DTAMSerial name : G2623_128978800L9 getLine : 22
-DTAMSerial name : G2623_128978800S10 getLine : 47
-DTAMSerial name : G2623_128978800S4 getLine : 47
-DTAMSerial name : G2623_128978800S5 getLine : 22
-DTAMSerial name : G2623_128978800S6 getLine : 47
-DTAMSerial name : G2623_128978800S7 getLine : 22
-DTAMSerial name : G2623_128978800S8 getLine : 47
-DTAMSerial name : G2623_128978800S9 getLine : 22
-taintPTS name : G2623_128978800L3 getLine : 38
-taintPTS name : G2623_128978800S2 getLine : 38
-taintPTS name : G2623_128978800S3 getLine : 22
+DTAMSerial name : G2623_124099472L10 getLine : 42
+DTAMSerial name : G2623_124099472L11 getLine : 47
+DTAMSerial name : G2623_124099472L12 getLine : 19
+DTAMSerial name : G2623_124099472L13 getLine : 22
+DTAMSerial name : G2623_124099472L14 getLine : 19
+DTAMSerial name : G2623_124099472L15 getLine : 42
+DTAMSerial name : G2623_124099472L16 getLine : 47
+DTAMSerial name : G2623_124099472L17 getLine : 42
+DTAMSerial name : G2623_124099472L18 getLine : 19
+DTAMSerial name : G2623_124099472L19 getLine : 22
+DTAMSerial name : G2623_124099472L20 getLine : 42
+DTAMSerial name : G2623_124099472L21 getLine : 47
+DTAMSerial name : G2623_124099472L4 getLine : 19
+DTAMSerial name : G2623_124099472L5 getLine : 42
+DTAMSerial name : G2623_124099472L6 getLine : 47
+DTAMSerial name : G2623_124099472L7 getLine : 42
+DTAMSerial name : G2623_124099472L8 getLine : 19
+DTAMSerial name : G2623_124099472L9 getLine : 22
+DTAMSerial name : G2623_124099472S10 getLine : 47
+DTAMSerial name : G2623_124099472S4 getLine : 47
+DTAMSerial name : G2623_124099472S5 getLine : 22
+DTAMSerial name : G2623_124099472S6 getLine : 47
+DTAMSerial name : G2623_124099472S7 getLine : 22
+DTAMSerial name : G2623_124099472S8 getLine : 47
+DTAMSerial name : G2623_124099472S9 getLine : 22
+taintPTS name : G2623_124099472L3 getLine : 38
+taintPTS name : G2623_124099472S2 getLine : 38
+taintPTS name : G2623_124099472S3 getLine : 22
 
 ************************************************************************
 第6次执行,路径文件为trace6.txt 前缀执行,前缀文件为prefixTrace1#42#E121#0-1.txt
@@ -809,49 +1165,49 @@ The number of assert: 0
 Verifying is over!
 Sum of branches: 15
 Verifying branch 1 @Trace6#19#E24#0-1: CCost : 4e-06
-Cost : 0.08823
+Cost : 0.117903
 No!
-Verifying branch 2 @Trace6#42#E47#0-1: CCost : 4e-06
-Cost : 0.03132
+Verifying branch 2 @Trace6#42#E47#0-1: CCost : 3e-06
+Cost : 0.027149
 Yes!
 Verifying branch 3 @Trace6#42#E73#1-0: CCost : 4e-06
-Cost : 0.089459
+Cost : 0.068244
 No!
 Verifying branch 4 @Trace6#42#E80#1-0: CCost : 4e-06
-Cost : 0.063056
+Cost : 0.11189
 Yes!
 Verifying branch 5 @Trace6#19#E96#0-1: CCost : 4e-06
-Cost : 0.064333
+Cost : 0.139875
 No!
-Verifying branch 6 @Trace6#19#E115#1-0: CCost : 4e-06
-Cost : 0.094281
+Verifying branch 6 @Trace6#19#E115#1-0: CCost : 6e-06
+Cost : 0.042077
 Yes!
-Verifying branch 7 @Trace6#42#E121#0-1: CCost : 3e-06
-Cost : 0.080505
+Verifying branch 7 @Trace6#42#E121#0-1: CCost : 4e-06
+Cost : 0.107448
 No!
 Verifying branch 8 @Trace6#42#E147#1-0: CCost : 5e-06
-Cost : 0.04456
+Cost : 0.039895
 Yes!
-Verifying branch 9 @Trace6#19#E153#0-1: CCost : 4e-06
-Cost : 0.136574
+Verifying branch 9 @Trace6#19#E153#0-1: CCost : 5e-06
+Cost : 0.08893
 No!
-Verifying branch 10 @Trace6#19#E172#1-0: CCost : 7e-06
-Cost : 0.059411
+Verifying branch 10 @Trace6#19#E172#1-0: CCost : 5e-06
+Cost : 0.076271
 Yes!
-Verifying branch 11 @Trace6#42#E178#0-1: CCost : 4e-06
-Cost : 0.046952
+Verifying branch 11 @Trace6#42#E178#0-1: CCost : 5e-06
+Cost : 0.117508
 No!
-Verifying branch 12 @Trace6#42#E204#1-0: CCost : 4e-06
-Cost : 0.022893
+Verifying branch 12 @Trace6#42#E204#1-0: CCost : 5e-06
+Cost : 0.098595
 Yes!
-Verifying branch 13 @Trace6#19#E210#0-1: CCost : 3e-06
-Cost : 0.031996
+Verifying branch 13 @Trace6#19#E210#0-1: CCost : 5e-06
+Cost : 0.103936
 No!
 Verifying branch 14 @Trace6#42#E230#0-1: CCost : 4e-06
-Cost : 0.031049
+Cost : 0.023099
 No!
-Verifying branch 15 @Trace6#77#E266#1-0: CCost : 4e-06
-Cost : 0.001571
+Verifying branch 15 @Trace6#77#E266#1-0: CCost : 5e-06
+Cost : 0.001775
 No!
 produce ....0
 total ....0
@@ -870,14 +1226,105 @@ total ....10
 
  DTAMSerial : 
 size : 27
+name : G3268_144786208L10
+name : G3268_144786208L11
+name : G3268_144786208L12
+name : G3268_144786208L13
+name : G3268_144786208L14
+name : G3268_144786208L15
+name : G3268_144786208L16
+name : G3268_144786208L17
+name : G3268_144786208L18
+name : G3268_144786208L19
+name : G3268_144786208L20
+name : G3268_144786208L21
+name : G3268_144786208L22
+name : G3268_144786208L23
+name : G3268_144786208L4
+name : G3268_144786208L5
+name : G3268_144786208L6
+name : G3268_144786208L7
+name : G3268_144786208L8
+name : G3268_144786208L9
+name : G3268_144786208S10
+name : G3268_144786208S4
+name : G3268_144786208S5
+name : G3268_144786208S6
+name : G3268_144786208S7
+name : G3268_144786208S8
+name : G3268_144786208S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G3268_144786208L1
+name : G3268_144786208L10
+name : G3268_144786208L11
+name : G3268_144786208L12
+name : G3268_144786208L13
+name : G3268_144786208L14
+name : G3268_144786208L15
+name : G3268_144786208L16
+name : G3268_144786208L17
+name : G3268_144786208L18
+name : G3268_144786208L19
+name : G3268_144786208L2
+name : G3268_144786208L20
+name : G3268_144786208L21
+name : G3268_144786208L22
+name : G3268_144786208L23
+name : G3268_144786208L3
+name : G3268_144786208L4
+name : G3268_144786208L5
+name : G3268_144786208L6
+name : G3268_144786208L7
+name : G3268_144786208L8
+name : G3268_144786208L9
+name : G3268_144786208S10
+name : G3268_144786208S2
+name : G3268_144786208S3
+name : G3268_144786208S4
+name : G3268_144786208S5
+name : G3268_144786208S6
+name : G3268_144786208S7
+name : G3268_144786208S8
+name : G3268_144786208S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G3268_144786208L1
+name : G3268_144786208L10
+name : G3268_144786208L11
+name : G3268_144786208L12
+name : G3268_144786208L13
+name : G3268_144786208L14
+name : G3268_144786208L15
+name : G3268_144786208L16
+name : G3268_144786208L17
+name : G3268_144786208L18
+name : G3268_144786208L19
+name : G3268_144786208L2
+name : G3268_144786208L20
+name : G3268_144786208L21
+name : G3268_144786208L22
+name : G3268_144786208L23
+name : G3268_144786208L3
+name : G3268_144786208L4
+name : G3268_144786208L5
+name : G3268_144786208L6
+name : G3268_144786208L7
+name : G3268_144786208L8
+name : G3268_144786208L9
+name : G3268_144786208S10
+name : G3268_144786208S2
+name : G3268_144786208S3
+name : G3268_144786208S4
+name : G3268_144786208S5
+name : G3268_144786208S6
+name : G3268_144786208S7
+name : G3268_144786208S8
+name : G3268_144786208S9
 
 
 buildInitTaintFormula
@@ -886,54 +1333,54 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-taintPTS : G3268_151361136L1
+taintPTS : G3268_144786208L1
 DTAMhybrid find
 getLine : 19
-taintPTS : G3268_151361136L2
+taintPTS : G3268_144786208L2
 DTAMhybrid find
 getLine : 22
-noTaintPTS : G3268_151361136L3
+noTaintPTS : G3268_144786208L3
 DTAMhybrid find
 getLine : 38
-taintPTS : G3268_151361136S2
+taintPTS : G3268_144786208S2
 DTAMhybrid find
 getLine : 22
-taintPTS : G3268_151361136S3
+taintPTS : G3268_144786208S3
 DTAMhybrid find
 getLine : 38
 
  size : 31
-DTAMSerial name : G3268_151361136L10 getLine : 19
-DTAMSerial name : G3268_151361136L11 getLine : 42
-DTAMSerial name : G3268_151361136L12 getLine : 47
-DTAMSerial name : G3268_151361136L13 getLine : 42
-DTAMSerial name : G3268_151361136L14 getLine : 19
-DTAMSerial name : G3268_151361136L15 getLine : 22
-DTAMSerial name : G3268_151361136L16 getLine : 19
-DTAMSerial name : G3268_151361136L17 getLine : 42
-DTAMSerial name : G3268_151361136L18 getLine : 47
-DTAMSerial name : G3268_151361136L19 getLine : 42
-DTAMSerial name : G3268_151361136L20 getLine : 19
-DTAMSerial name : G3268_151361136L21 getLine : 22
-DTAMSerial name : G3268_151361136L22 getLine : 42
-DTAMSerial name : G3268_151361136L23 getLine : 47
-DTAMSerial name : G3268_151361136L4 getLine : 42
-DTAMSerial name : G3268_151361136L5 getLine : 47
-DTAMSerial name : G3268_151361136L6 getLine : 42
-DTAMSerial name : G3268_151361136L7 getLine : 42
-DTAMSerial name : G3268_151361136L8 getLine : 19
-DTAMSerial name : G3268_151361136L9 getLine : 22
-DTAMSerial name : G3268_151361136S10 getLine : 47
-DTAMSerial name : G3268_151361136S4 getLine : 47
-DTAMSerial name : G3268_151361136S5 getLine : 22
-DTAMSerial name : G3268_151361136S6 getLine : 47
-DTAMSerial name : G3268_151361136S7 getLine : 22
-DTAMSerial name : G3268_151361136S8 getLine : 47
-DTAMSerial name : G3268_151361136S9 getLine : 22
-taintPTS name : G3268_151361136L1 getLine : 19
-taintPTS name : G3268_151361136L2 getLine : 22
-taintPTS name : G3268_151361136S2 getLine : 22
-taintPTS name : G3268_151361136S3 getLine : 38
+DTAMSerial name : G3268_144786208L10 getLine : 19
+DTAMSerial name : G3268_144786208L11 getLine : 42
+DTAMSerial name : G3268_144786208L12 getLine : 47
+DTAMSerial name : G3268_144786208L13 getLine : 42
+DTAMSerial name : G3268_144786208L14 getLine : 19
+DTAMSerial name : G3268_144786208L15 getLine : 22
+DTAMSerial name : G3268_144786208L16 getLine : 19
+DTAMSerial name : G3268_144786208L17 getLine : 42
+DTAMSerial name : G3268_144786208L18 getLine : 47
+DTAMSerial name : G3268_144786208L19 getLine : 42
+DTAMSerial name : G3268_144786208L20 getLine : 19
+DTAMSerial name : G3268_144786208L21 getLine : 22
+DTAMSerial name : G3268_144786208L22 getLine : 42
+DTAMSerial name : G3268_144786208L23 getLine : 47
+DTAMSerial name : G3268_144786208L4 getLine : 42
+DTAMSerial name : G3268_144786208L5 getLine : 47
+DTAMSerial name : G3268_144786208L6 getLine : 42
+DTAMSerial name : G3268_144786208L7 getLine : 42
+DTAMSerial name : G3268_144786208L8 getLine : 19
+DTAMSerial name : G3268_144786208L9 getLine : 22
+DTAMSerial name : G3268_144786208S10 getLine : 47
+DTAMSerial name : G3268_144786208S4 getLine : 47
+DTAMSerial name : G3268_144786208S5 getLine : 22
+DTAMSerial name : G3268_144786208S6 getLine : 47
+DTAMSerial name : G3268_144786208S7 getLine : 22
+DTAMSerial name : G3268_144786208S8 getLine : 47
+DTAMSerial name : G3268_144786208S9 getLine : 22
+taintPTS name : G3268_144786208L1 getLine : 19
+taintPTS name : G3268_144786208L2 getLine : 22
+taintPTS name : G3268_144786208S2 getLine : 22
+taintPTS name : G3268_144786208S3 getLine : 38
 
 ************************************************************************
 第7次执行,路径文件为trace7.txt 前缀执行,前缀文件为prefixTrace1#42#E147#1-0.txt
@@ -974,43 +1421,43 @@ The number of assert: 0
 Verifying is over!
 Sum of branches: 13
 Verifying branch 1 @Trace7#19#E24#0-1: CCost : 4e-06
-Cost : 0.063535
+Cost : 0.075782
 No!
-Verifying branch 2 @Trace7#19#E50#1-0: CCost : 4e-06
-Cost : 0.034625
+Verifying branch 2 @Trace7#19#E50#1-0: CCost : 6e-06
+Cost : 0.012693
 Yes!
-Verifying branch 3 @Trace7#42#E62#0-1: CCost : 3e-06
-Cost : 0.058145
+Verifying branch 3 @Trace7#42#E62#0-1: CCost : 4e-06
+Cost : 0.332809
 Yes!
-Verifying branch 4 @Trace7#42#E88#1-0: CCost : 3e-06
-Cost : 0.11759
+Verifying branch 4 @Trace7#42#E88#1-0: CCost : 4e-06
+Cost : 0.041051
 Yes!
-Verifying branch 5 @Trace7#19#E94#0-1: CCost : 4e-06
-Cost : 0.173335
+Verifying branch 5 @Trace7#19#E94#0-1: CCost : 5e-06
+Cost : 0.13097
 No!
-Verifying branch 6 @Trace7#19#E113#1-0: CCost : 4e-06
-Cost : 0.038091
+Verifying branch 6 @Trace7#19#E113#1-0: CCost : 5e-06
+Cost : 0.0197
 Yes!
-Verifying branch 7 @Trace7#42#E119#0-1: CCost : 3e-06
-Cost : 0.031585
+Verifying branch 7 @Trace7#42#E119#0-1: CCost : 4e-06
+Cost : 0.051444
 Yes!
-Verifying branch 8 @Trace7#19#E137#0-1: CCost : 3e-06
-Cost : 0.084171
+Verifying branch 8 @Trace7#19#E137#0-1: CCost : 4e-06
+Cost : 0.120543
 No!
 Verifying branch 9 @Trace7#42#E155#0-1: CCost : 5e-06
-Cost : 0.117514
+Cost : 0.052124
 Yes!
-Verifying branch 10 @Trace7#42#E183#1-0: CCost : 4e-06
-Cost : 0.127723
+Verifying branch 10 @Trace7#42#E183#1-0: CCost : 3e-06
+Cost : 0.165354
 Yes!
 Verifying branch 11 @Trace7#19#E198#0-1: CCost : 4e-06
-Cost : 0.069558
+Cost : 0.07965
 Yes!
 Verifying branch 12 @Trace7#42#E218#0-1: CCost : 4e-06
-Cost : 0.030443
+Cost : 0.165309
 Yes!
-Verifying branch 13 @Trace7#77#E254#1-0: CCost : 4e-06
-Cost : 0.001464
+Verifying branch 13 @Trace7#77#E254#1-0: CCost : 6e-06
+Cost : 0.001639
 No!
 produce ....0
 total ....0
@@ -1029,14 +1476,98 @@ total ....10
 
  DTAMSerial : 
 size : 24
+name : G3927_168574256L10
+name : G3927_168574256L11
+name : G3927_168574256L12
+name : G3927_168574256L13
+name : G3927_168574256L14
+name : G3927_168574256L15
+name : G3927_168574256L16
+name : G3927_168574256L17
+name : G3927_168574256L18
+name : G3927_168574256L19
+name : G3927_168574256L20
+name : G3927_168574256L21
+name : G3927_168574256L5
+name : G3927_168574256L6
+name : G3927_168574256L7
+name : G3927_168574256L8
+name : G3927_168574256L9
+name : G3927_168574256S10
+name : G3927_168574256S4
+name : G3927_168574256S5
+name : G3927_168574256S6
+name : G3927_168574256S7
+name : G3927_168574256S8
+name : G3927_168574256S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G3927_168574256L1
+name : G3927_168574256L10
+name : G3927_168574256L11
+name : G3927_168574256L12
+name : G3927_168574256L13
+name : G3927_168574256L14
+name : G3927_168574256L15
+name : G3927_168574256L16
+name : G3927_168574256L17
+name : G3927_168574256L18
+name : G3927_168574256L19
+name : G3927_168574256L2
+name : G3927_168574256L20
+name : G3927_168574256L21
+name : G3927_168574256L3
+name : G3927_168574256L4
+name : G3927_168574256L5
+name : G3927_168574256L6
+name : G3927_168574256L7
+name : G3927_168574256L8
+name : G3927_168574256L9
+name : G3927_168574256S10
+name : G3927_168574256S2
+name : G3927_168574256S3
+name : G3927_168574256S4
+name : G3927_168574256S5
+name : G3927_168574256S6
+name : G3927_168574256S7
+name : G3927_168574256S8
+name : G3927_168574256S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G3927_168574256L1
+name : G3927_168574256L10
+name : G3927_168574256L11
+name : G3927_168574256L12
+name : G3927_168574256L13
+name : G3927_168574256L14
+name : G3927_168574256L15
+name : G3927_168574256L16
+name : G3927_168574256L17
+name : G3927_168574256L18
+name : G3927_168574256L19
+name : G3927_168574256L2
+name : G3927_168574256L20
+name : G3927_168574256L21
+name : G3927_168574256L3
+name : G3927_168574256L4
+name : G3927_168574256L5
+name : G3927_168574256L6
+name : G3927_168574256L7
+name : G3927_168574256L8
+name : G3927_168574256L9
+name : G3927_168574256S10
+name : G3927_168574256S2
+name : G3927_168574256S3
+name : G3927_168574256S4
+name : G3927_168574256S5
+name : G3927_168574256S6
+name : G3927_168574256S7
+name : G3927_168574256S8
+name : G3927_168574256S9
 
 
 buildInitTaintFormula
@@ -1045,55 +1576,55 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-taintPTS : G3927_173395104L1
+taintPTS : G3927_168574256L1
 DTAMhybrid find
 getLine : 19
-taintPTS : G3927_173395104L2
+taintPTS : G3927_168574256L2
 DTAMhybrid find
 getLine : 22
-noTaintPTS : G3927_173395104L3
+noTaintPTS : G3927_168574256L3
 DTAMhybrid find
 getLine : 38
-taintPTS : G3927_173395104L4
+taintPTS : G3927_168574256L4
 DTAMhybrid find
 getLine : 19
-taintPTS : G3927_173395104S2
+taintPTS : G3927_168574256S2
 DTAMhybrid find
 getLine : 22
-taintPTS : G3927_173395104S3
+taintPTS : G3927_168574256S3
 DTAMhybrid find
 getLine : 38
 
  size : 29
-DTAMSerial name : G3927_173395104L10 getLine : 19
-DTAMSerial name : G3927_173395104L11 getLine : 42
-DTAMSerial name : G3927_173395104L12 getLine : 47
-DTAMSerial name : G3927_173395104L13 getLine : 19
-DTAMSerial name : G3927_173395104L14 getLine : 22
-DTAMSerial name : G3927_173395104L15 getLine : 42
-DTAMSerial name : G3927_173395104L16 getLine : 47
-DTAMSerial name : G3927_173395104L17 getLine : 42
-DTAMSerial name : G3927_173395104L18 getLine : 19
-DTAMSerial name : G3927_173395104L19 getLine : 22
-DTAMSerial name : G3927_173395104L20 getLine : 42
-DTAMSerial name : G3927_173395104L21 getLine : 47
-DTAMSerial name : G3927_173395104L5 getLine : 42
-DTAMSerial name : G3927_173395104L6 getLine : 47
-DTAMSerial name : G3927_173395104L7 getLine : 42
-DTAMSerial name : G3927_173395104L8 getLine : 19
-DTAMSerial name : G3927_173395104L9 getLine : 22
-DTAMSerial name : G3927_173395104S10 getLine : 47
-DTAMSerial name : G3927_173395104S4 getLine : 47
-DTAMSerial name : G3927_173395104S5 getLine : 22
-DTAMSerial name : G3927_173395104S6 getLine : 47
-DTAMSerial name : G3927_173395104S7 getLine : 22
-DTAMSerial name : G3927_173395104S8 getLine : 47
-DTAMSerial name : G3927_173395104S9 getLine : 22
-taintPTS name : G3927_173395104L1 getLine : 19
-taintPTS name : G3927_173395104L2 getLine : 22
-taintPTS name : G3927_173395104L4 getLine : 19
-taintPTS name : G3927_173395104S2 getLine : 22
-taintPTS name : G3927_173395104S3 getLine : 38
+DTAMSerial name : G3927_168574256L10 getLine : 19
+DTAMSerial name : G3927_168574256L11 getLine : 42
+DTAMSerial name : G3927_168574256L12 getLine : 47
+DTAMSerial name : G3927_168574256L13 getLine : 19
+DTAMSerial name : G3927_168574256L14 getLine : 22
+DTAMSerial name : G3927_168574256L15 getLine : 42
+DTAMSerial name : G3927_168574256L16 getLine : 47
+DTAMSerial name : G3927_168574256L17 getLine : 42
+DTAMSerial name : G3927_168574256L18 getLine : 19
+DTAMSerial name : G3927_168574256L19 getLine : 22
+DTAMSerial name : G3927_168574256L20 getLine : 42
+DTAMSerial name : G3927_168574256L21 getLine : 47
+DTAMSerial name : G3927_168574256L5 getLine : 42
+DTAMSerial name : G3927_168574256L6 getLine : 47
+DTAMSerial name : G3927_168574256L7 getLine : 42
+DTAMSerial name : G3927_168574256L8 getLine : 19
+DTAMSerial name : G3927_168574256L9 getLine : 22
+DTAMSerial name : G3927_168574256S10 getLine : 47
+DTAMSerial name : G3927_168574256S4 getLine : 47
+DTAMSerial name : G3927_168574256S5 getLine : 22
+DTAMSerial name : G3927_168574256S6 getLine : 47
+DTAMSerial name : G3927_168574256S7 getLine : 22
+DTAMSerial name : G3927_168574256S8 getLine : 47
+DTAMSerial name : G3927_168574256S9 getLine : 22
+taintPTS name : G3927_168574256L1 getLine : 19
+taintPTS name : G3927_168574256L2 getLine : 22
+taintPTS name : G3927_168574256L4 getLine : 19
+taintPTS name : G3927_168574256S2 getLine : 22
+taintPTS name : G3927_168574256S3 getLine : 38
 
 ************************************************************************
 第8次执行,路径文件为trace8.txt 前缀执行,前缀文件为prefixTrace1#19#E172#1-0.txt
@@ -1134,43 +1665,43 @@ The number of assert: 0
 Verifying is over!
 Sum of branches: 13
 Verifying branch 1 @Trace8#19#E24#0-1: CCost : 3e-06
-Cost : 0.027889
+Cost : 0.031002
 No!
-Verifying branch 2 @Trace8#19#E51#1-0: CCost : 3e-06
-Cost : 0.276988
+Verifying branch 2 @Trace8#19#E51#1-0: CCost : 4e-06
+Cost : 0.310797
 Yes!
-Verifying branch 3 @Trace8#42#E62#0-1: CCost : 3e-06
-Cost : 0.247604
+Verifying branch 3 @Trace8#42#E62#0-1: CCost : 4e-06
+Cost : 0.272892
 Yes!
 Verifying branch 4 @Trace8#42#E88#1-0: CCost : 4e-06
-Cost : 0.460905
+Cost : 0.501366
 Yes!
-Verifying branch 5 @Trace8#19#E94#0-1: CCost : 3e-06
-Cost : 0.046929
+Verifying branch 5 @Trace8#19#E94#0-1: CCost : 4e-06
+Cost : 0.051992
 No!
-Verifying branch 6 @Trace8#19#E113#1-0: CCost : 3e-06
-Cost : 0.020136
+Verifying branch 6 @Trace8#19#E113#1-0: CCost : 4e-06
+Cost : 0.022143
 Yes!
-Verifying branch 7 @Trace8#42#E119#0-1: CCost : 3e-06
-Cost : 0.14541
+Verifying branch 7 @Trace8#42#E119#0-1: CCost : 4e-06
+Cost : 0.161444
 Yes!
 Verifying branch 8 @Trace8#42#E145#1-0: CCost : 4e-06
-Cost : 0.048636
+Cost : 0.090955
 Yes!
-Verifying branch 9 @Trace8#19#E151#0-1: CCost : 3e-06
-Cost : 0.060712
+Verifying branch 9 @Trace8#19#E151#0-1: CCost : 4e-06
+Cost : 0.058294
 No!
 Verifying branch 10 @Trace8#42#E162#0-1: CCost : 4e-06
-Cost : 0.057388
+Cost : 0.034762
 No!
-Verifying branch 11 @Trace8#19#E187#0-1: CCost : 4e-06
-Cost : 0.034509
+Verifying branch 11 @Trace8#19#E187#0-1: CCost : 3e-06
+Cost : 0.097486
 Yes!
-Verifying branch 12 @Trace8#42#E218#0-1: CCost : 3e-06
-Cost : 0.081949
+Verifying branch 12 @Trace8#42#E218#0-1: CCost : 4e-06
+Cost : 0.08718
 Yes!
 Verifying branch 13 @Trace8#77#E254#1-0: CCost : 4e-06
-Cost : 0.001454
+Cost : 0.001578
 No!
 produce ....0
 total ....0
@@ -1189,14 +1720,99 @@ total ....10
 
  DTAMSerial : 
 size : 25
+name : G4572_194856336L10
+name : G4572_194856336L11
+name : G4572_194856336L12
+name : G4572_194856336L13
+name : G4572_194856336L14
+name : G4572_194856336L15
+name : G4572_194856336L16
+name : G4572_194856336L17
+name : G4572_194856336L18
+name : G4572_194856336L19
+name : G4572_194856336L20
+name : G4572_194856336L21
+name : G4572_194856336L4
+name : G4572_194856336L5
+name : G4572_194856336L6
+name : G4572_194856336L7
+name : G4572_194856336L8
+name : G4572_194856336L9
+name : G4572_194856336S10
+name : G4572_194856336S4
+name : G4572_194856336S5
+name : G4572_194856336S6
+name : G4572_194856336S7
+name : G4572_194856336S8
+name : G4572_194856336S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G4572_194856336L1
+name : G4572_194856336L10
+name : G4572_194856336L11
+name : G4572_194856336L12
+name : G4572_194856336L13
+name : G4572_194856336L14
+name : G4572_194856336L15
+name : G4572_194856336L16
+name : G4572_194856336L17
+name : G4572_194856336L18
+name : G4572_194856336L19
+name : G4572_194856336L2
+name : G4572_194856336L20
+name : G4572_194856336L21
+name : G4572_194856336L3
+name : G4572_194856336L4
+name : G4572_194856336L5
+name : G4572_194856336L6
+name : G4572_194856336L7
+name : G4572_194856336L8
+name : G4572_194856336L9
+name : G4572_194856336S10
+name : G4572_194856336S2
+name : G4572_194856336S3
+name : G4572_194856336S4
+name : G4572_194856336S5
+name : G4572_194856336S6
+name : G4572_194856336S7
+name : G4572_194856336S8
+name : G4572_194856336S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G4572_194856336L1
+name : G4572_194856336L10
+name : G4572_194856336L11
+name : G4572_194856336L12
+name : G4572_194856336L13
+name : G4572_194856336L14
+name : G4572_194856336L15
+name : G4572_194856336L16
+name : G4572_194856336L17
+name : G4572_194856336L18
+name : G4572_194856336L19
+name : G4572_194856336L2
+name : G4572_194856336L20
+name : G4572_194856336L21
+name : G4572_194856336L3
+name : G4572_194856336L4
+name : G4572_194856336L5
+name : G4572_194856336L6
+name : G4572_194856336L7
+name : G4572_194856336L8
+name : G4572_194856336L9
+name : G4572_194856336S10
+name : G4572_194856336S2
+name : G4572_194856336S3
+name : G4572_194856336S4
+name : G4572_194856336S5
+name : G4572_194856336S6
+name : G4572_194856336S7
+name : G4572_194856336S8
+name : G4572_194856336S9
 
 
 buildInitTaintFormula
@@ -1205,52 +1821,52 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-taintPTS : G4572_198625792L1
+taintPTS : G4572_194856336L1
 DTAMhybrid find
 getLine : 19
-taintPTS : G4572_198625792L2
+taintPTS : G4572_194856336L2
 DTAMhybrid find
 getLine : 22
-noTaintPTS : G4572_198625792L3
+noTaintPTS : G4572_194856336L3
 DTAMhybrid find
 getLine : 38
-taintPTS : G4572_198625792S2
+taintPTS : G4572_194856336S2
 DTAMhybrid find
 getLine : 22
-taintPTS : G4572_198625792S3
+taintPTS : G4572_194856336S3
 DTAMhybrid find
 getLine : 38
 
  size : 29
-DTAMSerial name : G4572_198625792L10 getLine : 19
-DTAMSerial name : G4572_198625792L11 getLine : 42
-DTAMSerial name : G4572_198625792L12 getLine : 47
-DTAMSerial name : G4572_198625792L13 getLine : 42
-DTAMSerial name : G4572_198625792L14 getLine : 19
-DTAMSerial name : G4572_198625792L15 getLine : 22
-DTAMSerial name : G4572_198625792L16 getLine : 42
-DTAMSerial name : G4572_198625792L17 getLine : 47
-DTAMSerial name : G4572_198625792L18 getLine : 19
-DTAMSerial name : G4572_198625792L19 getLine : 22
-DTAMSerial name : G4572_198625792L20 getLine : 42
-DTAMSerial name : G4572_198625792L21 getLine : 47
-DTAMSerial name : G4572_198625792L4 getLine : 19
-DTAMSerial name : G4572_198625792L5 getLine : 42
-DTAMSerial name : G4572_198625792L6 getLine : 47
-DTAMSerial name : G4572_198625792L7 getLine : 42
-DTAMSerial name : G4572_198625792L8 getLine : 19
-DTAMSerial name : G4572_198625792L9 getLine : 22
-DTAMSerial name : G4572_198625792S10 getLine : 47
-DTAMSerial name : G4572_198625792S4 getLine : 47
-DTAMSerial name : G4572_198625792S5 getLine : 22
-DTAMSerial name : G4572_198625792S6 getLine : 47
-DTAMSerial name : G4572_198625792S7 getLine : 22
-DTAMSerial name : G4572_198625792S8 getLine : 47
-DTAMSerial name : G4572_198625792S9 getLine : 22
-taintPTS name : G4572_198625792L1 getLine : 19
-taintPTS name : G4572_198625792L2 getLine : 22
-taintPTS name : G4572_198625792S2 getLine : 22
-taintPTS name : G4572_198625792S3 getLine : 38
+DTAMSerial name : G4572_194856336L10 getLine : 19
+DTAMSerial name : G4572_194856336L11 getLine : 42
+DTAMSerial name : G4572_194856336L12 getLine : 47
+DTAMSerial name : G4572_194856336L13 getLine : 42
+DTAMSerial name : G4572_194856336L14 getLine : 19
+DTAMSerial name : G4572_194856336L15 getLine : 22
+DTAMSerial name : G4572_194856336L16 getLine : 42
+DTAMSerial name : G4572_194856336L17 getLine : 47
+DTAMSerial name : G4572_194856336L18 getLine : 19
+DTAMSerial name : G4572_194856336L19 getLine : 22
+DTAMSerial name : G4572_194856336L20 getLine : 42
+DTAMSerial name : G4572_194856336L21 getLine : 47
+DTAMSerial name : G4572_194856336L4 getLine : 19
+DTAMSerial name : G4572_194856336L5 getLine : 42
+DTAMSerial name : G4572_194856336L6 getLine : 47
+DTAMSerial name : G4572_194856336L7 getLine : 42
+DTAMSerial name : G4572_194856336L8 getLine : 19
+DTAMSerial name : G4572_194856336L9 getLine : 22
+DTAMSerial name : G4572_194856336S10 getLine : 47
+DTAMSerial name : G4572_194856336S4 getLine : 47
+DTAMSerial name : G4572_194856336S5 getLine : 22
+DTAMSerial name : G4572_194856336S6 getLine : 47
+DTAMSerial name : G4572_194856336S7 getLine : 22
+DTAMSerial name : G4572_194856336S8 getLine : 47
+DTAMSerial name : G4572_194856336S9 getLine : 22
+taintPTS name : G4572_194856336L1 getLine : 19
+taintPTS name : G4572_194856336L2 getLine : 22
+taintPTS name : G4572_194856336S2 getLine : 22
+taintPTS name : G4572_194856336S3 getLine : 38
 
 ************************************************************************
 第9次执行,路径文件为trace9.txt 前缀执行,前缀文件为prefixTrace1#42#E204#1-0.txt
@@ -1290,47 +1906,47 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 14
-Verifying branch 1 @Trace9#19#E24#0-1: CCost : 3e-06
-Cost : 0.030447
+Verifying branch 1 @Trace9#19#E24#0-1: CCost : 4e-06
+Cost : 0.0345
 No!
 Verifying branch 2 @Trace9#19#E50#1-0: CCost : 3e-06
-Cost : 0.156716
+Cost : 0.403226
 Yes!
-Verifying branch 3 @Trace9#42#E62#0-1: CCost : 4e-06
-Cost : 2.62186
+Verifying branch 3 @Trace9#42#E62#0-1: CCost : 3e-06
+Cost : 0.073117
 Yes!
 Verifying branch 4 @Trace9#42#E88#1-0: CCost : 4e-06
-Cost : 0.056512
+Cost : 0.269616
 Yes!
-Verifying branch 5 @Trace9#19#E94#0-1: CCost : 3e-06
-Cost : 0.284655
+Verifying branch 5 @Trace9#19#E94#0-1: CCost : 4e-06
+Cost : 0.091433
 No!
 Verifying branch 6 @Trace9#19#E113#1-0: CCost : 4e-06
-Cost : 0.123577
+Cost : 0.034449
 Yes!
-Verifying branch 7 @Trace9#42#E119#0-1: CCost : 4e-06
-Cost : 0.202284
+Verifying branch 7 @Trace9#42#E119#0-1: CCost : 3e-06
+Cost : 0.092103
 Yes!
-Verifying branch 8 @Trace9#42#E145#1-0: CCost : 3e-06
-Cost : 0.043794
+Verifying branch 8 @Trace9#42#E145#1-0: CCost : 4e-06
+Cost : 0.074523
 Yes!
 Verifying branch 9 @Trace9#19#E151#0-1: CCost : 4e-06
-Cost : 0.043999
+Cost : 0.135293
 No!
 Verifying branch 10 @Trace9#19#E170#1-0: CCost : 4e-06
-Cost : 0.043299
+Cost : 0.070477
 Yes!
-Verifying branch 11 @Trace9#42#E176#0-1: CCost : 3e-06
-Cost : 0.064083
+Verifying branch 11 @Trace9#42#E176#0-1: CCost : 4e-06
+Cost : 0.081515
 No!
 Verifying branch 12 @Trace9#19#E194#0-1: CCost : 4e-06
-Cost : 0.031618
+Cost : 0.08786
 No!
-Verifying branch 13 @Trace9#42#E212#0-1: CCost : 3e-06
-Cost : 0.052579
+Verifying branch 13 @Trace9#42#E212#0-1: CCost : 4e-06
+Cost : 0.101261
 Yes!
-Verifying branch 14 @Trace9#77#E260#1-0: CCost : 3e-06
-Cost : 0.001693
+Verifying branch 14 @Trace9#77#E260#1-0: CCost : 4e-06
+Cost : 0.001797
 No!
 produce ....0
 total ....0
@@ -1349,14 +1965,101 @@ total ....10
 
  DTAMSerial : 
 size : 25
+name : G5217_212488448L10
+name : G5217_212488448L11
+name : G5217_212488448L12
+name : G5217_212488448L13
+name : G5217_212488448L14
+name : G5217_212488448L15
+name : G5217_212488448L16
+name : G5217_212488448L17
+name : G5217_212488448L18
+name : G5217_212488448L19
+name : G5217_212488448L20
+name : G5217_212488448L21
+name : G5217_212488448L22
+name : G5217_212488448L5
+name : G5217_212488448L6
+name : G5217_212488448L7
+name : G5217_212488448L8
+name : G5217_212488448L9
+name : G5217_212488448S10
+name : G5217_212488448S4
+name : G5217_212488448S5
+name : G5217_212488448S6
+name : G5217_212488448S7
+name : G5217_212488448S8
+name : G5217_212488448S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G5217_212488448L1
+name : G5217_212488448L10
+name : G5217_212488448L11
+name : G5217_212488448L12
+name : G5217_212488448L13
+name : G5217_212488448L14
+name : G5217_212488448L15
+name : G5217_212488448L16
+name : G5217_212488448L17
+name : G5217_212488448L18
+name : G5217_212488448L19
+name : G5217_212488448L2
+name : G5217_212488448L20
+name : G5217_212488448L21
+name : G5217_212488448L22
+name : G5217_212488448L3
+name : G5217_212488448L4
+name : G5217_212488448L5
+name : G5217_212488448L6
+name : G5217_212488448L7
+name : G5217_212488448L8
+name : G5217_212488448L9
+name : G5217_212488448S10
+name : G5217_212488448S2
+name : G5217_212488448S3
+name : G5217_212488448S4
+name : G5217_212488448S5
+name : G5217_212488448S6
+name : G5217_212488448S7
+name : G5217_212488448S8
+name : G5217_212488448S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G5217_212488448L1
+name : G5217_212488448L10
+name : G5217_212488448L11
+name : G5217_212488448L12
+name : G5217_212488448L13
+name : G5217_212488448L14
+name : G5217_212488448L15
+name : G5217_212488448L16
+name : G5217_212488448L17
+name : G5217_212488448L18
+name : G5217_212488448L19
+name : G5217_212488448L2
+name : G5217_212488448L20
+name : G5217_212488448L21
+name : G5217_212488448L22
+name : G5217_212488448L3
+name : G5217_212488448L4
+name : G5217_212488448L5
+name : G5217_212488448L6
+name : G5217_212488448L7
+name : G5217_212488448L8
+name : G5217_212488448L9
+name : G5217_212488448S10
+name : G5217_212488448S2
+name : G5217_212488448S3
+name : G5217_212488448S4
+name : G5217_212488448S5
+name : G5217_212488448S6
+name : G5217_212488448S7
+name : G5217_212488448S8
+name : G5217_212488448S9
 
 
 buildInitTaintFormula
@@ -1365,59 +2068,331 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-taintPTS : G5217_221252992L1
+taintPTS : G5217_212488448L1
 DTAMhybrid find
 getLine : 19
-taintPTS : G5217_221252992L2
+taintPTS : G5217_212488448L2
 DTAMhybrid find
 getLine : 22
-noTaintPTS : G5217_221252992L3
+noTaintPTS : G5217_212488448L3
 DTAMhybrid find
 getLine : 38
-taintPTS : G5217_221252992L4
+taintPTS : G5217_212488448L4
 DTAMhybrid find
 getLine : 19
-taintPTS : G5217_221252992S2
+taintPTS : G5217_212488448S2
 DTAMhybrid find
 getLine : 22
-taintPTS : G5217_221252992S3
+taintPTS : G5217_212488448S3
 DTAMhybrid find
 getLine : 38
 
  size : 30
-DTAMSerial name : G5217_221252992L10 getLine : 19
-DTAMSerial name : G5217_221252992L11 getLine : 42
-DTAMSerial name : G5217_221252992L12 getLine : 47
-DTAMSerial name : G5217_221252992L13 getLine : 42
-DTAMSerial name : G5217_221252992L14 getLine : 19
-DTAMSerial name : G5217_221252992L15 getLine : 22
-DTAMSerial name : G5217_221252992L16 getLine : 19
-DTAMSerial name : G5217_221252992L17 getLine : 42
-DTAMSerial name : G5217_221252992L18 getLine : 47
-DTAMSerial name : G5217_221252992L19 getLine : 19
-DTAMSerial name : G5217_221252992L20 getLine : 22
-DTAMSerial name : G5217_221252992L21 getLine : 42
-DTAMSerial name : G5217_221252992L22 getLine : 47
-DTAMSerial name : G5217_221252992L5 getLine : 42
-DTAMSerial name : G5217_221252992L6 getLine : 47
-DTAMSerial name : G5217_221252992L7 getLine : 42
-DTAMSerial name : G5217_221252992L8 getLine : 19
-DTAMSerial name : G5217_221252992L9 getLine : 22
-DTAMSerial name : G5217_221252992S10 getLine : 47
-DTAMSerial name : G5217_221252992S4 getLine : 47
-DTAMSerial name : G5217_221252992S5 getLine : 22
-DTAMSerial name : G5217_221252992S6 getLine : 47
-DTAMSerial name : G5217_221252992S7 getLine : 22
-DTAMSerial name : G5217_221252992S8 getLine : 47
-DTAMSerial name : G5217_221252992S9 getLine : 22
-taintPTS name : G5217_221252992L1 getLine : 19
-taintPTS name : G5217_221252992L2 getLine : 22
-taintPTS name : G5217_221252992L4 getLine : 19
-taintPTS name : G5217_221252992S2 getLine : 22
-taintPTS name : G5217_221252992S3 getLine : 38
+DTAMSerial name : G5217_212488448L10 getLine : 19
+DTAMSerial name : G5217_212488448L11 getLine : 42
+DTAMSerial name : G5217_212488448L12 getLine : 47
+DTAMSerial name : G5217_212488448L13 getLine : 42
+DTAMSerial name : G5217_212488448L14 getLine : 19
+DTAMSerial name : G5217_212488448L15 getLine : 22
+DTAMSerial name : G5217_212488448L16 getLine : 19
+DTAMSerial name : G5217_212488448L17 getLine : 42
+DTAMSerial name : G5217_212488448L18 getLine : 47
+DTAMSerial name : G5217_212488448L19 getLine : 19
+DTAMSerial name : G5217_212488448L20 getLine : 22
+DTAMSerial name : G5217_212488448L21 getLine : 42
+DTAMSerial name : G5217_212488448L22 getLine : 47
+DTAMSerial name : G5217_212488448L5 getLine : 42
+DTAMSerial name : G5217_212488448L6 getLine : 47
+DTAMSerial name : G5217_212488448L7 getLine : 42
+DTAMSerial name : G5217_212488448L8 getLine : 19
+DTAMSerial name : G5217_212488448L9 getLine : 22
+DTAMSerial name : G5217_212488448S10 getLine : 47
+DTAMSerial name : G5217_212488448S4 getLine : 47
+DTAMSerial name : G5217_212488448S5 getLine : 22
+DTAMSerial name : G5217_212488448S6 getLine : 47
+DTAMSerial name : G5217_212488448S7 getLine : 22
+DTAMSerial name : G5217_212488448S8 getLine : 47
+DTAMSerial name : G5217_212488448S9 getLine : 22
+taintPTS name : G5217_212488448L1 getLine : 19
+taintPTS name : G5217_212488448L2 getLine : 22
+taintPTS name : G5217_212488448L4 getLine : 19
+taintPTS name : G5217_212488448S2 getLine : 22
+taintPTS name : G5217_212488448S3 getLine : 38
 
 ************************************************************************
 第10次执行,路径文件为trace10.txt 前缀执行,前缀文件为prefixTrace2#42#E48#0-1.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为旧路径####################
+
+************************************************************************
+第11次执行,路径文件为trace11.txt 前缀执行,前缀文件为prefixTrace2#19#E73#0-1.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为旧路径####################
+
+************************************************************************
+第12次执行,路径文件为trace12.txt 前缀执行,前缀文件为prefixTrace2#19#E94#1-0.txt
+************************************************************************
+
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 12
+Verifying branch 1 @Trace12#19#E30#0-1: CCost : 3e-06
+Cost : 0.025419
+No!
+Verifying branch 2 @Trace12#42#E48#0-1: CCost : 5e-06
+Cost : 0.076522
+Yes!
+Verifying branch 3 @Trace12#19#E73#0-1: CCost : 6e-06
+Cost : 0.124217
+Yes!
+Verifying branch 4 @Trace12#42#E92#0-1: CCost : 3e-06
+Cost : 0.06016
+Yes!
+Verifying branch 5 @Trace12#42#E118#1-0: CCost : 3e-06
+Cost : 0.109571
+Yes!
+Verifying branch 6 @Trace12#19#E133#0-1: CCost : 3e-06
+Cost : 0.283094
+Yes!
+Verifying branch 7 @Trace12#19#E154#1-0: CCost : 3e-06
+Cost : 0.079176
+Yes!
+Verifying branch 8 @Trace12#42#E160#0-1: CCost : 3e-06
+Cost : 0.138866
+Yes!
+Verifying branch 9 @Trace12#42#E186#1-0: CCost : 3e-06
+Cost : 0.370065
+Yes!
+Verifying branch 10 @Trace12#19#E192#0-1: CCost : 4e-06
+Cost : 0.226488
+No!
+Verifying branch 11 @Trace12#42#E212#0-1: CCost : 3e-06
+Cost : 0.07516
+Yes!
+Verifying branch 12 @Trace12#77#E248#1-0: CCost : 4e-06
+Cost : 0.00136
+No!
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################taint analysis####################
+
+ DTAMSerial : 
+size : 24
+name : G6429_236728416L10
+name : G6429_236728416L11
+name : G6429_236728416L12
+name : G6429_236728416L13
+name : G6429_236728416L14
+name : G6429_236728416L15
+name : G6429_236728416L16
+name : G6429_236728416L17
+name : G6429_236728416L18
+name : G6429_236728416L19
+name : G6429_236728416L20
+name : G6429_236728416L4
+name : G6429_236728416L5
+name : G6429_236728416L6
+name : G6429_236728416L7
+name : G6429_236728416L8
+name : G6429_236728416L9
+name : G6429_236728416S10
+name : G6429_236728416S4
+name : G6429_236728416S5
+name : G6429_236728416S6
+name : G6429_236728416S7
+name : G6429_236728416S8
+name : G6429_236728416S9
+
+ DTAMParallel : 
+
+ DTAMParallel : 
+name : G6429_236728416L1
+name : G6429_236728416L10
+name : G6429_236728416L11
+name : G6429_236728416L12
+name : G6429_236728416L13
+name : G6429_236728416L14
+name : G6429_236728416L15
+name : G6429_236728416L16
+name : G6429_236728416L17
+name : G6429_236728416L18
+name : G6429_236728416L19
+name : G6429_236728416L2
+name : G6429_236728416L20
+name : G6429_236728416L3
+name : G6429_236728416L4
+name : G6429_236728416L5
+name : G6429_236728416L6
+name : G6429_236728416L7
+name : G6429_236728416L8
+name : G6429_236728416L9
+name : G6429_236728416S10
+name : G6429_236728416S2
+name : G6429_236728416S3
+name : G6429_236728416S4
+name : G6429_236728416S5
+name : G6429_236728416S6
+name : G6429_236728416S7
+name : G6429_236728416S8
+name : G6429_236728416S9
+
+ DTAMhybrid : 
+
+ DTAMhybrid : 
+name : G6429_236728416L1
+name : G6429_236728416L10
+name : G6429_236728416L11
+name : G6429_236728416L12
+name : G6429_236728416L13
+name : G6429_236728416L14
+name : G6429_236728416L15
+name : G6429_236728416L16
+name : G6429_236728416L17
+name : G6429_236728416L18
+name : G6429_236728416L19
+name : G6429_236728416L2
+name : G6429_236728416L20
+name : G6429_236728416L3
+name : G6429_236728416L4
+name : G6429_236728416L5
+name : G6429_236728416L6
+name : G6429_236728416L7
+name : G6429_236728416L8
+name : G6429_236728416L9
+name : G6429_236728416S10
+name : G6429_236728416S2
+name : G6429_236728416S3
+name : G6429_236728416S4
+name : G6429_236728416S5
+name : G6429_236728416S6
+name : G6429_236728416S7
+name : G6429_236728416S8
+name : G6429_236728416S9
+
+
+buildInitTaintFormula
+
+buildTaintMatchFormula
+
+buildTaintProgatationFormula
+PTS
+noTaintPTS : G6429_236728416L1
+DTAMhybrid find
+getLine : 19
+taintPTS : G6429_236728416L2
+DTAMhybrid find
+getLine : 38
+noTaintPTS : G6429_236728416L3
+DTAMhybrid find
+getLine : 22
+taintPTS : G6429_236728416S2
+DTAMhybrid find
+getLine : 38
+taintPTS : G6429_236728416S3
+DTAMhybrid find
+getLine : 22
+
+ size : 27
+DTAMSerial name : G6429_236728416L10 getLine : 42
+DTAMSerial name : G6429_236728416L11 getLine : 19
+DTAMSerial name : G6429_236728416L12 getLine : 22
+DTAMSerial name : G6429_236728416L13 getLine : 19
+DTAMSerial name : G6429_236728416L14 getLine : 42
+DTAMSerial name : G6429_236728416L15 getLine : 47
+DTAMSerial name : G6429_236728416L16 getLine : 42
+DTAMSerial name : G6429_236728416L17 getLine : 19
+DTAMSerial name : G6429_236728416L18 getLine : 22
+DTAMSerial name : G6429_236728416L19 getLine : 42
+DTAMSerial name : G6429_236728416L20 getLine : 47
+DTAMSerial name : G6429_236728416L4 getLine : 42
+DTAMSerial name : G6429_236728416L5 getLine : 47
+DTAMSerial name : G6429_236728416L6 getLine : 19
+DTAMSerial name : G6429_236728416L7 getLine : 22
+DTAMSerial name : G6429_236728416L8 getLine : 42
+DTAMSerial name : G6429_236728416L9 getLine : 47
+DTAMSerial name : G6429_236728416S10 getLine : 47
+DTAMSerial name : G6429_236728416S4 getLine : 47
+DTAMSerial name : G6429_236728416S5 getLine : 22
+DTAMSerial name : G6429_236728416S6 getLine : 47
+DTAMSerial name : G6429_236728416S7 getLine : 22
+DTAMSerial name : G6429_236728416S8 getLine : 47
+DTAMSerial name : G6429_236728416S9 getLine : 22
+taintPTS name : G6429_236728416L2 getLine : 38
+taintPTS name : G6429_236728416S2 getLine : 38
+taintPTS name : G6429_236728416S3 getLine : 22
+
+************************************************************************
+第13次执行,路径文件为trace13.txt 前缀执行,前缀文件为prefixTrace2#42#E109#0-1.txt
 ************************************************************************
 
 produce ....0
@@ -1432,14 +2407,14 @@ total ....3
 consume ....2
 thread 1 unable to finish successfully, final state is 4
 function = main
-pos = /home/zhy/Test/taint/arithmetic/arithmetic_put/arithmetic_prog_ok.c : 75 call
+pos = /home/zhy/Test/taint/arithmetic/arithmetic_prog_ok.c : 75 call
 
 thread 3 unable to finish successfully, final state is 2
 function = thread2
-pos = /home/zhy/Test/taint/arithmetic/arithmetic_put/arithmetic_prog_ok.c : 43 call
+pos = /home/zhy/Test/taint/arithmetic/arithmetic_prog_ok.c : 43 call
 
 ######################执行有错误,放弃本次执行####################
 
-KLEE: done: total instructions = 7256
-KLEE: done: completed paths = 28
+KLEE: done: total instructions = 8536
+KLEE: done: completed paths = 33
 KLEE: done: generated tests = 0

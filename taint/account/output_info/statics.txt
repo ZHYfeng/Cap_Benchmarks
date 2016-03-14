@@ -7,17 +7,17 @@ allGlobal:9.5
 brGlobal:2
 AllBranch:1
 satBranch:1
-satCost:0.003538
+satCost:0.000541
 unSatBranch:0
 unSatCost:0
 uunSatBranch:0
-SolvingCost:0.208129
-RunningCost:0.026846
-taintCost:0.001526
-PTSCost:0.014016
-DTAMCost:0.00024
-DTAMParallelCost:0.000138
-DTAMhybridCost:6e-05
+SolvingCost:0.014681
+RunningCost:0.002738
+taintCost:0.001169
+PTSCost:0.008489
+DTAMCost:0.000189
+DTAMParallelCost:0.000101
+DTAMhybridCost:5.3e-05
 DTAMSerial:2
 DTAMParallel:6
 DTAMhybrid:6
@@ -30,11 +30,11 @@ DTAMParallelMap:6
 DTAMhybridMap:6
 
 times:0
-allTaintCost:0.000711
-allPTSCost:0.010269
-allDTAMCost:0.000186
-allDTAMParallelCost:0.000103
-allDTAMhybridCost:5.1e-05
+allTaintCost:0.000567
+allPTSCost:0.005931
+allDTAMCost:0.000146
+allDTAMParallelCost:7.4e-05
+allDTAMhybridCost:4.7e-05
 allDTAMSerial:2
 allDTAMParallel:6
 allDTAMhybrid:6
@@ -47,11 +47,11 @@ allDTAMhybridMap:6
 allTaintMap:3
 
 times:1
-allTaintCost:0.000815
-allPTSCost:0.003747
-allDTAMCost:5.4e-05
-allDTAMParallelCost:3.5e-05
-allDTAMhybridCost:9e-06
+allTaintCost:0.000602
+allPTSCost:0.002558
+allDTAMCost:4.3e-05
+allDTAMParallelCost:2.7e-05
+allDTAMhybridCost:6e-06
 allDTAMSerial:0
 allDTAMParallel:0
 allDTAMhybrid:0
@@ -63,6 +63,7 @@ allDTAMParallelMap:0
 allDTAMhybridMap:0
 allTaintMap:0
 
-TimeCost:3.963970e-01
+TimeCost:4.885100e-02
 Insts:413
 totalline:55
+name:account

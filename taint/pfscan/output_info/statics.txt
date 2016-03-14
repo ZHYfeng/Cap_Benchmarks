@@ -3,21 +3,21 @@ SovingTimes:0
 TotalNewPath:30
 TotalOldPath:148
 TotalPath:178
-allGlobal:501.2
+allGlobal:473.2
 brGlobal:51.2
 AllBranch:17.2
 satBranch:5.9
-satCost:0.0245155
+satCost:0.0244732
 unSatBranch:11.3
-unSatCost:0.00818662
+unSatCost:0.00825063
 uunSatBranch:28
-SolvingCost:32.3139
-RunningCost:3.28298
-taintCost:0.310485
-PTSCost:8.22653
-DTAMCost:0.03319
-DTAMParallelCost:0.023421
-DTAMhybridCost:0.00621
+SolvingCost:32.2259
+RunningCost:3.28035
+taintCost:0.323696
+PTSCost:8.1925
+DTAMCost:0.049999
+DTAMParallelCost:0.029538
+DTAMhybridCost:0.012102
 DTAMSerial:1116
 DTAMParallel:1506
 DTAMhybrid:1446
@@ -30,11 +30,11 @@ DTAMParallelMap:39
 DTAMhybridMap:37
 
 times:0
-allTaintCost:0.009261
-allPTSCost:0.275873
-allDTAMCost:0.001002
-allDTAMParallelCost:0.000719
-allDTAMhybridCost:0.000184
+allTaintCost:0.009718
+allPTSCost:0.272073
+allDTAMCost:0.001491
+allDTAMParallelCost:0.000886
+allDTAMhybridCost:0.000355
 allDTAMSerial:34
 allDTAMParallel:47
 allDTAMhybrid:45
@@ -47,11 +47,11 @@ allDTAMhybridMap:36
 allTaintMap:27
 
 times:1
-allTaintCost:0.00995
-allPTSCost:0.287671
-allDTAMCost:0.00104
-allDTAMParallelCost:0.000744
-allDTAMhybridCost:0.00019
+allTaintCost:0.010471
+allPTSCost:0.283284
+allDTAMCost:0.001523
+allDTAMParallelCost:0.000918
+allDTAMhybridCost:0.000365
 allDTAMSerial:33
 allDTAMParallel:46
 allDTAMhybrid:44
@@ -64,11 +64,11 @@ allDTAMhybridMap:36
 allTaintMap:27
 
 times:2
-allTaintCost:0.010768
-allPTSCost:0.306697
-allDTAMCost:0.001054
-allDTAMParallelCost:0.000742
-allDTAMhybridCost:0.000194
+allTaintCost:0.010467
+allPTSCost:0.306857
+allDTAMCost:0.001954
+allDTAMParallelCost:0.001226
+allDTAMhybridCost:0.000415
 allDTAMSerial:38
 allDTAMParallel:51
 allDTAMhybrid:49
@@ -81,11 +81,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:3
-allTaintCost:0.009976
-allPTSCost:0.295512
-allDTAMCost:0.001059
-allDTAMParallelCost:0.000737
-allDTAMhybridCost:0.000206
+allTaintCost:0.0104
+allPTSCost:0.29069
+allDTAMCost:0.001589
+allDTAMParallelCost:0.000914
+allDTAMhybridCost:0.000392
 allDTAMSerial:38
 allDTAMParallel:51
 allDTAMhybrid:49
@@ -98,11 +98,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:4
-allTaintCost:0.009944
-allPTSCost:0.296288
-allDTAMCost:0.00106
-allDTAMParallelCost:0.000736
-allDTAMhybridCost:0.00021
+allTaintCost:0.010628
+allPTSCost:0.28549
+allDTAMCost:0.001592
+allDTAMParallelCost:0.000939
+allDTAMhybridCost:0.000393
 allDTAMSerial:36
 allDTAMParallel:49
 allDTAMhybrid:47
@@ -115,11 +115,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:5
-allTaintCost:0.0102
-allPTSCost:0.275374
-allDTAMCost:0.001081
-allDTAMParallelCost:0.000774
-allDTAMhybridCost:0.000196
+allTaintCost:0.010693
+allPTSCost:0.299653
+allDTAMCost:0.001633
+allDTAMParallelCost:0.000982
+allDTAMhybridCost:0.000376
 allDTAMSerial:35
 allDTAMParallel:48
 allDTAMhybrid:46
@@ -132,11 +132,11 @@ allDTAMhybridMap:36
 allTaintMap:27
 
 times:6
-allTaintCost:0.01278
-allPTSCost:0.268763
-allDTAMCost:0.001038
-allDTAMParallelCost:0.000734
-allDTAMhybridCost:0.00019
+allTaintCost:0.012687
+allPTSCost:0.284426
+allDTAMCost:0.001659
+allDTAMParallelCost:0.000985
+allDTAMhybridCost:0.000405
 allDTAMSerial:36
 allDTAMParallel:49
 allDTAMhybrid:47
@@ -149,11 +149,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:7
-allTaintCost:0.010308
-allPTSCost:0.27438
-allDTAMCost:0.00114
-allDTAMParallelCost:0.000818
-allDTAMhybridCost:0.000205
+allTaintCost:0.010572
+allPTSCost:0.282529
+allDTAMCost:0.001633
+allDTAMParallelCost:0.000958
+allDTAMhybridCost:0.000403
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -166,11 +166,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:8
-allTaintCost:0.010289
-allPTSCost:0.161485
-allDTAMCost:0.001086
-allDTAMParallelCost:0.000756
-allDTAMhybridCost:0.000206
+allTaintCost:0.01114
+allPTSCost:0.160715
+allDTAMCost:0.001717
+allDTAMParallelCost:0.000992
+allDTAMhybridCost:0.000436
 allDTAMSerial:40
 allDTAMParallel:53
 allDTAMhybrid:51
@@ -183,11 +183,11 @@ allDTAMhybridMap:37
 allTaintMap:26
 
 times:9
-allTaintCost:0.010075
-allPTSCost:0.294821
-allDTAMCost:0.001082
-allDTAMParallelCost:0.000755
-allDTAMhybridCost:0.000207
+allTaintCost:0.010548
+allPTSCost:0.298412
+allDTAMCost:0.001823
+allDTAMParallelCost:0.001109
+allDTAMhybridCost:0.000421
 allDTAMSerial:39
 allDTAMParallel:52
 allDTAMhybrid:50
@@ -200,11 +200,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:10
-allTaintCost:0.009874
-allPTSCost:0.286547
-allDTAMCost:0.00108
-allDTAMParallelCost:0.000758
-allDTAMhybridCost:0.000208
+allTaintCost:0.010372
+allPTSCost:0.274167
+allDTAMCost:0.001609
+allDTAMParallelCost:0.000956
+allDTAMhybridCost:0.000385
 allDTAMSerial:36
 allDTAMParallel:49
 allDTAMhybrid:47
@@ -217,11 +217,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:11
-allTaintCost:0.010414
-allPTSCost:0.296742
-allDTAMCost:0.001149
-allDTAMParallelCost:0.000825
-allDTAMhybridCost:0.000207
+allTaintCost:0.010283
+allPTSCost:0.287289
+allDTAMCost:0.001652
+allDTAMParallelCost:0.000973
+allDTAMhybridCost:0.000411
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -234,11 +234,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:12
-allTaintCost:0.011244
-allPTSCost:0.159344
-allDTAMCost:0.001316
-allDTAMParallelCost:0.00095
-allDTAMhybridCost:0.000232
+allTaintCost:0.010649
+allPTSCost:0.167896
+allDTAMCost:0.001713
+allDTAMParallelCost:0.000984
+allDTAMhybridCost:0.000433
 allDTAMSerial:40
 allDTAMParallel:53
 allDTAMhybrid:51
@@ -251,11 +251,11 @@ allDTAMhybridMap:37
 allTaintMap:26
 
 times:13
-allTaintCost:0.009992
-allPTSCost:0.272837
-allDTAMCost:0.001085
-allDTAMParallelCost:0.000756
-allDTAMhybridCost:0.00021
+allTaintCost:0.010392
+allPTSCost:0.283701
+allDTAMCost:0.0017
+allDTAMParallelCost:0.00101
+allDTAMhybridCost:0.000413
 allDTAMSerial:38
 allDTAMParallel:51
 allDTAMhybrid:49
@@ -268,11 +268,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:14
-allTaintCost:0.010341
-allPTSCost:0.293064
-allDTAMCost:0.001098
-allDTAMParallelCost:0.000772
-allDTAMhybridCost:0.000207
+allTaintCost:0.012651
+allPTSCost:0.290784
+allDTAMCost:0.001703
+allDTAMParallelCost:0.000987
+allDTAMhybridCost:0.000421
 allDTAMSerial:38
 allDTAMParallel:51
 allDTAMhybrid:49
@@ -285,11 +285,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:15
-allTaintCost:0.010187
-allPTSCost:0.294117
-allDTAMCost:0.001099
-allDTAMParallelCost:0.000774
-allDTAMhybridCost:0.000203
+allTaintCost:0.010635
+allPTSCost:0.293887
+allDTAMCost:0.001636
+allDTAMParallelCost:0.000946
+allDTAMhybridCost:0.000401
 allDTAMSerial:39
 allDTAMParallel:52
 allDTAMhybrid:50
@@ -302,11 +302,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:16
-allTaintCost:0.009851
-allPTSCost:0.29248
-allDTAMCost:0.001036
-allDTAMParallelCost:0.000734
-allDTAMhybridCost:0.000188
+allTaintCost:0.010707
+allPTSCost:0.295118
+allDTAMCost:0.001573
+allDTAMParallelCost:0.000931
+allDTAMhybridCost:0.000377
 allDTAMSerial:35
 allDTAMParallel:48
 allDTAMhybrid:46
@@ -319,11 +319,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:17
-allTaintCost:0.010314
-allPTSCost:0.16404
-allDTAMCost:0.001127
-allDTAMParallelCost:0.000784
-allDTAMhybridCost:0.000217
+allTaintCost:0.011073
+allPTSCost:0.158127
+allDTAMCost:0.001924
+allDTAMParallelCost:0.001183
+allDTAMhybridCost:0.000436
 allDTAMSerial:40
 allDTAMParallel:53
 allDTAMhybrid:51
@@ -336,11 +336,11 @@ allDTAMhybridMap:37
 allTaintMap:26
 
 times:18
-allTaintCost:0.010548
-allPTSCost:0.302916
-allDTAMCost:0.00131
-allDTAMParallelCost:0.00097
-allDTAMhybridCost:0.000204
+allTaintCost:0.010967
+allPTSCost:0.284324
+allDTAMCost:0.00172
+allDTAMParallelCost:0.00104
+allDTAMhybridCost:0.000406
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -353,11 +353,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:19
-allTaintCost:0.01031
-allPTSCost:0.270057
-allDTAMCost:0.001216
-allDTAMParallelCost:0.000868
-allDTAMhybridCost:0.000235
+allTaintCost:0.010334
+allPTSCost:0.258634
+allDTAMCost:0.00161
+allDTAMParallelCost:0.000966
+allDTAMhybridCost:0.000389
 allDTAMSerial:35
 allDTAMParallel:48
 allDTAMhybrid:46
@@ -370,11 +370,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:20
-allTaintCost:0.010045
-allPTSCost:0.283502
-allDTAMCost:0.001062
-allDTAMParallelCost:0.000742
-allDTAMhybridCost:0.000203
+allTaintCost:0.01047
+allPTSCost:0.278256
+allDTAMCost:0.001615
+allDTAMParallelCost:0.000949
+allDTAMhybridCost:0.000398
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -387,11 +387,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:21
-allTaintCost:0.009879
-allPTSCost:0.267607
-allDTAMCost:0.001062
-allDTAMParallelCost:0.000743
-allDTAMhybridCost:0.000205
+allTaintCost:0.010258
+allPTSCost:0.268723
+allDTAMCost:0.001603
+allDTAMParallelCost:0.000954
+allDTAMhybridCost:0.000393
 allDTAMSerial:35
 allDTAMParallel:48
 allDTAMhybrid:46
@@ -404,11 +404,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:22
-allTaintCost:0.010455
-allPTSCost:0.284163
-allDTAMCost:0.001135
-allDTAMParallelCost:0.000765
-allDTAMhybridCost:0.000251
+allTaintCost:0.010631
+allPTSCost:0.276582
+allDTAMCost:0.001634
+allDTAMParallelCost:0.00095
+allDTAMhybridCost:0.000408
 allDTAMSerial:38
 allDTAMParallel:51
 allDTAMhybrid:49
@@ -421,11 +421,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:23
-allTaintCost:0.010465
-allPTSCost:0.283991
-allDTAMCost:0.001165
-allDTAMParallelCost:0.000844
-allDTAMhybridCost:0.000196
+allTaintCost:0.010548
+allPTSCost:0.283513
+allDTAMCost:0.00163
+allDTAMParallelCost:0.000938
+allDTAMhybridCost:0.000388
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -438,11 +438,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:24
-allTaintCost:0.010052
-allPTSCost:0.281978
-allDTAMCost:0.001092
-allDTAMParallelCost:0.000763
-allDTAMhybridCost:0.000211
+allTaintCost:0.011073
+allPTSCost:0.284453
+allDTAMCost:0.001671
+allDTAMParallelCost:0.000985
+allDTAMhybridCost:0.000417
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -455,11 +455,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:25
-allTaintCost:0.010148
-allPTSCost:0.281053
-allDTAMCost:0.001072
-allDTAMParallelCost:0.000744
-allDTAMhybridCost:0.000206
+allTaintCost:0.010742
+allPTSCost:0.284706
+allDTAMCost:0.001728
+allDTAMParallelCost:0.000999
+allDTAMhybridCost:0.000431
 allDTAMSerial:39
 allDTAMParallel:52
 allDTAMhybrid:50
@@ -472,11 +472,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:26
-allTaintCost:0.009997
-allPTSCost:0.302502
-allDTAMCost:0.001071
-allDTAMParallelCost:0.000748
-allDTAMhybridCost:0.000204
+allTaintCost:0.010757
+allPTSCost:0.288217
+allDTAMCost:0.001654
+allDTAMParallelCost:0.000965
+allDTAMhybridCost:0.000403
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -489,11 +489,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:27
-allTaintCost:0.010031
-allPTSCost:0.290621
-allDTAMCost:0.001122
-allDTAMParallelCost:0.000783
-allDTAMhybridCost:0.000217
+allTaintCost:0.010685
+allPTSCost:0.296087
+allDTAMCost:0.001681
+allDTAMParallelCost:0.00097
+allDTAMhybridCost:0.000409
 allDTAMSerial:39
 allDTAMParallel:52
 allDTAMhybrid:50
@@ -506,11 +506,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:28
-allTaintCost:0.01229
-allPTSCost:0.276581
-allDTAMCost:0.001076
-allDTAMParallelCost:0.000743
-allDTAMhybridCost:0.000206
+allTaintCost:0.012539
+allPTSCost:0.281867
+allDTAMCost:0.001625
+allDTAMParallelCost:0.000946
+allDTAMhybridCost:0.000402
 allDTAMSerial:37
 allDTAMParallel:50
 allDTAMhybrid:48
@@ -523,11 +523,11 @@ allDTAMhybridMap:37
 allTaintMap:28
 
 times:29
-allTaintCost:0.010497
-allPTSCost:0.305521
-allDTAMCost:0.001175
-allDTAMParallelCost:0.00084
-allDTAMhybridCost:0.000212
+allTaintCost:0.010606
+allPTSCost:0.292044
+allDTAMCost:0.001704
+allDTAMParallelCost:0.000997
+allDTAMhybridCost:0.00042
 allDTAMSerial:39
 allDTAMParallel:52
 allDTAMhybrid:50
@@ -539,6 +539,7 @@ allDTAMParallelMap:39
 allDTAMhybridMap:37
 allTaintMap:28
 
-TimeCost:4.431374e+01
+TimeCost:4.421931e+01
 Insts:1104613
 totalline:998
+name:pfscan

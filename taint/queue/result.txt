@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/Test/taint/queue/queue_put/klee-out-0"
+KLEE: output directory is "/home/zhy/Test/taint/queue/klee-out-0"
 KLEE: WARNING: undefined reference to function: make_taint
 KLEE: WARNING: undefined reference to function: printf
 KLEE: WARNING: undefined reference to function: pthread_create
@@ -11,8 +11,8 @@ KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: printf(25931680)
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(25889920, 0)
+KLEE: WARNING ONCE: calling external: printf(45705952)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(45986688, 0)
 queue is empty
 queue is empty
 ######################本条路径为新路径####################
@@ -23,88 +23,140 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 23
-Verifying branch 1 @Trace1#32#E32#1-0: CCost : 5e-06
-Cost : 0.000609
+Verifying branch 1 @Trace1#32#E32#1-0: CCost : 4e-06
+Cost : 0.000601
 No!
-Verifying branch 2 @Trace1#90#E51#1-0: CCost : 1e-06
-Cost : 0.000687
+Verifying branch 2 @Trace1#90#E51#1-0: CCost : 2e-06
+Cost : 0.000696
 No!
 Verifying branch 3 @Trace1#54#E72#1-0: CCost : 2e-06
-Cost : 0.00056
+Cost : 0.000565
 No!
 Verifying branch 4 @Trace1#57#E85#0-1: CCost : 1e-06
 Cost : 0.000605
 No!
-Verifying branch 5 @Trace1#54#E117#1-0: CCost : 1e-06
-Cost : 0.000591
+Verifying branch 5 @Trace1#54#E117#1-0: CCost : 2e-06
+Cost : 0.000639
 No!
 Verifying branch 6 @Trace1#57#E130#0-1: CCost : 1e-06
-Cost : 0.000612
-No!
-Verifying branch 7 @Trace1#54#E162#1-0: CCost : 2e-06
-Cost : 0.000651
-No!
-Verifying branch 8 @Trace1#57#E175#0-1: CCost : 1e-06
-Cost : 0.000651
-No!
-Verifying branch 9 @Trace1#54#E207#1-0: CCost : 1e-06
-Cost : 0.000691
-No!
-Verifying branch 10 @Trace1#57#E220#0-1: CCost : 1e-06
-Cost : 0.000715
-No!
-Verifying branch 11 @Trace1#114#E252#1-0: CCost : 2e-06
-Cost : 0.002988
-Yes!
-Verifying branch 12 @Trace1#32#E269#0-1: CCost : 2e-06
-Cost : 0.001564
-No!
-Verifying branch 13 @Trace1#73#E284#1-0: CCost : 2e-06
-Cost : 0.000573
-No!
-Verifying branch 14 @Trace1#75#E298#0-1: CCost : 2e-06
-Cost : 0.000581
-No!
-Verifying branch 15 @Trace1#32#E327#0-1: CCost : 2e-06
-Cost : 0.000957
-No!
-Verifying branch 16 @Trace1#73#E342#1-0: CCost : 2e-06
 Cost : 0.000617
 No!
+Verifying branch 7 @Trace1#54#E162#1-0: CCost : 1e-06
+Cost : 0.000649
+No!
+Verifying branch 8 @Trace1#57#E175#0-1: CCost : 2e-06
+Cost : 0.000647
+No!
+Verifying branch 9 @Trace1#54#E207#1-0: CCost : 1e-06
+Cost : 0.000699
+No!
+Verifying branch 10 @Trace1#57#E220#0-1: CCost : 2e-06
+Cost : 0.000692
+No!
+Verifying branch 11 @Trace1#114#E252#1-0: CCost : 2e-06
+Cost : 0.002997
+Yes!
+Verifying branch 12 @Trace1#32#E269#0-1: CCost : 5e-06
+Cost : 0.001799
+No!
+Verifying branch 13 @Trace1#73#E284#1-0: CCost : 2e-06
+Cost : 0.000584
+No!
+Verifying branch 14 @Trace1#75#E298#0-1: CCost : 1e-06
+Cost : 0.000586
+No!
+Verifying branch 15 @Trace1#32#E327#0-1: CCost : 2e-06
+Cost : 0.000965
+No!
+Verifying branch 16 @Trace1#73#E342#1-0: CCost : 1e-06
+Cost : 0.000624
+No!
 Verifying branch 17 @Trace1#75#E356#0-1: CCost : 1e-06
-Cost : 0.000632
+Cost : 0.00065
 No!
 Verifying branch 18 @Trace1#32#E385#0-1: CCost : 2e-06
-Cost : 0.001132
+Cost : 0.001042
 No!
 Verifying branch 19 @Trace1#73#E400#1-0: CCost : 2e-06
-Cost : 0.000685
+Cost : 0.000678
 No!
 Verifying branch 20 @Trace1#75#E414#0-1: CCost : 1e-06
-Cost : 0.000668
+Cost : 0.000671
 No!
-Verifying branch 21 @Trace1#32#E443#0-1: CCost : 1e-06
-Cost : 0.001083
+Verifying branch 21 @Trace1#32#E443#0-1: CCost : 2e-06
+Cost : 0.001236
 No!
-Verifying branch 22 @Trace1#73#E458#1-0: CCost : 2e-06
-Cost : 0.000707
+Verifying branch 22 @Trace1#73#E458#1-0: CCost : 1e-06
+Cost : 0.000714
 No!
 Verifying branch 23 @Trace1#75#E472#0-1: CCost : 1e-06
-Cost : 0.000706
+Cost : 0.00071
 No!
 queue is empty
 ######################taint analysis####################
 
  DTAMSerial : 
 size : 16
+name : G11_45701592L2
+name : G11_45701592L3
+name : G11_45701592L4
+name : G11_45701592L5
+name : G11_45701592L6
+name : G11_45701592L7
+name : G11_45701592L8
+name : G11_45701592L9
+name : G11_45701592S10
+name : G11_45701592S3
+name : G11_45701592S4
+name : G11_45701592S5
+name : G11_45701592S6
+name : G11_45701592S7
+name : G11_45701592S8
+name : G11_45701592S9
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G11_45701592L1
+name : G11_45701592L2
+name : G11_45701592L3
+name : G11_45701592L4
+name : G11_45701592L5
+name : G11_45701592L6
+name : G11_45701592L7
+name : G11_45701592L8
+name : G11_45701592L9
+name : G11_45701592S10
+name : G11_45701592S2
+name : G11_45701592S3
+name : G11_45701592S4
+name : G11_45701592S5
+name : G11_45701592S6
+name : G11_45701592S7
+name : G11_45701592S8
+name : G11_45701592S9
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G11_45701592L1
+name : G11_45701592L2
+name : G11_45701592L3
+name : G11_45701592L4
+name : G11_45701592L5
+name : G11_45701592L6
+name : G11_45701592L7
+name : G11_45701592L8
+name : G11_45701592L9
+name : G11_45701592S10
+name : G11_45701592S2
+name : G11_45701592S3
+name : G11_45701592S4
+name : G11_45701592S5
+name : G11_45701592S6
+name : G11_45701592S7
+name : G11_45701592S8
+name : G11_45701592S9
 
 
 buildInitTaintFormula
@@ -113,31 +165,31 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-noTaintPTS : G11_25783192L1
+noTaintPTS : G11_45701592L1
 DTAMhybrid find
 getLine : 92
-taintPTS : G11_25783192S2
+taintPTS : G11_45701592S2
 DTAMhybrid find
 getLine : 92
 
  size : 17
-DTAMSerial name : G11_25783192L2 getLine : 56
-DTAMSerial name : G11_25783192L3 getLine : 56
-DTAMSerial name : G11_25783192L4 getLine : 56
-DTAMSerial name : G11_25783192L5 getLine : 56
-DTAMSerial name : G11_25783192L6 getLine : 74
-DTAMSerial name : G11_25783192L7 getLine : 74
-DTAMSerial name : G11_25783192L8 getLine : 74
-DTAMSerial name : G11_25783192L9 getLine : 74
-DTAMSerial name : G11_25783192S10 getLine : 74
-DTAMSerial name : G11_25783192S3 getLine : 56
-DTAMSerial name : G11_25783192S4 getLine : 56
-DTAMSerial name : G11_25783192S5 getLine : 56
-DTAMSerial name : G11_25783192S6 getLine : 56
-DTAMSerial name : G11_25783192S7 getLine : 74
-DTAMSerial name : G11_25783192S8 getLine : 74
-DTAMSerial name : G11_25783192S9 getLine : 74
-taintPTS name : G11_25783192S2 getLine : 92
+DTAMSerial name : G11_45701592L2 getLine : 56
+DTAMSerial name : G11_45701592L3 getLine : 56
+DTAMSerial name : G11_45701592L4 getLine : 56
+DTAMSerial name : G11_45701592L5 getLine : 56
+DTAMSerial name : G11_45701592L6 getLine : 74
+DTAMSerial name : G11_45701592L7 getLine : 74
+DTAMSerial name : G11_45701592L8 getLine : 74
+DTAMSerial name : G11_45701592L9 getLine : 74
+DTAMSerial name : G11_45701592S10 getLine : 74
+DTAMSerial name : G11_45701592S3 getLine : 56
+DTAMSerial name : G11_45701592S4 getLine : 56
+DTAMSerial name : G11_45701592S5 getLine : 56
+DTAMSerial name : G11_45701592S6 getLine : 56
+DTAMSerial name : G11_45701592S7 getLine : 74
+DTAMSerial name : G11_45701592S8 getLine : 74
+DTAMSerial name : G11_45701592S9 getLine : 74
+taintPTS name : G11_45701592S2 getLine : 92
 
 ************************************************************************
 第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#114#E252#1-0.txt
@@ -153,52 +205,80 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 11
-Verifying branch 1 @Trace2#32#E32#1-0: CCost : 6e-06
-Cost : 0.000444
+Verifying branch 1 @Trace2#32#E32#1-0: CCost : 4e-06
+Cost : 0.000318
 No!
-Verifying branch 2 @Trace2#114#E49#0-1: CCost : 2e-06
-Cost : 0.001376
+Verifying branch 2 @Trace2#114#E49#0-1: CCost : 1e-06
+Cost : 0.001268
 Yes!
-Verifying branch 3 @Trace2#90#E61#1-0: CCost : 1e-06
-Cost : 0.000134
+Verifying branch 3 @Trace2#90#E61#1-0: CCost : 2e-06
+Cost : 0.00013
 No!
-Verifying branch 4 @Trace2#54#E82#1-0: CCost : 2e-06
-Cost : 0.000121
+Verifying branch 4 @Trace2#54#E82#1-0: CCost : 1e-06
+Cost : 0.000119
 No!
-Verifying branch 5 @Trace2#57#E95#0-1: CCost : 2e-06
-Cost : 0.000135
+Verifying branch 5 @Trace2#57#E95#0-1: CCost : 1e-06
+Cost : 0.000132
 No!
-Verifying branch 6 @Trace2#54#E127#1-0: CCost : 2e-06
+Verifying branch 6 @Trace2#54#E127#1-0: CCost : 1e-06
 Cost : 0.000143
 No!
-Verifying branch 7 @Trace2#57#E140#0-1: CCost : 2e-06
-Cost : 0.000143
+Verifying branch 7 @Trace2#57#E140#0-1: CCost : 1e-06
+Cost : 0.000144
 No!
 Verifying branch 8 @Trace2#54#E172#1-0: CCost : 1e-06
-Cost : 0.000164
+Cost : 0.000161
 No!
 Verifying branch 9 @Trace2#57#E185#0-1: CCost : 1e-06
-Cost : 0.00016
+Cost : 0.000159
 No!
-Verifying branch 10 @Trace2#54#E217#1-0: CCost : 1e-06
+Verifying branch 10 @Trace2#54#E217#1-0: CCost : 2e-06
 Cost : 0.000184
 No!
-Verifying branch 11 @Trace2#57#E230#0-1: CCost : 1e-06
-Cost : 0.000183
+Verifying branch 11 @Trace2#57#E230#0-1: CCost : 2e-06
+Cost : 0.000178
 No!
 queue is empty
 ######################taint analysis####################
 
  DTAMSerial : 
 size : 8
+name : G1367_60301688L2
+name : G1367_60301688L3
+name : G1367_60301688L4
+name : G1367_60301688L5
+name : G1367_60301688S3
+name : G1367_60301688S4
+name : G1367_60301688S5
+name : G1367_60301688S6
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G1367_60301688L1
+name : G1367_60301688L2
+name : G1367_60301688L3
+name : G1367_60301688L4
+name : G1367_60301688L5
+name : G1367_60301688S2
+name : G1367_60301688S3
+name : G1367_60301688S4
+name : G1367_60301688S5
+name : G1367_60301688S6
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G1367_60301688L1
+name : G1367_60301688L2
+name : G1367_60301688L3
+name : G1367_60301688L4
+name : G1367_60301688L5
+name : G1367_60301688S2
+name : G1367_60301688S3
+name : G1367_60301688S4
+name : G1367_60301688S5
+name : G1367_60301688S6
 
 
 buildInitTaintFormula
@@ -207,23 +287,23 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-noTaintPTS : G1367_40420568L1
+noTaintPTS : G1367_60301688L1
 DTAMhybrid find
 getLine : 92
-taintPTS : G1367_40420568S2
+taintPTS : G1367_60301688S2
 DTAMhybrid find
 getLine : 92
 
  size : 9
-DTAMSerial name : G1367_40420568L2 getLine : 56
-DTAMSerial name : G1367_40420568L3 getLine : 56
-DTAMSerial name : G1367_40420568L4 getLine : 56
-DTAMSerial name : G1367_40420568L5 getLine : 56
-DTAMSerial name : G1367_40420568S3 getLine : 56
-DTAMSerial name : G1367_40420568S4 getLine : 56
-DTAMSerial name : G1367_40420568S5 getLine : 56
-DTAMSerial name : G1367_40420568S6 getLine : 56
-taintPTS name : G1367_40420568S2 getLine : 92
+DTAMSerial name : G1367_60301688L2 getLine : 56
+DTAMSerial name : G1367_60301688L3 getLine : 56
+DTAMSerial name : G1367_60301688L4 getLine : 56
+DTAMSerial name : G1367_60301688L5 getLine : 56
+DTAMSerial name : G1367_60301688S3 getLine : 56
+DTAMSerial name : G1367_60301688S4 getLine : 56
+DTAMSerial name : G1367_60301688S5 getLine : 56
+DTAMSerial name : G1367_60301688S6 getLine : 56
+taintPTS name : G1367_60301688S2 getLine : 92
 
 ************************************************************************
 第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixTrace2#114#E49#0-1.txt

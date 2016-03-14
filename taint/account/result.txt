@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/Test/taint/account/account_put/klee-out-0"
+KLEE: output directory is "/home/zhy/Test/taint/account/klee-out-0"
 KLEE: WARNING: undefined reference to function: make_taint
 KLEE: WARNING: undefined reference to function: pthread_create
 KLEE: WARNING: undefined reference to function: pthread_mutex_init
@@ -9,7 +9,7 @@ KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(43755808, 0)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(47172032, 0)
 ######################本条路径为新路径####################
 
 Verifying this trace......
@@ -18,21 +18,35 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 1
-Verifying branch 1 @Trace1#32#E23#0-1: CCost : 7e-06
-Cost : 0.006452
+Verifying branch 1 @Trace1#32#E23#0-1: CCost : 4e-06
+Cost : 0.000581
 Yes!
 ######################taint analysis####################
 
  DTAMSerial : 
 size : 2
+name : G10_47171952L3
+name : G10_47171952S4
 
  DTAMParallel : 
 
  DTAMParallel : 
+name : G10_47171952L1
+name : G10_47171952L2
+name : G10_47171952L3
+name : G10_47171952S2
+name : G10_47171952S3
+name : G10_47171952S4
 
  DTAMhybrid : 
 
  DTAMhybrid : 
+name : G10_47171952L1
+name : G10_47171952L2
+name : G10_47171952L3
+name : G10_47171952S2
+name : G10_47171952S3
+name : G10_47171952S4
 
 
 buildInitTaintFormula
@@ -41,23 +55,23 @@ buildTaintMatchFormula
 
 buildTaintProgatationFormula
 PTS
-noTaintPTS : G10_43580352L1
+noTaintPTS : G10_47171952L1
 DTAMhybrid find
 getLine : 13
-noTaintPTS : G10_43580352L2
+noTaintPTS : G10_47171952L2
 DTAMhybrid find
 getLine : 14
-noTaintPTS : G10_43580352S2
+noTaintPTS : G10_47171952S2
 DTAMhybrid find
 getLine : 13
-taintPTS : G10_43580352S3
+taintPTS : G10_47171952S3
 DTAMhybrid find
 getLine : 14
 
  size : 3
-DTAMSerial name : G10_43580352L3 getLine : 23
-DTAMSerial name : G10_43580352S4 getLine : 23
-taintPTS name : G10_43580352S3 getLine : 14
+DTAMSerial name : G10_47171952L3 getLine : 23
+DTAMSerial name : G10_47171952S4 getLine : 23
+taintPTS name : G10_47171952S3 getLine : 14
 
 ************************************************************************
 第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#32#E23#0-1.txt
@@ -71,8 +85,8 @@ The number of assert: 0
 
 Verifying is over!
 Sum of branches: 1
-Verifying branch 1 @Trace2#32#E50#1-0: CCost : 3e-06
-Cost : 0.000624
+Verifying branch 1 @Trace2#32#E50#1-0: CCost : 4e-06
+Cost : 0.000501
 Yes!
 ######################taint analysis####################
 

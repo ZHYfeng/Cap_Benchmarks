@@ -7,17 +7,17 @@ allGlobal:325
 brGlobal:141
 AllBranch:250
 satBranch:1
-satCost:2.23128
+satCost:2.59667
 unSatBranch:249
-unSatCost:0.0344235
+unSatCost:0.0383866
 uunSatBranch:25
-SolvingCost:15.8393
-RunningCost:0.084897
-taintCost:0.034658
-PTSCost:2.04557
-DTAMCost:0.002629
-DTAMParallelCost:0.001568
-DTAMhybridCost:0.000617
+SolvingCost:17.7699
+RunningCost:0.084187
+taintCost:0.038644
+PTSCost:2.28483
+DTAMCost:0.004872
+DTAMParallelCost:0.002442
+DTAMhybridCost:0.001294
 DTAMSerial:152
 DTAMParallel:160
 DTAMhybrid:160
@@ -30,11 +30,11 @@ DTAMParallelMap:18
 DTAMhybridMap:18
 
 times:0
-allTaintCost:0.034658
-allPTSCost:2.04557
-allDTAMCost:0.002629
-allDTAMParallelCost:0.001568
-allDTAMhybridCost:0.000617
+allTaintCost:0.038644
+allPTSCost:2.28483
+allDTAMCost:0.004872
+allDTAMParallelCost:0.002442
+allDTAMhybridCost:0.001294
 allDTAMSerial:152
 allDTAMParallel:160
 allDTAMhybrid:160
@@ -46,6 +46,7 @@ allDTAMParallelMap:18
 allDTAMhybridMap:18
 allTaintMap:18
 
-TimeCost:1.802319e+01
+TimeCost:2.020135e+01
 Insts:33828
 totalline:639
+name:blackscholes-parallel
