@@ -1,6 +1,0 @@
-#!/bin/bash -x
-set -e
-
-klee -search=dfs -use-call-paths=false arithmetic_prog_ok.o >result 2>&1
-bash
-

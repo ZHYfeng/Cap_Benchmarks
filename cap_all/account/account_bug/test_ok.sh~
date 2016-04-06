@@ -1,6 +1,0 @@
-#!/bin/bash -x
-set -e
-preklee.sh account_bad
-klee -search=dfs -use-call-paths=false account_bad.o
-bash
-

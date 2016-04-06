@@ -1,6 +1,0 @@
-#!/bin/bash -x
-set -e
-preklee.sh example
-klee -search=dfs -use-call-paths=false example.o 1 0
-bash
-
