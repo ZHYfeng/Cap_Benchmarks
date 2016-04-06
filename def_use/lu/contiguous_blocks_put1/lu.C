@@ -49,7 +49,7 @@ MAIN_ENV
 //#define DEFAULT_N                         512
 //#define DEFAULT_P                           1
 //#define DEFAULT_B                          16
-#define DEFAULT_N                         2
+#define DEFAULT_N                         4
 #define DEFAULT_P                         2
 #define DEFAULT_B                         2
 #define min(a,b) ((a) < (b) ? (a) : (b))
@@ -88,7 +88,7 @@ double **a;                  /* a = lu; l and u both placed back in a */
 double *rhs;
 long *proc_bytes;            /* Bytes to malloc per processor to hold blocks of A*/
 double **last_malloc;        /* Starting point of last block of A */
-
+long dohelp = 0;
 long test_result = 0;        /* Test result of factorization? */
 long doprint = 0;            /* Print out matrix values? */
 long dostats = 0;            /* Print out individual processor statistics? */
@@ -126,16 +126,14 @@ int main(int argc, char *argv[])
 
   CLOCK(start)
 
-  while ((ch = getopt(argc, argv, "n:p:b:cstoh")) != -1) {
-    switch(ch) {
-    case 'n': n = atoi(optarg); break;
-    case 'p': P = atoi(optarg); break;
-    case 'b': block_size = atoi(optarg); break;
-    case 's': dostats = 1; break;
-    case 't': test_result = !test_result; break;
-    case 'o': doprint = !doprint; break;
-    case 'h': printf("Usage: LU <options>\n\n");
-	      printf("options:\n");
+  make_input(&doprint);
+  make_input(&test_result);
+  make_input(&dostats);
+  make_input(&dohelp);
+
+  if(dohelp){
+              printf("Usage: LU <options>\n\n");
+              printf("options:\n");
               printf("  -nN : Decompose NxN matrix.\n");
               printf("  -pP : P = number of processors.\n");
               printf("  -bB : Use a block size of B. BxB elements should fit in cache for \n");
@@ -146,15 +144,37 @@ int main(int argc, char *argv[])
               printf("  -o  : Print out matrix values.\n");
               printf("  -h  : Print out command line options.\n\n");
               printf("Default: LU -n%1d -p%1d -b%1d\n",
-		     DEFAULT_N,DEFAULT_P,DEFAULT_B);
-              exit(0);
-              break;
-    }
+                     DEFAULT_N,DEFAULT_P,DEFAULT_B);
   }
 
+  // while ((ch = getopt(argc, argv, "n:p:b:cstoh")) != -1) {
+  //   switch(ch) {
+  //   case 'n': n = atoi(optarg); break;
+  //   case 'p': P = atoi(optarg); break;
+  //   case 'b': block_size = atoi(optarg); break;
+  //   case 's': dostats = 1; break;
+  //   case 't': test_result = !test_result; break;
+  //   case 'o': doprint = !doprint; break;
+  //   case 'h': printf("Usage: LU <options>\n\n");
+	 //      printf("options:\n");
+  //             printf("  -nN : Decompose NxN matrix.\n");
+  //             printf("  -pP : P = number of processors.\n");
+  //             printf("  -bB : Use a block size of B. BxB elements should fit in cache for \n");
+  //             printf("        good performance. Small block sizes (B=8, B=16) work well.\n");
+  //             printf("  -c  : Copy non-locally allocated blocks to local memory before use.\n");
+  //             printf("  -s  : Print individual processor timing statistics.\n");
+  //             printf("  -t  : Test output.\n");
+  //             printf("  -o  : Print out matrix values.\n");
+  //             printf("  -h  : Print out command line options.\n\n");
+  //             printf("Default: LU -n%1d -p%1d -b%1d\n",
+		//      DEFAULT_N,DEFAULT_P,DEFAULT_B);
+  //             exit(0);
+  //             break;
+  //   }
+  // }
+
   MAIN_INITENV(,150000000)
-  doprint=1;
-  test_result=1;
+
   printf("\n");
   printf("Blocked Dense LU Factorization\n");
   printf("     %ld by %ld Matrix\n",n,n);

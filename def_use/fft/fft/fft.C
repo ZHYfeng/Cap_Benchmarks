@@ -50,7 +50,7 @@
 #define NUM_CACHE_LINES        65536 
 #define LOG2_LINE_SIZE             4
 #define PI                         3.1416
-#define DEFAULT_M                  3
+#define DEFAULT_M                  4
 #define DEFAULT_P                  2
 
 MAIN_ENV
@@ -80,6 +80,7 @@ double *umain2;         /* umain2 is entire roots of unity matrix */
 long test_result = 0;
 long doprint = 0;
 long dostats = 0;
+long dohelp = 0;
 long transtime = 0;
 long transtime2 = 0;
 long avgtranstime = 0;
@@ -192,8 +193,35 @@ int main(int argc, char *argv[])
   //   }
   // }
 
+
+
+
   MAIN_INITENV(,80000000);
-  doprint=1;
+  
+  make_input(&doprint);
+  make_input(&test_result);
+  make_input(&dostats);
+  make_input(&dohelp);
+
+
+  if(dohelp){
+  	        	printf("Usage: FFT <options>\n\n");
+                printf("options:\n");
+                printf("  -mM : M = even integer; 2**M total complex data points transformed.\n");
+                printf("  -pP : P = number of processors; Must be a power of 2.\n");
+                printf("  -nN : N = number of cache lines.\n");
+                printf("  -lL : L = Log base 2 of cache line length in bytes.\n");
+                printf("  -s  : Print individual processor timing statistics.\n");
+                printf("  -t  : Perform FFT and inverse FFT.  Test output by comparing the\n");
+                printf("        integral of the original data to the integral of the data that\n");
+                printf("        results from performing the FFT and inverse FFT.\n");
+                printf("  -o  : Print out complex data points.\n");
+                printf("  -h  : Print out command line options.\n\n");
+                printf("Default: FFT -m%1d -p%1d -n%1d -l%1d\n",
+                       DEFAULT_M,DEFAULT_P,NUM_CACHE_LINES,LOG2_LINE_SIZE);
+  }
+
+
   N = 1<<M;
   rootN = 1<<(M/2);
   rowsperproc = rootN/P;

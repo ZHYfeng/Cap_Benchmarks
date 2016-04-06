@@ -23,7 +23,7 @@ void *withdraw(void *arg)
   pthread_mutex_unlock(&m);
 }
 
-void *check_result(void *arg) 
+void *check_result(void *argc) 
 {
   int j;
   pthread_mutex_lock(&m);
