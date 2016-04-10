@@ -345,7 +345,7 @@ int main(int argc, char **argv) {
   fptype *buffer;
   int *buffer2;
   int rv;
-
+  make_input(&errorInput);
 #ifdef PARSEC_VERSION
 #define __PARSEC_STRING(x) #x
 #define __PARSEC_XSTRING(x) __PARSEC_STRING(x)
