@@ -64,7 +64,7 @@ int _M4_numThreads = MAX_THREADS;
 
 using namespace std;
 using namespace tbb;
-#endif  // ENABLE_TBB
+#endif // ENABLE_TBB
 
 // Multi-threaded header for Windows
 #ifdef WIN32
@@ -79,16 +79,16 @@ using namespace tbb;
 #define NUM_RUNS 3
 
 typedef struct OptionData_ {
-  fptype s;         // spot price
-  fptype strike;    // strike price
-  fptype r;         // risk-free interest rate
-  fptype divq;      // dividend rate
-  fptype v;         // volatility
-  fptype t;         // time to maturity or option expiration in years
-                    //     (1yr = 1.0, 6mos = 0.5, 3mos = 0.25, ..., etc)
-  char OptionType;  // Option type.  "P"=PUT, "C"=CALL
-  fptype divs;      // dividend vals (not used in this test)
-  fptype DGrefval;  // DerivaGem Reference Value
+  fptype s;        // spot price
+  fptype strike;   // strike price
+  fptype r;        // risk-free interest rate
+  fptype divq;     // dividend rate
+  fptype v;        // volatility
+  fptype t;        // time to maturity or option expiration in years
+                   //     (1yr = 1.0, 6mos = 0.5, 3mos = 0.25, ..., etc)
+  char OptionType; // Option type.  "P"=PUT, "C"=CALL
+  fptype divs;     // dividend vals (not used in this test)
+  fptype DGrefval; // DerivaGem Reference Value
 } OptionData;
 
 OptionData *data;
@@ -102,6 +102,7 @@ fptype *rate;
 fptype *volatility;
 fptype *otime;
 int numError = 0;
+int errorInput = 0;
 int nThreads;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -272,7 +273,7 @@ struct mainWork {
   }
 };
 
-#endif  // ENABLE_TBB
+#endif // ENABLE_TBB
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -291,7 +292,7 @@ int bs_thread(void *tid_ptr) {
 
   return 1;
 }
-#else  // !ENABLE_TBB
+#else // !ENABLE_TBB
 
 #ifdef WIN32
 DWORD WINAPI bs_thread(LPVOID tid_ptr) {
@@ -305,34 +306,37 @@ int bs_thread(void *tid_ptr) {
   int start = tid * (numOptions / nThreads);
   int end = start + (numOptions / nThreads);
 
-  for (j = 0; j < NUM_RUNS; j++) {
+  if (errorInput) {
+
+    for (j = 0; j < NUM_RUNS; j++) {
 #ifdef ENABLE_OPENMP
 #pragma omp parallel for private(i, price, priceDelta)
-    for (i = 0; i < numOptions; i++) {
-#else   // ENABLE_OPENMP
-    for (i = start; i < end; i++) {
-#endif  // ENABLE_OPENMP
-      /* Calling main function to calculate option value based on
-       * Black & Scholes's equation.
-       */
-      price = BlkSchlsEqEuroNoDiv(sptprice[i], strike[i], rate[i],
-                                  volatility[i], otime[i], otype[i], 0);
-      prices[i] = price;
+      for (i = 0; i < numOptions; i++) {
+#else  // ENABLE_OPENMP
+      for (i = start; i < end; i++) {
+#endif // ENABLE_OPENMP
+        /* Calling main function to calculate option value based on
+         * Black & Scholes's equation.
+         */
+        price = BlkSchlsEqEuroNoDiv(sptprice[i], strike[i], rate[i],
+                                    volatility[i], otime[i], otype[i], 0);
+        prices[i] = price;
 
 #ifdef ERR_CHK
-      priceDelta = data[i].DGrefval - price;
-      if (fabs(priceDelta) >= 1e-4) {
-        printf("Error on %d. Computed=%.5f, Ref=%.5f, Delta=%.5f\n", i, price,
-               data[i].DGrefval, priceDelta);
-        numError++;
-      }
+        priceDelta = data[i].DGrefval - price;
+        if (fabs(priceDelta) >= 1e-4) {
+          printf("Error on %d. Computed=%.5f, Ref=%.5f, Delta=%.5f\n", i, price,
+                 data[i].DGrefval, priceDelta);
+          numError++;
+        }
 #endif
+      }
     }
   }
 
   return 1;
 }
-#endif  // ENABLE_TBB
+#endif // ENABLE_TBB
 
 int main(int argc, char **argv) {
   FILE *file;
@@ -351,7 +355,7 @@ int main(int argc, char **argv) {
 #else
   printf("PARSEC Benchmark Suite\n");
   fflush(NULL);
-#endif  // PARSEC_VERSION
+#endif // PARSEC_VERSION
 #ifdef ENABLE_PARSEC_HOOKS
   __parsec_bench_begin(__parsec_blackscholes);
 #endif
@@ -477,7 +481,8 @@ int main(int argc, char **argv) {
     {
       int _M4_i;
       for (_M4_i = 0; _M4_i < MAX_THREADS; _M4_i++) {
-        if (_M4_threadsTableAllocated[_M4_i] == 0) break;
+        if (_M4_threadsTableAllocated[_M4_i] == 0)
+          break;
       }
       pthread_create(&_M4_threadsTable[_M4_i], NULL,
                      (void *(*)(void *))bs_thread, (void *)&tids[i]);
@@ -489,32 +494,33 @@ int main(int argc, char **argv) {
     int _M4_i;
     void *_M4_ret;
     for (_M4_i = 0; _M4_i < MAX_THREADS; _M4_i++) {
-      if (_M4_threadsTableAllocated[_M4_i] == 0) break;
+      if (_M4_threadsTableAllocated[_M4_i] == 0)
+        break;
       pthread_join(_M4_threadsTable[_M4_i], &_M4_ret);
     }
   };
   free(tids);
-#endif  // WIN32
-#else   // ENABLE_THREADS
+#endif // WIN32
+#else  // ENABLE_THREADS
 #ifdef ENABLE_OPENMP
   {
     int tid = 0;
     omp_set_num_threads(nThreads);
     bs_thread(&tid);
   }
-#else  // ENABLE_OPENMP
+#else // ENABLE_OPENMP
 #ifdef ENABLE_TBB
   tbb::task_scheduler_init init(nThreads);
 
   int tid = 0;
   bs_thread(&tid);
-#else   // ENABLE_TBB
+#else  // ENABLE_TBB
   // serial version
   int tid = 0;
   bs_thread(&tid);
-#endif  // ENABLE_TBB
-#endif  // ENABLE_OPENMP
-#endif  // ENABLE_THREADS
+#endif // ENABLE_TBB
+#endif // ENABLE_OPENMP
+#endif // ENABLE_THREADS
 
 #ifdef ENABLE_PARSEC_HOOKS
   __parsec_roi_end();
