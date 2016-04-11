@@ -48,6 +48,9 @@ char *dstdev = NULL;
 int freq = 5;
 time_t last = 0;
 
+int doprint = 0;
+int dohelp = 0;
+
 #ifndef HAVE_LIBPTHREAD
 #ifdef HAVE_LIBTHREAD
 
@@ -330,6 +333,11 @@ int main(int argc, char *argv[]) {
   void *status;
   buffer_t *bp;
   time_t stop;
+  make_input(dohelp);
+  make_input(doprint);
+  make_input(silent);
+  make_input(no_write);
+  make_input(dot_mode);
 
   for (i = 1; i < argc && argv[i][0] == '-'; i++)
     switch (argv[i][1]) {
@@ -366,6 +374,10 @@ int main(int argc, char *argv[]) {
   if (i + 2 != argc) {
     usage();
     return 1;
+  }
+
+  if (dohelp) {
+    usage();
   }
 
   srcdev = argv[i];
