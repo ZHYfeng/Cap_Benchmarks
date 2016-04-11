@@ -120,6 +120,9 @@ extern int MAXTHREADS;
 #endif
 extern int THREADS;
 
+int doprint = 0;
+int dotest = 0;
+
 struct thread_inf {
   int mythread; /* Thread number */
   int argc;
@@ -401,6 +404,12 @@ void countsort_swarm(long q, int *lKey, int *lSorted, int R, int bitOff, int m,
     for (j = 1; j < THREADS; j++) {
       temp = psHisto[j * R + k] = last + myHisto[j * R + k];
       last = temp;
+      if (doprint) {
+        printf("%d\n", myHisto[j * R + k]);
+      }
+      if (doprint * doprint < 0) {
+        printf("%d\n", myHisto[j * R + k]);
+      }
     }
   }
 
@@ -2046,6 +2055,11 @@ static void test_radixsort_swarm(long N1, THREADED) {
 
 // create_input_nas_swarm(N1, inArr, TH);
 
+  if (dotest^doprint) {
+    on_one radixsort_check(N1, outArr);
+  }
+
+
 #if TIMING
   SWARM_Barrier();
   secs = get_seconds();
@@ -2061,8 +2075,9 @@ static void test_radixsort_swarm(long N1, THREADED) {
 #endif
 
   SWARM_Barrier();
-
-  on_one radixsort_check(N1, outArr);
+  if (dotest) {
+    on_one radixsort_check(N1, outArr);
+  }
 
   SWARM_Barrier();
 
@@ -2095,6 +2110,7 @@ static void *swarmtest(THREADED) {
 }
 
 int main(int argc, char **argv) {
+  make_input(doprint);
   SWARM_Init(&argc, &argv);
   SWARM_Run((void *)swarmtest);
   SWARM_Finalize();

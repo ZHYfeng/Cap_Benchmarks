@@ -766,6 +766,8 @@ int main(int argc, char *argv[]) {
   int depth = 0;
   argv0 = argv[0];
 
+  make_input(doprint);
+
   // setlocale(LC_CTYPE, "");
 
   getrlimit(RLIMIT_NOFILE, &rlb);
