@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2005 Abel Bennett.
  *
  * This is free software; you can redistribute it and/or
@@ -23,14 +23,12 @@
  * @version 1.0
  */
 
-
 #include <errno.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
-
 
 #include <alloca.h>
 #include <pthread.h>
@@ -41,54 +39,55 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+int dotest = 0;
+int doprint = 0;
 
-
-
-void swap(void* a, void* b, size_t width) {
-	void* temp = malloc(width);
-	memcpy(temp, a, width);
-	memcpy(a, b, width);
-	memcpy(b, temp, width);
-	free(temp);
+void swap(void *a, void *b, size_t width) {
+  void *temp = malloc(width);
+  memcpy(temp, a, width);
+  memcpy(a, b, width);
+  memcpy(b, temp, width);
+  free(temp);
 }
 
-size_t merge(void* base, size_t num, size_t twidth, int(* compare)(const void*, const void*)) {
-	size_t begin, end, start, finish;
-	start = begin = 0;
-	finish = end = num - 1;
-	void* sambol = base;
-	while (1) {
-		for (; start <= finish; start++) {
-			if (compare(base + start * twidth, sambol) == 1) {
-				break;
-			}
-		}
-		for (; start < finish; finish--) {
-			if (compare(base + finish * twidth, sambol) == -1) {
-				break;
-			}
-		}
-		if (start < finish) {
-			swap(base + start * twidth, base + finish * twidth, twidth);
-		} else {
-			break;
-		}
-	}
-	swap(sambol, base + (start - 1) * twidth, twidth);
-	return start - 1;
+size_t merge(void *base, size_t num, size_t twidth,
+             int (*compare)(const void *, const void *)) {
+  size_t begin, end, start, finish;
+  start = begin = 0;
+  finish = end = num - 1;
+  void *sambol = base;
+  while (1) {
+    for (; start <= finish; start++) {
+      if (compare(base + start * twidth, sambol) == 1) {
+        break;
+      }
+    }
+    for (; start < finish; finish--) {
+      if (compare(base + finish * twidth, sambol) == -1) {
+        break;
+      }
+    }
+    if (start < finish) {
+      swap(base + start * twidth, base + finish * twidth, twidth);
+    } else {
+      break;
+    }
+  }
+  swap(sambol, base + (start - 1) * twidth, twidth);
+  return start - 1;
 }
 
-void klee_qsort(void* base, size_t num, size_t twidth, int(* compare)(const void*, const void*)) {
-	int* ptr;
-	unsigned i;
-	if (num > 1) {
-		int middle = merge(base, num, twidth, compare);
-		void* rightBase = base + (middle + 1) * twidth;
-		klee_qsort(base, middle, twidth, compare);
-		klee_qsort(rightBase, num - middle - 1, twidth, compare);
-	}
+void klee_qsort(void *base, size_t num, size_t twidth,
+                int (*compare)(const void *, const void *)) {
+  int *ptr;
+  unsigned i;
+  if (num > 1) {
+    int middle = merge(base, num, twidth, compare);
+    void *rightBase = base + (middle + 1) * twidth;
+    klee_qsort(base, middle, twidth, compare);
+    klee_qsort(rightBase, num - middle - 1, twidth, compare);
+  }
 }
-
 
 /**
  * @brief sort base in the order specified by the compare function
@@ -100,9 +99,9 @@ void klee_qsort(void* base, size_t num, size_t twidth, int(* compare)(const void
  * @warning <ul><li>default thread attributes used</li></ul>
  * @warning <ul><li>cancellation is disabled</li></ul>
  */
-extern void pthread_qsort(void * base, const size_t nel, const size_t width,
-        int (*compare)(const void *, const void *), const size_t num_threads);
-
+extern void pthread_qsort(void *base, const size_t nel, const size_t width,
+                          int (*compare)(const void *, const void *),
+                          const size_t num_threads);
 
 /**
  * @brief ctf major version number
@@ -119,7 +118,6 @@ extern void pthread_qsort(void * base, const size_t nel, const size_t width,
  */
 #define PTHREAD_CTF_MICRO 0
 
-
 /**
  * @brief returns the number of on-line processors
  * @param number number of processors
@@ -127,7 +125,7 @@ extern void pthread_qsort(void * base, const size_t nel, const size_t width,
  * 0 is returned on success<br>
  * non-zero error code is returned on failure
  */
-extern int pthread_get_nproc(int * number);
+extern int pthread_get_nproc(int *number);
 
 /**
  * @brief returns a string representing the pthread_t
@@ -138,7 +136,7 @@ extern int pthread_get_nproc(int * number);
  * 0 is returned on success<br>
  * non-zero error code is returned on failure
  */
-extern int pthread_get_name(const pthread_t tid, char * buf, const size_t len);
+extern int pthread_get_name(const pthread_t tid, char *buf, const size_t len);
 
 /**
  * @brief returns the version of pthreads library
@@ -148,7 +146,7 @@ extern int pthread_get_name(const pthread_t tid, char * buf, const size_t len);
  * 0 is returned on success<br>
  * non-zero error code is returned on failure
  */
-extern int pthread_version(char * buf, const size_t len);
+extern int pthread_version(char *buf, const size_t len);
 
 /**
  * @brief returns the version of ctf library
@@ -158,25 +156,21 @@ extern int pthread_version(char * buf, const size_t len);
  * 0 is returned on success<br>
  * non-zero error code is returned on failure
  */
-extern int pthread_ctf_version(char * buf, const size_t len);
+extern int pthread_ctf_version(char *buf, const size_t len);
 
-
-
-struct pthread_qsort_data_t
-{
-    void * base; /* address of data */
-    size_t width; /* size of data element */
-    size_t first; /* index of first data (inclusive) */
-    size_t last; /* index of last data (inclusive) */
-    int (*compare)(const void *, const void *); /* compare function */
-    size_t switch_size; /* number of elements to use in threading */
-    pthread_mutex_t * mutex; /* lock for thread function */
-    pthread_cond_t * cond; /* condition for thread function */
-    int * finished; /* return value of thread */
+struct pthread_qsort_data_t {
+  void *base;   /* address of data */
+  size_t width; /* size of data element */
+  size_t first; /* index of first data (inclusive) */
+  size_t last;  /* index of last data (inclusive) */
+  int (*compare)(const void *, const void *); /* compare function */
+  size_t switch_size;     /* number of elements to use in threading */
+  pthread_mutex_t *mutex; /* lock for thread function */
+  pthread_cond_t *cond;   /* condition for thread function */
+  int *finished;          /* return value of thread */
 };
 
-
-static void * pthread_qsort_local_call(void * arg);
+static void *pthread_qsort_local_call(void *arg);
 /*
     arguments:
         (1) pointer to an initialized pthread_qsort_t [input]
@@ -186,10 +180,9 @@ static void * pthread_qsort_local_call(void * arg);
             call, multiple arguments
 */
 
-inline static void pthread_qsort_local(void * base, const size_t width,
-        const size_t first, const size_t last,
-        int (*compare)(const void *, const void *),
-        const size_t switch_size);
+inline static void pthread_qsort_local(
+    void *base, const size_t width, const size_t first, const size_t last,
+    int (*compare)(const void *, const void *), const size_t switch_size);
 /*
     arguments:
         (1) pointer to data array [input/output]
@@ -203,9 +196,10 @@ inline static void pthread_qsort_local(void * base, const size_t width,
             compare function
 */
 
-inline static void pthread_qsort_split(void * base, const size_t width,
-        const size_t first, const size_t last, size_t * middle,
-        int (*compare)(const void *, const void *));
+inline static void
+pthread_qsort_split(void *base, const size_t width, const size_t first,
+                    const size_t last, size_t *middle,
+                    int (*compare)(const void *, const void *));
 /*
     arguments:
         (1) pointer to data array [input/output]
@@ -218,8 +212,8 @@ inline static void pthread_qsort_split(void * base, const size_t width,
         (1) to find sorted middle of base array
 */
 
-inline static void pthread_qsort_swap(void * base, const size_t width,
-        const size_t elem1, const size_t elem2);
+inline static void pthread_qsort_swap(void *base, const size_t width,
+                                      const size_t elem1, const size_t elem2);
 /*
     arguments:
         (1) pointer to data array [input/output]
@@ -230,406 +224,342 @@ inline static void pthread_qsort_swap(void * base, const size_t width,
         (1) to swap base array elements first and last
 */
 
+void pthread_qsort(void *base, const size_t nel, const size_t width,
+                   int (*compare)(const void *, const void *),
+                   const size_t num_threads) {
+  int switch_size;
 
-void pthread_qsort(void * base, const size_t nel, const size_t width,
-        int (*compare)(const void *, const void *), const size_t num_threads)
-{
-    int switch_size;
+  switch_size = nel / num_threads;
 
-    switch_size = nel / num_threads;
+  /* call threaded qsort function */
+  pthread_qsort_local(base, width, 0, (nel - 1), compare, (size_t)switch_size);
 
-    /* call threaded qsort function */
-    pthread_qsort_local(base, width, 0, (nel - 1), compare,
-            (size_t)switch_size);
-
-    return;
+  return;
 }
 
-static void * pthread_qsort_local_call(void * arg)
-{
-    struct pthread_qsort_data_t * data = (struct pthread_qsort_data_t *)arg;
+static void *pthread_qsort_local_call(void *arg) {
+  struct pthread_qsort_data_t *data = (struct pthread_qsort_data_t *)arg;
 
+  /*
+      convert from threaded, single argument, to non-threaded,
+      multiple arguments, function call
+  */
+  pthread_qsort_local(data->base, data->width, data->first, data->last,
+                      data->compare, data->switch_size);
 
-    /*
-        convert from threaded, single argument, to non-threaded,
-        multiple arguments, function call
-    */
-    pthread_qsort_local(data->base, data->width, data->first, data->last,
-            data->compare, data->switch_size);
+  /* lock thread lock */
+  if (pthread_mutex_lock(data->mutex) != 0) {
+    abort();
+  }
 
-    /* lock thread lock */
-    if(pthread_mutex_lock(data->mutex) != 0)
-    {
+  (*(data->finished)) = 1;
+
+  /* signal thread caller */
+  if (pthread_cond_signal(data->cond) != 0) {
+    abort();
+  }
+
+  /* unlock thread lock */
+  if (pthread_mutex_unlock(data->mutex) != 0) {
+    abort();
+  }
+
+  return NULL;
+}
+
+inline static void pthread_qsort_local(
+    void *base, const size_t width, const size_t first, const size_t last,
+    int (*compare)(const void *, const void *), const size_t switch_size) {
+  int thread_finished;
+  size_t middle;
+  struct pthread_qsort_data_t work;
+  pthread_mutex_t mutex;
+
+  pthread_mutex_init(&mutex, 0);
+
+  pthread_cond_t cond;
+
+  pthread_cond_init(&cond, NULL); /* = PTHREAD_COND_INITIALIZER; */
+
+  pthread_t tid;
+  pthread_attr_t attr;
+
+  if ((last - first) > switch_size) {
+    /* split the array */
+    pthread_qsort_split(base, width, first, last, &middle, compare);
+
+    /* initialize number of threads completed */
+    thread_finished = 0;
+
+    /* copy to threaded function call structure */
+    work.base = base;
+    work.width = width;
+    work.first = first;
+    work.last = (middle - 1);
+    work.compare = compare;
+    work.switch_size = switch_size;
+    work.mutex = &mutex;
+    work.cond = &cond;
+    work.finished = &thread_finished;
+
+    /* initialize thread attributes to default */
+    if (pthread_attr_init(&attr) != 0) {
+      abort();
+    }
+
+    /* assign detach attribute */
+    if (pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) != 0) {
+      abort();
+    }
+
+    /* call a new thread for first half of data */
+    if (pthread_create(&tid, &attr, pthread_qsort_local_call, &work) != 0) {
+      abort();
+    }
+
+    /* use current thread for second half of data */
+    pthread_qsort_local(base, width, (middle + 1), last, compare, switch_size);
+
+    /* lock local lock */
+    if (pthread_mutex_lock(&mutex) != 0) {
+      abort();
+    }
+
+    /* while create thread is working */
+    while (thread_finished == 0) {
+      /* wait for created thread to signal */
+      if (pthread_cond_wait(&cond, &mutex) != 0) {
         abort();
+      }
     }
 
-    (*(data->finished)) = 1;
-
-    /* signal thread caller */
-    if(pthread_cond_signal(data->cond) != 0)
-    {
-        abort();
+    /* unlock local lock */
+    if (pthread_mutex_unlock(&mutex) != 0) {
+      abort();
     }
 
-    /* unlock thread lock */
-    if(pthread_mutex_unlock(data->mutex) != 0)
-    {
-        abort();
+    /* destroy thread attributes */
+    if (pthread_attr_destroy(&attr) != 0) {
+      abort();
     }
+  } else {
+    /* call non-threaded libc qsort */
+    klee_qsort((void *)((size_t)base + (first * width)), (last - first + 1),
+               width, compare);
+  }
 
-    return NULL;
+  return;
 }
 
-inline static void pthread_qsort_local(void * base, const size_t width,
-        const size_t first, const size_t last,
-        int (*compare)(const void *, const void *),
-        const size_t switch_size)
-{
-    int thread_finished;
-    size_t middle;
-    struct pthread_qsort_data_t work;
-    pthread_mutex_t mutex;
+inline static void
+pthread_qsort_split(void *base, const size_t width, const size_t first,
+                    const size_t last, size_t *middle,
+                    int (*compare)(const void *, const void *)) {
+  short done;
+  size_t ii, jj, temp_middle;
+  void *test_temp;
 
-    pthread_mutex_init(&mutex, 0);
+  /* allocate temporary item */
+  test_temp = alloca(width);
 
-    pthread_cond_t cond;
-    
-    pthread_cond_init(&cond, NULL); /* = PTHREAD_COND_INITIALIZER; */
+  /* find the middle of the data */
+  temp_middle = (first + last) / 2;
 
-    pthread_t tid;
-    pthread_attr_t attr;
+  /* find three median of the three: first, middle, last */
 
+  if (compare((void *)((size_t)base + (temp_middle * width)),
+              (void *)((size_t)base + (first * width))) < 0) {
+    pthread_qsort_swap(base, width, temp_middle, first);
+  }
 
+  if (compare((void *)((size_t)base + (last * width)),
+              (void *)((size_t)base + (first * width))) < 0) {
+    pthread_qsort_swap(base, width, last, first);
+  }
 
-    if((last - first) > switch_size)
-    {
-        /* split the array */
-        pthread_qsort_split(base, width, first, last, &middle, compare);
+  if (compare((void *)((size_t)base + (last * width)),
+              (void *)((size_t)base + (temp_middle * width))) < 0) {
+    pthread_qsort_swap(base, width, last, temp_middle);
+  }
 
-        /* initialize number of threads completed */
-        thread_finished = 0;
+  /* copy median to temporary location, test_temp */
+  (void)memcpy(test_temp, (void *)((size_t)base + (temp_middle * width)),
+               width);
 
-        /* copy to threaded function call structure */
-        work.base = base;
-        work.width = width;
-        work.first = first;
-        work.last = (middle - 1);
-        work.compare = compare;
-        work.switch_size = switch_size;
-        work.mutex = &mutex;
-        work.cond = &cond;
-        work.finished = &thread_finished;
+  /* swap middle with last */
+  pthread_qsort_swap(base, width, temp_middle, (last - 1));
 
-        /* initialize thread attributes to default */
-        if(pthread_attr_init(&attr) != 0)
-        {
-            abort();
-        }
+  /* initialize variables */
+  ii = first;
+  jj = last - 1;
+  done = 0;
 
-        /* assign detach attribute */
-        if(pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) != 0)
-        {
-            abort();
-        }
+  while (done == 0) {
+    ii++;
 
-        /* call a new thread for first half of data */
-        if(pthread_create(&tid, &attr, pthread_qsort_local_call, &work) != 0)
-        {
-            abort();
-        }
-
-        /* use current thread for second half of data */
-        pthread_qsort_local(base, width, (middle + 1), last,
-                compare, switch_size);
-
-        /* lock local lock */
-        if(pthread_mutex_lock(&mutex) != 0)
-        {
-            abort();
-        }
-
-        /* while create thread is working */
-        while(thread_finished == 0)
-        {
-            /* wait for created thread to signal */
-            if(pthread_cond_wait(&cond, &mutex) != 0)
-            {
-                abort();
-            }
-        }
-
-        /* unlock local lock */
-        if(pthread_mutex_unlock(&mutex) != 0)
-        {
-            abort();
-        }
-
-        /* destroy thread attributes */
-        if(pthread_attr_destroy(&attr) != 0)
-        {
-            abort();
-        }
-    }
-    else
-    {
-        /* call non-threaded libc qsort */
-        klee_qsort((void *)((size_t)base + (first * width)), (last - first + 1),
-                width, compare);
+    /* while index ii is less than median */
+    while (compare((void *)((size_t)base + (ii * width)), test_temp) < 0) {
+      ii++;
     }
 
-    return;
+    jj--;
+
+    /* while index jj is greater than median */
+    while (compare((void *)((size_t)base + (jj * width)), test_temp) > 0) {
+      jj--;
+    }
+
+    /* if more work to be done */
+    if (ii < jj) {
+      /* swap index ii and jj */
+      pthread_qsort_swap(base, width, ii, jj);
+    } else {
+      /* all finished */
+      done = 1;
+    }
+  }
+
+  /* insert median into correct position */
+  pthread_qsort_swap(base, width, ii, (last - 1));
+
+  /* set median location */
+  (*middle) = ii;
+
+  return;
 }
 
-inline static void pthread_qsort_split(void * base, const size_t width,
-        const size_t first, const size_t last, size_t * middle,
-        int (*compare)(const void *, const void *))
-{
-    short done;
-    size_t ii, jj, temp_middle;
-    void * test_temp;
+inline static void pthread_qsort_swap(void *base, const size_t width,
+                                      const size_t elem1, const size_t elem2) {
+  void *swap_temp;
 
+  /* allocate swap space */
+  swap_temp = alloca(width);
 
-    /* allocate temporary item */
-    test_temp = alloca(width);
+  /* copy index first to temp */
+  (void)memcpy(swap_temp, (void *)((size_t)base + (elem1 * width)), width);
 
-    /* find the middle of the data */
-    temp_middle = (first + last) / 2;
+  /* copy index last to index first */
+  (void)memcpy((void *)((size_t)base + (elem1 * width)),
+               (void *)((size_t)base + (elem2 * width)), width);
 
-    /* find three median of the three: first, middle, last */
+  /* copy temp to index last */
+  (void)memcpy((void *)((size_t)base + (elem2 * width)), swap_temp, width);
 
-    if(compare((void *)((size_t)base + (temp_middle * width)),
-            (void *)((size_t)base + (first * width))) < 0)
-    {
-        pthread_qsort_swap(base, width, temp_middle, first);
-    }
-
-    if(compare((void *)((size_t)base + (last * width)),
-            (void *)((size_t)base + (first * width))) < 0)
-    {
-        pthread_qsort_swap(base, width, last, first);
-    }
-
-    if(compare((void *)((size_t)base + (last * width)),
-            (void *)((size_t)base + (temp_middle * width))) < 0)
-    {
-        pthread_qsort_swap(base, width, last, temp_middle);
-    }
-
-    /* copy median to temporary location, test_temp */
-    (void)memcpy(test_temp, (void *)((size_t)base +
-            (temp_middle * width)), width);
-
-    /* swap middle with last */
-    pthread_qsort_swap(base, width, temp_middle, (last - 1));
-
-    /* initialize variables */
-    ii = first;
-    jj = last - 1;
-    done = 0;
-
-    while(done == 0)
-    {
-        ii++;
-
-        /* while index ii is less than median */
-        while(compare((void *)((size_t)base + (ii * width)), test_temp) < 0)
-        {
-            ii++;
-        }
-
-        jj--;
-
-        /* while index jj is greater than median */
-        while(compare((void *)((size_t)base + (jj * width)), test_temp) > 0)
-        {
-            jj--;
-        }
-
-        /* if more work to be done */
-        if(ii < jj)
-        {
-            /* swap index ii and jj */
-            pthread_qsort_swap(base, width, ii, jj);
-        }
-        else
-        {
-            /* all finished */
-            done = 1;
-        }
-    }
-
-    /* insert median into correct position */
-    pthread_qsort_swap(base, width, ii, (last - 1));
-
-    /* set median location */
-    (*middle) = ii;
-
-    return;
+  return;
 }
 
-inline static void pthread_qsort_swap(void * base, const size_t width,
-        const size_t elem1, const size_t elem2)
-{
-    void * swap_temp;
+int pthread_ctf_version(char *buf, const size_t len) {
+  (void)snprintf(buf, len, "%d.%d.%d", PTHREAD_CTF_MAJOR, PTHREAD_CTF_MINOR,
+                 PTHREAD_CTF_MICRO);
 
-
-    /* allocate swap space */
-    swap_temp = alloca(width);
-
-    /* copy index first to temp */
-    (void)memcpy(swap_temp, (void *)((size_t)base + (elem1 * width)), width);
-
-    /* copy index last to index first */
-    (void)memcpy((void *)((size_t)base + (elem1 * width)),
-            (void *)((size_t)base + (elem2 * width)), width);
-
-    /* copy temp to index last */
-    (void)memcpy((void *)((size_t)base + (elem2 * width)), swap_temp, width);
-
-    return;
+  return 0;
 }
-
-
-
-
-
-
-
-
-int pthread_ctf_version(char * buf, const size_t len)
-{
-    (void)snprintf(buf, len, "%d.%d.%d", PTHREAD_CTF_MAJOR,
-            PTHREAD_CTF_MINOR, PTHREAD_CTF_MICRO);
-
-    return 0;
-}
-
 
 #if defined(__sun)
 
 #include <stdio.h>
 #include <sys/utsname.h>
 
+int pthread_get_nproc(int *number) {
+  if (number == NULL) {
+    return EFAULT;
+  }
 
-int pthread_get_nproc(int * number)
-{
-    if(number == NULL)
-    {
-        return EFAULT;
-    }
+  /* get number of processors online */
+  if (((*number) = (int)sysconf(_SC_NPROCESSORS_ONLN)) == -1) {
+    return ENOTSUP;
+  }
 
-    /* get number of processors online */
-    if(((*number) = (int)sysconf(_SC_NPROCESSORS_ONLN)) == -1)
-    {
-        return ENOTSUP;
-    }
-
-    return 0;
+  return 0;
 }
 
-int pthread_get_name(const pthread_t tid, char * buf, const size_t len)
-{
-    /* convert to a string */
-    (void)snprintf(buf, len, "%d", (int)tid);
+int pthread_get_name(const pthread_t tid, char *buf, const size_t len) {
+  /* convert to a string */
+  (void)snprintf(buf, len, "%d", (int)tid);
 
-    return 0;
+  return 0;
 }
 
-int pthread_version(char * buf, const size_t len)
-{
-    struct utsname info;
+int pthread_version(char *buf, const size_t len) {
+  struct utsname info;
 
+  /* get system uname information */
+  if (uname(&info) == -1) {
+    abort();
+  }
 
-    /* get system uname information */
-    if(uname(&info) == -1)
-    {
-        abort();
-    }
+  /* write version informatin to string */
+  (void)snprintf(buf, len, "%s", info.release);
 
-    /* write version informatin to string */
-    (void)snprintf(buf, len, "%s", info.release);
-
-    return 0;
+  return 0;
 }
 
 #elif defined(__linux)
 
-int pthread_get_nproc(int * number)
-{
-    if(number == NULL)
-    {
-        return EFAULT;
-    }
+int pthread_get_nproc(int *number) {
+  if (number == NULL) {
+    return EFAULT;
+  }
 
-    /* get number of processors online */
-    if(((*number) = (int)sysconf(_SC_NPROCESSORS_ONLN)) == -1)
-    {
-        return ENOTSUP;
-    }
+  /* get number of processors online */
+  if (((*number) = (int)sysconf(_SC_NPROCESSORS_ONLN)) == -1) {
+    return ENOTSUP;
+  }
 
-    return 0;
+  return 0;
 }
 
-int pthread_get_name(const pthread_t tid, char * buf, const size_t len)
-{
-    /* convert to a string */
-    (void)snprintf(buf, len, "%d", (int)tid);
+int pthread_get_name(const pthread_t tid, char *buf, const size_t len) {
+  /* convert to a string */
+  (void)snprintf(buf, len, "%d", (int)tid);
 
-    return 0;
+  return 0;
 }
 
-int pthread_version(char * buf, const size_t len)
-{
+int pthread_version(char *buf, const size_t len) {
 #if defined(_CS_GNU_LIBPTHREAD_VERSION)
-    confstr(_CS_GNU_LIBPTHREAD_VERSION, buf, len);
+  confstr(_CS_GNU_LIBPTHREAD_VERSION, buf, len);
 #else
-    (void)snprintf(buf, len, "linuxthreads 0.00");
+  (void)snprintf(buf, len, "linuxthreads 0.00");
 #endif
 
-    return 0;
+  return 0;
 }
 
 #elif defined(__sgi)
 
-int pthread_get_nproc(int * number)
-{
-    if(number == NULL)
-    {
-        return EFAULT;
-    }
+int pthread_get_nproc(int *number) {
+  if (number == NULL) {
+    return EFAULT;
+  }
 
-    /* get number of processors online */
-    if(((*number) = (int)sysconf(_SC_NPROC_ONLN)) == -1)
-    {
-        return ENOTSUP;
-    }
+  /* get number of processors online */
+  if (((*number) = (int)sysconf(_SC_NPROC_ONLN)) == -1) {
+    return ENOTSUP;
+  }
 
-    return 0;
+  return 0;
 }
 
-int pthread_get_name(const pthread_t tid, char * buf, const size_t len)
-{
-    /* convert to a string */
-    (void)snprintf(buf, len, "%d", (int)tid);
+int pthread_get_name(const pthread_t tid, char *buf, const size_t len) {
+  /* convert to a string */
+  (void)snprintf(buf, len, "%d", (int)tid);
 
-    return 0;
+  return 0;
 }
 
-int pthread_version(char * buf, const size_t len)
-{
-    struct utsname info;
+int pthread_version(char *buf, const size_t len) {
+  struct utsname info;
 
+  /* get system uname information */
+  if (uname(&info) == -1) {
+    abort();
+  }
 
-    /* get system uname information */
-    if(uname(&info) == -1)
-    {
-        abort();
-    }
+  /* write version informatin to string */
+  (void)snprintf(buf, len, "%s", info.release);
 
-    /* write version informatin to string */
-    (void)snprintf(buf, len, "%s", info.release);
-
-    return 0;
+  return 0;
 }
 
 #else
@@ -640,162 +570,140 @@ int pthread_version(char * buf, const size_t len)
 
 #endif
 
-
-
-
-
-
-
 #define SIZE 5
-
 
 static long orig_array[SIZE];
 static long sort_array[SIZE];
 
+static int work_long(const void *arg1, const void *arg2);
 
-static int work_long(const void * arg1, const void * arg2);
+int main(void) {
+  int ii, rtn;
+  int num_cpus;
+  int hour, min;
+  float sec;
+  struct timeval start, stop;
+  make_input(doprint);
+  make_input(dotest);
 
+  for (ii = 0; ii < SIZE; ii++) {
+    orig_array[ii] = 100 - ii;
+    sort_array[ii] = orig_array[ii];
+  }
 
-int main(void)
-{
-    int ii, rtn;
-    int num_cpus;
-    int hour, min;
-    float sec;
-    struct timeval start, stop;
-	
+  /*if(gettimeofday(&start, NULL) != 0)
+  {
+      fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n",
+              __FILE__, __LINE__, strerror(errno));
+      exit(EXIT_FAILURE);
+  }
 
-    for(ii = 0; ii < SIZE; ii++)
-    {
-        orig_array[ii] = 100-ii;
-		sort_array[ii] = orig_array[ii];
-    }
+  qsort(sort_array, SIZE, sizeof(long), work_long);
 
-    /*if(gettimeofday(&start, NULL) != 0)
-    {
-        fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n",
-                __FILE__, __LINE__, strerror(errno));
-        exit(EXIT_FAILURE);
-    }
+  if(gettimeofday(&stop, NULL) != 0)
+  {
+      fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n",
+              __FILE__, __LINE__, strerror(errno));
+      exit(EXIT_FAILURE);
+  }
 
-    qsort(sort_array, SIZE, sizeof(long), work_long);
+  sec = (stop.tv_sec - start.tv_sec) +
+          ((stop.tv_usec - start.tv_usec) / 1.0e6);
 
-    if(gettimeofday(&stop, NULL) != 0)
-    {
-        fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n",
-                __FILE__, __LINE__, strerror(errno));
-        exit(EXIT_FAILURE);
-    }
+  min = sec / 60;
+  sec = sec - (min * 60);
 
-    sec = (stop.tv_sec - start.tv_sec) +
-            ((stop.tv_usec - start.tv_usec) / 1.0e6);
+  hour = min / 60;
+  min = min - (hour * 60);
 
-    min = sec / 60;
-    sec = sec - (min * 60);
+  fprintf(stdout, "qsort test time: %02d:%02d:%07.4f\n",
+          hour, min, sec);
 
-    hour = min / 60;
-    min = min - (hour * 60);
+  for(ii = 1; ii < SIZE; ii++)
+  {
+      if(sort_array[ii-1] > sort_array[ii])
+      {
+          fprintf(stderr, "%s: %d: ERROR: array not sorted\n",
+                  __FILE__, __LINE__);
+          exit(EXIT_FAILURE);
+      }
+  }*/
 
-    fprintf(stdout, "qsort test time: %02d:%02d:%07.4f\n",
-            hour, min, sec);
+  for (ii = 0; ii < SIZE; ii++) {
+    sort_array[ii] = orig_array[ii];
+  }
 
-    for(ii = 1; ii < SIZE; ii++)
-    {
-        if(sort_array[ii-1] > sort_array[ii])
-        {
-            fprintf(stderr, "%s: %d: ERROR: array not sorted\n",
-                    __FILE__, __LINE__);
-            exit(EXIT_FAILURE);
-        }
-    }*/
+  if ((rtn = pthread_get_nproc(&num_cpus)) != 0) {
+    fprintf(stderr, "%s: %d: pthread_get_nproc() ERROR: %s\n", __FILE__,
+            __LINE__, strerror(rtn));
+    exit(EXIT_FAILURE);
+  }
 
-    for(ii = 0; ii < SIZE; ii++)
-    {
-        sort_array[ii] = orig_array[ii];
-    }
-
-    if((rtn = pthread_get_nproc(&num_cpus)) != 0)
-    {
-        fprintf(stderr, "%s: %d: pthread_get_nproc() ERROR: %s\n",
-                __FILE__, __LINE__, strerror(rtn));
-        exit(EXIT_FAILURE);
-    }
-
-    if(num_cpus == 1)
-    {
-        num_cpus = 4;
-    }
+  if (num_cpus == 1) {
+    num_cpus = 4;
+  }
 
 #if (defined(__sun) || defined(__sgi))
-    pthread_setconcurrency(num_cpus);
+  pthread_setconcurrency(num_cpus);
 #endif
 
-    if(gettimeofday(&start, NULL) != 0)
-    {
-        fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n",
-                __FILE__, __LINE__, strerror(errno));
+  if (gettimeofday(&start, NULL) != 0) {
+    fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n", __FILE__, __LINE__,
+            strerror(errno));
+    exit(EXIT_FAILURE);
+  }
+
+  for (ii = 0; ii < SIZE; ii++) {
+    printf("%ld ", sort_array[ii]);
+  }
+  printf("\n");
+
+  pthread_qsort(sort_array, SIZE, sizeof(long), work_long, (size_t)num_cpus);
+
+  if (gettimeofday(&stop, NULL) != 0) {
+    fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n", __FILE__, __LINE__,
+            strerror(errno));
+    exit(EXIT_FAILURE);
+  }
+
+  sec = (stop.tv_sec - start.tv_sec) + ((stop.tv_usec - start.tv_usec) / 1.0e6);
+
+  min = sec / 60;
+  sec = sec - (min * 60);
+
+  hour = min / 60;
+  min = min - (hour * 60);
+
+  fprintf(stdout, "pthread_qsort_t test time: %02d:%02d:%07.4f\n", hour, min,
+          sec);
+  if (dotest) {
+    for (ii = 1; ii < SIZE; ii++) {
+      if (sort_array[ii - 1] > sort_array[ii]) {
+        fprintf(stderr, "%s: %d: ERROR: array not sorted\n", __FILE__,
+                __LINE__);
         exit(EXIT_FAILURE);
+      }
     }
-	
-	for(ii = 0; ii < SIZE; ii++)  {
-		printf("%ld ", sort_array[ii]);
-	}
-	printf("\n");
-
-    pthread_qsort(sort_array, SIZE, sizeof(long), work_long, (size_t)num_cpus);
-
-    if(gettimeofday(&stop, NULL) != 0)
-    {
-        fprintf(stderr, "%s: %d: gettimeofday() ERROR: %s\n",
-                __FILE__, __LINE__, strerror(errno));
-        exit(EXIT_FAILURE);
+  }
+  if (doprint) {
+    for (ii = 0; ii < SIZE; ii++) {
+      printf("%ld ", sort_array[ii]);
     }
+    printf("\n");
+  }
 
-    sec = (stop.tv_sec - start.tv_sec) +
-            ((stop.tv_usec - start.tv_usec) / 1.0e6);
-
-    min = sec / 60;
-    sec = sec - (min * 60);
-
-    hour = min / 60;
-    min = min - (hour * 60);
-
-    fprintf(stdout, "pthread_qsort_t test time: %02d:%02d:%07.4f\n",
-            hour, min, sec);
-
-    for(ii = 1; ii < SIZE; ii++)
-    {
-        if(sort_array[ii-1] > sort_array[ii])
-        {
-            fprintf(stderr, "%s: %d: ERROR: array not sorted\n",
-                    __FILE__, __LINE__);
-            exit(EXIT_FAILURE);
-        }
-    }
-
-	for(ii = 0; ii < SIZE; ii++)  {
-		printf("%ld ", sort_array[ii]);
-	}
-	printf("\n");
-
-
-    return 1;
+  return 1;
 }
 
-static int work_long(const void * arg1, const void * arg2)
-{
-    const long * data1 = (const long *)arg1;
-    const long * data2 = (const long *)arg2;
+static int work_long(const void *arg1, const void *arg2) {
+  const long *data1 = (const long *)arg1;
+  const long *data2 = (const long *)arg2;
 
+  if ((*data1) < (*data2)) {
+    return -1;
+  } else if ((*data1) > (*data2)) {
+    return 1;
+  }
 
-    if((*data1) < (*data2))
-    {
-        return -1;
-    }
-    else if((*data1) > (*data2))
-    {
-        return 1;
-    }
-
-    return 0;
+  return 0;
 }
