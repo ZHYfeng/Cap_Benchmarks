@@ -2111,6 +2111,7 @@ static void *swarmtest(THREADED) {
 
 int main(int argc, char **argv) {
   make_input(doprint);
+  make_input(dotest);
   SWARM_Init(&argc, &argv);
   SWARM_Run((void *)swarmtest);
   SWARM_Finalize();
