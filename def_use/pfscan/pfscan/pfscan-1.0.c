@@ -767,7 +767,9 @@ int main(int argc, char *argv[]) {
   argv0 = argv[0];
 
   make_input(doprint);
-
+  make_input(ignore_case);
+  make_input(debug);
+  make_input(verbose);
   // setlocale(LC_CTYPE, "");
 
   getrlimit(RLIMIT_NOFILE, &rlb);
