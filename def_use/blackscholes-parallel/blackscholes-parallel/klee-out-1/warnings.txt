@@ -1,0 +1,25 @@
+KLEE: WARNING: undefined reference to function: __isoc99_fscanf
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: exp
+KLEE: WARNING: undefined reference to function: fclose
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fopen
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: log
+KLEE: WARNING: undefined reference to function: make_input
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutexattr_init
+KLEE: WARNING: undefined reference to function: sqrt
+KLEE: WARNING ONCE: calling external: printf(51857392)
+KLEE: WARNING ONCE: calling external: fflush(0)
+KLEE: WARNING ONCE: calling external: atoi(51444016)
+KLEE: WARNING ONCE: calling external: fopen(51444368, 51858576)
+KLEE: WARNING ONCE: calling external: __isoc99_fscanf(51964128, 51859728, 51852352)
+KLEE: WARNING ONCE: calling external: fclose(51964128)
+KLEE: WARNING ONCE: calling external: pthread_mutexattr_init(51844528)
+KLEE: WARNING ONCE: calling external: fprintf(53027856, 51871344, 4)
+KLEE: WARNING ONCE: calling external: sqrt(4602678819172646912)
+KLEE: WARNING ONCE: calling external: log(4607407598566637568)
+KLEE: WARNING ONCE: calling external: exp(13822373797623234560)

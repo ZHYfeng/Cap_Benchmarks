@@ -1,0 +1,31 @@
+KLEE: WARNING: undefined reference to function: fabs
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: lrand48
+KLEE: WARNING: undefined reference to function: make_input
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_broadcast
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_destroy
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: pthread_setcancelstate
+KLEE: WARNING: undefined reference to function: sqrt
+KLEE: WARNING: undefined reference to function: srand48
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: valloc
+KLEE: WARNING ONCE: calling external: gettimeofday(44947616, 0)
+KLEE: WARNING ONCE: calling external: printf(44863888)
+KLEE: WARNING ONCE: calling external: sqrt(4611686018427387904)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(45414208, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(45414248, 0)
+KLEE: WARNING ONCE: calling external: srand48(1)
+KLEE: WARNING ONCE: calling external: lrand48()
+KLEE: WARNING ONCE: calling external: pthread_setcancelstate(1, 46451472)
+KLEE: WARNING ONCE: calling external: fabs(4372995238176751616)
+KLEE: WARNING ONCE: calling external: fflush(139977436460032)

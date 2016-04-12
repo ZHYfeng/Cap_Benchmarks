@@ -1,0 +1,39 @@
+KLEE: output directory is "/home/icefox/git/Benchmarks/def_use/account/account_put/klee-out-1"
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+var name : deposit_done
+var name : withdraw_done
+var name : m
+var name : balance
+var name : y
+var name : z
+var name : x
+PSOListener execute.
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(32771264, 0)
+SymbolicListener execute.
+######################本条路径为新路径####################
+total br event : 1
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:6
+write set size:6
+(and (< E47 E33) (or (< E10 E47) (< E33 E10)) (or (< E35 E47) (< E33 E35)))
+the constraint can be solved!
+(and (< E10 E45) (or (< E35 E10) (< E45 E35)) (or (< E47 E10) (< E45 E47)))
+the constraint can be solved!
+(< E37 E20)
+the constraint can be solved!
+(< E49 E21)
+the constraint can be solved!
+Sum of branches: 1
+InputGenListener execute 
+
+KLEE: done: total instructions = 159
+KLEE: done: completed paths = 3
+KLEE: done: generated tests = 0

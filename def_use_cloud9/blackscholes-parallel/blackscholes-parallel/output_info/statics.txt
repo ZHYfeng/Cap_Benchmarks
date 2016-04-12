@@ -1,0 +1,22 @@
+AllFormulaNum:1612
+SovingTimes:0
+TotalNewPath:2
+TotalOldPath:2
+TotalPath:4
+allGlobal:243
+brGlobal:243
+AllBranch:0
+satBranch:0
+satCost:0
+unSatBranch:0
+unSatCost:0
+uunSatBranch:0
+SolvingCost:1.0677
+RunningCost:0.067971
+inputCost:0.013497
+def-use size:23
+TimeCost:1.184599e+00
+Insts:30100
+totalline:569
+name:blackscholes-parallel
+memory:78536

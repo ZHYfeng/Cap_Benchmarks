@@ -1,0 +1,728 @@
+KLEE: output directory is "/home/icefox/git/Benchmarks/def_use/fft/fft/klee-out-13"
+KLEE: WARNING: undefined reference to function: cos
+KLEE: WARNING: undefined reference to function: drand48
+KLEE: WARNING: undefined reference to function: fabs
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: make_input
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_broadcast
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_destroy
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: pthread_setcancelstate
+KLEE: WARNING: undefined reference to function: sin
+KLEE: WARNING: undefined reference to function: srand48
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to function: valloc
+var name : P
+var name : M
+var name : test_result
+var name : doprint
+var name : dostats
+var name : dohelp
+var name : transtime
+var name : transtime2
+var name : avgtranstime
+var name : avgcomptime
+var name : transstart
+var name : transend
+var name : maxtotal
+var name : mintotal
+var name : maxfrac
+var name : minfrac
+var name : avgfractime
+var name : orig_num_lines
+var name : num_cache_lines
+var name : log2_line_size
+var name : ass
+var name : N
+var name : rootN
+var name : rowsperproc
+var name : line_size
+var name : pad_length
+var name : Global
+var name : x
+var name : trans
+var name : umain
+var name : umain2
+var name : ck1
+var name : PThreadTable
+var name : ck3
+var name : stderr
+PSOListener execute.
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: gettimeofday(34937152, 0)
+KLEE: WARNING ONCE: calling external: printf(34868544)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(35126528, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(35126568, 0)
+KLEE: WARNING ONCE: calling external: srand48(0)
+KLEE: WARNING ONCE: calling external: drand48()
+KLEE: WARNING ONCE: calling external: cos(0)
+KLEE: WARNING ONCE: calling external: sin(0)
+KLEE: WARNING ONCE: calling external: pthread_setcancelstate(1, 35883184)
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             64099           8990       0.14025
+
+                 TIMING INFORMATION
+Start time                        : 1460424109880080
+Initialization finish time        : 1460424109908094
+Overall finish time               : 1460424109972193
+Total time with initialization    :            92113
+Total time without initialization :            64099
+Overall transpose time            :             8990
+Overall transpose fraction        :          0.14025
+
+SymbolicListener execute.
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             19058           2719       0.14025
+
+                 TIMING INFORMATION
+Start time                        : 1460424109983460
+Initialization finish time        : 1460424109990901
+Overall finish time               : 1460424110009959
+Total time with initialization    :            92113
+Total time without initialization :            64099
+Overall transpose time            :             2719
+Overall transpose fraction        :          0.14025
+
+######################本条路径为新路径####################
+total br event : 978
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:139
+write set size:131
+(and (< E2036 E1955) (or (< E290 E2036) (< E1955 E290)))
+the constraint can be solved!
+(and (< E2036 E1959) (or (< E290 E2036) (< E1959 E290)))
+the constraint can be solved!
+(< E16662 E13821)
+the constraint can be solved!
+Sum of branches: 60
+InputGenListener execute 
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             15547           2197       0.14131
+
+                 TIMING INFORMATION
+Start time                        : 1460424471926604
+Initialization finish time        : 1460424471932653
+Overall finish time               : 1460424471948200
+Total time with initialization    :            21596
+Total time without initialization :            15547
+Overall transpose time            :             2197
+Overall transpose fraction        :          0.14131
+
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             55681           7852       0.14102
+    1             54613           7847       0.14368
+  Avg             55147           7850       0.14235
+  Max             55681           7852       0.14368
+  Min             54613           7847       0.14102
+
+                 TIMING INFORMATION
+Start time                        : 1460424471960792
+Initialization finish time        : 1460424471977634
+Overall finish time               : 1460424472033315
+Total time with initialization    :            72523
+Total time without initialization :            55681
+Overall transpose time            :             7852
+Overall transpose fraction        :          0.14102
+
+SymbolicListener execute.
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             19262           2579       0.14102
+    1             18698           2646       0.14368
+  Avg             55147           7850       0.14235
+  Max             19262           2579       0.14368
+  Min             18698           2646       0.14102
+
+                 TIMING INFORMATION
+Start time                        : 1460424472043851
+Initialization finish time        : 1460424472052026
+Overall finish time               : 1460424472071288
+Total time with initialization    :            72523
+Total time without initialization :            55681
+Overall transpose time            :             2579
+Overall transpose fraction        :          0.14102
+
+######################本条路径为新路径####################
+total br event : 988
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:149
+write set size:141
+Sum of branches: 66
+InputGenListener execute 
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             18962           2623       0.13833
+    1             18319           2586       0.14116
+  Avg             18640           2604       0.13975
+  Max             18962           2623       0.14116
+  Min             18319           2586       0.13833
+
+                 TIMING INFORMATION
+Start time                        : 1460424714199035
+Initialization finish time        : 1460424714206361
+Overall finish time               : 1460424714225323
+Total time with initialization    :            26288
+Total time without initialization :            18962
+Overall transpose time            :             2623
+Overall transpose fraction        :          0.13833
+
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             60033           8600       0.14325
+
+                 TIMING INFORMATION
+Start time                        : 1460424714240223
+Initialization finish time        : 1460424714259444
+Overall finish time               : 1460424714319477
+Total time with initialization    :            79254
+Total time without initialization :            60033
+Overall transpose time            :             8600
+Overall transpose fraction        :          0.14325
+
+######################本条路径为旧路径####################
+PSOListener execute.
+
+************************************************************************
+第4次执行,路径文件为trace4.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: fabs(0)
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0            125401          16714       0.13328
+
+                 TIMING INFORMATION
+Start time                        : 1460424714327311
+Initialization finish time        : 1460424714347269
+Overall finish time               : 1460424714472670
+Total time with initialization    :           145359
+Total time without initialization :           125401
+Overall transpose time            :            16714
+Overall transpose fraction        :          0.13328
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+SymbolicListener execute.
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             45917           5956       0.13328
+
+                 TIMING INFORMATION
+Start time                        : 1460424714484897
+Initialization finish time        : 1460424714494340
+Overall finish time               : 1460424714540257
+Total time with initialization    :           145359
+Total time without initialization :           125401
+Overall transpose time            :             5956
+Overall transpose fraction        :          0.13328
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+######################本条路径为新路径####################
+total br event : 1856
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:141
+write set size:133
+Sum of branches: 96
+a new prefix show up in encoding.
+InputGenListener execute 
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             37678           5210       0.13828
+
+                 TIMING INFORMATION
+Start time                        : 1460427813654331
+Initialization finish time        : 1460427813661623
+Overall finish time               : 1460427813699301
+Total time with initialization    :            44970
+Total time without initialization :            37678
+Overall transpose time            :             5210
+Overall transpose fraction        :          0.13828
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第5次执行,路径文件为trace5.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+Original data values:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+Data values after FFT:
+ 9.18 7.89, 0.07 0.96, -0.36 0.64, 0.67 0.92, -0.08 2.04, 0.41 0.39, -0.52 -0.57, -0.72 1.73,
+ -0.18 1.00, -1.37 -1.09, 0.26 -1.44, -0.16 -1.73, 0.92 1.18, -2.67 -0.79, -1.09 -0.14, -1.63 1.00
+
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             63981           8494       0.13276
+
+                 TIMING INFORMATION
+Start time                        : 1460427813718030
+Initialization finish time        : 1460427813744564
+Overall finish time               : 1460427813808545
+Total time with initialization    :            90515
+Total time without initialization :            63981
+Overall transpose time            :             8494
+Overall transpose fraction        :          0.13276
+
+SymbolicListener execute.
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+Original data values:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+Data values after FFT:
+ 9.18 7.89, 0.07 0.96, -0.36 0.64, 0.67 0.92, -0.08 2.04, 0.41 0.39, -0.52 -0.57, -0.72 1.73,
+ -0.18 1.00, -1.37 -1.09, 0.26 -1.44, -0.16 -1.73, 0.92 1.18, -2.67 -0.79, -1.09 -0.14, -1.63 1.00
+
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             22275           2988       0.13276
+
+                 TIMING INFORMATION
+Start time                        : 1460427813821336
+Initialization finish time        : 1460427813832312
+Overall finish time               : 1460427813854587
+Total time with initialization    :            90515
+Total time without initialization :            63981
+Overall transpose time            :             2988
+Overall transpose fraction        :          0.13276
+
+######################本条路径为新路径####################
+total br event : 1167
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:139
+write set size:131
+Sum of branches: 117
+a new prefix show up in encoding.
+InputGenListener execute 
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+Original data values:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+Data values after FFT:
+ 9.18 7.89, 0.07 0.96, -0.36 0.64, 0.67 0.92, -0.08 2.04, 0.41 0.39, -0.52 -0.57, -0.72 1.73,
+ -0.18 1.00, -1.37 -1.09, 0.26 -1.44, -0.16 -1.73, 0.92 1.18, -2.67 -0.79, -1.09 -0.14, -1.63 1.00
+
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             16459           2335       0.14187
+
+                 TIMING INFORMATION
+Start time                        : 1460428504960444
+Initialization finish time        : 1460428504967621
+Overall finish time               : 1460428504984080
+Total time with initialization    :            23636
+Total time without initialization :            16459
+Overall transpose time            :             2335
+Overall transpose fraction        :          0.14187
+
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第6次执行,路径文件为trace6.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+Original data values:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+Data values after inverse FFT:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0            153827          19689       0.12799
+
+                 TIMING INFORMATION
+Start time                        : 1460428505000636
+Initialization finish time        : 1460428505022843
+Overall finish time               : 1460428505176670
+Total time with initialization    :           176034
+Total time without initialization :           153827
+Overall transpose time            :            19689
+Overall transpose fraction        :          0.12799
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+SymbolicListener execute.
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+Original data values:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+Data values after inverse FFT:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             41937           6010       0.12799
+
+                 TIMING INFORMATION
+Start time                        : 1460428505190944
+Initialization finish time        : 1460428505201237
+Overall finish time               : 1460428505243174
+Total time with initialization    :           176034
+Total time without initialization :           153827
+Overall transpose time            :             6010
+Overall transpose fraction        :          0.12799
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+######################本条路径为新路径####################
+total br event : 2011
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:141
+write set size:133
+Sum of branches: 153
+a new prefix show up in encoding.
+InputGenListener execute 
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+Original data values:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+Data values after inverse FFT:
+ 0.17 0.75, 0.10 0.87, 0.58 0.79, 0.69 0.37, 0.87 0.75, 0.45 0.35, 0.73 0.26, 0.39 0.78,
+ 0.85 0.58, 0.72 0.08, 0.46 0.11, 0.55 0.39, 0.57 0.96, 0.87 0.16, 0.28 0.26, 0.92 0.44
+
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             43531           5774       0.13264
+
+                 TIMING INFORMATION
+Start time                        : 1460431274385764
+Initialization finish time        : 1460431274394696
+Overall finish time               : 1460431274438227
+Total time with initialization    :            52463
+Total time without initialization :            43531
+Overall transpose time            :             5774
+Overall transpose fraction        :          0.13264
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第7次执行,路径文件为trace7.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             63352           8772       0.13846
+
+                 TIMING INFORMATION
+Start time                        : 1460431274458884
+Initialization finish time        : 1460431274476663
+Overall finish time               : 1460431274540015
+Total time with initialization    :            81131
+Total time without initialization :            63352
+Overall transpose time            :             8772
+Overall transpose fraction        :          0.13846
+
+######################本条路径为旧路径####################
+PSOListener execute.
+
+************************************************************************
+第8次执行,路径文件为trace8.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0            125887          16434       0.13055
+    1            125646          16493       0.13127
+  Avg            125766          16464       0.13091
+  Max            125887          16493       0.13127
+  Min            125646          16434       0.13055
+
+                 TIMING INFORMATION
+Start time                        : 1460431274547235
+Initialization finish time        : 1460431274566979
+Overall finish time               : 1460431274692866
+Total time with initialization    :           145631
+Total time without initialization :           125887
+Overall transpose time            :            16493
+Overall transpose fraction        :          0.13101
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+SymbolicListener execute.
+
+FFT with Blocking Transpose
+   16 Complex Doubles
+   2 Processors
+   65536 Cache lines
+   16 Byte line size
+   4096 Bytes per page
+
+
+                 PROCESS STATISTICS
+            Computation      Transpose     Transpose
+ Proc          Time            Time        Fraction
+    0             44328           5693       0.13055
+    1             44212           5750       0.13127
+  Avg            125766          16464       0.13091
+  Max             44328           5750       0.13127
+  Min             44212           5693       0.13055
+
+                 TIMING INFORMATION
+Start time                        : 1460431274706121
+Initialization finish time        : 1460431274715721
+Overall finish time               : 1460431274760049
+Total time with initialization    :           145631
+Total time without initialization :           125887
+Overall transpose time            :             5750
+Overall transpose fraction        :          0.13101
+
+              INVERSE FFT TEST RESULTS
+Checksum difference is 0.000 (17.070, 17.070)
+TEST PASSED
+######################本条路径为新路径####################
+total br event : 1866
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:151
+write set size:143
+Sum of branches: 102

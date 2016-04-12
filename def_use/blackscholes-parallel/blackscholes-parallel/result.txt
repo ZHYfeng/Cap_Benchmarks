@@ -1,0 +1,104 @@
+KLEE: output directory is "/home/icefox/git/Benchmarks/def_use/blackscholes-parallel/blackscholes-parallel/klee-out-1"
+KLEE: WARNING: undefined reference to function: __isoc99_fscanf
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: exp
+KLEE: WARNING: undefined reference to function: fclose
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fopen
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: log
+KLEE: WARNING: undefined reference to function: make_input
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutexattr_init
+KLEE: WARNING: undefined reference to function: sqrt
+var name : _M4_numThreads
+var name : numError
+var name : errorInput
+var name : numOptions
+var name : nThreads
+var name : sptprice
+var name : strike
+var name : rate
+var name : volatility
+var name : otime
+var name : otype
+var name : prices
+var name : data
+var name : _M4_normalMutexAttr
+var name : _M4_threadsTableAllocated
+var name : _M4_threadsTable
+that's possible branch.
+that's possible branch.
+that's possible branch.
+PSOListener execute.
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: printf(51857392)
+KLEE: WARNING ONCE: calling external: fflush(0)
+PARSEC Benchmark Suite
+KLEE: WARNING ONCE: calling external: atoi(51444016)
+KLEE: WARNING ONCE: calling external: fopen(51444368, 51858576)
+KLEE: WARNING ONCE: calling external: __isoc99_fscanf(51964128, 51859728, 51852352)
+KLEE: WARNING ONCE: calling external: fclose(51964128)
+KLEE: WARNING ONCE: calling external: pthread_mutexattr_init(51844528)
+KLEE: WARNING ONCE: calling external: fprintf(53027856, 51871344, 4)
+Size of data: 160
+SymbolicListener execute.
+PARSEC Benchmark Suite
+Size of data: 160
+######################本条路径为新路径####################
+total br event : 32
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:38
+write set size:157
+(< E2292 E2242)
+the constraint can be solved!
+Sum of branches: 4
+InputGenListener execute 
+PARSEC Benchmark Suite
+Size of data: 160
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+PARSEC Benchmark Suite
+KLEE: WARNING ONCE: calling external: sqrt(4602678819172646912)
+KLEE: WARNING ONCE: calling external: log(4607407598566637568)
+KLEE: WARNING ONCE: calling external: exp(13822373797623234560)
+Size of data: 160
+SymbolicListener execute.
+PARSEC Benchmark Suite
+Size of data: 160
+######################本条路径为新路径####################
+total br event : 101
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:50
+write set size:159
+(< E2681 E4987)
+the constraint can be solved!
+Sum of branches: 22
+InputGenListener execute 
+PARSEC Benchmark Suite
+Size of data: 160
+satisfied the constraints in get solve result.
+PSOListener execute.
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixmapOfInputAndPreix.txt
+************************************************************************
+
+PARSEC Benchmark Suite
+Size of data: 160
+######################本条路径为旧路径####################
+
+KLEE: done: total instructions = 25021
+KLEE: done: completed paths = 7
+KLEE: done: generated tests = 0

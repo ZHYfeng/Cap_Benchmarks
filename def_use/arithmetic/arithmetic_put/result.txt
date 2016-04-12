@@ -1,0 +1,110 @@
+KLEE: output directory is "/home/icefox/git/Benchmarks/def_use/arithmetic/arithmetic_put/klee-out-1"
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_signal
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+var name : m
+var name : num
+var name : empty
+var name : full
+var name : total
+var name : flag
+PSOListener execute.
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(27713136, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(27908304, 0)
+KLEE: WARNING ONCE: calling external: printf(27812304, 0)
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+SymbolicListener execute.
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+######################本条路径为新路径####################
+total br event : 15
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:3
+write set size:3
+(and (< E70 E23)
+     (or (< E0 E70) (< E23 E0))
+     (or (< E28 E70) (< E23 E28))
+     (or (< E95 E70) (< E23 E95))
+     (or (< E152 E70) (< E23 E152))
+     (or (< E209 E70) (< E23 E209)))
+the constraint can be solved!
+(and (< E70 E25)
+     (or (< E0 E70) (< E25 E0))
+     (or (< E28 E70) (< E25 E28))
+     (or (< E95 E70) (< E25 E95))
+     (or (< E152 E70) (< E25 E152))
+     (or (< E209 E70) (< E25 E209)))
+the constraint can be solved!
+(and (< E0 E58)
+     (or (< E28 E0) (< E58 E28))
+     (or (< E70 E0) (< E58 E70))
+     (or (< E95 E0) (< E58 E95))
+     (or (< E127 E0) (< E58 E127))
+     (or (< E152 E0) (< E58 E152))
+     (or (< E184 E0) (< E58 E184))
+     (or (< E209 E0) (< E58 E209))
+     (or (< E236 E0) (< E58 E236)))
+the constraint can be solved!
+(and (< E0 E68)
+     (or (< E28 E0) (< E68 E28))
+     (or (< E70 E0) (< E68 E70))
+     (or (< E95 E0) (< E68 E95))
+     (or (< E127 E0) (< E68 E127))
+     (or (< E152 E0) (< E68 E152))
+     (or (< E184 E0) (< E68 E184))
+     (or (< E209 E0) (< E68 E209))
+     (or (< E236 E0) (< E68 E236)))
+the constraint can be solved!
+Sum of branches: 1
+InputGenListener execute 
+produce ....0
+total ....0
+consume ....0
+produce ....1
+total ....1
+consume ....1
+produce ....2
+total ....3
+consume ....2
+produce ....3
+total ....6
+consume ....3
+total ....10
+
+KLEE: done: total instructions = 786
+KLEE: done: completed paths = 3
+KLEE: done: generated tests = 0

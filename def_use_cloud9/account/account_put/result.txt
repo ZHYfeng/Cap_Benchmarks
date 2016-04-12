@@ -1,0 +1,62 @@
+KLEE: output directory is "/home/icefox/git/Benchmarks/def_use/account/account_put/klee-out-0"
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+var name : deposit_done
+var name : withdraw_done
+var name : m
+var name : balance
+var name : y
+var name : z
+var name : x
+PSOListener execute.
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(56193920, 0)
+SymbolicListener execute.
+######################本条路径为新路径####################
+total br event : 1
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:6
+write set size:6
+(and (< E47 E33) (or (< E10 E47) (< E33 E10)) (or (< E35 E47) (< E33 E35)))
+the constraint can be solved!
+(and (< E10 E45) (or (< E35 E10) (< E45 E35)) (or (< E47 E10) (< E45 E47)))
+the constraint can be solved!
+(< E37 E20)
+the constraint can be solved!
+(< E49 E21)
+the constraint can be solved!
+Sum of branches: 1
+a new prefix show up in encoding.
+InputGenListener execute 
+PSOListener execute.
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixcould be negated..txt
+************************************************************************
+
+SymbolicListener execute.
+######################本条路径为新路径####################
+total br event : 1
+<-->--<-->--<-->--<--><-->--<--><-->--<--><-->--<-->
+read set size:6
+write set size:6
+Sum of branches: 1
+a new prefix show up in encoding.
+InputGenListener execute 
+PSOListener execute.
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixcould be negated..txt
+************************************************************************
+
+######################本条路径为旧路径####################
+
+KLEE: done: total instructions = 392
+KLEE: done: completed paths = 7
+KLEE: done: generated tests = 0
