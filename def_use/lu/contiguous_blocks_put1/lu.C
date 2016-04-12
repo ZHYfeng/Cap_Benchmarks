@@ -88,10 +88,10 @@ double **a;                  /* a = lu; l and u both placed back in a */
 double *rhs;
 long *proc_bytes;            /* Bytes to malloc per processor to hold blocks of A*/
 double **last_malloc;        /* Starting point of last block of A */
-long dohelp = 0;
-long test_result = 0;        /* Test result of factorization? */
-long doprint = 0;            /* Print out matrix values? */
-long dostats = 0;            /* Print out individual processor statistics? */
+int dohelp = 0;
+int test_result = 0;        /* Test result of factorization? */
+int doprint = 0;            /* Print out matrix values? */
+int dostats = 0;            /* Print out individual processor statistics? */
 long ass = 0;
 void SlaveStart(void);
 void OneSolve(long n, long block_size, long MyNum, long dostats);

@@ -333,13 +333,30 @@ int main(int argc, char *argv[]) {
   void *status;
   buffer_t *bp;
   time_t stop;
-  make_input(dohelp);
-  make_input(doprint);
-  make_input(silent);
-  make_input(no_write);
-  make_input(dot_mode);
+  make_input(&dohelp);
+  make_input(&doprint);
+  make_input(&silent);
+  make_input(&no_write);
+  make_input(&dot_mode);
 
   for (i = 1; i < argc && argv[i][0] == '-'; i++)
+    if (argv[i][1] == 's') {
+      silent = 1;
+    } else if (argv[i][1] == 'n') {
+      no_write = 1;
+    } else if (argv[i][1] == 'd') {
+      dot_mode = 1;
+    } else if (argv[i][1] == 'q') {
+      queue_size = atoi(argv[i] + 2);
+    } else if (argv[i][1] == 'u') {
+      freq = atoi(argv[i] + 2);
+    } else if (argv[i][1] == 'b') {
+      buffer_size = atoi(argv[i] + 2) * 1024;
+    } else {
+      usage();
+      return 0;
+    }
+    /*
     switch (argv[i][1]) {
     case 's':
       silent = 1;
@@ -370,6 +387,7 @@ int main(int argc, char *argv[]) {
       usage();
       return 0;
     }
+    */
 
   if (i + 2 != argc) {
     usage();

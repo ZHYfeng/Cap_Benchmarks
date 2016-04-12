@@ -393,6 +393,33 @@ int deslash(unsigned char *str) {
     if (*rp != '\\')
       *wp++ = *rp++;
     else {
+      char ch = *++rp;
+      if (ch == 'n') {
+        *wp++ = 10;
+        ++rp;
+      } else if (ch == 'r') {
+        *wp++ = 13;
+        ++rp;
+      } else if (ch == 't') {
+        *wp++ = 9;
+        ++rp;
+      } else if (ch == 'b') {
+        *wp++ = 8;
+        ++rp;
+      } else if (ch == 'x') {
+        ++rp;
+        *wp++ = get_char_code(&rp, 16);
+      } else if (ch == '0') {
+        *wp++ = get_char_code(&rp, 8);
+      } else if (ch == '1' || ch == '2' ||
+        ch == '3' || ch == '4' || ch == '5' ||
+        ch == '6' || ch == '7' || ch == '8' ||
+        ch == '9') {
+        *wp++ = get_char_code(&rp, 10);
+      } else {
+        *wp++ = *rp++;
+      }
+      /*
       switch (*++rp) {
       case 'n':
         *wp++ = 10;
@@ -435,6 +462,7 @@ int deslash(unsigned char *str) {
         *wp++ = *rp++;
         break;
       }
+      */
     }
   }
 
@@ -468,7 +496,24 @@ size_t print_output(unsigned char *str, size_t slen) {
     while (len < slen && len < maxlen) {
       if (isprint(*(unsigned char *)str))
         putchar(*str);
-      else
+      else {
+        char ch = *str;
+        if (ch == '\0') {
+          printf("\\0");
+        } else if (ch == '\n') {
+          if (line_f)
+            return len;
+          printf("\\n");
+        } else if (ch == '\r') {
+          if (line_f)
+            return len;
+          printf("\\r");
+        } else if (ch == '\t') {
+          printf("\\t");
+        } else {
+          printf("\\x%02x", *(unsigned char *)str);
+        }
+        /*
         switch (*str) {
         case '\0':
           printf("\\0");
@@ -493,6 +538,8 @@ size_t print_output(unsigned char *str, size_t slen) {
         default:
           printf("\\x%02x", *(unsigned char *)str);
         }
+        */
+      }
 
       ++len;
       ++str;
@@ -611,7 +658,21 @@ int foreach_path(const char *path, const struct stat *sp, int f) {
   ++n_files;
 
   n_bytes += sp->st_size;
-
+  if (f == FTW_F) {
+    pqueue_put(&pqb, (void *)strdup(path));
+    return 0;
+  } else if (f == FTW_D) {
+    return 0;
+  } else if (f == FTW_DNR) {
+    fprintf(stderr, "%s: %s: Can't read directory.\n", argv0, path);
+    return 1;
+  } else if (f == FTW_NS) {
+    fprintf(stderr, "%s: %s: Can't stat object.\n", argv0, path);
+    return 1;
+  } else {
+    fprintf(stderr, "%s: %s: Internal error (invalid ftw code)\n", argv0, path);
+  }
+  /*
   switch (f) {
   case FTW_F:
     pqueue_put(&pqb, (void *)strdup(path));
@@ -631,6 +692,7 @@ int foreach_path(const char *path, const struct stat *sp, int f) {
   default:
     fprintf(stderr, "%s: %s: Internal error (invalid ftw code)\n", argv0, path);
   }
+  */
 
   return 1;
 }
@@ -766,10 +828,10 @@ int main(int argc, char *argv[]) {
   int depth = 0;
   argv0 = argv[0];
 
-  make_input(doprint);
-  make_input(ignore_case);
-  make_input(debug);
-  make_input(verbose);
+  make_input(&doprint);
+  make_input(&ignore_case);
+  make_input(&debug);
+  make_input(&verbose);
   // setlocale(LC_CTYPE, "");
 
   getrlimit(RLIMIT_NOFILE, &rlb);
@@ -788,6 +850,17 @@ int main(int argc, char *argv[]) {
 
   for (i = 1; i < argc && argv[i][0] == '-'; i++)
     for (j = 1; j > 0 && argv[i][j]; ++j)
+      if (argv[i][j] == '-') {
+        ++i;
+        goto EndOptions;
+      } else if (argv[i][j] == 'V') {
+        print_version(stdout);
+      } else {
+        fprintf(stderr, "%s: unknown command line switch: -%c\n", argv[0],
+                argv[i][j]);
+        exit(1);
+      }
+      /*
       switch (argv[i][j]) {
       case '-':
         ++i;
@@ -847,6 +920,7 @@ int main(int argc, char *argv[]) {
                 argv[i][j]);
         exit(1);
       }
+      */
 
 EndOptions:
 

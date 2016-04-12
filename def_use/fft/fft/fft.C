@@ -77,10 +77,10 @@ double *x;              /* x is the original time-domain data     */
 double *trans;          /* trans is used as scratch space         */
 double *umain;          /* umain is roots of unity for 1D FFTs    */
 double *umain2;         /* umain2 is entire roots of unity matrix */
-long test_result = 0;
-long doprint = 0;
-long dostats = 0;
-long dohelp = 0;
+int test_result = 0;
+int doprint = 0;
+int dostats = 0;
+int dohelp = 0;
 long transtime = 0;
 long transtime2 = 0;
 long avgtranstime = 0;

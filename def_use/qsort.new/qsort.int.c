@@ -554,8 +554,8 @@ int main(void) {
   int hour, min;
   float sec;
   struct timeval start, stop;
-  make_input(doprint);
-  make_input(dotest);
+  make_input(&doprint);
+  make_input(&dotest);
   // printf("%u, %u\n", orig_array, sort_array);
 
   /*for(ii = 0; ii < SIZE; ii++)

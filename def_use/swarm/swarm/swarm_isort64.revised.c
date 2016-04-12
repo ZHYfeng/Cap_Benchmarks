@@ -1207,6 +1207,28 @@ static void SWARM_get_args(int *argc, char ***argv) {
         if (*s == '-')
           done = 1;
         else {
+          if (*s == 'o') {
+            if (numarg <= 1)
+              perror("output filename expected after -o (e.g. -o filename)");
+            numarg--;
+            outfilename = (char *)malloc(MAXLEN * sizeof(char));
+            strcpy(outfilename, *++argvv);
+            SWARM_outfile = fopen(outfilename, "a+");
+          } else if (*s == 't') {
+            if (numarg <= 1)
+              perror("number of threads per node expected after -t");
+            numarg--;
+            THREADS = atoi(*++argvv);
+
+          } else if (*s == 'h') {
+                        fprintf(SWARM_outfile, "SWARM Options:\n");
+            fprintf(SWARM_outfile, " -t <number of threads per node>\n");
+            fprintf(SWARM_outfile, "\n\n");
+            fflush(SWARM_outfile);
+          } else {
+            perror("illegal option");  
+          }
+          /*
           switch (*s) {
           case 'o':
             if (numarg <= 1)
@@ -1229,8 +1251,9 @@ static void SWARM_get_args(int *argc, char ***argv) {
             fprintf(SWARM_outfile, "\n\n");
             fflush(SWARM_outfile);
             break;
-            /*  default: perror("illegal option");  */
+            default: perror("illegal option");  
           }
+          */
         }
       }
   if (done) {
@@ -1424,6 +1447,20 @@ void SWARM_Run(void *start_routine) {
                         f, ti);
 
     if (rc != 0) {
+      if (rc == EAGAIN) {
+        SWARM_error(__LINE__, "Run:pthread_create",
+                    "not enough resources to create another thread");
+      } else if (rc == EINVAL) {
+        SWARM_error(__LINE__, "Run:pthread_create",
+                    "invalid thread attributes");
+      } else if (rc == EPERM) {
+        SWARM_error(__LINE__, "Run:pthread_create", "insufficient permissions "
+                                                    "for setting scheduling "
+                                                    "parameters or policy ");
+      } else {
+        SWARM_error(__LINE__, "Run:pthread_create", "error code %d", rc);
+      }
+      /*
       switch (rc) {
       case EAGAIN:
         SWARM_error(__LINE__, "Run:pthread_create",
@@ -1444,6 +1481,7 @@ void SWARM_Run(void *start_routine) {
       default:
         SWARM_error(__LINE__, "Run:pthread_create", "error code %d", rc);
       }
+      */
     }
 
     ti += NOSHARE(1);
@@ -1452,6 +1490,15 @@ void SWARM_Run(void *start_routine) {
   for (i = 0; i < THREADS; i++) {
     rc = pthread_join(spawn_thread[NOSHARE(i)], (void *)&parg);
     if (rc != 0) {
+      if (rc == EINVAL) {
+        SWARM_error(__LINE__, "Run:pthread_join",
+                    "specified thread is not joinable");
+      } else if (rc == ESRCH) {
+        SWARM_error(__LINE__, "Run:pthread_join", "cannot find thread");
+      } else {
+        SWARM_error(__LINE__, "Run:pthread_join", "error code %d", rc);
+      }
+      /*
       switch (rc) {
       case EINVAL:
         SWARM_error(__LINE__, "Run:pthread_join",
@@ -1465,6 +1512,7 @@ void SWARM_Run(void *start_routine) {
       default:
         SWARM_error(__LINE__, "Run:pthread_join", "error code %d", rc);
       }
+      */
     }
   }
 }
@@ -1611,6 +1659,16 @@ int _SWARM_MULTICORE_reduce_i(_SWARM_MULTICORE_reduce_i_t nbarrier, int val,
   if (nbarrier->n_waiting == 0) {
     nbarrier->sum = val;
   } else {
+    if (op == MIN) {
+      nbarrier->sum = min(nbarrier->sum, val);
+    } else if (op == MAX) {
+      nbarrier->sum = max(nbarrier->sum, val);
+    } else if (op == SUM) {
+      nbarrier->sum += val;
+    } else {
+      perror("ERROR: _SWARM_MULTICORE_reduce_i() Bad reduction operator");
+    }
+    /*
     switch (op) {
     case MIN:
       nbarrier->sum = min(nbarrier->sum, val);
@@ -1624,6 +1682,7 @@ int _SWARM_MULTICORE_reduce_i(_SWARM_MULTICORE_reduce_i_t nbarrier, int val,
     default:
       perror("ERROR: _SWARM_MULTICORE_reduce_i() Bad reduction operator");
     }
+    */
   }
   nbarrier->n_waiting++;
   if (nbarrier->n_waiting == nbarrier->n_clients) {
@@ -1671,6 +1730,16 @@ long _SWARM_MULTICORE_reduce_l(_SWARM_MULTICORE_reduce_l_t nbarrier, long val,
   if (nbarrier->n_waiting == 0) {
     nbarrier->sum = val;
   } else {
+    if (op == MIN) {
+      nbarrier->sum = min(nbarrier->sum, val);
+    } else if (op == MAX) {
+      nbarrier->sum = max(nbarrier->sum, val);
+    } else if (op == SUM) {
+      nbarrier->sum += val;
+    } else {
+      perror("ERROR: _SWARM_MULTICORE_reduce_l() Bad reduction operator");
+    }
+    /*
     switch (op) {
     case MIN:
       nbarrier->sum = min(nbarrier->sum, val);
@@ -1684,6 +1753,7 @@ long _SWARM_MULTICORE_reduce_l(_SWARM_MULTICORE_reduce_l_t nbarrier, long val,
     default:
       perror("ERROR: _SWARM_MULTICORE_reduce_l() Bad reduction operator");
     }
+    */
   }
   nbarrier->n_waiting++;
   if (nbarrier->n_waiting == nbarrier->n_clients) {
@@ -1731,6 +1801,16 @@ double _SWARM_MULTICORE_reduce_d(_SWARM_MULTICORE_reduce_d_t nbarrier,
   if (nbarrier->n_waiting == 0) {
     nbarrier->sum = val;
   } else {
+    if (op == MIN) {
+      nbarrier->sum = min(nbarrier->sum, val);
+    } else if (op == MAX) {
+      nbarrier->sum = max(nbarrier->sum, val);
+    } else if (op == SUM) {
+      nbarrier->sum += val;
+    } else {
+      perror("ERROR: _SWARM_MULTICORE_reduce_i() Bad reduction operator");
+    }
+    /*
     switch (op) {
     case MIN:
       nbarrier->sum = min(nbarrier->sum, val);
@@ -1744,6 +1824,7 @@ double _SWARM_MULTICORE_reduce_d(_SWARM_MULTICORE_reduce_d_t nbarrier,
     default:
       perror("ERROR: _SWARM_MULTICORE_reduce_i() Bad reduction operator");
     }
+    */
   }
   nbarrier->n_waiting++;
   if (nbarrier->n_waiting == nbarrier->n_clients) {
@@ -1795,6 +1876,25 @@ int _SWARM_MULTICORE_scan_i(_SWARM_MULTICORE_scan_i_t nbarrier, int val,
   nbarrier->n_waiting++;
   if (nbarrier->n_waiting ==
       nbarrier->n_clients) { /* get the prefix result in result array*/
+    if (op == MIN) {
+      temp = nbarrier->result[0];
+      for (i = 1; i < nbarrier->n_clients; i++) {
+        temp = min(nbarrier->result[i], temp);
+        nbarrier->result[i] = temp;
+      }
+    } else if (op == MAX) {
+      temp = nbarrier->result[0];
+      for (i = 1; i < nbarrier->n_clients; i++) {
+        temp = max(nbarrier->result[i], temp);
+        nbarrier->result[i] = temp;
+      }
+    } else if (op == SUM) {
+      for (i = 1; i < nbarrier->n_clients; i++)
+        nbarrier->result[i] += nbarrier->result[i - 1];
+    } else {
+        perror("ERROR: _SWARM_MULTICORE_scan_i() Bad reduction operator");
+    }
+    /*
     switch (op) {
     case MIN:
       temp = nbarrier->result[0];
@@ -1817,6 +1917,7 @@ int _SWARM_MULTICORE_scan_i(_SWARM_MULTICORE_scan_i_t nbarrier, int val,
     default:
       perror("ERROR: _SWARM_MULTICORE_scan_i() Bad reduction operator");
     }
+    */
     nbarrier->n_waiting = 0;
     nbarrier->phase = 1 - my_phase;
     pthread_cond_broadcast(&nbarrier->wait_cv);
@@ -1863,6 +1964,25 @@ long _SWARM_MULTICORE_scan_l(_SWARM_MULTICORE_scan_l_t nbarrier, long val,
 
   nbarrier->n_waiting++;
   if (nbarrier->n_waiting == nbarrier->n_clients) { /*get the prefix*/
+    if (op == MIN) {
+      temp = nbarrier->result[0];
+      for (i = 1; i < nbarrier->n_clients; i++) {
+        temp = min(nbarrier->result[i], temp);
+        nbarrier->result[i] = temp;
+      }
+    } else if (op == MAX) {
+      temp = nbarrier->result[0];
+      for (i = 1; i < nbarrier->n_clients; i++) {
+        temp = max(nbarrier->result[i], temp);
+        nbarrier->result[i] = temp;
+      }
+    } else if (op == SUM) {
+      for (i = 1; i < nbarrier->n_clients; i++)
+        nbarrier->result[i] += nbarrier->result[i - 1];
+    } else {
+            perror("ERROR: _SWARM_MULTICORE_scan_i() Bad reduction operator");
+    }
+    /*
     switch (op) {
     case MIN:
       temp = nbarrier->result[0];
@@ -1885,6 +2005,7 @@ long _SWARM_MULTICORE_scan_l(_SWARM_MULTICORE_scan_l_t nbarrier, long val,
     default:
       perror("ERROR: _SWARM_MULTICORE_scan_i() Bad reduction operator");
     }
+    */
     nbarrier->n_waiting = 0;
     nbarrier->phase = 1 - my_phase;
     pthread_cond_broadcast(&nbarrier->wait_cv);
@@ -1931,6 +2052,25 @@ double _SWARM_MULTICORE_scan_d(_SWARM_MULTICORE_scan_d_t nbarrier, double val,
   nbarrier->result[th_index] = val;
   nbarrier->n_waiting++;
   if (nbarrier->n_waiting == nbarrier->n_clients) {
+    if (op == MIN) {
+      temp = nbarrier->result[0];
+      for (i = 1; i < nbarrier->n_clients; i++) {
+        temp = min(nbarrier->result[i], temp);
+        nbarrier->result[i] = temp;
+      }
+    } else if (op == MAX) {
+      temp = nbarrier->result[0];
+      for (i = 1; i < nbarrier->n_clients; i++) {
+        temp = max(nbarrier->result[i], temp);
+        nbarrier->result[i] = temp;
+      }
+    } else if (op == SUM) {
+      for (i = 1; i < nbarrier->n_clients; i++)
+        nbarrier->result[i] += nbarrier->result[i - 1];
+    } else {
+            perror("ERROR: _SWARM_MULTICORE_scan_i() Bad reduction operator");
+    }
+    /*
     switch (op) {
     case MIN:
       temp = nbarrier->result[0];
@@ -1953,6 +2093,7 @@ double _SWARM_MULTICORE_scan_d(_SWARM_MULTICORE_scan_d_t nbarrier, double val,
     default:
       perror("ERROR: _SWARM_MULTICORE_scan_i() Bad reduction operator");
     }
+    */
     nbarrier->n_waiting = 0;
     nbarrier->phase = 1 - my_phase;
     pthread_cond_broadcast(&nbarrier->wait_cv);
@@ -2110,8 +2251,8 @@ static void *swarmtest(THREADED) {
 }
 
 int main(int argc, char **argv) {
-  make_input(doprint);
-  make_input(dotest);
+  make_input(&doprint);
+  make_input(&dotest);
   SWARM_Init(&argc, &argv);
   SWARM_Run((void *)swarmtest);
   SWARM_Finalize();

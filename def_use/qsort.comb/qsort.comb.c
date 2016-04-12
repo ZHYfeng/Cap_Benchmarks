@@ -583,8 +583,8 @@ int main(void) {
   int hour, min;
   float sec;
   struct timeval start, stop;
-  make_input(doprint);
-  make_input(dotest);
+  make_input(&doprint);
+  make_input(&dotest);
 
   for (ii = 0; ii < SIZE; ii++) {
     orig_array[ii] = 100 - ii;
