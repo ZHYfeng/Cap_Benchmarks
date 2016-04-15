@@ -307,7 +307,7 @@ int bs_thread(void *tid_ptr) {
   int end = start + (numOptions / nThreads);
 
   if (errorInput) {
-
+    
     for (j = 0; j < NUM_RUNS; j++) {
 #ifdef ENABLE_OPENMP
 #pragma omp parallel for private(i, price, priceDelta)

@@ -350,24 +350,24 @@ rank_partition[p] = radix;
        maxrank = avgrank = minrank = global->ranktime[0];
        maxsort = avgsort = minsort = global->sorttime[0];
        for (i=1; i<number_of_processors; i++) {
-         if (global->totaltime[i] > maxt) {
+         // if (global->totaltime[i] > maxt) {
            maxt = global->totaltime[i];
-         }
-         if (global->totaltime[i] < mint) {
+         // }
+         // if (global->totaltime[i] < mint) {
            mint = global->totaltime[i];
-         }
-         if (global->ranktime[i] > maxrank) {
+         // }
+         // if (global->ranktime[i] > maxrank) {
            maxrank = global->ranktime[i];
-         }
-         if (global->ranktime[i] < minrank) {
+         // }
+         // if (global->ranktime[i] < minrank) {
            minrank = global->ranktime[i];
-         }
-         if (global->sorttime[i] > maxsort) {
+         // }
+         // if (global->sorttime[i] > maxsort) {
            maxsort = global->sorttime[i];
-         }
-         if (global->sorttime[i] < minsort) {
+         // }
+         // if (global->sorttime[i] < minsort) {
            minsort = global->sorttime[i];
-         }
+         // }
          avgt += global->totaltime[i];
          avgrank += global->ranktime[i];
          avgsort += global->sorttime[i];

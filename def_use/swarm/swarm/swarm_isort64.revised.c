@@ -399,17 +399,20 @@ void countsort_swarm(long q, int *lKey, int *lSorted, int R, int bitOff, int m,
   pardo(x, 0, q, 1) mhp[bits(lKey[x], bitOff, m)]++;
 
   SWARM_Barrier();
+  // printf("after swarm_barrier before pardo\n");
   pardo(k, 0, R, 1) {
     last = psHisto[k] = myHisto[k];
+    // printf("before doprint print\n");
     for (j = 1; j < THREADS; j++) {
       temp = psHisto[j * R + k] = last + myHisto[j * R + k];
       last = temp;
-      if (doprint) {
-        printf("%d\n", myHisto[j * R + k]);
-      }
-      if (doprint * doprint < 0) {
-        printf("%d\n", myHisto[j * R + k]);
-      }
+      // printf("doprint = %d\n", doprint);
+      // if (doprint) {
+      //   printf("%d\n", myHisto[j * R + k]);
+      // }
+      // if (doprint * doprint < 0) {
+      //   printf("%d\n", myHisto[j * R + k]);
+      // }
     }
   }
 

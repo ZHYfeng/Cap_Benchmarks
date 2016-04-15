@@ -266,30 +266,31 @@ int main(int argc, char *argv[])
     min_bar = max_bar = avg_bar = Global->t_in_bar[0];
 
     for (i=1; i<P; i++) {
-      if (Global->t_in_fac[i] > max_fac) {
+      // if (Global->t_in_fac[i] > max_fac) {
         max_fac = Global->t_in_fac[i];
-      }
-      if (Global->t_in_fac[i] < min_fac) {
+      // }
+      // if (Global->t_in_fac[i] < min_fac) {
         min_fac = Global->t_in_fac[i];
-      }
-      if (Global->t_in_solve[i] > max_solve) {
+      // }
+      // if (Global->t_in_solve[i] > max_solve) {
         max_solve = Global->t_in_solve[i];
-      }
-      if (Global->t_in_solve[i] < min_solve) {
+      // }
+      // if (Global->t_in_solve[i] < min_solve) {
         min_solve = Global->t_in_solve[i];
-      }
-      if (Global->t_in_mod[i] > max_mod) {
+      // }
+      // if (Global->t_in_mod[i] > max_mod) {
         max_mod = Global->t_in_mod[i];
-      }
-      if (Global->t_in_mod[i] < min_mod) {
+      // }
+      // if (Global->t_in_mod[i] < min_mod) {
         min_mod = Global->t_in_mod[i];
-      }
-      if (Global->t_in_bar[i] > max_bar) {
+      // }
+      // printf("min_bar = %lf, max_bar = %lf\n", min_bar, max_bar);
+      // if (Global->t_in_bar[i] > max_bar) {
         max_bar = Global->t_in_bar[i];
-      }
-      if (Global->t_in_bar[i] < min_bar) {
+      // }
+      // if (Global->t_in_bar[i] < min_bar) {
         min_bar = Global->t_in_bar[i];
-      }
+      // }
       avg_fac += Global->t_in_fac[i];
       avg_solve += Global->t_in_solve[i];
       avg_mod += Global->t_in_mod[i];
