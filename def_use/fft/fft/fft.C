@@ -50,7 +50,7 @@
 #define NUM_CACHE_LINES        65536 
 #define LOG2_LINE_SIZE             4
 #define PI                         3.1416
-#define DEFAULT_M                  4
+#define DEFAULT_M                  2 // 4
 #define DEFAULT_P                  2
 
 MAIN_ENV
@@ -352,14 +352,14 @@ int main(int argc, char *argv[])
   CREATE(SlaveStart, P);
   WAIT_FOR_END(P);
 
-  if (doprint) {
-    if (test_result) {
-      printf("Data values after inverse FFT:\n");
-    } else {
-      printf("Data values after FFT:\n");
-    }
-    PrintArray(N, x);
-  }
+  // if (doprint) {
+  //   if (test_result) {
+  //     printf("Data values after inverse FFT:\n");
+  //   } else {
+  //     printf("Data values after FFT:\n");
+  //   }
+  //   PrintArray(N, x);
+  // }
 
   transtime = Global->transtimes[0];
   printf("\n");
