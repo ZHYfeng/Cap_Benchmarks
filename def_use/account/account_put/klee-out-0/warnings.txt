@@ -1,5 +1,0 @@
-KLEE: WARNING: undefined reference to function: pthread_create
-KLEE: WARNING: undefined reference to function: pthread_mutex_init
-KLEE: WARNING: undefined reference to function: pthread_mutex_lock
-KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(56193920, 0)
