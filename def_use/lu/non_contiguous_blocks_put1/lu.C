@@ -46,7 +46,7 @@ MAIN_ENV
 //#define DEFAULT_N				128
 //#define DEFAULT_P				1
 //#define DEFAULT_B				16
-#define DEFAULT_N                         8
+#define DEFAULT_N                         4 // 8
 #define DEFAULT_P                         2
 #define DEFAULT_B                         2
 

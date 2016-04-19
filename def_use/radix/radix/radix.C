@@ -356,6 +356,7 @@ rank_partition[p] = radix;
          // if (global->totaltime[i] < mint) {
            mint = global->totaltime[i];
          // }
+         printf("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH\n");
          // if (global->ranktime[i] > maxrank) {
            maxrank = global->ranktime[i];
          // }
