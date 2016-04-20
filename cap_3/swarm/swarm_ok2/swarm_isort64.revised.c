@@ -2110,7 +2110,7 @@ static void test_radixsort_swarm(long N1, THREADED) {
     assert2++;
   }
   printf("MYTHREAD : %d assert1 : %d assert2 : %d\n", MYTHREAD, assert1, assert2);
-  assert(assert2 != 3);
+  assert(assert2 != 4);
 
   SWARM_Barrier();
 

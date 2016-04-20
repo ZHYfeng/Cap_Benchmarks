@@ -1057,16 +1057,9 @@ char *SWARM_Bcast_cp(char *myval, THREADED) {
 
   on_one_thread {
     _SWARM_bcast_cp = myval;
-    // assert1 = 1;
   }
-  // if (!assert1) {
-  //   assert2++;
-  // }
-  assert1 = MYTHREAD;
-  printf("MYTHREAD : %d assert1 : %d\n", MYTHREAD, assert1);
-  assert(assert1 == MYTHREAD);
+
   SWARM_Barrier();
-  // assert(assert2 != 3);
   return (_SWARM_bcast_cp);
 }
 
@@ -2030,7 +2023,7 @@ static void test_radixsort_swarm(long N1, THREADED) {
 #if TIMING
   double secs, tsec;
 #endif
-
+  int temp;
   inArr = (int *)SWARM_malloc_l(N1 * sizeof(int), TH);
   outArr = (int *)SWARM_malloc_l(N1 * sizeof(int), TH);
   /*
@@ -2096,10 +2089,16 @@ static void test_radixsort_swarm(long N1, THREADED) {
 // create_input_nas_swarm(N1, inArr, TH);
 
 #if TIMING
-  printf("TIMING\n");
   SWARM_Barrier();
   secs = get_seconds();
 #endif
+
+  printf("MYTHREAD : %d assert1 : %d\n", MYTHREAD, assert1);
+  // pthread_mutex_lock(&assertM);
+  assert1++;
+  temp = assert1;
+  assert(assert1 == temp);
+  // pthread_mutex_unlock(&assertM);
 
   radixsort_swarm(N1, inArr, outArr, TH);
 
