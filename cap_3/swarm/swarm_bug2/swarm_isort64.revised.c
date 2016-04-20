@@ -372,6 +372,18 @@ void radixsort_check(long q, int *lSorted);
 
 #define bits(x, k, j) ((x >> k) & ~(~0 << j))
 
+static int _SWARM_bcast_i;
+static long _SWARM_bcast_l;
+static double _SWARM_bcast_d;
+static char _SWARM_bcast_c;
+static int *_SWARM_bcast_ip;
+static long *_SWARM_bcast_lp;
+static double *_SWARM_bcast_dp;
+static char *_SWARM_bcast_cp;
+
+int assert1;
+int assert2;
+
 /****************************************************/
 void countsort_swarm(long q, int *lKey, int *lSorted, int R, int bitOff, int m,
                      THREADED)
@@ -436,7 +448,9 @@ void radixsort_check(long q, int *lSorted)
 {
   long i;
 
-  for (i = 1; i < q; i++)
+  for (i = 1; i < q; i++) {
+    printf("q:%ld lSorted[%6ld] > lSorted[%6ld] (%6d,%6d)\n", q, i - 1, i,
+           lSorted[i - 1], lSorted[i]);
     if (lSorted[i - 1] > lSorted[i]) {
       fprintf(stderr, "ERROR: q:%ld lSorted[%6ld] > lSorted[%6ld] (%6d,%6d)\n",
               q, i - 1, i, lSorted[i - 1], lSorted[i]);
@@ -444,6 +458,7 @@ void radixsort_check(long q, int *lSorted)
       thrilleAssertC(0);
 #endif
     }
+  }
 }
 
 /****************************************************/
@@ -453,7 +468,6 @@ void radixsort_swarm_s3(long q, int *lKeys, int *lSorted, THREADED)
   int *lTemp;
 
   lTemp = (int *)SWARM_malloc_l(q * sizeof(int), TH);
-
   countsort_swarm(q, lKeys, lTemp, (1 << 2), 0, 2, TH);
   countsort_swarm(q, lTemp, lSorted, (1 << 1), 2, 1, TH);
 
@@ -822,15 +836,6 @@ static int _swarm_init = 0;
 
 #define MAX_GATHER 2
 
-static int _SWARM_bcast_i;
-static long _SWARM_bcast_l;
-static double _SWARM_bcast_d;
-static char _SWARM_bcast_c;
-static int *_SWARM_bcast_ip;
-static long *_SWARM_bcast_lp;
-static double *_SWARM_bcast_dp;
-static char *_SWARM_bcast_cp;
-
 static _SWARM_MULTICORE_barrier_t nbar;
 
 int SWARM_mutex_init(SWARM_mutex_t **mutex, const SWARM_mutexattr_t *attr,
@@ -1050,9 +1055,18 @@ char *SWARM_Bcast_cp(char *myval, THREADED) {
 
   SWARM_Barrier();
 
-  on_one_thread { _SWARM_bcast_cp = myval; }
-
+  on_one_thread {
+    _SWARM_bcast_cp = myval;
+    assert1 = 1;
+  }
+  if (!assert1) {
+    assert2++;
+  }
+  // assert1 = MYTHREAD;
+  // printf("MYTHREAD : %d assert1 : %d\n", MYTHREAD, assert1);
+  // assert(assert1 == MYTHREAD);
   SWARM_Barrier();
+  assert(assert2 != 3);
   return (_SWARM_bcast_cp);
 }
 
@@ -1300,6 +1314,8 @@ void SWARM_Init(int *argc, char ***argv) {
 
   THREADS = SWARM_get_num_cores();
   THREADS = 4;
+  assert1 = 0;
+  assert2 = 0;
 
   SWARM_outfile = stdout;
   SWARM_outfilename = NULL;
@@ -2080,6 +2096,7 @@ static void test_radixsort_swarm(long N1, THREADED) {
 // create_input_nas_swarm(N1, inArr, TH);
 
 #if TIMING
+  printf("TIMING\n");
   SWARM_Barrier();
   secs = get_seconds();
 #endif
@@ -2095,7 +2112,7 @@ static void test_radixsort_swarm(long N1, THREADED) {
 
   SWARM_Barrier();
 
-  on_one radixsort_check(N1, outArr);
+  radixsort_check(N1, outArr);
 
   SWARM_Barrier();
 
