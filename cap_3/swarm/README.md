@@ -10,6 +10,7 @@
  > 都是分配在同一块内存。
  > 线程ID为0的负责malloc内存。
  > 每个线程通过不同的偏移量访问自己的数据。
+ 3. 1.73M expr, so it can not solve.
 
  3. 通过SWARM_Barrier()保持4个线程同步工作。
 
