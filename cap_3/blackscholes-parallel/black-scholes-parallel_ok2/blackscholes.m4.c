@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <assert.h>
 
 #ifdef ENABLE_PARSEC_HOOKS
 #include <hooks.h>
@@ -103,6 +104,9 @@ fptype *volatility;
 fptype *otime;
 int numError = 0;
 int nThreads;
+int assert1;
+int assert2;
+pthread_mutex_t assertL;
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -305,11 +309,21 @@ int bs_thread(void *tid_ptr) {
   int start = tid * (numOptions / nThreads);
   int end = start + (numOptions / nThreads);
 
+  printf("tid : %d\n", tid);
+  if (tid == 0) {
+    assert1++;
+  }
+  if (assert1) {
+    assert2++;
+  }
+  printf("assert1 : %d assert2 : %d\n", assert1, assert2);
+  assert(assert2 != 0);
+
   for (j = 0; j < NUM_RUNS; j++) {
 #ifdef ENABLE_OPENMP
 #pragma omp parallel for private(i, price, priceDelta)
     for (i = 0; i < numOptions; i++) {
-#else // ENABLE_OPENMP
+#else  // ENABLE_OPENMP
     for (i = start; i < end; i++) {
 #endif // ENABLE_OPENMP
       /* Calling main function to calculate option value based on
@@ -341,6 +355,9 @@ int main(int argc, char **argv) {
   fptype *buffer;
   int *buffer2;
   int rv;
+
+  assert1 = 0;
+  assert2 = 0;
 
 #ifdef PARSEC_VERSION
 #define __PARSEC_STRING(x) #x
@@ -496,7 +513,7 @@ int main(int argc, char **argv) {
   };
   free(tids);
 #endif // WIN32
-#else // ENABLE_THREADS
+#else  // ENABLE_THREADS
 #ifdef ENABLE_OPENMP
   {
     int tid = 0;
@@ -509,7 +526,7 @@ int main(int argc, char **argv) {
 
   int tid = 0;
   bs_thread(&tid);
-#else // ENABLE_TBB
+#else  // ENABLE_TBB
   // serial version
   int tid = 0;
   bs_thread(&tid);

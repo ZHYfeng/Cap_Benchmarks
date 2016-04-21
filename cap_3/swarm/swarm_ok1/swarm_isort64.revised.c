@@ -1309,6 +1309,7 @@ void SWARM_Init(int *argc, char ***argv) {
   THREADS = 4;
   assert1 = 0;
   assert2 = 0;
+  pthread_mutex_init(&assertM, NULL);
 
   SWARM_outfile = stdout;
   SWARM_outfilename = NULL;
