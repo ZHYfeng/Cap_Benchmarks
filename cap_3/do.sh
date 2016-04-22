@@ -41,7 +41,7 @@ recurrence(){
 	cd $1
 	for file in `ls`
 	do
-		rm do.sh all.md DATE1.txt DATE2.txt
+		# rm do.sh all.md DATE1.txt DATE2.txt
 		if [ -d $file ]
 			then
 			recurrence $file
@@ -51,19 +51,19 @@ recurrence(){
 			# echo "#"$now >> ${all}/all.md
 			make clean
 			rm -rf klee* output_info result.txt
-			rm do.sh all.md DATE1.txt DATE2.txt
-			# make
-			# getmemory $now &
-			# ./$file
+			# rm do.sh all.md DATE1.txt DATE2.txt
+			make
+			getmemory $now &
+			./$file
 			# awk -F" " '{ if( $1 == "klee" ) { printf("- 运行命令:\n\t"); x=1; while( x<NF-1 ){ printf("%s ",$x); x++; } printf("\n"); } }' ./$file >> ${all}/all.md
 			# more ./README >> ${all}/all.md
 			# echo "" >> ${all}/all.md
-			# totalline
-			# pwd | awk -F"/" '{ printf("name:%s\n",$NF); }' >> ./output_info/statics.txt
+			totalline
+			pwd | awk -F"/" '{ printf("name:%s\n",$NF); }' >> ./output_info/statics.txt
 			# more ./output_info/statics.txt >> ${all}/all.md
-			# sleep 1
-			# awk -F":" '{ printf("%s ",$2); }' ./output_info/statics.txt >> ${all}/DATE1.txt
-			# echo "" >> ${all}/DATE1.txt
+			sleep 1
+			awk -F":" '{ printf("%s ",$2); }' ./output_info/statics.txt >> ${all}/DATE1.txt
+			echo "" >> ${all}/DATE1.txt
 			# echo "" >> ${all}/all.md
 			# echo "" >> ${all}/all.md
 			# echo "" >> ${all}/all.md
@@ -78,4 +78,4 @@ rm ${all}/all.md
 rm ${all}/DATE1.txt
 rm ${all}/DATE2.txt
 recurrence "."
-# awk -F" " '{ printf("%s %s %s %s ",$NF,$(NF-1),$(NF-2),$(NF-3)); x=1; while( x<NF-3 ){ printf("%s ",$x); x++; } printf("\n"); }' ${all}/DATE1.txt >> ${all}/DATE2.txt
+awk -F" " '{ printf("%s %s %s %s ",$NF,$(NF-1),$(NF-2),$(NF-3)); x=1; while( x<NF-3 ){ printf("%s ",$x); x++; } printf("\n"); }' ${all}/DATE1.txt >> ${all}/DATE2.txt
