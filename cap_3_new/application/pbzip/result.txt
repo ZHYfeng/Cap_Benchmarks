@@ -1,0 +1,132 @@
+KLEE: output directory is "/home/zhy/git/Benchmarks/cap_3_new/application/pbzip/klee-out-6"
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: __isoc99_sscanf
+KLEE: WARNING: undefined reference to function: chmod
+KLEE: WARNING: undefined reference to function: chown
+KLEE: WARNING: undefined reference to function: close
+KLEE: WARNING: undefined reference to function: fclose
+KLEE: WARNING: undefined reference to function: fdopen
+KLEE: WARNING: undefined reference to function: ferror
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fgetc
+KLEE: WARNING: undefined reference to function: fopen
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: fread
+KLEE: WARNING: undefined reference to function: fstat
+KLEE: WARNING: undefined reference to function: fwrite
+KLEE: WARNING: undefined reference to function: lseek
+KLEE: WARNING: undefined reference to function: open
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_destroy
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_signal
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_destroy
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: pthread_self
+KLEE: WARNING: undefined reference to function: read
+KLEE: WARNING: undefined reference to function: remove
+KLEE: WARNING: undefined reference to function: signal
+KLEE: WARNING: undefined reference to function: stat
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdin
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strcat
+KLEE: WARNING: undefined reference to function: strcmp
+KLEE: WARNING: undefined reference to function: strcpy
+KLEE: WARNING: undefined reference to function: strlen
+KLEE: WARNING: undefined reference to function: strncasecmp
+KLEE: WARNING: undefined reference to function: strncpy
+KLEE: WARNING: undefined reference to function: strstr
+KLEE: WARNING: undefined reference to function: ungetc
+KLEE: WARNING: undefined reference to function: utime
+KLEE: WARNING: undefined reference to function: vfprintf
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: gettimeofday(39505408, 39513280)
+KLEE: WARNING ONCE: calling external: strcpy(39507648, 39114032)
+KLEE: WARNING ONCE: calling external: strncpy(39507648, 33370962, 1)
+KLEE: WARNING ONCE: calling external: fprintf(140279550747072, 39096176)
+Parallel BZIP2 v0.9.4 - by: Jeff Gilchrist [http://compression.ca]
+[Aug. 30, 2005]             (uses libbzip2  by Julian Seward)
+
+** This is a BETA version - Use at your own risk! **
+KLEE: WARNING ONCE: calling external: signal(2, 25680480)
+
+         # CPUs: 1
+ BWT Block Size: 900k
+File Block Size: 900k
+-------------------------------------------
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(39965056, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(40078288, 0)
+KLEE: WARNING ONCE: calling external: strlen(28747024)
+KLEE: WARNING ONCE: calling external: strncasecmp(28747074, 39125136, 4)
+KLEE: WARNING ONCE: calling external: strcat(39505472, 39125136)
+KLEE: WARNING ONCE: calling external: open(28747024, 0)
+KLEE: WARNING ONCE: calling external: fstat(8, 39514608)
+KLEE: WARNING ONCE: calling external: stat(28747024, 39095264)
+         File #: 1 of 1
+     Input Name: /home/zhy/git/Benchmarks/cap_3_new/application/pbzip/2
+    Output Name: /home/zhy/git/Benchmarks/cap_3_new/application/pbzip/2.bz2
+
+     Input Size: 1 bytes
+Compressing data...
+numCPU : 1
+KLEE: WARNING ONCE: calling external: read(8, 40244240, 1)
+KLEE: WARNING ONCE: calling external: close(8)
+KLEE: WARNING ONCE: calling external: write(8, 40429536, 37)
+Completed: 100%             KLEE: WARNING ONCE: calling external: fflush(140279550747072)
+    Output Size: 37 bytes
+KLEE: WARNING ONCE: calling external: chmod(39505472, 33188)
+KLEE: WARNING ONCE: calling external: utime(39505472, 40665056)
+KLEE: WARNING ONCE: calling external: chown(39505472, 1000, 1000)
+-------------------------------------------
+KLEE: WARNING ONCE: calling external: pthread_mutex_destroy(40050496)
+KLEE: WARNING ONCE: calling external: pthread_cond_destroy(40078288)
+
+     Wall Clock: 0.440105 seconds
+######################本条路径为新路径####################
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 3
+Verifying assert 1 @Trace1#7825#E914#1-0assert_bug: Yes!
+Assert Failure at /home/zhy/git/Benchmarks/cap_3_new/application/pbzip/pbzip2_revise2.c: 7825
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#7825#E914#1-0assert_bug.txt
+************************************************************************
+
+Parallel BZIP2 v0.9.4 - by: Jeff Gilchrist [http://compression.ca]
+[Aug. 30, 2005]             (uses libbzip2  by Julian Seward)
+
+** This is a BETA version - Use at your own risk! **
+
+         # CPUs: 1
+ BWT Block Size: 900k
+File Block Size: 900k
+-------------------------------------------
+         File #: 1 of 1
+     Input Name: /home/zhy/git/Benchmarks/cap_3_new/application/pbzip/2
+    Output Name: /home/zhy/git/Benchmarks/cap_3_new/application/pbzip/2.bz2
+
+     Input Size: 1 bytes
+Compressing data...
+numCPU : 1
+KLEE: ERROR: /home/zhy/git/Benchmarks/cap_3_new/application/pbzip/pbzip2_revise2.c:7825: ASSERTION FAIL: assert1 == temp
+KLEE: NOTE: now ignoring this error at this location
+encounter runtime error
+######################执行有错误,放弃本次执行##############
+
+KLEE: done: total instructions = 58285
+KLEE: done: completed paths = 2
+KLEE: done: generated tests = 0

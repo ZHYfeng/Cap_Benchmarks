@@ -1,0 +1,73 @@
+KLEE: output directory is "/home/zhy/git/Benchmarks/cap_3_new/application/pcopy-1.5/klee-out-0"
+KLEE: WARNING: undefined reference to function: _IO_putc
+KLEE: WARNING: undefined reference to function: __errno_location
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: lseek
+KLEE: WARNING: undefined reference to function: open
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_signal
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: putchar
+KLEE: WARNING: undefined reference to function: read
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strerror
+KLEE: WARNING: undefined reference to function: time
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(44198608, 0)
+KLEE: WARNING ONCE: calling external: printf(44202784, 43943296, 43942720)
+KLEE: WARNING ONCE: calling external: fflush(140718894109696)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+KLEE: WARNING ONCE: calling external: open(43943296, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(44553576, 0)
+KLEE: WARNING ONCE: calling external: time(44194592)
+KLEE: WARNING ONCE: calling external: read(8, 140718929158160, 1048576)
+KLEE: WARNING ONCE: calling external: lseek(9, 0, 0)
+KLEE: WARNING ONCE: calling external: write(9, 140718929158160, 1)
+KLEE: WARNING ONCE: calling external: putchar(10)
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 17
+Verifying assert 1 @Trace1#221#E222#1-0assert_bug: No!
+Verifying assert 2 @Trace1#221#E320#1-0assert_bug: No!
+Verifying assert 3 @Trace1#221#E418#1-0assert_bug: No!
+Verifying assert 4 @Trace1#221#E516#1-0assert_bug: No!
+Verifying assert 5 @Trace1#221#E614#1-0assert_bug: No!
+Verifying assert 6 @Trace1#221#E712#1-0assert_bug: No!
+Verifying assert 7 @Trace1#221#E810#1-0assert_bug: No!
+Verifying assert 8 @Trace1#221#E908#1-0assert_bug: No!
+Verifying assert 9 @Trace1#490#E959#1-0assert_bug: Yes!
+Assert Failure at /home/zhy/git/Benchmarks/cap_3_new/application/pcopy-1.5/pcopy.c: 490
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#490#E959#1-0assert_bug.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+KLEE: ERROR: /home/zhy/git/Benchmarks/cap_3_new/application/pcopy-1.5/pcopy.c:490: ASSERTION FAIL: assert1 == temp
+KLEE: NOTE: now ignoring this error at this location
+encounter runtime error
+######################执行有错误,放弃本次执行##############
+
+KLEE: done: total instructions = 2717
+KLEE: done: completed paths = 2
+KLEE: done: generated tests = 0
