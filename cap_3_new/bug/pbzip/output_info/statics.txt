@@ -1,18 +1,18 @@
-AllFormulaNum:2235
-SovingTimes:9
+AllFormulaNum:9052
+SovingTimes:1
 TotalNewPath:1
 TotalOldPath:1
 TotalPath:2
-allGlobal:190
-brGlobal:156
+allGlobal:1975
+brGlobal:1835
 AllBranch:0
 satBranch:0
 satCost:0
 unSatBranchBySolve:0
 unSatCost:0
 unSatBranchByPreSolve:0
-SolvingCost:128.821
-RunningCost:0.116524
+SolvingCost:8.84154
+RunningCost:0.441744
 DTAMCost:0
 DTAMSerialCost:0
 DTAMParallelCost:0
@@ -23,6 +23,6 @@ DTAMParallelMap:0
 DTAMhybridMap:0
 taintMap:0
 
-totalline:603
-name:pcopy-1.5
-memory:368336
+totalline:7926
+name:pbzip
+memory:1460860

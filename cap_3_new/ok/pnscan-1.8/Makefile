@@ -29,7 +29,7 @@ default:
 	@echo '   lnx      (Linux with GCC)'
 	@echo '   gso      (Solaris with GCC v3)'
 	@echo '   sol      (Solaris with Forte C)'
-	@exit 1
+	@$(MAKE) all CC="$(LNX_CC)" LIBS="$(LNX_LIBS)"
 
 lnx linux:
 	@$(MAKE) all CC="$(LNX_CC)" LIBS="$(LNX_LIBS)"

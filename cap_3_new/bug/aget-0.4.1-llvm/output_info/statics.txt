@@ -1,18 +1,18 @@
-AllFormulaNum:9052
+AllFormulaNum:1301
 SovingTimes:1
 TotalNewPath:1
 TotalOldPath:1
 TotalPath:2
-allGlobal:1975
-brGlobal:1835
+allGlobal:482
+brGlobal:428
 AllBranch:0
 satBranch:0
 satCost:0
 unSatBranchBySolve:0
 unSatCost:0
 unSatBranchByPreSolve:0
-SolvingCost:9.97046
-RunningCost:0.458831
+SolvingCost:0.455219
+RunningCost:0.064925
 DTAMCost:0
 DTAMSerialCost:0
 DTAMParallelCost:0
@@ -23,3 +23,6 @@ DTAMParallelMap:0
 DTAMhybridMap:0
 taintMap:0
 
+totalline:1176
+name:aget-0.4.1-llvm
+memory:60488
