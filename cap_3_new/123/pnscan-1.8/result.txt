@@ -1,0 +1,90 @@
+KLEE: output directory is "/home/zhy/cap_3_new/123/pnscan-1.8/klee-out-0"
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: __isoc99_sscanf
+KLEE: WARNING: undefined reference to function: close
+KLEE: WARNING: undefined reference to function: connect
+KLEE: WARNING: undefined reference to function: fcntl
+KLEE: WARNING: undefined reference to function: feof
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fgets
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: gethostbyaddr
+KLEE: WARNING: undefined reference to function: getnetbyname
+KLEE: WARNING: undefined reference to function: htonl
+KLEE: WARNING: undefined reference to function: htons
+KLEE: WARNING: undefined reference to function: inet_makeaddr
+KLEE: WARNING: undefined reference to function: inet_ntoa
+KLEE: WARNING: undefined reference to function: inet_pton
+KLEE: WARNING: undefined reference to function: ntohl
+KLEE: WARNING: undefined reference to function: poll
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: putchar
+KLEE: WARNING: undefined reference to function: read
+KLEE: WARNING: undefined reference to function: setrlimit
+KLEE: WARNING: undefined reference to function: shutdown
+KLEE: WARNING: undefined reference to function: signal
+KLEE: WARNING: undefined reference to function: socket
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdin
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strcmp
+KLEE: WARNING: undefined reference to function: strtok_r
+KLEE: WARNING: undefined reference to function: tolower
+KLEE: WARNING: undefined reference to function: toupper
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(39763744, 0)
+KLEE: WARNING ONCE: calling external: getrlimit(7, 39955968)
+KLEE: WARNING ONCE: calling external: setrlimit(7, 39955968)
+KLEE: WARNING ONCE: calling external: signal(13, 1)
+KLEE: WARNING ONCE: calling external: __isoc99_sscanf(38172912, 39779296, 40176640, 40187296)
+KLEE: WARNING ONCE: calling external: printf(39767680, 40176640)
+KLEE: WARNING ONCE: calling external: strcmp(40190656, 39781120)
+KLEE: WARNING ONCE: calling external: socket(2, 1, 0)
+KLEE: WARNING ONCE: calling external: htons(80)
+KLEE: WARNING ONCE: calling external: htonl(2130706433)
+KLEE: WARNING ONCE: calling external: fcntl(8, 3, 0)
+KLEE: WARNING ONCE: calling external: connect(8, 40320480, 16)
+KLEE: WARNING ONCE: calling external: shutdown(8, 1)
+KLEE: WARNING ONCE: calling external: poll(40377456, 1, 1000)
+KLEE: WARNING ONCE: calling external: read(8, 40321744, 1023)
+KLEE: WARNING ONCE: calling external: inet_ntoa(16777343)
+KLEE: WARNING ONCE: calling external: fprintf(139797848613888, 39740112, 139797885487000, 80)
+KLEE: WARNING ONCE: calling external: putchar(10)
+KLEE: WARNING ONCE: calling external: close(8)
+KLEE: WARNING ONCE: calling external: fflush(139797848613888)
+str : 127.0.0.1
+nworkers : 1
+127.0.0.1       :    80 : TXT : 
+######################本条路径为新路径####################
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 11
+Verifying branch 1 @Trace1#878#E54#0-1: NNo!
+Verifying branch 2 @Trace1#995#E182#0-1: Cost : 0.0173 No!
+Verifying branch 3 @Trace1#998#E196#0-1: NNo!
+Verifying branch 4 @Trace1#1001#E196#1-0: Cost : 0.014257 No!
+Verifying branch 5 @Trace1#1001#E205#0-1: Cost : 0.015003 No!
+Verifying branch 6 @Trace1#615#E241#1-0: NNo!
+Verifying branch 7 @Trace1#616#E248#1-0: Cost : 0.014753 No!
+Verifying branch 8 @Trace1#193#E519#0-1: NNo!
+Verifying branch 9 @Trace1#615#E594#1-0: NNo!
+Verifying branch 10 @Trace1#616#E601#0-1: Cost : 0.015118 No!
+Verifying branch 11 @Trace1#620#E603#1-0: Cost : 0.016677 No!
+
+KLEE: done: total instructions = 611
+KLEE: done: completed paths = 1
+KLEE: done: generated tests = 0

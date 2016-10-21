@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/klee-out-0"
+KLEE: output directory is "/home/zhy/work/test/cap_3_new/bug/pbzip/klee-out-0"
 KLEE: WARNING: undefined reference to function: __ctype_b_loc
 KLEE: WARNING: undefined reference to function: __isoc99_sscanf
 KLEE: WARNING: undefined reference to function: chmod
@@ -51,48 +51,48 @@ KLEE: WARNING: undefined reference to function: write
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: gettimeofday(62411024, 62418896)
-KLEE: WARNING ONCE: calling external: strcpy(62413264, 62019184)
-KLEE: WARNING ONCE: calling external: strncpy(62413264, 56275714, 1)
-KLEE: WARNING ONCE: calling external: fprintf(139921077588416, 62001328)
+KLEE: WARNING ONCE: calling external: gettimeofday(48832848, 48840720)
+KLEE: WARNING ONCE: calling external: strcpy(48835088, 48440976)
+KLEE: WARNING ONCE: calling external: strncpy(48835088, 42719298, 1)
+KLEE: WARNING ONCE: calling external: fprintf(139889404383680, 48423072)
 Parallel BZIP2 v0.9.4 - by: Jeff Gilchrist [http://compression.ca]
 [Aug. 30, 2005]             (uses libbzip2  by Julian Seward)
 
 ** This is a BETA version - Use at your own risk! **
-KLEE: WARNING ONCE: calling external: signal(2, 48585296)
+KLEE: WARNING ONCE: calling external: signal(2, 35007056)
 
          # CPUs: 1
  BWT Block Size: 900k
 File Block Size: 900k
 -------------------------------------------
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(62870672, 0)
-KLEE: WARNING ONCE: calling external: pthread_cond_init(62983904, 0)
-KLEE: WARNING ONCE: calling external: strlen(56300736)
-KLEE: WARNING ONCE: calling external: strncasecmp(56300778, 62030288, 4)
-KLEE: WARNING ONCE: calling external: strcat(62411088, 62030288)
-KLEE: WARNING ONCE: calling external: open(56300736, 0)
-KLEE: WARNING ONCE: calling external: fstat(8, 62420224)
-KLEE: WARNING ONCE: calling external: stat(56300736, 62000416)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(49292448, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(49405680, 0)
+KLEE: WARNING ONCE: calling external: strlen(42495504)
+KLEE: WARNING ONCE: calling external: strncasecmp(42495541, 48452080, 4)
+KLEE: WARNING ONCE: calling external: strcat(48832912, 48452080)
+KLEE: WARNING ONCE: calling external: open(42495504, 0)
+KLEE: WARNING ONCE: calling external: fstat(8, 48842048)
+KLEE: WARNING ONCE: calling external: stat(42495504, 48422160)
          File #: 1 of 1
-     Input Name: /home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/2
-    Output Name: /home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/2.bz2
+     Input Name: /home/zhy/work/test/cap_3_new/bug/pbzip/2
+    Output Name: /home/zhy/work/test/cap_3_new/bug/pbzip/2.bz2
 
      Input Size: 1 bytes
 Compressing data...
 numCPU : 1
-KLEE: WARNING ONCE: calling external: read(8, 63149840, 1)
+KLEE: WARNING ONCE: calling external: read(8, 49571632, 1)
 KLEE: WARNING ONCE: calling external: close(8)
-KLEE: WARNING ONCE: calling external: write(8, 63334976, 37)
-Completed: 100%             KLEE: WARNING ONCE: calling external: fflush(139921077588416)
+KLEE: WARNING ONCE: calling external: write(8, 49757088, 37)
+Completed: 100%             KLEE: WARNING ONCE: calling external: fflush(139889404383680)
     Output Size: 37 bytes
-KLEE: WARNING ONCE: calling external: chmod(62411088, 33188)
-KLEE: WARNING ONCE: calling external: utime(62411088, 63577952)
-KLEE: WARNING ONCE: calling external: chown(62411088, 1000, 1000)
+KLEE: WARNING ONCE: calling external: chmod(48832912, 33188)
+KLEE: WARNING ONCE: calling external: utime(48832912, 49948384)
+KLEE: WARNING ONCE: calling external: chown(48832912, 1000, 1000)
 -------------------------------------------
-KLEE: WARNING ONCE: calling external: pthread_mutex_destroy(62956112)
-KLEE: WARNING ONCE: calling external: pthread_cond_destroy(62983904)
+KLEE: WARNING ONCE: calling external: pthread_mutex_destroy(49377888)
+KLEE: WARNING ONCE: calling external: pthread_cond_destroy(49405680)
 
-     Wall Clock: 0.423554 seconds
+     Wall Clock: 0.434015 seconds
 ######################本条路径为新路径####################
 buildAllFormula  success!
 
@@ -100,7 +100,7 @@ Verifying this trace......
 
 The number of assert: 3
 Verifying assert 1 @Trace1#7825#E914#1-0assert_bug: Yes!
-Assert Failure at /home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/pbzip2_revise2.c: 7825
+Assert Failure at /home/zhy/work/test/cap_3_new/bug/pbzip/pbzip2_revise2.c: 7825
 
 ************************************************************************
 第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#7825#E914#1-0assert_bug.txt
@@ -116,13 +116,13 @@ Parallel BZIP2 v0.9.4 - by: Jeff Gilchrist [http://compression.ca]
 File Block Size: 900k
 -------------------------------------------
          File #: 1 of 1
-     Input Name: /home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/2
-    Output Name: /home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/2.bz2
+     Input Name: /home/zhy/work/test/cap_3_new/bug/pbzip/2
+    Output Name: /home/zhy/work/test/cap_3_new/bug/pbzip/2.bz2
 
      Input Size: 1 bytes
 Compressing data...
 numCPU : 1
-KLEE: ERROR: /home/zhy/git/Benchmarks/cap_3_new/bug/pbzip/pbzip2_revise2.c:7825: ASSERTION FAIL: assert1 == temp
+KLEE: ERROR: /home/zhy/work/test/cap_3_new/bug/pbzip/pbzip2_revise2.c:7825: ASSERTION FAIL: assert1 == temp
 KLEE: NOTE: now ignoring this error at this location
 encounter runtime error
 ######################执行有错误,放弃本次执行##############

@@ -11,8 +11,8 @@ satCost:0
 unSatBranchBySolve:0
 unSatCost:0
 unSatBranchByPreSolve:0
-SolvingCost:8.84154
-RunningCost:0.441744
+SolvingCost:8.7019
+RunningCost:0.452564
 DTAMCost:0
 DTAMSerialCost:0
 DTAMParallelCost:0
@@ -25,4 +25,4 @@ taintMap:0
 
 totalline:7926
 name:pbzip
-memory:1460860
+memory:1461068

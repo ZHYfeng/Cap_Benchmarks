@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/git/Benchmarks/cap_3_new/application/aget-0.4.1-llvm/klee-out-3"
+KLEE: output directory is "/home/zhy/work/test/cap_3_new/ok/aget-0.4.1-llvm/klee-out-1"
 KLEE: WARNING: undefined reference to function: __errno_location
 KLEE: WARNING: undefined reference to function: __h_errno_location
 KLEE: WARNING: undefined reference to function: alarm
@@ -58,21 +58,21 @@ KLEE: WARNING: undefined reference to function: write
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(31749584, 0)
-KLEE: WARNING ONCE: calling external: getopt(2, 31199664, 31760928)
-KLEE: WARNING ONCE: calling external: strlen(30969216)
-KLEE: WARNING ONCE: calling external: printf(31778528, 32068800)
-KLEE: WARNING ONCE: calling external: strncmp(32068800, 31779136, 6)
-KLEE: WARNING ONCE: calling external: strncpy(32021312, 32200336, 5)
-KLEE: WARNING ONCE: calling external: gethostbyname(32019264)
-KLEE: WARNING ONCE: calling external: time(31768544)
-KLEE: WARNING ONCE: calling external: bzero(32436144, 16)
-KLEE: WARNING ONCE: calling external: inet_addr(32022336)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(52022960, 0)
+KLEE: WARNING ONCE: calling external: getopt(2, 51272272, 52050128)
+KLEE: WARNING ONCE: calling external: strlen(50578192)
+KLEE: WARNING ONCE: calling external: printf(52067728, 52351808)
+KLEE: WARNING ONCE: calling external: strncmp(52351808, 52068336, 6)
+KLEE: WARNING ONCE: calling external: strncpy(52304320, 52483344, 5)
+KLEE: WARNING ONCE: calling external: gethostbyname(52302272)
+KLEE: WARNING ONCE: calling external: time(52057744)
+KLEE: WARNING ONCE: calling external: bzero(53023632, 16)
+KLEE: WARNING ONCE: calling external: inet_addr(52305344)
 KLEE: WARNING ONCE: calling external: htons(80)
 KLEE: WARNING ONCE: calling external: socket(2, 1, 0)
-KLEE: WARNING ONCE: calling external: connect(8, 32436144, 16)
-KLEE: WARNING ONCE: calling external: sprintf(32909248, 31793712, 31792736)
-KLEE: WARNING ONCE: calling external: fflush(140666154419200)
+KLEE: WARNING ONCE: calling external: connect(8, 53023632, 16)
+KLEE: WARNING ONCE: calling external: sprintf(53174752, 52082912, 52079520)
+KLEE: WARNING ONCE: calling external: fflush(139980601013248)
 http://127.0.0.1/2.txt
 size : 5
 2
@@ -83,23 +83,23 @@ t
 req->host : 127.0.0.1
 req->ip : 
 req->ip : 127.0.0.1
-KLEE: WARNING ONCE: calling external: vfprintf(140666154418624, 32909248, 32897168)
-<LOG> Head-Request Connection establishedKLEE: WARNING ONCE: calling external: fprintf(140666154418624, 31791200)
+KLEE: WARNING ONCE: calling external: vfprintf(139980601012672, 53174752, 53147072)
+<LOG> Head-Request Connection establishedKLEE: WARNING ONCE: calling external: fprintf(139980601012672, 52080448)
 
-KLEE: WARNING ONCE: calling external: send(8, 32851472, 76, 0)
-KLEE: WARNING ONCE: calling external: recv(8, 32855936, 512, 0)
-KLEE: WARNING ONCE: calling external: strstr(32855936, 31796752)
-KLEE: WARNING ONCE: calling external: strtok(32855936, 31806976)
-KLEE: WARNING ONCE: calling external: strncasecmp(32855953, 31808240, 15)
-KLEE: WARNING ONCE: calling external: atoll(32856129)
+KLEE: WARNING ONCE: calling external: send(8, 53136096, 76, 0)
+KLEE: WARNING ONCE: calling external: recv(8, 53119120, 512, 0)
+KLEE: WARNING ONCE: calling external: strstr(53119120, 52085952)
+KLEE: WARNING ONCE: calling external: strtok(53119120, 52096176)
+KLEE: WARNING ONCE: calling external: strncasecmp(53119137, 52097440, 15)
+KLEE: WARNING ONCE: calling external: atoll(53119313)
 <LOG> Downloading /2.txt (4 bytes) from site 127.0.0.1(127.0.0.1:80). Number of Threads: 1
-KLEE: WARNING ONCE: calling external: open(32021312, 66, 448)
+KLEE: WARNING ONCE: calling external: open(52304320, 66, 448)
 KLEE: WARNING ONCE: calling external: lseek(9, 3, 0)
-KLEE: WARNING ONCE: calling external: write(9, 31773248, 1)
+KLEE: WARNING ONCE: calling external: write(9, 52062448, 1)
 KLEE: WARNING ONCE: calling external: dup(9)
-KLEE: WARNING ONCE: calling external: snprintf(33056688, 256, 31775136, 32020288, 32019264, 31775872, 0)
-KLEE: WARNING ONCE: calling external: pthread_sigmask(1, 31769792, 0)
-KLEE: WARNING ONCE: calling external: pwrite(10, 33233948, 4, 0)
+KLEE: WARNING ONCE: calling external: snprintf(53340416, 256, 52064336, 52303296, 52302272, 52065072, 0)
+KLEE: WARNING ONCE: calling external: pthread_sigmask(1, 52058992, 0)
+KLEE: WARNING ONCE: calling external: pwrite(10, 53516684, 4, 0)
 KLEE: WARNING ONCE: calling external: close(11)
 req->clength : 4
 foffset : 4
@@ -118,7 +118,7 @@ Verifying assert 2 @Trace1#28#E1898#1-0assert_bug: No!
 Verifying is over!
 Sum of branches: 364
 Verifying branch 1 @Trace1#91#E40#0-1: NNo!
-Verifying branch 2 @Trace1#33#E546#1-0: Cost : 0.118971 No!
+Verifying branch 2 @Trace1#33#E546#1-0: Cost : 0.112239 No!
 Verifying branch 3 @Trace1#46#E573#1-0: NNo!
 Verifying branch 4 @Trace1#51#E581#0-1: NNo!
 Verifying branch 5 @Trace1#46#E601#1-0: NNo!
@@ -163,7 +163,7 @@ Verifying branch 43 @Trace1#93#E1707#1-0: NNo!
 Verifying branch 44 @Trace1#97#E1775#1-0: NNo!
 Verifying branch 45 @Trace1#93#E1871#0-1: NNo!
 Verifying branch 46 @Trace1#114#E1879#1-0: NNo!
-Verifying branch 47 @Trace1#50#E1915#1-0: Cost : 0.129393 Yes!
+Verifying branch 47 @Trace1#50#E1915#1-0: Cost : 0.127568 Yes!
 Verifying branch 48 @Trace1#90#E2010#0-1: NNo!
 Verifying branch 49 @Trace1#90#E2022#0-1: NNo!
 Verifying branch 50 @Trace1#90#E2034#0-1: NNo!
@@ -471,10 +471,10 @@ Verifying branch 351 @Trace1#90#E5526#0-1: NNo!
 Verifying branch 352 @Trace1#90#E5532#0-1: NNo!
 Verifying branch 353 @Trace1#90#E5538#0-1: NNo!
 Verifying branch 354 @Trace1#90#E5544#0-1: NNo!
-Verifying branch 355 @Trace1#100#E5567#0-1: Cost : 0.014732 No!
-Verifying branch 356 @Trace1#112#E5602#0-1: Cost : 0.013947 No!
-Verifying branch 357 @Trace1#126#E5611#1-0: Cost : 0.014823 No!
-Verifying branch 358 @Trace1#116#E5626#1-0: Cost : 0.00125 No!
+Verifying branch 355 @Trace1#100#E5567#0-1: Cost : 0.016643 No!
+Verifying branch 356 @Trace1#112#E5602#0-1: Cost : 0.015382 No!
+Verifying branch 357 @Trace1#126#E5611#1-0: Cost : 0.014835 No!
+Verifying branch 358 @Trace1#116#E5626#1-0: Cost : 0.001465 No!
 Verifying branch 359 @Trace1#114#E5639#0-1: NNo!
 Verifying branch 360 @Trace1#120#E5645#1-0: NNo!
 Verifying branch 361 @Trace1#179#E5703#1-0: NNo!
@@ -515,8 +515,8 @@ Verifying assert 2 @Trace2#40#E588#1-0assert_bug: No!
 Verifying is over!
 Sum of branches: 364
 Verifying branch 1 @Trace2#91#E40#0-1: NNo!
-Verifying branch 2 @Trace2#50#E573#0-1: Cost : 0.166062 Yes!
-Verifying branch 3 @Trace2#33#E575#1-0: Cost : 0.031676 No!
+Verifying branch 2 @Trace2#50#E573#0-1: Cost : 0.162586 Yes!
+Verifying branch 3 @Trace2#33#E575#1-0: Cost : 0.03283 No!
 Verifying branch 4 @Trace2#46#E602#1-0: NNo!
 Verifying branch 5 @Trace2#51#E610#0-1: NNo!
 Verifying branch 6 @Trace2#46#E630#1-0: NNo!
@@ -868,10 +868,10 @@ Verifying branch 351 @Trace2#90#E5519#0-1: NNo!
 Verifying branch 352 @Trace2#90#E5525#0-1: NNo!
 Verifying branch 353 @Trace2#90#E5531#0-1: NNo!
 Verifying branch 354 @Trace2#90#E5537#0-1: NNo!
-Verifying branch 355 @Trace2#100#E5560#0-1: Cost : 0.014909 No!
-Verifying branch 356 @Trace2#112#E5595#0-1: Cost : 0.017896 No!
-Verifying branch 357 @Trace2#126#E5604#1-0: Cost : 0.016258 No!
-Verifying branch 358 @Trace2#116#E5619#1-0: Cost : 0.001291 No!
+Verifying branch 355 @Trace2#100#E5560#0-1: Cost : 0.01638 No!
+Verifying branch 356 @Trace2#112#E5595#0-1: Cost : 0.015664 No!
+Verifying branch 357 @Trace2#126#E5604#1-0: Cost : 0.018569 No!
+Verifying branch 358 @Trace2#116#E5619#1-0: Cost : 0.001349 No!
 Verifying branch 359 @Trace2#114#E5632#0-1: NNo!
 Verifying branch 360 @Trace2#120#E5638#1-0: NNo!
 Verifying branch 361 @Trace2#179#E5696#1-0: NNo!

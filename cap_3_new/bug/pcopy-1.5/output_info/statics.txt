@@ -11,8 +11,8 @@ satCost:0
 unSatBranchBySolve:0
 unSatCost:0
 unSatBranchByPreSolve:0
-SolvingCost:128.821
-RunningCost:0.116524
+SolvingCost:105.695
+RunningCost:0.126154
 DTAMCost:0
 DTAMSerialCost:0
 DTAMParallelCost:0
@@ -25,4 +25,4 @@ taintMap:0
 
 totalline:603
 name:pcopy-1.5
-memory:368336
+memory:359476

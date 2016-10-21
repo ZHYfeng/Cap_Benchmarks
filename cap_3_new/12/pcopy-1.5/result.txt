@@ -1,0 +1,523 @@
+KLEE: output directory is "/home/zhy/work/test/cap_3_new/基础版本+去除与分支无关共享变量+确定不可取反分支/pcopy-1.5/klee-out-0"
+KLEE: WARNING: undefined reference to function: _IO_putc
+KLEE: WARNING: undefined reference to function: __errno_location
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: lseek
+KLEE: WARNING: undefined reference to function: open
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_signal
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: putchar
+KLEE: WARNING: undefined reference to function: read
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strerror
+KLEE: WARNING: undefined reference to function: time
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(45011616, 0)
+KLEE: WARNING ONCE: calling external: printf(45025056, 44508032, 44508336)
+KLEE: WARNING ONCE: calling external: fflush(140541661582336)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+KLEE: WARNING ONCE: calling external: open(44508032, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(45347688, 0)
+KLEE: WARNING ONCE: calling external: time(45018784)
+KLEE: WARNING ONCE: calling external: read(8, 140541696634896, 1048576)
+KLEE: WARNING ONCE: calling external: lseek(9, 0, 0)
+KLEE: WARNING ONCE: calling external: write(9, 140541696634896, 1)
+KLEE: WARNING ONCE: calling external: putchar(10)
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 52
+Verifying branch 1 @Trace1#404#E33#0-1: NNo!
+Verifying branch 2 @Trace1#446#E55#0-1: NNo!
+Verifying branch 3 @Trace1#464#E73#0-1: NNo!
+Verifying branch 4 @Trace1#472#E79#0-1: Cost : 0.000108 No!
+Verifying branch 5 @Trace1#483#E169#1-0: NNo!
+Verifying branch 6 @Trace1#218#E214#0-1: Cost : 1.74202 No!
+Verifying branch 7 @Trace1#223#E226#1-0: Cost : 1.08444 No!
+Verifying branch 8 @Trace1#483#E259#1-0: NNo!
+Verifying branch 9 @Trace1#218#E304#0-1: Cost : 0.020934 No!
+Verifying branch 10 @Trace1#223#E316#1-0: Cost : 9.95806 No!
+Verifying branch 11 @Trace1#483#E349#1-0: NNo!
+Verifying branch 12 @Trace1#218#E394#0-1: Cost : 1.15705 No!
+Verifying branch 13 @Trace1#223#E406#1-0: Cost : 2.03479 No!
+Verifying branch 14 @Trace1#483#E439#1-0: NNo!
+Verifying branch 15 @Trace1#218#E484#0-1: Cost : 0.379882 No!
+Verifying branch 16 @Trace1#223#E496#1-0: Cost : 2.24621 No!
+Verifying branch 17 @Trace1#483#E529#1-0: NNo!
+Verifying branch 18 @Trace1#218#E574#0-1: Cost : 0.340892 No!
+Verifying branch 19 @Trace1#223#E586#1-0: Cost : 0.895618 No!
+Verifying branch 20 @Trace1#483#E619#1-0: NNo!
+Verifying branch 21 @Trace1#218#E664#0-1: Cost : 0.104506 No!
+Verifying branch 22 @Trace1#223#E676#1-0: Cost : 0.020324 No!
+Verifying branch 23 @Trace1#483#E709#1-0: NNo!
+Verifying branch 24 @Trace1#218#E754#0-1: Cost : 0.113569 No!
+Verifying branch 25 @Trace1#223#E766#1-0: Cost : 0.040337 No!
+Verifying branch 26 @Trace1#483#E799#1-0: NNo!
+Verifying branch 27 @Trace1#218#E844#0-1: Cost : 0.098942 No!
+Verifying branch 28 @Trace1#223#E856#1-0: Cost : 0.058666 No!
+Verifying branch 29 @Trace1#483#E889#0-1: NNo!
+Verifying branch 30 @Trace1#238#E916#0-1: Cost : 0.129502 No!
+Verifying branch 31 @Trace1#243#E927#1-0: Cost : 0.000145 No!
+Verifying branch 32 @Trace1#156#E996#0-1: NNo!
+Verifying branch 33 @Trace1#218#E1065#0-1: Cost : 1.04611 No!
+Verifying branch 34 @Trace1#223#E1077#1-0: Cost : 0.000145 No!
+Verifying branch 35 @Trace1#238#E1117#0-1: Cost : 0.583415 No!
+Verifying branch 36 @Trace1#243#E1128#1-0: Cost : 0.005526 No!
+Verifying branch 37 @Trace1#156#E1197#0-1: NNo!
+Verifying branch 38 @Trace1#218#E1240#0-1: Cost : 0.997843 No!
+Verifying branch 39 @Trace1#223#E1252#1-0: Cost : 0.005617 No!
+Verifying branch 40 @Trace1#238#E1313#0-1: Cost : 19.1639 Yes!
+Verifying branch 41 @Trace1#243#E1324#1-0: Cost : 0.000208 No!
+Verifying branch 42 @Trace1#174#E1376#0-1: NNo!
+Verifying branch 43 @Trace1#181#E1384#1-0: Cost : 0.005296 No!
+Verifying branch 44 @Trace1#305#E1418#0-1: Cost : 0.361505 No!
+Verifying branch 45 @Trace1#218#E1451#0-1: Cost : 1.28174 No!
+Verifying branch 46 @Trace1#223#E1463#1-0: Cost : 1.06399 No!
+Verifying branch 47 @Trace1#329#E1491#0-1: NNo!
+Verifying branch 48 @Trace1#331#E1494#0-1: NNo!
+Verifying branch 49 @Trace1#347#E1509#0-1: NNo!
+Verifying branch 50 @Trace1#238#E1525#0-1: Cost : 9.41758 Yes!
+Verifying branch 51 @Trace1#243#E1536#1-0: Cost : 1.72929 No!
+Verifying branch 52 @Trace1#575#E1598#0-1: NNo!
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#238#E1313#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 53
+Verifying branch 1 @Trace2#404#E33#0-1: NNo!
+Verifying branch 2 @Trace2#446#E55#0-1: NNo!
+Verifying branch 3 @Trace2#464#E73#0-1: NNo!
+Verifying branch 4 @Trace2#472#E79#0-1: Cost : 0.000113 No!
+Verifying branch 5 @Trace2#483#E169#1-0: NNo!
+Verifying branch 6 @Trace2#218#E214#0-1: Cost : 2.19096 No!
+Verifying branch 7 @Trace2#223#E226#1-0: Cost : 2.17221 No!
+Verifying branch 8 @Trace2#483#E259#1-0: NNo!
+Verifying branch 9 @Trace2#218#E304#0-1: Cost : 0.294917 No!
+Verifying branch 10 @Trace2#223#E316#1-0: Cost : 2.26593 No!
+Verifying branch 11 @Trace2#483#E349#1-0: NNo!
+Verifying branch 12 @Trace2#218#E394#0-1: Cost : 0.132756 No!
+Verifying branch 13 @Trace2#223#E406#1-0: Cost : 2.54022 No!
+Verifying branch 14 @Trace2#483#E439#1-0: NNo!
+Verifying branch 15 @Trace2#218#E484#0-1: Cost : 0.130794 No!
+Verifying branch 16 @Trace2#223#E496#1-0: Cost : 8.08732 No!
+Verifying branch 17 @Trace2#483#E529#1-0: NNo!
+Verifying branch 18 @Trace2#218#E574#0-1: Cost : 4.50355 No!
+Verifying branch 19 @Trace2#223#E586#1-0: Cost : 1.9067 No!
+Verifying branch 20 @Trace2#483#E619#1-0: NNo!
+Verifying branch 21 @Trace2#218#E664#0-1: Cost : 0.465495 No!
+Verifying branch 22 @Trace2#223#E676#1-0: Cost : 0.022106 No!
+Verifying branch 23 @Trace2#483#E709#1-0: NNo!
+Verifying branch 24 @Trace2#218#E754#0-1: Cost : 0.154057 No!
+Verifying branch 25 @Trace2#223#E766#1-0: Cost : 0.041891 No!
+Verifying branch 26 @Trace2#483#E799#1-0: NNo!
+Verifying branch 27 @Trace2#218#E844#0-1: Cost : 0.141229 No!
+Verifying branch 28 @Trace2#223#E856#1-0: Cost : 0.062068 No!
+Verifying branch 29 @Trace2#483#E889#0-1: NNo!
+Verifying branch 30 @Trace2#238#E935#0-1: Cost : 0.125059 No!
+Verifying branch 31 @Trace2#243#E946#1-0: Cost : 0.000149 No!
+Verifying branch 32 @Trace2#238#E968#1-0: Cost : 3.49706 Yes!
+Verifying branch 33 @Trace2#156#E1031#0-1: NNo!
+Verifying branch 34 @Trace2#218#E1105#0-1: Cost : 0.112272 No!
+Verifying branch 35 @Trace2#223#E1117#1-0: Cost : 0.00015 No!
+Verifying branch 36 @Trace2#238#E1157#0-1: Cost : 0.816642 No!
+Verifying branch 37 @Trace2#243#E1168#1-0: Cost : 0.005673 No!
+Verifying branch 38 @Trace2#156#E1237#0-1: NNo!
+Verifying branch 39 @Trace2#218#E1280#0-1: Cost : 1.56944 No!
+Verifying branch 40 @Trace2#223#E1292#1-0: Cost : 0.005573 No!
+Verifying branch 41 @Trace2#238#E1325#0-1: Cost : 0.161744 No!
+Verifying branch 42 @Trace2#243#E1336#1-0: Cost : 0.000211 No!
+Verifying branch 43 @Trace2#174#E1388#0-1: NNo!
+Verifying branch 44 @Trace2#181#E1396#1-0: Cost : 0.005387 No!
+Verifying branch 45 @Trace2#305#E1430#0-1: Cost : 0.009911 No!
+Verifying branch 46 @Trace2#218#E1463#0-1: Cost : 2.01164 No!
+Verifying branch 47 @Trace2#223#E1475#1-0: Cost : 1.64009 No!
+Verifying branch 48 @Trace2#329#E1503#0-1: NNo!
+Verifying branch 49 @Trace2#331#E1506#0-1: NNo!
+Verifying branch 50 @Trace2#347#E1521#0-1: NNo!
+Verifying branch 51 @Trace2#238#E1537#0-1: Cost : 2.07576 Yes!
+Verifying branch 52 @Trace2#243#E1548#1-0: Cost : 5.83326 No!
+Verifying branch 53 @Trace2#575#E1610#0-1: NNo!
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixTrace1#238#E1525#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 53
+Verifying branch 1 @Trace3#404#E33#0-1: NNo!
+Verifying branch 2 @Trace3#446#E55#0-1: NNo!
+Verifying branch 3 @Trace3#464#E73#0-1: NNo!
+Verifying branch 4 @Trace3#472#E79#0-1: Cost : 0.000114 No!
+Verifying branch 5 @Trace3#483#E169#1-0: NNo!
+Verifying branch 6 @Trace3#218#E214#0-1: Cost : 0.463647 No!
+Verifying branch 7 @Trace3#223#E226#1-0: Cost : 0.633683 No!
+Verifying branch 8 @Trace3#483#E259#1-0: NNo!
+Verifying branch 9 @Trace3#218#E304#0-1: Cost : 1.63881 No!
+Verifying branch 10 @Trace3#223#E316#1-0: Cost : 4.68894 No!
+Verifying branch 11 @Trace3#483#E349#1-0: NNo!
+Verifying branch 12 @Trace3#218#E394#0-1: Cost : 0.494637 No!
+Verifying branch 13 @Trace3#223#E406#1-0: Cost : 2.14553 No!
+Verifying branch 14 @Trace3#483#E439#1-0: NNo!
+Verifying branch 15 @Trace3#218#E484#0-1: Cost : 0.923313 No!
+Verifying branch 16 @Trace3#223#E496#1-0: Cost : 0.128027 No!
+Verifying branch 17 @Trace3#483#E529#1-0: NNo!
+Verifying branch 18 @Trace3#218#E574#0-1: Cost : 1.75195 No!
+Verifying branch 19 @Trace3#223#E586#1-0: Cost : 0.541516 No!
+Verifying branch 20 @Trace3#483#E619#1-0: NNo!
+Verifying branch 21 @Trace3#218#E664#0-1: Cost : 0.088288 No!
+Verifying branch 22 @Trace3#223#E676#1-0: Cost : 0.022338 No!
+Verifying branch 23 @Trace3#483#E709#1-0: NNo!
+Verifying branch 24 @Trace3#218#E754#0-1: Cost : 0.091292 No!
+Verifying branch 25 @Trace3#223#E766#1-0: Cost : 0.042032 No!
+Verifying branch 26 @Trace3#483#E799#1-0: NNo!
+Verifying branch 27 @Trace3#218#E844#0-1: Cost : 0.090173 No!
+Verifying branch 28 @Trace3#223#E856#1-0: Cost : 0.062238 No!
+Verifying branch 29 @Trace3#483#E889#0-1: NNo!
+Verifying branch 30 @Trace3#238#E937#0-1: Cost : 0.265095 No!
+Verifying branch 31 @Trace3#243#E948#1-0: Cost : 0.000144 No!
+Verifying branch 32 @Trace3#156#E1017#0-1: NNo!
+Verifying branch 33 @Trace3#218#E1086#0-1: Cost : 7.77379 No!
+Verifying branch 34 @Trace3#223#E1098#1-0: Cost : 0.000157 No!
+Verifying branch 35 @Trace3#238#E1145#0-1: Cost : 0.436929 No!
+Verifying branch 36 @Trace3#243#E1156#1-0: Cost : 0.004855 No!
+Verifying branch 37 @Trace3#238#E1201#0-1: Cost : 9.96028 Yes!
+Verifying branch 38 @Trace3#243#E1213#1-0: Cost : 0.000232 No!
+Verifying branch 39 @Trace3#174#E1271#0-1: NNo!
+Verifying branch 40 @Trace3#181#E1279#1-0: Cost : 0.005092 No!
+Verifying branch 41 @Trace3#305#E1313#0-1: Cost : 0.350226 No!
+Verifying branch 42 @Trace3#218#E1346#0-1: Cost : 0.727662 No!
+Verifying branch 43 @Trace3#223#E1358#1-0: Cost : 1.4308 No!
+Verifying branch 44 @Trace3#329#E1386#0-1: NNo!
+Verifying branch 45 @Trace3#331#E1389#0-1: NNo!
+Verifying branch 46 @Trace3#347#E1404#0-1: NNo!
+Verifying branch 47 @Trace3#238#E1420#1-0: Cost : 2.08034 Yes!
+Verifying branch 48 @Trace3#156#E1444#0-1: NNo!
+Verifying branch 49 @Trace3#218#E1492#0-1: Cost : 0.750822 No!
+Verifying branch 50 @Trace3#223#E1504#1-0: Cost : 0.005528 No!
+Verifying branch 51 @Trace3#238#E1537#0-1: Cost : 0.986402 No!
+Verifying branch 52 @Trace3#243#E1548#1-0: Cost : 0.811696 No!
+Verifying branch 53 @Trace3#575#E1610#0-1: NNo!
+
+************************************************************************
+第4次执行,路径文件为trace4.txt 前缀执行,前缀文件为prefixTrace2#238#E968#1-0.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第5次执行,路径文件为trace5.txt 前缀执行,前缀文件为prefixTrace2#238#E1537#0-1.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 54
+Verifying branch 1 @Trace5#404#E33#0-1: NNo!
+Verifying branch 2 @Trace5#446#E55#0-1: NNo!
+Verifying branch 3 @Trace5#464#E73#0-1: NNo!
+Verifying branch 4 @Trace5#472#E79#0-1: Cost : 0.000119 No!
+Verifying branch 5 @Trace5#483#E169#1-0: NNo!
+Verifying branch 6 @Trace5#218#E214#0-1: Cost : 0.590381 No!
+Verifying branch 7 @Trace5#223#E226#1-0: Cost : 0.68315 No!
+Verifying branch 8 @Trace5#483#E259#1-0: NNo!
+Verifying branch 9 @Trace5#218#E304#0-1: Cost : 0.820735 No!
+Verifying branch 10 @Trace5#223#E316#1-0: Cost : 0.110101 No!
+Verifying branch 11 @Trace5#483#E349#1-0: NNo!
+Verifying branch 12 @Trace5#218#E394#0-1: Cost : 0.312823 No!
+Verifying branch 13 @Trace5#223#E406#1-0: Cost : 7.59632 No!
+Verifying branch 14 @Trace5#483#E439#1-0: NNo!
+Verifying branch 15 @Trace5#218#E484#0-1: Cost : 0.052752 No!
+Verifying branch 16 @Trace5#223#E496#1-0: Cost : 4.89762 No!
+Verifying branch 17 @Trace5#483#E529#1-0: NNo!
+Verifying branch 18 @Trace5#218#E574#0-1: Cost : 0.57344 No!
+Verifying branch 19 @Trace5#223#E586#1-0: Cost : 13.3821 No!
+Verifying branch 20 @Trace5#483#E619#1-0: NNo!
+Verifying branch 21 @Trace5#218#E664#0-1: Cost : 0.784096 No!
+Verifying branch 22 @Trace5#223#E676#1-0: Cost : 0.022438 No!
+Verifying branch 23 @Trace5#483#E709#1-0: NNo!
+Verifying branch 24 @Trace5#218#E754#0-1: Cost : 0.124735 No!
+Verifying branch 25 @Trace5#223#E766#1-0: Cost : 0.042432 No!
+Verifying branch 26 @Trace5#483#E799#1-0: NNo!
+Verifying branch 27 @Trace5#218#E844#0-1: Cost : 0.122777 No!
+Verifying branch 28 @Trace5#223#E856#1-0: Cost : 0.062891 No!
+Verifying branch 29 @Trace5#483#E889#0-1: NNo!
+Verifying branch 30 @Trace5#238#E932#0-1: Cost : 0.253159 No!
+Verifying branch 31 @Trace5#243#E948#1-0: Cost : 0.000149 No!
+Verifying branch 32 @Trace5#156#E1024#0-1: NNo!
+Verifying branch 33 @Trace5#238#E1080#1-0: Cost : 3.16923 No!
+Verifying branch 34 @Trace5#218#E1105#0-1: Cost : 0.348132 No!
+Verifying branch 35 @Trace5#223#E1117#1-0: Cost : 0.000156 No!
+Verifying branch 36 @Trace5#238#E1150#0-1: Cost : 0.419443 No!
+Verifying branch 37 @Trace5#243#E1161#1-0: Cost : 0.000235 No!
+Verifying branch 38 @Trace5#238#E1188#0-1: Cost : 2.29284 No!
+Verifying branch 39 @Trace5#243#E1199#1-0: Cost : 0.005311 No!
+Verifying branch 40 @Trace5#174#E1283#0-1: NNo!
+Verifying branch 41 @Trace5#181#E1291#1-0: Cost : 0.005533 No!
+Verifying branch 42 @Trace5#305#E1325#0-1: Cost : 0.009593 No!
+Verifying branch 43 @Trace5#218#E1358#0-1: Cost : 0.553112 No!
+Verifying branch 44 @Trace5#223#E1370#1-0: Cost : 9.39512 No!
+Verifying branch 45 @Trace5#329#E1398#0-1: NNo!
+Verifying branch 46 @Trace5#331#E1401#0-1: NNo!
+Verifying branch 47 @Trace5#347#E1416#0-1: NNo!
+Verifying branch 48 @Trace5#238#E1432#1-0: Cost : 4.0454 Yes!
+Verifying branch 49 @Trace5#156#E1456#0-1: NNo!
+Verifying branch 50 @Trace5#218#E1504#0-1: Cost : 0.182107 No!
+Verifying branch 51 @Trace5#223#E1516#1-0: Cost : 0.006146 No!
+Verifying branch 52 @Trace5#238#E1549#0-1: Cost : 0.289682 No!
+Verifying branch 53 @Trace5#243#E1560#1-0: Cost : 1.61578 No!
+Verifying branch 54 @Trace5#575#E1622#0-1: NNo!
+
+************************************************************************
+第6次执行,路径文件为trace6.txt 前缀执行,前缀文件为prefixTrace3#238#E1201#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第7次执行,路径文件为trace7.txt 前缀执行,前缀文件为prefixTrace3#238#E1420#1-0.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 52
+Verifying branch 1 @Trace7#404#E33#0-1: NNo!
+Verifying branch 2 @Trace7#446#E55#0-1: NNo!
+Verifying branch 3 @Trace7#464#E73#0-1: NNo!
+Verifying branch 4 @Trace7#472#E79#0-1: Cost : 0.00011 No!
+Verifying branch 5 @Trace7#483#E169#1-0: NNo!
+Verifying branch 6 @Trace7#218#E214#0-1: Cost : 0.284687 No!
+Verifying branch 7 @Trace7#223#E226#1-0: Cost : 0.669775 No!
+Verifying branch 8 @Trace7#483#E259#1-0: NNo!
+Verifying branch 9 @Trace7#218#E304#0-1: Cost : 0.466052 No!
+Verifying branch 10 @Trace7#223#E316#1-0: Cost : 0.703449 No!
+Verifying branch 11 @Trace7#483#E349#1-0: NNo!
+Verifying branch 12 @Trace7#218#E394#0-1: Cost : 0.124183 No!
+Verifying branch 13 @Trace7#223#E406#1-0: Cost : 0.307902 No!
+Verifying branch 14 @Trace7#483#E439#1-0: NNo!
+Verifying branch 15 @Trace7#218#E484#0-1: Cost : 0.778459 No!
+Verifying branch 16 @Trace7#223#E496#1-0: Cost : 0.423433 No!
+Verifying branch 17 @Trace7#483#E529#1-0: NNo!
+Verifying branch 18 @Trace7#218#E574#0-1: Cost : 3.05942 No!
+Verifying branch 19 @Trace7#223#E586#1-0: Cost : 3.81498 No!
+Verifying branch 20 @Trace7#483#E619#1-0: NNo!
+Verifying branch 21 @Trace7#218#E664#0-1: Cost : 0.417328 No!
+Verifying branch 22 @Trace7#223#E676#1-0: Cost : 0.022916 No!
+Verifying branch 23 @Trace7#483#E709#1-0: NNo!
+Verifying branch 24 @Trace7#218#E754#0-1: Cost : 0.102148 No!
+Verifying branch 25 @Trace7#223#E766#1-0: Cost : 0.040648 No!
+Verifying branch 26 @Trace7#483#E799#1-0: NNo!
+Verifying branch 27 @Trace7#218#E844#0-1: Cost : 0.100149 No!
+Verifying branch 28 @Trace7#223#E856#1-0: Cost : 0.05923 No!
+Verifying branch 29 @Trace7#483#E889#0-1: NNo!
+Verifying branch 30 @Trace7#238#E937#0-1: Cost : 0.110757 No!
+Verifying branch 31 @Trace7#243#E948#1-0: Cost : 0.000157 No!
+Verifying branch 32 @Trace7#156#E1017#0-1: NNo!
+Verifying branch 33 @Trace7#218#E1086#0-1: Cost : 0.116722 No!
+Verifying branch 34 @Trace7#223#E1098#1-0: Cost : 0.00015 No!
+Verifying branch 35 @Trace7#238#E1149#0-1: Cost : 6.2322 Yes!
+Verifying branch 36 @Trace7#238#E1154#0-1: Cost : 2.46401 No!
+Verifying branch 37 @Trace7#243#E1171#1-0: Cost : 0.00021 No!
+Verifying branch 38 @Trace7#243#E1173#1-0: Cost : 0.004735 No!
+Verifying branch 39 @Trace7#174#E1271#0-1: NNo!
+Verifying branch 40 @Trace7#181#E1279#1-0: Cost : 0.005073 No!
+Verifying branch 41 @Trace7#305#E1313#0-1: Cost : 0.045103 No!
+Verifying branch 42 @Trace7#218#E1346#0-1: Cost : 0.245397 No!
+Verifying branch 43 @Trace7#223#E1358#1-0: Cost : 1.34721 No!
+Verifying branch 44 @Trace7#329#E1386#0-1: NNo!
+Verifying branch 45 @Trace7#331#E1389#0-1: NNo!
+Verifying branch 46 @Trace7#347#E1404#0-1: NNo!
+Verifying branch 47 @Trace7#156#E1441#0-1: NNo!
+Verifying branch 48 @Trace7#238#E1445#0-1: Cost : 1.19741 Yes!
+Verifying branch 49 @Trace7#243#E1488#1-0: Cost : 1.21569 No!
+Verifying branch 50 @Trace7#218#E1532#0-1: Cost : 1.12679 No!
+Verifying branch 51 @Trace7#223#E1544#1-0: Cost : 0.00528 No!
+Verifying branch 52 @Trace7#575#E1598#0-1: NNo!
+
+************************************************************************
+第8次执行,路径文件为trace8.txt 前缀执行,前缀文件为prefixTrace5#238#E1432#1-0.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 53
+Verifying branch 1 @Trace8#404#E33#0-1: NNo!
+Verifying branch 2 @Trace8#446#E55#0-1: NNo!
+Verifying branch 3 @Trace8#464#E73#0-1: NNo!
+Verifying branch 4 @Trace8#472#E79#0-1: Cost : 0.000132 No!
+Verifying branch 5 @Trace8#483#E169#1-0: NNo!
+Verifying branch 6 @Trace8#218#E214#0-1: Cost : 1.41424 No!
+Verifying branch 7 @Trace8#223#E226#1-0: Cost : 0.764207 No!
+Verifying branch 8 @Trace8#483#E259#1-0: NNo!
+Verifying branch 9 @Trace8#218#E304#0-1: Cost : 0.010636 No!
+Verifying branch 10 @Trace8#223#E316#1-0: Cost : 0.281716 No!
+Verifying branch 11 @Trace8#483#E349#1-0: NNo!
+Verifying branch 12 @Trace8#218#E394#0-1: Cost : 0.841748 No!
+Verifying branch 13 @Trace8#223#E406#1-0: Cost : 3.94075 No!
+Verifying branch 14 @Trace8#483#E439#1-0: NNo!
+Verifying branch 15 @Trace8#218#E484#0-1: Cost : 1.34272 No!
+Verifying branch 16 @Trace8#223#E496#1-0: Cost : 0.122012 No!
+Verifying branch 17 @Trace8#483#E529#1-0: NNo!
+Verifying branch 18 @Trace8#218#E574#0-1: Cost : 2.39051 No!
+Verifying branch 19 @Trace8#223#E586#1-0: Cost : 0.242044 No!
+Verifying branch 20 @Trace8#483#E619#1-0: NNo!
+Verifying branch 21 @Trace8#218#E664#0-1: Cost : 0.180016 No!
+Verifying branch 22 @Trace8#223#E676#1-0: Cost : 0.021822 No!
+Verifying branch 23 @Trace8#483#E709#1-0: NNo!
+Verifying branch 24 @Trace8#218#E754#0-1: Cost : 0.105969 No!
+Verifying branch 25 @Trace8#223#E766#1-0: Cost : 0.039603 No!
+Verifying branch 26 @Trace8#483#E799#1-0: NNo!
+Verifying branch 27 @Trace8#218#E844#0-1: Cost : 0.122388 No!
+Verifying branch 28 @Trace8#223#E856#1-0: Cost : 0.05607 No!
+Verifying branch 29 @Trace8#483#E889#0-1: NNo!
+Verifying branch 30 @Trace8#238#E937#0-1: Cost : 0.498895 No!
+Verifying branch 31 @Trace8#243#E948#1-0: Cost : 0.00015 No!
+Verifying branch 32 @Trace8#238#E1028#1-0: Cost : 5.76818 Yes!
+Verifying branch 33 @Trace8#156#E1036#0-1: NNo!
+Verifying branch 34 @Trace8#218#E1105#0-1: Cost : 0.192207 No!
+Verifying branch 35 @Trace8#223#E1117#1-0: Cost : 0.000174 No!
+Verifying branch 36 @Trace8#238#E1157#0-1: Cost : 1.45411 No!
+Verifying branch 37 @Trace8#243#E1168#1-0: Cost : 0.005371 No!
+Verifying branch 38 @Trace8#238#E1208#0-1: Cost : 2.84485 No!
+Verifying branch 39 @Trace8#243#E1219#1-0: Cost : 0.00026 No!
+Verifying branch 40 @Trace8#174#E1276#0-1: NNo!
+Verifying branch 41 @Trace8#181#E1284#1-0: Cost : 0.006275 No!
+Verifying branch 42 @Trace8#305#E1318#0-1: Cost : 0.008337 No!
+Verifying branch 43 @Trace8#218#E1351#0-1: Cost : 3.32988 No!
+Verifying branch 44 @Trace8#223#E1363#1-0: Cost : 1.2938 No!
+Verifying branch 45 @Trace8#329#E1391#0-1: NNo!
+Verifying branch 46 @Trace8#331#E1394#0-1: NNo!
+Verifying branch 47 @Trace8#347#E1409#0-1: NNo!
+Verifying branch 48 @Trace8#156#E1453#0-1: NNo!
+Verifying branch 49 @Trace8#238#E1457#0-1: Cost : 1.93296 Yes!
+Verifying branch 50 @Trace8#243#E1500#1-0: Cost : 0.267065 No!
+Verifying branch 51 @Trace8#218#E1544#0-1: Cost : 2.93311 No!
+Verifying branch 52 @Trace8#223#E1556#1-0: Cost : 0.005477 No!
+Verifying branch 53 @Trace8#575#E1610#0-1: NNo!
+
+************************************************************************
+第9次执行,路径文件为trace9.txt 前缀执行,前缀文件为prefixTrace7#238#E1149#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第10次执行,路径文件为trace10.txt 前缀执行,前缀文件为prefixTrace7#238#E1445#0-1.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第11次执行,路径文件为trace11.txt 前缀执行,前缀文件为prefixTrace8#238#E1028#1-0.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第12次执行,路径文件为trace12.txt 前缀执行,前缀文件为prefixTrace8#238#E1457#0-1.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+KLEE: done: total instructions = 19560
+KLEE: done: completed paths = 12
+KLEE: done: generated tests = 0
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)

@@ -1,1 +1,89 @@
-KLEE: ERROR: error loading program 'pnscan': No such file or directory
+KLEE: output directory is "/home/zhy/work/test/cap_3_new/bug/pnscan-1.8/klee-out-0"
+KLEE: WARNING: undefined reference to function: __ctype_b_loc
+KLEE: WARNING: undefined reference to function: __isoc99_sscanf
+KLEE: WARNING: undefined reference to function: close
+KLEE: WARNING: undefined reference to function: connect
+KLEE: WARNING: undefined reference to function: fcntl
+KLEE: WARNING: undefined reference to function: feof
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fgets
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: gethostbyaddr
+KLEE: WARNING: undefined reference to function: getnetbyname
+KLEE: WARNING: undefined reference to function: htonl
+KLEE: WARNING: undefined reference to function: htons
+KLEE: WARNING: undefined reference to function: inet_makeaddr
+KLEE: WARNING: undefined reference to function: inet_ntoa
+KLEE: WARNING: undefined reference to function: inet_pton
+KLEE: WARNING: undefined reference to function: ntohl
+KLEE: WARNING: undefined reference to function: poll
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: putchar
+KLEE: WARNING: undefined reference to function: read
+KLEE: WARNING: undefined reference to function: setrlimit
+KLEE: WARNING: undefined reference to function: shutdown
+KLEE: WARNING: undefined reference to function: signal
+KLEE: WARNING: undefined reference to function: socket
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdin
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strcmp
+KLEE: WARNING: undefined reference to function: strtok_r
+KLEE: WARNING: undefined reference to function: tolower
+KLEE: WARNING: undefined reference to function: toupper
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(55673792, 0)
+KLEE: WARNING ONCE: calling external: getrlimit(7, 55862368)
+KLEE: WARNING ONCE: calling external: setrlimit(7, 55862368)
+KLEE: WARNING ONCE: calling external: signal(13, 1)
+KLEE: WARNING ONCE: calling external: __isoc99_sscanf(54964576, 55671552, 56083184, 56093728)
+KLEE: WARNING ONCE: calling external: printf(55659936, 56083184)
+KLEE: WARNING ONCE: calling external: strcmp(56097088, 55673408)
+KLEE: WARNING ONCE: calling external: socket(2, 1, 0)
+KLEE: WARNING ONCE: calling external: htons(80)
+KLEE: WARNING ONCE: calling external: htonl(2130706433)
+KLEE: WARNING ONCE: calling external: fcntl(8, 3, 0)
+KLEE: WARNING ONCE: calling external: connect(8, 56230640, 16)
+KLEE: WARNING ONCE: calling external: shutdown(8, 1)
+KLEE: WARNING ONCE: calling external: poll(56285440, 1, 1000)
+KLEE: WARNING ONCE: calling external: read(8, 56231856, 1023)
+KLEE: WARNING ONCE: calling external: inet_ntoa(16777343)
+KLEE: WARNING ONCE: calling external: fprintf(140160476644352, 55631184, 140160513517464, 80)
+KLEE: WARNING ONCE: calling external: putchar(10)
+KLEE: WARNING ONCE: calling external: close(8)
+KLEE: WARNING ONCE: calling external: fflush(140160476644352)
+str : 127.0.0.1
+nworkers : 1
+127.0.0.1       :    80 : TXT : 
+######################本条路径为新路径####################
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 2
+Verifying assert 1 @Trace1#1006#E218#1-0assert_bug: Yes!
+Assert Failure at /home/zhy/work/test/cap_3_new/bug/pnscan-1.8/pnscan.c: 1006
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#1006#E218#1-0assert_bug.txt
+************************************************************************
+
+KLEE: ERROR: /home/zhy/work/test/cap_3_new/bug/pnscan-1.8/pnscan.c:1006: ASSERTION FAIL: assert1 == temp
+KLEE: NOTE: now ignoring this error at this location
+encounter runtime error
+######################执行有错误,放弃本次执行##############
+
+KLEE: done: total instructions = 852
+KLEE: done: completed paths = 2
+KLEE: done: generated tests = 0
+str : 127.0.0.1
+nworkers : 1

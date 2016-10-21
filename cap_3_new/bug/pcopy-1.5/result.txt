@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/git/Benchmarks/cap_3_new/bug/pcopy-1.5/klee-out-0"
+KLEE: output directory is "/home/zhy/work/test/cap_3_new/bug/pcopy-1.5/klee-out-0"
 KLEE: WARNING: undefined reference to function: _IO_putc
 KLEE: WARNING: undefined reference to function: __errno_location
 KLEE: WARNING: undefined reference to function: atoi
@@ -27,16 +27,16 @@ KLEE: WARNING: undefined reference to function: write
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(34180304, 0)
-KLEE: WARNING ONCE: calling external: printf(34184432, 32914016, 33704432)
-KLEE: WARNING ONCE: calling external: fflush(140312587367424)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(42543232, 0)
+KLEE: WARNING ONCE: calling external: printf(42552304, 42292336, 42072528)
+KLEE: WARNING ONCE: calling external: fflush(140337204208640)
 Copying from ./infile to ./outfile (start in 3 seconds)...
-KLEE: WARNING ONCE: calling external: open(32914016, 0)
-KLEE: WARNING ONCE: calling external: pthread_cond_init(34535768, 0)
-KLEE: WARNING ONCE: calling external: time(34176288)
-KLEE: WARNING ONCE: calling external: read(8, 140312622415888, 1048576)
+KLEE: WARNING ONCE: calling external: open(42292336, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(42903640, 0)
+KLEE: WARNING ONCE: calling external: time(42544160)
+KLEE: WARNING ONCE: calling external: read(8, 140337239257104, 1048576)
 KLEE: WARNING ONCE: calling external: lseek(9, 0, 0)
-KLEE: WARNING ONCE: calling external: write(9, 140312622415888, 1)
+KLEE: WARNING ONCE: calling external: write(9, 140337239257104, 1)
 KLEE: WARNING ONCE: calling external: putchar(10)
 ######################本条路径为新路径####################
 len : 1
@@ -56,14 +56,14 @@ Verifying assert 6 @Trace1#221#E712#1-0assert_bug: No!
 Verifying assert 7 @Trace1#221#E810#1-0assert_bug: No!
 Verifying assert 8 @Trace1#221#E908#1-0assert_bug: No!
 Verifying assert 9 @Trace1#490#E959#1-0assert_bug: Yes!
-Assert Failure at /home/zhy/git/Benchmarks/cap_3_new/bug/pcopy-1.5/pcopy.c: 490
+Assert Failure at /home/zhy/work/test/cap_3_new/bug/pcopy-1.5/pcopy.c: 490
 
 ************************************************************************
 第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#490#E959#1-0assert_bug.txt
 ************************************************************************
 
 Copying from ./infile to ./outfile (start in 3 seconds)...
-KLEE: ERROR: /home/zhy/git/Benchmarks/cap_3_new/bug/pcopy-1.5/pcopy.c:490: ASSERTION FAIL: assert1 == temp
+KLEE: ERROR: /home/zhy/work/test/cap_3_new/bug/pcopy-1.5/pcopy.c:490: ASSERTION FAIL: assert1 == temp
 KLEE: NOTE: now ignoring this error at this location
 encounter runtime error
 ######################执行有错误,放弃本次执行##############

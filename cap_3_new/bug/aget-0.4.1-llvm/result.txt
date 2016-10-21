@@ -1,4 +1,4 @@
-KLEE: output directory is "/home/zhy/git/Benchmarks/cap_3_new/bug/aget-0.4.1-llvm/klee-out-0"
+KLEE: output directory is "/home/zhy/work/test/cap_3_new/bug/aget-0.4.1-llvm/klee-out-0"
 KLEE: WARNING: undefined reference to function: __errno_location
 KLEE: WARNING: undefined reference to function: __h_errno_location
 KLEE: WARNING: undefined reference to function: alarm
@@ -58,21 +58,21 @@ KLEE: WARNING: undefined reference to function: write
 第1次执行,路径文件为trace1.txt 初始执行
 ************************************************************************
 
-KLEE: WARNING ONCE: calling external: pthread_mutex_init(48259008, 0)
-KLEE: WARNING ONCE: calling external: getopt(2, 47709952, 48270208)
-KLEE: WARNING ONCE: calling external: strlen(47479664)
-KLEE: WARNING ONCE: calling external: printf(48287856, 48578560)
-KLEE: WARNING ONCE: calling external: strncmp(48578560, 48288464, 6)
-KLEE: WARNING ONCE: calling external: strncpy(48531072, 48710096, 5)
-KLEE: WARNING ONCE: calling external: gethostbyname(48529024)
-KLEE: WARNING ONCE: calling external: time(48277824)
-KLEE: WARNING ONCE: calling external: bzero(48946736, 16)
-KLEE: WARNING ONCE: calling external: inet_addr(48532096)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(33320736, 0)
+KLEE: WARNING ONCE: calling external: getopt(2, 32548672, 33331984)
+KLEE: WARNING ONCE: calling external: strlen(33279344)
+KLEE: WARNING ONCE: calling external: printf(33349584, 33640352)
+KLEE: WARNING ONCE: calling external: strncmp(33640352, 33350192, 6)
+KLEE: WARNING ONCE: calling external: strncpy(33592864, 33771888, 5)
+KLEE: WARNING ONCE: calling external: gethostbyname(33590816)
+KLEE: WARNING ONCE: calling external: time(33339600)
+KLEE: WARNING ONCE: calling external: bzero(33892352, 16)
+KLEE: WARNING ONCE: calling external: inet_addr(33593888)
 KLEE: WARNING ONCE: calling external: htons(80)
 KLEE: WARNING ONCE: calling external: socket(2, 1, 0)
-KLEE: WARNING ONCE: calling external: connect(8, 48946736, 16)
-KLEE: WARNING ONCE: calling external: sprintf(49413952, 48302992, 48312240)
-KLEE: WARNING ONCE: calling external: fflush(140263073694720)
+KLEE: WARNING ONCE: calling external: connect(8, 33892352, 16)
+KLEE: WARNING ONCE: calling external: sprintf(34472336, 33364768, 33360000)
+KLEE: WARNING ONCE: calling external: fflush(140036799583232)
 http://127.0.0.1/2.txt
 size : 5
 2
@@ -83,23 +83,23 @@ t
 req->host : 127.0.0.1
 req->ip : 
 req->ip : 127.0.0.1
-KLEE: WARNING ONCE: calling external: vfprintf(140263073694144, 49413952, 49419968)
-<LOG> Head-Request Connection establishedKLEE: WARNING ONCE: calling external: fprintf(140263073694144, 48300528)
+KLEE: WARNING ONCE: calling external: vfprintf(140036799582656, 34472336, 34481664)
+<LOG> Head-Request Connection establishedKLEE: WARNING ONCE: calling external: fprintf(140036799582656, 33362304)
 
-KLEE: WARNING ONCE: calling external: send(8, 49362016, 76, 0)
-KLEE: WARNING ONCE: calling external: recv(8, 49345248, 512, 0)
-KLEE: WARNING ONCE: calling external: strstr(49345248, 48306032)
-KLEE: WARNING ONCE: calling external: strtok(49345248, 48316256)
-KLEE: WARNING ONCE: calling external: strncasecmp(49345265, 48317520, 15)
-KLEE: WARNING ONCE: calling external: atoll(49345441)
+KLEE: WARNING ONCE: calling external: send(8, 34423424, 76, 0)
+KLEE: WARNING ONCE: calling external: recv(8, 34406592, 512, 0)
+KLEE: WARNING ONCE: calling external: strstr(34406592, 33367808)
+KLEE: WARNING ONCE: calling external: strtok(34406592, 33378032)
+KLEE: WARNING ONCE: calling external: strncasecmp(34406609, 33379296, 15)
+KLEE: WARNING ONCE: calling external: atoll(34406785)
 <LOG> Downloading /2.txt (4 bytes) from site 127.0.0.1(127.0.0.1:80). Number of Threads: 1
-KLEE: WARNING ONCE: calling external: open(48531072, 66, 448)
+KLEE: WARNING ONCE: calling external: open(33592864, 66, 448)
 KLEE: WARNING ONCE: calling external: lseek(9, 3, 0)
-KLEE: WARNING ONCE: calling external: write(9, 48282576, 1)
+KLEE: WARNING ONCE: calling external: write(9, 33344304, 1)
 KLEE: WARNING ONCE: calling external: dup(9)
-KLEE: WARNING ONCE: calling external: snprintf(49561056, 256, 48284464, 48530048, 48529024, 48285200, 0)
-KLEE: WARNING ONCE: calling external: pthread_sigmask(1, 48279072, 0)
-KLEE: WARNING ONCE: calling external: pwrite(10, 49741836, 4, 0)
+KLEE: WARNING ONCE: calling external: snprintf(34627760, 256, 33346192, 33591840, 33590816, 33346928, 0)
+KLEE: WARNING ONCE: calling external: pthread_sigmask(1, 33340848, 0)
+KLEE: WARNING ONCE: calling external: pwrite(10, 34803788, 4, 0)
 KLEE: WARNING ONCE: calling external: close(11)
 req->clength : 4
 foffset : 4
@@ -113,13 +113,13 @@ Verifying this trace......
 
 The number of assert: 2
 Verifying assert 1 @Trace1#40#E558#1-0assert_bug: Yes!
-Assert Failure at /home/zhy/git/Benchmarks/cap_3_new/bug/aget-0.4.1-llvm/Misc.c: 40
+Assert Failure at /home/zhy/work/test/cap_3_new/bug/aget-0.4.1-llvm/Misc.c: 40
 
 ************************************************************************
 第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#40#E558#1-0assert_bug.txt
 ************************************************************************
 
-KLEE: ERROR: /home/zhy/git/Benchmarks/cap_3_new/bug/aget-0.4.1-llvm/Misc.c:40: ASSERTION FAIL: assert1 == temp
+KLEE: ERROR: /home/zhy/work/test/cap_3_new/bug/aget-0.4.1-llvm/Misc.c:40: ASSERTION FAIL: assert1 == temp
 KLEE: NOTE: now ignoring this error at this location
 encounter runtime error
 ######################执行有错误,放弃本次执行##############

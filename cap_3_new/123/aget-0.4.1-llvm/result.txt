@@ -1,0 +1,515 @@
+KLEE: output directory is "/home/zhy/cap_3_new/123/aget-0.4.1-llvm/klee-out-0"
+KLEE: WARNING: undefined reference to function: __errno_location
+KLEE: WARNING: undefined reference to function: __h_errno_location
+KLEE: WARNING: undefined reference to function: alarm
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: atoll
+KLEE: WARNING: undefined reference to function: bzero
+KLEE: WARNING: undefined reference to function: close
+KLEE: WARNING: undefined reference to function: connect
+KLEE: WARNING: undefined reference to function: dup
+KLEE: WARNING: undefined reference to function: fclose
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fopen
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: fread
+KLEE: WARNING: undefined reference to function: fwrite
+KLEE: WARNING: undefined reference to function: gethostbyname
+KLEE: WARNING: undefined reference to function: getopt
+KLEE: WARNING: undefined reference to function: hstrerror
+KLEE: WARNING: undefined reference to function: htons
+KLEE: WARNING: undefined reference to function: inet_addr
+KLEE: WARNING: undefined reference to function: lseek
+KLEE: WARNING: undefined reference to function: open
+KLEE: WARNING: undefined reference to variable: optarg
+KLEE: WARNING: undefined reference to variable: optind
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cancel
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_exit
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: pthread_self
+KLEE: WARNING: undefined reference to function: pthread_sigmask
+KLEE: WARNING: undefined reference to function: putchar
+KLEE: WARNING: undefined reference to function: pwrite
+KLEE: WARNING: undefined reference to function: recv
+KLEE: WARNING: undefined reference to function: send
+KLEE: WARNING: undefined reference to function: snprintf
+KLEE: WARNING: undefined reference to function: socket
+KLEE: WARNING: undefined reference to function: sprintf
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strerror
+KLEE: WARNING: undefined reference to function: strlen
+KLEE: WARNING: undefined reference to function: strncasecmp
+KLEE: WARNING: undefined reference to function: strncmp
+KLEE: WARNING: undefined reference to function: strncpy
+KLEE: WARNING: undefined reference to function: strstr
+KLEE: WARNING: undefined reference to function: strtok
+KLEE: WARNING: undefined reference to function: time
+KLEE: WARNING: undefined reference to function: unlink
+KLEE: WARNING: undefined reference to function: vfprintf
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(37268688, 0)
+KLEE: WARNING ONCE: calling external: getopt(2, 36508480, 37295744)
+KLEE: WARNING ONCE: calling external: strlen(35831984)
+KLEE: WARNING ONCE: calling external: printf(37313392, 37587312)
+KLEE: WARNING ONCE: calling external: strncmp(37587312, 37314000, 6)
+KLEE: WARNING ONCE: calling external: strncpy(37536496, 37719744, 5)
+KLEE: WARNING ONCE: calling external: gethostbyname(37534448)
+KLEE: WARNING ONCE: calling external: time(37303408)
+KLEE: WARNING ONCE: calling external: bzero(37945840, 16)
+KLEE: WARNING ONCE: calling external: inet_addr(37537520)
+KLEE: WARNING ONCE: calling external: htons(80)
+KLEE: WARNING ONCE: calling external: socket(2, 1, 0)
+KLEE: WARNING ONCE: calling external: connect(8, 37945840, 16)
+KLEE: WARNING ONCE: calling external: sprintf(38382352, 37326640, 37335888)
+KLEE: WARNING ONCE: calling external: fflush(140085450626048)
+http://127.0.0.1/2.txt
+size : 5
+2
+.
+t
+x
+t
+req->host : 127.0.0.1
+req->ip : 
+req->ip : 127.0.0.1
+KLEE: WARNING ONCE: calling external: vfprintf(140085450625472, 38382352, 38408720)
+<LOG> Head-Request Connection establishedKLEE: WARNING ONCE: calling external: fprintf(140085450625472, 37324176)
+
+KLEE: WARNING ONCE: calling external: send(8, 38369712, 76, 0)
+KLEE: WARNING ONCE: calling external: recv(8, 38352880, 512, 0)
+KLEE: WARNING ONCE: calling external: strstr(38352880, 37329680)
+KLEE: WARNING ONCE: calling external: strtok(38352880, 37339904)
+KLEE: WARNING ONCE: calling external: strncasecmp(38352897, 37341168, 15)
+KLEE: WARNING ONCE: calling external: atoll(38353073)
+<LOG> Downloading /2.txt (4 bytes) from site 127.0.0.1(127.0.0.1:80). Number of Threads: 1
+KLEE: WARNING ONCE: calling external: open(37536496, 66, 448)
+KLEE: WARNING ONCE: calling external: lseek(9, 3, 0)
+KLEE: WARNING ONCE: calling external: write(9, 37308112, 1)
+KLEE: WARNING ONCE: calling external: dup(9)
+KLEE: WARNING ONCE: calling external: snprintf(38570848, 256, 37310000, 37535472, 37534448, 37310736, 0)
+KLEE: WARNING ONCE: calling external: pthread_sigmask(1, 37304656, 0)
+KLEE: WARNING ONCE: calling external: pwrite(10, 38747836, 4, 0)
+KLEE: WARNING ONCE: calling external: close(11)
+req->clength : 4
+foffset : 4
+td->offset : 4
+<LOG> Download completed, job completed in 1 seconds. (0 Kb/sec)
+<LOG> Shutting down...
+######################本条路径为新路径####################
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 0
+
+Verifying is over!
+Sum of branches: 364
+Verifying branch 1 @Trace1#91#E40#0-1: NNo!
+Verifying branch 2 @Trace1#33#E546#1-0: Cost : 0.121258 No!
+Verifying branch 3 @Trace1#46#E569#1-0: NNo!
+Verifying branch 4 @Trace1#51#E577#0-1: NNo!
+Verifying branch 5 @Trace1#46#E597#1-0: NNo!
+Verifying branch 6 @Trace1#51#E605#0-1: NNo!
+Verifying branch 7 @Trace1#46#E625#1-0: NNo!
+Verifying branch 8 @Trace1#51#E633#0-1: NNo!
+Verifying branch 9 @Trace1#46#E653#1-0: NNo!
+Verifying branch 10 @Trace1#51#E661#0-1: NNo!
+Verifying branch 11 @Trace1#46#E681#1-0: NNo!
+Verifying branch 12 @Trace1#51#E689#0-1: NNo!
+Verifying branch 13 @Trace1#46#E709#1-0: NNo!
+Verifying branch 14 @Trace1#51#E717#0-1: NNo!
+Verifying branch 15 @Trace1#46#E737#1-0: NNo!
+Verifying branch 16 @Trace1#51#E745#0-1: NNo!
+Verifying branch 17 @Trace1#46#E765#1-0: NNo!
+Verifying branch 18 @Trace1#51#E773#0-1: NNo!
+Verifying branch 19 @Trace1#46#E793#1-0: NNo!
+Verifying branch 20 @Trace1#51#E801#0-1: NNo!
+Verifying branch 21 @Trace1#46#E821#0-1: NNo!
+Verifying branch 22 @Trace1#76#E834#1-0: NNo!
+Verifying branch 23 @Trace1#76#E857#1-0: NNo!
+Verifying branch 24 @Trace1#76#E880#1-0: NNo!
+Verifying branch 25 @Trace1#76#E903#1-0: NNo!
+Verifying branch 26 @Trace1#76#E926#1-0: NNo!
+Verifying branch 27 @Trace1#76#E949#1-0: NNo!
+Verifying branch 28 @Trace1#76#E972#0-1: NNo!
+Verifying branch 29 @Trace1#85#E988#1-0: NNo!
+Verifying branch 30 @Trace1#85#E1011#1-0: NNo!
+Verifying branch 31 @Trace1#85#E1034#1-0: NNo!
+Verifying branch 32 @Trace1#85#E1057#1-0: NNo!
+Verifying branch 33 @Trace1#85#E1080#1-0: NNo!
+Verifying branch 34 @Trace1#85#E1103#0-1: NNo!
+Verifying branch 35 @Trace1#43#E1325#1-0: NNo!
+Verifying branch 36 @Trace1#179#E1440#1-0: NNo!
+Verifying branch 37 @Trace1#179#E1449#0-1: NNo!
+Verifying branch 38 @Trace1#99#E1581#0-1: NNo!
+Verifying branch 39 @Trace1#101#E1581#1-0: NNo!
+Verifying branch 40 @Trace1#53#E1598#0-1: NNo!
+Verifying branch 41 @Trace1#179#E1650#1-0: NNo!
+Verifying branch 42 @Trace1#179#E1659#0-1: NNo!
+Verifying branch 43 @Trace1#93#E1703#1-0: NNo!
+Verifying branch 44 @Trace1#97#E1771#1-0: NNo!
+Verifying branch 45 @Trace1#93#E1867#0-1: NNo!
+Verifying branch 46 @Trace1#114#E1875#1-0: NNo!
+Verifying branch 47 @Trace1#50#E1907#1-0: Cost : 0.1825 Yes!
+Verifying branch 48 @Trace1#90#E2002#0-1: NNo!
+Verifying branch 49 @Trace1#90#E2014#0-1: NNo!
+Verifying branch 50 @Trace1#90#E2026#0-1: NNo!
+Verifying branch 51 @Trace1#90#E2038#0-1: NNo!
+Verifying branch 52 @Trace1#90#E2050#0-1: NNo!
+Verifying branch 53 @Trace1#90#E2062#0-1: NNo!
+Verifying branch 54 @Trace1#90#E2074#0-1: NNo!
+Verifying branch 55 @Trace1#90#E2086#0-1: NNo!
+Verifying branch 56 @Trace1#90#E2098#0-1: NNo!
+Verifying branch 57 @Trace1#90#E2110#0-1: NNo!
+Verifying branch 58 @Trace1#90#E2122#0-1: NNo!
+Verifying branch 59 @Trace1#90#E2134#0-1: NNo!
+Verifying branch 60 @Trace1#90#E2146#0-1: NNo!
+Verifying branch 61 @Trace1#90#E2158#0-1: NNo!
+Verifying branch 62 @Trace1#90#E2170#0-1: NNo!
+Verifying branch 63 @Trace1#90#E2182#0-1: NNo!
+Verifying branch 64 @Trace1#90#E2194#0-1: NNo!
+Verifying branch 65 @Trace1#90#E2206#0-1: NNo!
+Verifying branch 66 @Trace1#90#E2218#0-1: NNo!
+Verifying branch 67 @Trace1#90#E2230#0-1: NNo!
+Verifying branch 68 @Trace1#90#E2242#0-1: NNo!
+Verifying branch 69 @Trace1#90#E2254#0-1: NNo!
+Verifying branch 70 @Trace1#90#E2266#0-1: NNo!
+Verifying branch 71 @Trace1#90#E2278#0-1: NNo!
+Verifying branch 72 @Trace1#90#E2290#0-1: NNo!
+Verifying branch 73 @Trace1#90#E2302#0-1: NNo!
+Verifying branch 74 @Trace1#90#E2314#0-1: NNo!
+Verifying branch 75 @Trace1#90#E2326#0-1: NNo!
+Verifying branch 76 @Trace1#90#E2338#0-1: NNo!
+Verifying branch 77 @Trace1#90#E2350#0-1: NNo!
+Verifying branch 78 @Trace1#90#E2356#0-1: NNo!
+Verifying branch 79 @Trace1#90#E2362#0-1: NNo!
+Verifying branch 80 @Trace1#90#E2374#0-1: NNo!
+Verifying branch 81 @Trace1#90#E2386#0-1: NNo!
+Verifying branch 82 @Trace1#90#E2398#0-1: NNo!
+Verifying branch 83 @Trace1#90#E2410#0-1: NNo!
+Verifying branch 84 @Trace1#90#E2422#0-1: NNo!
+Verifying branch 85 @Trace1#90#E2434#0-1: NNo!
+Verifying branch 86 @Trace1#90#E2446#0-1: NNo!
+Verifying branch 87 @Trace1#90#E2458#0-1: NNo!
+Verifying branch 88 @Trace1#90#E2470#0-1: NNo!
+Verifying branch 89 @Trace1#90#E2482#0-1: NNo!
+Verifying branch 90 @Trace1#90#E2494#0-1: NNo!
+Verifying branch 91 @Trace1#90#E2506#0-1: NNo!
+Verifying branch 92 @Trace1#90#E2518#0-1: NNo!
+Verifying branch 93 @Trace1#90#E2530#0-1: NNo!
+Verifying branch 94 @Trace1#90#E2542#0-1: NNo!
+Verifying branch 95 @Trace1#90#E2554#0-1: NNo!
+Verifying branch 96 @Trace1#90#E2566#0-1: NNo!
+Verifying branch 97 @Trace1#90#E2578#0-1: NNo!
+Verifying branch 98 @Trace1#90#E2590#0-1: NNo!
+Verifying branch 99 @Trace1#90#E2602#0-1: NNo!
+Verifying branch 100 @Trace1#90#E2614#0-1: NNo!
+Verifying branch 101 @Trace1#90#E2626#0-1: NNo!
+Verifying branch 102 @Trace1#90#E2638#0-1: NNo!
+Verifying branch 103 @Trace1#90#E2650#0-1: NNo!
+Verifying branch 104 @Trace1#90#E2662#0-1: NNo!
+Verifying branch 105 @Trace1#90#E2674#0-1: NNo!
+Verifying branch 106 @Trace1#90#E2686#0-1: NNo!
+Verifying branch 107 @Trace1#90#E2698#0-1: NNo!
+Verifying branch 108 @Trace1#90#E2710#0-1: NNo!
+Verifying branch 109 @Trace1#90#E2722#0-1: NNo!
+Verifying branch 110 @Trace1#90#E2734#0-1: NNo!
+Verifying branch 111 @Trace1#90#E2746#0-1: NNo!
+Verifying branch 112 @Trace1#90#E2758#0-1: NNo!
+Verifying branch 113 @Trace1#90#E2770#0-1: NNo!
+Verifying branch 114 @Trace1#90#E2782#0-1: NNo!
+Verifying branch 115 @Trace1#90#E2794#0-1: NNo!
+Verifying branch 116 @Trace1#90#E2806#0-1: NNo!
+Verifying branch 117 @Trace1#90#E2812#0-1: NNo!
+Verifying branch 118 @Trace1#90#E2818#0-1: NNo!
+Verifying branch 119 @Trace1#90#E2830#0-1: NNo!
+Verifying branch 120 @Trace1#90#E2842#0-1: NNo!
+Verifying branch 121 @Trace1#90#E2854#0-1: NNo!
+Verifying branch 122 @Trace1#90#E2866#0-1: NNo!
+Verifying branch 123 @Trace1#90#E2878#0-1: NNo!
+Verifying branch 124 @Trace1#90#E2890#0-1: NNo!
+Verifying branch 125 @Trace1#90#E2902#0-1: NNo!
+Verifying branch 126 @Trace1#90#E2914#0-1: NNo!
+Verifying branch 127 @Trace1#90#E2926#0-1: NNo!
+Verifying branch 128 @Trace1#90#E2938#0-1: NNo!
+Verifying branch 129 @Trace1#90#E2950#0-1: NNo!
+Verifying branch 130 @Trace1#90#E2962#0-1: NNo!
+Verifying branch 131 @Trace1#90#E2974#0-1: NNo!
+Verifying branch 132 @Trace1#90#E2986#0-1: NNo!
+Verifying branch 133 @Trace1#90#E2998#0-1: NNo!
+Verifying branch 134 @Trace1#90#E3010#0-1: NNo!
+Verifying branch 135 @Trace1#90#E3022#0-1: NNo!
+Verifying branch 136 @Trace1#90#E3034#0-1: NNo!
+Verifying branch 137 @Trace1#90#E3046#0-1: NNo!
+Verifying branch 138 @Trace1#90#E3058#0-1: NNo!
+Verifying branch 139 @Trace1#90#E3070#0-1: NNo!
+Verifying branch 140 @Trace1#90#E3082#0-1: NNo!
+Verifying branch 141 @Trace1#90#E3094#0-1: NNo!
+Verifying branch 142 @Trace1#90#E3106#0-1: NNo!
+Verifying branch 143 @Trace1#90#E3118#0-1: NNo!
+Verifying branch 144 @Trace1#90#E3130#0-1: NNo!
+Verifying branch 145 @Trace1#90#E3142#0-1: NNo!
+Verifying branch 146 @Trace1#90#E3154#0-1: NNo!
+Verifying branch 147 @Trace1#90#E3166#0-1: NNo!
+Verifying branch 148 @Trace1#90#E3178#0-1: NNo!
+Verifying branch 149 @Trace1#90#E3184#0-1: NNo!
+Verifying branch 150 @Trace1#90#E3190#0-1: NNo!
+Verifying branch 151 @Trace1#90#E3202#0-1: NNo!
+Verifying branch 152 @Trace1#90#E3214#0-1: NNo!
+Verifying branch 153 @Trace1#90#E3226#0-1: NNo!
+Verifying branch 154 @Trace1#90#E3238#0-1: NNo!
+Verifying branch 155 @Trace1#90#E3250#0-1: NNo!
+Verifying branch 156 @Trace1#90#E3262#0-1: NNo!
+Verifying branch 157 @Trace1#90#E3274#0-1: NNo!
+Verifying branch 158 @Trace1#90#E3286#0-1: NNo!
+Verifying branch 159 @Trace1#90#E3298#0-1: NNo!
+Verifying branch 160 @Trace1#90#E3310#0-1: NNo!
+Verifying branch 161 @Trace1#90#E3322#0-1: NNo!
+Verifying branch 162 @Trace1#90#E3334#0-1: NNo!
+Verifying branch 163 @Trace1#90#E3346#0-1: NNo!
+Verifying branch 164 @Trace1#90#E3358#0-1: NNo!
+Verifying branch 165 @Trace1#90#E3370#0-1: NNo!
+Verifying branch 166 @Trace1#90#E3382#0-1: NNo!
+Verifying branch 167 @Trace1#90#E3394#0-1: NNo!
+Verifying branch 168 @Trace1#90#E3406#0-1: NNo!
+Verifying branch 169 @Trace1#90#E3418#0-1: NNo!
+Verifying branch 170 @Trace1#90#E3430#0-1: NNo!
+Verifying branch 171 @Trace1#90#E3442#0-1: NNo!
+Verifying branch 172 @Trace1#90#E3454#0-1: NNo!
+Verifying branch 173 @Trace1#90#E3466#0-1: NNo!
+Verifying branch 174 @Trace1#90#E3478#0-1: NNo!
+Verifying branch 175 @Trace1#90#E3490#0-1: NNo!
+Verifying branch 176 @Trace1#90#E3502#0-1: NNo!
+Verifying branch 177 @Trace1#90#E3514#0-1: NNo!
+Verifying branch 178 @Trace1#90#E3526#0-1: NNo!
+Verifying branch 179 @Trace1#90#E3538#0-1: NNo!
+Verifying branch 180 @Trace1#90#E3550#0-1: NNo!
+Verifying branch 181 @Trace1#90#E3562#0-1: NNo!
+Verifying branch 182 @Trace1#90#E3574#0-1: NNo!
+Verifying branch 183 @Trace1#90#E3586#0-1: NNo!
+Verifying branch 184 @Trace1#90#E3598#0-1: NNo!
+Verifying branch 185 @Trace1#90#E3610#0-1: NNo!
+Verifying branch 186 @Trace1#90#E3622#0-1: NNo!
+Verifying branch 187 @Trace1#90#E3634#0-1: NNo!
+Verifying branch 188 @Trace1#90#E3646#0-1: NNo!
+Verifying branch 189 @Trace1#90#E3658#0-1: NNo!
+Verifying branch 190 @Trace1#90#E3670#0-1: NNo!
+Verifying branch 191 @Trace1#90#E3682#0-1: NNo!
+Verifying branch 192 @Trace1#90#E3694#0-1: NNo!
+Verifying branch 193 @Trace1#90#E3706#0-1: NNo!
+Verifying branch 194 @Trace1#90#E3718#0-1: NNo!
+Verifying branch 195 @Trace1#90#E3730#0-1: NNo!
+Verifying branch 196 @Trace1#90#E3742#0-1: NNo!
+Verifying branch 197 @Trace1#90#E3748#0-1: NNo!
+Verifying branch 198 @Trace1#90#E3754#0-1: NNo!
+Verifying branch 199 @Trace1#90#E3766#0-1: NNo!
+Verifying branch 200 @Trace1#90#E3778#0-1: NNo!
+Verifying branch 201 @Trace1#90#E3790#0-1: NNo!
+Verifying branch 202 @Trace1#90#E3802#0-1: NNo!
+Verifying branch 203 @Trace1#90#E3814#0-1: NNo!
+Verifying branch 204 @Trace1#90#E3826#0-1: NNo!
+Verifying branch 205 @Trace1#90#E3838#0-1: NNo!
+Verifying branch 206 @Trace1#90#E3850#0-1: NNo!
+Verifying branch 207 @Trace1#90#E3862#0-1: NNo!
+Verifying branch 208 @Trace1#90#E3874#0-1: NNo!
+Verifying branch 209 @Trace1#90#E3886#0-1: NNo!
+Verifying branch 210 @Trace1#90#E3898#0-1: NNo!
+Verifying branch 211 @Trace1#90#E3910#0-1: NNo!
+Verifying branch 212 @Trace1#90#E3922#0-1: NNo!
+Verifying branch 213 @Trace1#90#E3934#0-1: NNo!
+Verifying branch 214 @Trace1#90#E3946#0-1: NNo!
+Verifying branch 215 @Trace1#90#E3958#0-1: NNo!
+Verifying branch 216 @Trace1#90#E3970#0-1: NNo!
+Verifying branch 217 @Trace1#90#E3982#0-1: NNo!
+Verifying branch 218 @Trace1#90#E3994#0-1: NNo!
+Verifying branch 219 @Trace1#90#E4006#0-1: NNo!
+Verifying branch 220 @Trace1#90#E4018#0-1: NNo!
+Verifying branch 221 @Trace1#90#E4030#0-1: NNo!
+Verifying branch 222 @Trace1#90#E4042#0-1: NNo!
+Verifying branch 223 @Trace1#90#E4054#0-1: NNo!
+Verifying branch 224 @Trace1#90#E4060#0-1: NNo!
+Verifying branch 225 @Trace1#90#E4066#0-1: NNo!
+Verifying branch 226 @Trace1#90#E4078#0-1: NNo!
+Verifying branch 227 @Trace1#90#E4090#0-1: NNo!
+Verifying branch 228 @Trace1#90#E4102#0-1: NNo!
+Verifying branch 229 @Trace1#90#E4114#0-1: NNo!
+Verifying branch 230 @Trace1#90#E4126#0-1: NNo!
+Verifying branch 231 @Trace1#90#E4138#0-1: NNo!
+Verifying branch 232 @Trace1#90#E4150#0-1: NNo!
+Verifying branch 233 @Trace1#90#E4162#0-1: NNo!
+Verifying branch 234 @Trace1#90#E4174#0-1: NNo!
+Verifying branch 235 @Trace1#90#E4186#0-1: NNo!
+Verifying branch 236 @Trace1#90#E4198#0-1: NNo!
+Verifying branch 237 @Trace1#90#E4210#0-1: NNo!
+Verifying branch 238 @Trace1#90#E4222#0-1: NNo!
+Verifying branch 239 @Trace1#90#E4234#0-1: NNo!
+Verifying branch 240 @Trace1#90#E4246#0-1: NNo!
+Verifying branch 241 @Trace1#90#E4258#0-1: NNo!
+Verifying branch 242 @Trace1#90#E4270#0-1: NNo!
+Verifying branch 243 @Trace1#90#E4282#0-1: NNo!
+Verifying branch 244 @Trace1#90#E4294#0-1: NNo!
+Verifying branch 245 @Trace1#90#E4306#0-1: NNo!
+Verifying branch 246 @Trace1#90#E4318#0-1: NNo!
+Verifying branch 247 @Trace1#90#E4330#0-1: NNo!
+Verifying branch 248 @Trace1#90#E4336#0-1: NNo!
+Verifying branch 249 @Trace1#90#E4342#0-1: NNo!
+Verifying branch 250 @Trace1#90#E4354#0-1: NNo!
+Verifying branch 251 @Trace1#90#E4366#0-1: NNo!
+Verifying branch 252 @Trace1#90#E4378#0-1: NNo!
+Verifying branch 253 @Trace1#90#E4390#0-1: NNo!
+Verifying branch 254 @Trace1#90#E4402#0-1: NNo!
+Verifying branch 255 @Trace1#90#E4414#0-1: NNo!
+Verifying branch 256 @Trace1#90#E4426#0-1: NNo!
+Verifying branch 257 @Trace1#90#E4438#0-1: NNo!
+Verifying branch 258 @Trace1#90#E4450#0-1: NNo!
+Verifying branch 259 @Trace1#90#E4462#0-1: NNo!
+Verifying branch 260 @Trace1#90#E4474#0-1: NNo!
+Verifying branch 261 @Trace1#90#E4486#0-1: NNo!
+Verifying branch 262 @Trace1#90#E4498#0-1: NNo!
+Verifying branch 263 @Trace1#90#E4510#0-1: NNo!
+Verifying branch 264 @Trace1#90#E4522#0-1: NNo!
+Verifying branch 265 @Trace1#90#E4534#0-1: NNo!
+Verifying branch 266 @Trace1#90#E4546#0-1: NNo!
+Verifying branch 267 @Trace1#90#E4558#0-1: NNo!
+Verifying branch 268 @Trace1#90#E4570#0-1: NNo!
+Verifying branch 269 @Trace1#90#E4576#0-1: NNo!
+Verifying branch 270 @Trace1#90#E4582#0-1: NNo!
+Verifying branch 271 @Trace1#90#E4594#0-1: NNo!
+Verifying branch 272 @Trace1#90#E4606#0-1: NNo!
+Verifying branch 273 @Trace1#90#E4618#0-1: NNo!
+Verifying branch 274 @Trace1#90#E4630#0-1: NNo!
+Verifying branch 275 @Trace1#90#E4642#0-1: NNo!
+Verifying branch 276 @Trace1#90#E4654#0-1: NNo!
+Verifying branch 277 @Trace1#90#E4666#0-1: NNo!
+Verifying branch 278 @Trace1#90#E4678#0-1: NNo!
+Verifying branch 279 @Trace1#90#E4690#0-1: NNo!
+Verifying branch 280 @Trace1#90#E4702#0-1: NNo!
+Verifying branch 281 @Trace1#90#E4714#0-1: NNo!
+Verifying branch 282 @Trace1#90#E4726#0-1: NNo!
+Verifying branch 283 @Trace1#90#E4738#0-1: NNo!
+Verifying branch 284 @Trace1#90#E4750#0-1: NNo!
+Verifying branch 285 @Trace1#90#E4762#0-1: NNo!
+Verifying branch 286 @Trace1#90#E4774#0-1: NNo!
+Verifying branch 287 @Trace1#90#E4786#0-1: NNo!
+Verifying branch 288 @Trace1#90#E4798#0-1: NNo!
+Verifying branch 289 @Trace1#90#E4810#0-1: NNo!
+Verifying branch 290 @Trace1#90#E4822#0-1: NNo!
+Verifying branch 291 @Trace1#90#E4834#0-1: NNo!
+Verifying branch 292 @Trace1#90#E4846#0-1: NNo!
+Verifying branch 293 @Trace1#90#E4858#0-1: NNo!
+Verifying branch 294 @Trace1#90#E4870#0-1: NNo!
+Verifying branch 295 @Trace1#90#E4882#0-1: NNo!
+Verifying branch 296 @Trace1#90#E4894#0-1: NNo!
+Verifying branch 297 @Trace1#90#E4906#0-1: NNo!
+Verifying branch 298 @Trace1#90#E4918#0-1: NNo!
+Verifying branch 299 @Trace1#90#E4924#0-1: NNo!
+Verifying branch 300 @Trace1#90#E4930#0-1: NNo!
+Verifying branch 301 @Trace1#90#E4942#0-1: NNo!
+Verifying branch 302 @Trace1#90#E4954#0-1: NNo!
+Verifying branch 303 @Trace1#90#E4966#0-1: NNo!
+Verifying branch 304 @Trace1#90#E4978#0-1: NNo!
+Verifying branch 305 @Trace1#90#E4990#0-1: NNo!
+Verifying branch 306 @Trace1#90#E5002#0-1: NNo!
+Verifying branch 307 @Trace1#90#E5014#0-1: NNo!
+Verifying branch 308 @Trace1#90#E5026#0-1: NNo!
+Verifying branch 309 @Trace1#90#E5038#0-1: NNo!
+Verifying branch 310 @Trace1#90#E5050#0-1: NNo!
+Verifying branch 311 @Trace1#90#E5062#0-1: NNo!
+Verifying branch 312 @Trace1#90#E5074#0-1: NNo!
+Verifying branch 313 @Trace1#90#E5086#0-1: NNo!
+Verifying branch 314 @Trace1#90#E5098#0-1: NNo!
+Verifying branch 315 @Trace1#90#E5110#0-1: NNo!
+Verifying branch 316 @Trace1#90#E5122#0-1: NNo!
+Verifying branch 317 @Trace1#90#E5134#0-1: NNo!
+Verifying branch 318 @Trace1#90#E5146#0-1: NNo!
+Verifying branch 319 @Trace1#90#E5158#0-1: NNo!
+Verifying branch 320 @Trace1#90#E5164#0-1: NNo!
+Verifying branch 321 @Trace1#90#E5170#0-1: NNo!
+Verifying branch 322 @Trace1#90#E5182#0-1: NNo!
+Verifying branch 323 @Trace1#90#E5194#0-1: NNo!
+Verifying branch 324 @Trace1#90#E5206#0-1: NNo!
+Verifying branch 325 @Trace1#90#E5218#0-1: NNo!
+Verifying branch 326 @Trace1#90#E5230#0-1: NNo!
+Verifying branch 327 @Trace1#90#E5242#0-1: NNo!
+Verifying branch 328 @Trace1#90#E5254#0-1: NNo!
+Verifying branch 329 @Trace1#90#E5266#0-1: NNo!
+Verifying branch 330 @Trace1#90#E5278#0-1: NNo!
+Verifying branch 331 @Trace1#90#E5290#0-1: NNo!
+Verifying branch 332 @Trace1#90#E5302#0-1: NNo!
+Verifying branch 333 @Trace1#90#E5314#0-1: NNo!
+Verifying branch 334 @Trace1#90#E5326#0-1: NNo!
+Verifying branch 335 @Trace1#90#E5338#0-1: NNo!
+Verifying branch 336 @Trace1#90#E5350#0-1: NNo!
+Verifying branch 337 @Trace1#90#E5362#0-1: NNo!
+Verifying branch 338 @Trace1#90#E5374#0-1: NNo!
+Verifying branch 339 @Trace1#90#E5386#0-1: NNo!
+Verifying branch 340 @Trace1#90#E5398#0-1: NNo!
+Verifying branch 341 @Trace1#90#E5410#0-1: NNo!
+Verifying branch 342 @Trace1#90#E5422#0-1: NNo!
+Verifying branch 343 @Trace1#90#E5434#0-1: NNo!
+Verifying branch 344 @Trace1#90#E5446#0-1: NNo!
+Verifying branch 345 @Trace1#90#E5458#0-1: NNo!
+Verifying branch 346 @Trace1#90#E5470#0-1: NNo!
+Verifying branch 347 @Trace1#90#E5482#0-1: NNo!
+Verifying branch 348 @Trace1#90#E5488#0-1: NNo!
+Verifying branch 349 @Trace1#90#E5494#0-1: NNo!
+Verifying branch 350 @Trace1#90#E5506#0-1: NNo!
+Verifying branch 351 @Trace1#90#E5518#0-1: NNo!
+Verifying branch 352 @Trace1#90#E5524#0-1: NNo!
+Verifying branch 353 @Trace1#90#E5530#0-1: NNo!
+Verifying branch 354 @Trace1#90#E5536#0-1: NNo!
+Verifying branch 355 @Trace1#100#E5559#0-1: Cost : 0.021469 No!
+Verifying branch 356 @Trace1#112#E5594#0-1: Cost : 0.021341 No!
+Verifying branch 357 @Trace1#126#E5603#1-0: Cost : 0.021581 No!
+Verifying branch 358 @Trace1#116#E5618#1-0: Cost : 0.0019 No!
+Verifying branch 359 @Trace1#114#E5631#0-1: NNo!
+Verifying branch 360 @Trace1#120#E5637#1-0: NNo!
+Verifying branch 361 @Trace1#179#E5695#1-0: NNo!
+Verifying branch 362 @Trace1#179#E5704#0-1: NNo!
+Verifying branch 363 @Trace1#179#E5740#1-0: NNo!
+Verifying branch 364 @Trace1#179#E5749#0-1: NNo!
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#50#E1907#1-0.txt
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: __errno_location()
+Load address = 140085487499040
+klee: PSOListener.cpp:370: virtual void klee::PSOListener::beforeExecuteInstruction(klee::ExecutionState&, klee::KInstruction*): Assertion `0 && "load resolve unsuccess"' failed.
+http://127.0.0.1/2.txt
+size : 5
+2
+.
+t
+x
+t
+req->host : 127.0.0.1
+req->ip : 
+req->ip : 127.0.0.1
+0  klee            0x0000000000ecc815 llvm::sys::PrintStackTrace(_IO_FILE*) + 37
+1  klee            0x0000000000eccc72
+2  libpthread.so.0 0x00007f6831785330
+3  libc.so.6       0x00007f682f4d4c37 gsignal + 55
+4  libc.so.6       0x00007f682f4d8028 abort + 328
+5  libc.so.6       0x00007f682f4cdbf6
+6  libc.so.6       0x00007f682f4cdca2
+7  klee            0x00000000005f584b klee::PSOListener::beforeExecuteInstruction(klee::ExecutionState&, klee::KInstruction*) + 10971
+8  klee            0x00000000005eba4e klee::ListenerService::beforeExecuteInstruction(klee::Executor*, klee::ExecutionState&, klee::KInstruction*) + 110
+9  klee            0x000000000054c107 klee::Executor::run(klee::ExecutionState&) + 2471
+10 klee            0x000000000054cb96 klee::Executor::runFunctionAsMain(llvm::Function*, int, char**, char**) + 1910
+11 klee            0x00000000005329c6 klee::Executor::runVerification(llvm::Function*, int, char**, char**) + 86
+12 klee            0x0000000000514fe8 main + 8824
+13 libc.so.6       0x00007f682f4bff45 __libc_start_main + 245
+14 klee            0x00000000005299a1
+Aborted

@@ -11,8 +11,8 @@ satCost:0
 unSatBranchBySolve:0
 unSatCost:0
 unSatBranchByPreSolve:0
-SolvingCost:0.455219
-RunningCost:0.064925
+SolvingCost:0.44722
+RunningCost:0.064703
 DTAMCost:0
 DTAMSerialCost:0
 DTAMParallelCost:0
@@ -25,4 +25,4 @@ taintMap:0
 
 totalline:1176
 name:aget-0.4.1-llvm
-memory:60488
+memory:60428
