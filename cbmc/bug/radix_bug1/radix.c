@@ -1,6 +1,3 @@
-#line 228 "./null_macros/c.m4.null.POSIX"
-
-#line 1 "radix.C"
 /*************************************************************************/
 /*                                                                       */
 /*  Copyright (c) 1994 Stanford University                               */
@@ -57,76 +54,22 @@
 #define PAGE_MASK     (~(PAGE_SIZE-1))
 #define MAX_RADIX                    2
 
-
-#line 57
-#include <pthread.h>
-#line 57
-#include <sys/time.h>
-#line 57
-#include <unistd.h>
-#line 57
-#include <stdlib.h>
-#line 57
-#define MAX_THREADS 32
-#line 57
-pthread_t PThreadTable[MAX_THREADS];
-#line 57
-
+MAIN_ENV
 
 struct prefix_node {
    long densities[MAX_RADIX];
    long ranks[MAX_RADIX];
-   
-#line 62
-struct {
-#line 62
-	pthread_mutex_t	Mutex;
-#line 62
-	pthread_cond_t	CondVar;
-#line 62
-	unsigned long	Flag;
-#line 62
-} done;
-#line 62
-
+   PAUSEDEC(done)
    char pad[PAGE_SIZE];
 };
 
 struct global_memory {
    long Index;                             /* process ID */
-   pthread_mutex_t (lock_Index);                    /* for fetch and add to get ID */
-   pthread_mutex_t (rank_lock);                     /* for fetch and add to get ID */
-/*   pthread_mutex_t section_lock[MAX_PROCESSORS];*/  /* key locks */
-   
-#line 71
-struct {
-#line 71
-	pthread_mutex_t	mutex;
-#line 71
-	pthread_cond_t	cv;
-#line 71
-	unsigned long	counter;
-#line 71
-	unsigned long	cycle;
-#line 71
-} (barrier_rank);
-#line 71
-                   /* for ranking process */
-   
-#line 72
-struct {
-#line 72
-	pthread_mutex_t	mutex;
-#line 72
-	pthread_cond_t	cv;
-#line 72
-	unsigned long	counter;
-#line 72
-	unsigned long	cycle;
-#line 72
-} (barrier_key);
-#line 72
-                    /* for key sorting process */
+   LOCKDEC(lock_Index)                    /* for fetch and add to get ID */
+   LOCKDEC(rank_lock)                     /* for fetch and add to get ID */
+/*   ALOCKDEC(section_lock,MAX_PROCESSORS)*/  /* key locks */
+   BARDEC(barrier_rank)                   /* for ranking process */
+   BARDEC(barrier_key)                    /* for key sorting process */
    double *ranktime;
    double *sorttime;
    double *totaltime;
@@ -189,17 +132,7 @@ int main(int argc, char *argv[])
    unsigned long start;
 
 
-   {
-#line 135
-	struct timeval	FullTime;
-#line 135
-
-#line 135
-	gettimeofday(&FullTime, NULL);
-#line 135
-	(start) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 135
-}
+   CLOCK(start)
 
    while ((c = getopt(argc, argv, "p:r:n:m:stoh")) != -1) {
      switch(c) {
@@ -258,26 +191,26 @@ int main(int argc, char *argv[])
      }
    }
 
-   {;}
+   MAIN_INITENV(,80000000)
    doprint =1;
    test_result=1;
 
    log2_radix = log_2(radix); 
    log2_keys = log_2(num_keys);
-   global = (struct global_memory *) valloc(sizeof(struct global_memory));;
+   global = (struct global_memory *) G_MALLOC(sizeof(struct global_memory));
    if (global == NULL) {
 	   fprintf(stderr,"ERROR: Cannot malloc enough memory for global\n");
 	   exit(-1);
    }
-   key[0] = (long *) valloc(num_keys*sizeof(long));;
-   key[1] = (long *) valloc(num_keys*sizeof(long));;
-   key_partition = (long *) valloc((number_of_processors+1)*sizeof(long));;
-   rank_partition = (long *) valloc((number_of_processors+1)*sizeof(long));;
-   global->ranktime = (double *) valloc(number_of_processors*sizeof(double));;
-   global->sorttime = (double *) valloc(number_of_processors*sizeof(double));;
-   global->totaltime = (double *) valloc(number_of_processors*sizeof(double));;
+   key[0] = (long *) G_MALLOC(num_keys*sizeof(long));
+   key[1] = (long *) G_MALLOC(num_keys*sizeof(long));
+   key_partition = (long *) G_MALLOC((number_of_processors+1)*sizeof(long));
+   rank_partition = (long *) G_MALLOC((number_of_processors+1)*sizeof(long));
+   global->ranktime = (double *) G_MALLOC(number_of_processors*sizeof(double));
+   global->sorttime = (double *) G_MALLOC(number_of_processors*sizeof(double));
+   global->totaltime = (double *) G_MALLOC(number_of_processors*sizeof(double));
    size = number_of_processors*(radix*sizeof(long)+sizeof(long *));
-   rank_me = (long **) valloc(size);;
+   rank_me = (long **) G_MALLOC(size);
    if ((key[0] == NULL) || (key[1] == NULL) || (key_partition == NULL) || (rank_partition == NULL) || 
        (global->ranktime == NULL) || (global->sorttime == NULL) || (global->totaltime == NULL) || (rank_me == NULL)) {
      fprintf(stderr,"ERROR: Cannot malloc enough memory\n");
@@ -293,118 +226,16 @@ int main(int argc, char *argv[])
      a += radix;
    }
    for (i=0;i<number_of_processors;i++) {
-     gp[i].rank_ff = (long *) valloc(radix*sizeof(long)+PAGE_SIZE);;
+     gp[i].rank_ff = (long *) G_MALLOC(radix*sizeof(long)+PAGE_SIZE);
    }
-   {pthread_mutex_init(&(global->lock_Index), NULL);}
-   {pthread_mutex_init(&(global->rank_lock), NULL);}
-/*   {
-#line 233
-	unsigned long	i, Error;
-#line 233
-
-#line 233
-	for (i = 0; i < MAX_PROCESSORS; i++) {
-#line 233
-		Error = pthread_mutex_init(&global->section_lock[i], NULL);
-#line 233
-		if (Error != 0) {
-#line 233
-			printf("Error while initializing array of locks.\n");
-#line 233
-			exit(-1);
-#line 233
-		}
-#line 233
-	}
-#line 233
-}*/
-   {
-#line 234
-	unsigned long	Error;
-#line 234
-
-#line 234
-	Error = pthread_mutex_init(&(global->barrier_rank).mutex, NULL);
-#line 234
-	if (Error != 0) {
-#line 234
-		printf("Error while initializing barrier.\n");
-#line 234
-		exit(-1);
-#line 234
-	}
-#line 234
-
-#line 234
-	Error = pthread_cond_init(&(global->barrier_rank).cv, NULL);
-#line 234
-	if (Error != 0) {
-#line 234
-		printf("Error while initializing barrier.\n");
-#line 234
-		pthread_mutex_destroy(&(global->barrier_rank).mutex);
-#line 234
-		exit(-1);
-#line 234
-	}
-#line 234
-
-#line 234
-	(global->barrier_rank).counter = 0;
-#line 234
-	(global->barrier_rank).cycle = 0;
-#line 234
-}
-   {
-#line 235
-	unsigned long	Error;
-#line 235
-
-#line 235
-	Error = pthread_mutex_init(&(global->barrier_key).mutex, NULL);
-#line 235
-	if (Error != 0) {
-#line 235
-		printf("Error while initializing barrier.\n");
-#line 235
-		exit(-1);
-#line 235
-	}
-#line 235
-
-#line 235
-	Error = pthread_cond_init(&(global->barrier_key).cv, NULL);
-#line 235
-	if (Error != 0) {
-#line 235
-		printf("Error while initializing barrier.\n");
-#line 235
-		pthread_mutex_destroy(&(global->barrier_key).mutex);
-#line 235
-		exit(-1);
-#line 235
-	}
-#line 235
-
-#line 235
-	(global->barrier_key).counter = 0;
-#line 235
-	(global->barrier_key).cycle = 0;
-#line 235
-}
+   LOCKINIT(global->lock_Index)
+   LOCKINIT(global->rank_lock)
+/*   ALOCKINIT(global->section_lock,MAX_PROCESSORS)*/
+   BARINIT(global->barrier_rank, number_of_processors)
+   BARINIT(global->barrier_key, number_of_processors)
    
    for (i=0; i<2*number_of_processors; i++) {
-     {
-#line 238
-	pthread_mutex_init(&global->prefix_tree[i].done.Mutex, NULL);
-#line 238
-	pthread_cond_init(&global->prefix_tree[i].done.CondVar, NULL);
-#line 238
-	global->prefix_tree[i].done.Flag = 0;
-#line 238
-}
-#line 238
-;
+     PAUSEINIT(global->prefix_tree[i].done);
    }
 
    global->Index = 0;
@@ -483,50 +314,8 @@ int main(int argc, char *argv[])
 
    /* Fill the random-number array. */
    
-   {
-#line 317
-	long	i, Error;
-#line 317
-
-#line 317
-	for (i = 0; i < (number_of_processors) - 1; i++) {
-#line 317
-		Error = pthread_create(&PThreadTable[i], NULL, (void * (*)(void *))(slave_sort), NULL);
-#line 317
-		if (Error != 0) {
-#line 317
-			printf("Error in pthread_create().\n");
-#line 317
-			exit(-1);
-#line 317
-		}
-#line 317
-	}
-#line 317
-
-#line 317
-	slave_sort();
-#line 317
-};
-   {
-#line 318
-	unsigned long	i, Error;
-#line 318
-	for (i = 0; i < (number_of_processors) - 1; i++) {
-#line 318
-		Error = pthread_join(PThreadTable[i], NULL);
-#line 318
-		if (Error != 0) {
-#line 318
-			printf("Error in pthread_join().\n");
-#line 318
-			exit(-1);
-#line 318
-		}
-#line 318
-	}
-#line 318
-};
+   CREATE(slave_sort, number_of_processors);
+   WAIT_FOR_END(number_of_processors);
 
    printf("\n");
    printf("                 PROCESS STATISTICS\n");
@@ -598,7 +387,7 @@ int main(int argc, char *argv[])
      test_sort(global->final);  
    }
   
-   {return 0;};
+   MAIN_END;
 }
 
 void slave_sort()
@@ -643,19 +432,19 @@ void slave_sort()
 
    stats = dostats;
 
-   // {pthread_mutex_lock(&(global->lock_Index));}
+   // LOCK(global->lock_Index)
      MyNum = global->Index;
      assert(MyNum == global->Index);
      global->Index++;
-   // {pthread_mutex_unlock(&(global->lock_Index));}
+   // UNLOCK(global->lock_Index)
 
-   {;};
-   {;};
+   BARINCLUDE(global->barrier_key);
+   BARINCLUDE(global->barrier_rank);
 
 /* POSSIBLE ENHANCEMENT:  Here is where one might pin processes to
    processors to avoid migration */
 
-   key_density = (long *) valloc(radix*sizeof(long));;
+   key_density = (long *) G_MALLOC(radix*sizeof(long));
 
    /* Fill the random-number array. */
 
@@ -669,129 +458,15 @@ void slave_sort()
 
    init(key_start,key_stop,from);
 
-   {
-#line 461
-	unsigned long	Error, Cycle;
-#line 461
-	long		Cancel, Temp;
-#line 461
-
-#line 461
-	Error = pthread_mutex_lock(&(global->barrier_key).mutex);
-#line 461
-	if (Error != 0) {
-#line 461
-		printf("Error while trying to get lock in barrier.\n");
-#line 461
-		exit(-1);
-#line 461
-	}
-#line 461
-
-#line 461
-	Cycle = (global->barrier_key).cycle;
-#line 461
-	if (++(global->barrier_key).counter != (number_of_processors)) {
-#line 461
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 461
-		while (Cycle == (global->barrier_key).cycle) {
-#line 461
-			Error = pthread_cond_wait(&(global->barrier_key).cv, &(global->barrier_key).mutex);
-#line 461
-			if (Error != 0) {
-#line 461
-				break;
-#line 461
-			}
-#line 461
-		}
-#line 461
-		pthread_setcancelstate(Cancel, &Temp);
-#line 461
-	} else {
-#line 461
-		(global->barrier_key).cycle = !(global->barrier_key).cycle;
-#line 461
-		(global->barrier_key).counter = 0;
-#line 461
-		Error = pthread_cond_broadcast(&(global->barrier_key).cv);
-#line 461
-	}
-#line 461
-	pthread_mutex_unlock(&(global->barrier_key).mutex);
-#line 461
-} 
+   BARRIER(global->barrier_key, number_of_processors) 
 
 /* POSSIBLE ENHANCEMENT:  Here is where one might reset the
    statistics that one is measuring about the parallel execution */
 
-   {
-#line 466
-	unsigned long	Error, Cycle;
-#line 466
-	long		Cancel, Temp;
-#line 466
-
-#line 466
-	Error = pthread_mutex_lock(&(global->barrier_key).mutex);
-#line 466
-	if (Error != 0) {
-#line 466
-		printf("Error while trying to get lock in barrier.\n");
-#line 466
-		exit(-1);
-#line 466
-	}
-#line 466
-
-#line 466
-	Cycle = (global->barrier_key).cycle;
-#line 466
-	if (++(global->barrier_key).counter != (number_of_processors)) {
-#line 466
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 466
-		while (Cycle == (global->barrier_key).cycle) {
-#line 466
-			Error = pthread_cond_wait(&(global->barrier_key).cv, &(global->barrier_key).mutex);
-#line 466
-			if (Error != 0) {
-#line 466
-				break;
-#line 466
-			}
-#line 466
-		}
-#line 466
-		pthread_setcancelstate(Cancel, &Temp);
-#line 466
-	} else {
-#line 466
-		(global->barrier_key).cycle = !(global->barrier_key).cycle;
-#line 466
-		(global->barrier_key).counter = 0;
-#line 466
-		Error = pthread_cond_broadcast(&(global->barrier_key).cv);
-#line 466
-	}
-#line 466
-	pthread_mutex_unlock(&(global->barrier_key).mutex);
-#line 466
-} 
+   BARRIER(global->barrier_key, number_of_processors) 
 
    if ((MyNum == 0) || (stats)) {
-     {
-#line 469
-	struct timeval	FullTime;
-#line 469
-
-#line 469
-	gettimeofday(&FullTime, NULL);
-#line 469
-	(time1) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 469
-}
+     CLOCK(time1)
    }
 
 /* Do 1 iteration per digit.  */
@@ -805,17 +480,7 @@ void slave_sort()
 /* generate histograms based on one digit */
 
      if ((MyNum == 0) || (stats)) {
-       {
-#line 483
-	struct timeval	FullTime;
-#line 483
-
-#line 483
-	gettimeofday(&FullTime, NULL);
-#line 483
-	(time2) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 483
-}
+       CLOCK(time2)
      }
 
      for (i = 0; i < radix; i++) {
@@ -833,59 +498,7 @@ void slave_sort()
        key_density[i] = key_density[i-1] + rank_me_mynum[i];  
      }
 
-     {
-#line 501
-	unsigned long	Error, Cycle;
-#line 501
-	long		Cancel, Temp;
-#line 501
-
-#line 501
-	Error = pthread_mutex_lock(&(global->barrier_rank).mutex);
-#line 501
-	if (Error != 0) {
-#line 501
-		printf("Error while trying to get lock in barrier.\n");
-#line 501
-		exit(-1);
-#line 501
-	}
-#line 501
-
-#line 501
-	Cycle = (global->barrier_rank).cycle;
-#line 501
-	if (++(global->barrier_rank).counter != (number_of_processors)) {
-#line 501
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 501
-		while (Cycle == (global->barrier_rank).cycle) {
-#line 501
-			Error = pthread_cond_wait(&(global->barrier_rank).cv, &(global->barrier_rank).mutex);
-#line 501
-			if (Error != 0) {
-#line 501
-				break;
-#line 501
-			}
-#line 501
-		}
-#line 501
-		pthread_setcancelstate(Cancel, &Temp);
-#line 501
-	} else {
-#line 501
-		(global->barrier_rank).cycle = !(global->barrier_rank).cycle;
-#line 501
-		(global->barrier_rank).counter = 0;
-#line 501
-		Error = pthread_cond_broadcast(&(global->barrier_rank).cv);
-#line 501
-	}
-#line 501
-	pthread_mutex_unlock(&(global->barrier_rank).mutex);
-#line 501
-}  
+     BARRIER(global->barrier_rank, number_of_processors)  
 
      n = &(global->prefix_tree[MyNum]);
      for (i = 0; i < radix; i++) {
@@ -896,17 +509,7 @@ void slave_sort()
      level = number_of_processors >> 1;
      base = number_of_processors;
      if ((MyNum & 0x1) == 0) {
-        {
-#line 512
-	pthread_mutex_lock(&global->prefix_tree[base + (offset >> 1)].done.Mutex);
-#line 512
-	global->prefix_tree[base + (offset >> 1)].done.Flag = 1;
-#line 512
-	pthread_cond_broadcast(&global->prefix_tree[base + (offset >> 1)].done.CondVar);
-#line 512
-	pthread_mutex_unlock(&global->prefix_tree[base + (offset >> 1)].done.Mutex);}
-#line 512
-;
+        SETPAUSE(global->prefix_tree[base + (offset >> 1)].done);
      }
      while ((offset & 0x1) != 0) {
        offset >>= 1;
@@ -914,24 +517,8 @@ void slave_sort()
        l = n - 1;
        index = base + offset;
        n = &(global->prefix_tree[index]);
-       {
-#line 520
-	pthread_mutex_lock(&n->done.Mutex);
-#line 520
-	if (n->done.Flag == 0) {
-#line 520
-		pthread_cond_wait(&n->done.CondVar, &n->done.Mutex);
-#line 520
-	}
-#line 520
-};
-       {
-#line 521
-	n->done.Flag = 0;
-#line 521
-	pthread_mutex_unlock(&n->done.Mutex);}
-#line 521
-;
+       WAITPAUSE(n->done);
+       CLEARPAUSE(n->done);
        if (offset != (level - 1)) {
          for (i = 0; i < radix; i++) {
            n->densities[i] = r->densities[i] + l->densities[i];
@@ -945,72 +532,10 @@ void slave_sort()
        base += level;
        level >>= 1;
        if ((offset & 0x1) == 0) {
-         {
-#line 535
-	pthread_mutex_lock(&global->prefix_tree[base + (offset >> 1)].done.Mutex);
-#line 535
-	global->prefix_tree[base + (offset >> 1)].done.Flag = 1;
-#line 535
-	pthread_cond_broadcast(&global->prefix_tree[base + (offset >> 1)].done.CondVar);
-#line 535
-	pthread_mutex_unlock(&global->prefix_tree[base + (offset >> 1)].done.Mutex);}
-#line 535
-;
+         SETPAUSE(global->prefix_tree[base + (offset >> 1)].done);
        }
      }
-     {
-#line 538
-	unsigned long	Error, Cycle;
-#line 538
-	long		Cancel, Temp;
-#line 538
-
-#line 538
-	Error = pthread_mutex_lock(&(global->barrier_rank).mutex);
-#line 538
-	if (Error != 0) {
-#line 538
-		printf("Error while trying to get lock in barrier.\n");
-#line 538
-		exit(-1);
-#line 538
-	}
-#line 538
-
-#line 538
-	Cycle = (global->barrier_rank).cycle;
-#line 538
-	if (++(global->barrier_rank).counter != (number_of_processors)) {
-#line 538
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 538
-		while (Cycle == (global->barrier_rank).cycle) {
-#line 538
-			Error = pthread_cond_wait(&(global->barrier_rank).cv, &(global->barrier_rank).mutex);
-#line 538
-			if (Error != 0) {
-#line 538
-				break;
-#line 538
-			}
-#line 538
-		}
-#line 538
-		pthread_setcancelstate(Cancel, &Temp);
-#line 538
-	} else {
-#line 538
-		(global->barrier_rank).cycle = !(global->barrier_rank).cycle;
-#line 538
-		(global->barrier_rank).counter = 0;
-#line 538
-		Error = pthread_cond_broadcast(&(global->barrier_rank).cv);
-#line 538
-	}
-#line 538
-	pthread_mutex_unlock(&(global->barrier_rank).mutex);
-#line 538
-};
+     BARRIER(global->barrier_rank, number_of_processors);
 
      if (MyNum != (number_of_processors - 1)) {
        offset = MyNum;
@@ -1031,24 +556,8 @@ void slave_sort()
          level >>= 1;
        }
        their_node = &(global->prefix_tree[base + offset]);
-       {
-#line 559
-	pthread_mutex_lock(&my_node->done.Mutex);
-#line 559
-	if (my_node->done.Flag == 0) {
-#line 559
-		pthread_cond_wait(&my_node->done.CondVar, &my_node->done.Mutex);
-#line 559
-	}
-#line 559
-};
-       {
-#line 560
-	my_node->done.Flag = 0;
-#line 560
-	pthread_mutex_unlock(&my_node->done.Mutex);}
-#line 560
-;
+       WAITPAUSE(my_node->done);
+       CLEARPAUSE(my_node->done);
        for (i = 0; i < radix; i++) {
          my_node->densities[i] = their_node->densities[i];
        }
@@ -1059,17 +568,7 @@ void slave_sort()
      level = number_of_processors;
      base = 0;
      while ((offset & 0x1) != 0) {
-       {
-#line 571
-	pthread_mutex_lock(&global->prefix_tree[base + offset - 1].done.Mutex);
-#line 571
-	global->prefix_tree[base + offset - 1].done.Flag = 1;
-#line 571
-	pthread_cond_broadcast(&global->prefix_tree[base + offset - 1].done.CondVar);
-#line 571
-	pthread_mutex_unlock(&global->prefix_tree[base + offset - 1].done.Mutex);}
-#line 571
-;
+       SETPAUSE(global->prefix_tree[base + offset - 1].done);
        offset >>= 1;
        base += level;
        level >>= 1;
@@ -1097,85 +596,13 @@ void slave_sort()
      }
 
      if ((MyNum == 0) || (stats)) {
-       {
-#line 599
-	struct timeval	FullTime;
-#line 599
-
-#line 599
-	gettimeofday(&FullTime, NULL);
-#line 599
-	(time3) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 599
-};
+       CLOCK(time3);
      }
 
-     {
-#line 602
-	unsigned long	Error, Cycle;
-#line 602
-	long		Cancel, Temp;
-#line 602
-
-#line 602
-	Error = pthread_mutex_lock(&(global->barrier_rank).mutex);
-#line 602
-	if (Error != 0) {
-#line 602
-		printf("Error while trying to get lock in barrier.\n");
-#line 602
-		exit(-1);
-#line 602
-	}
-#line 602
-
-#line 602
-	Cycle = (global->barrier_rank).cycle;
-#line 602
-	if (++(global->barrier_rank).counter != (number_of_processors)) {
-#line 602
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 602
-		while (Cycle == (global->barrier_rank).cycle) {
-#line 602
-			Error = pthread_cond_wait(&(global->barrier_rank).cv, &(global->barrier_rank).mutex);
-#line 602
-			if (Error != 0) {
-#line 602
-				break;
-#line 602
-			}
-#line 602
-		}
-#line 602
-		pthread_setcancelstate(Cancel, &Temp);
-#line 602
-	} else {
-#line 602
-		(global->barrier_rank).cycle = !(global->barrier_rank).cycle;
-#line 602
-		(global->barrier_rank).counter = 0;
-#line 602
-		Error = pthread_cond_broadcast(&(global->barrier_rank).cv);
-#line 602
-	}
-#line 602
-	pthread_mutex_unlock(&(global->barrier_rank).mutex);
-#line 602
-};
+     BARRIER(global->barrier_rank, number_of_processors);
 
      if ((MyNum == 0) || (stats)) {
-       {
-#line 605
-	struct timeval	FullTime;
-#line 605
-
-#line 605
-	gettimeofday(&FullTime, NULL);
-#line 605
-	(time4) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 605
-};
+       CLOCK(time4);
      }
 
      /* put it in order according to this digit */
@@ -1189,17 +616,7 @@ void slave_sort()
      }   /*  i */  
 
      if ((MyNum == 0) || (stats)) {
-       {
-#line 619
-	struct timeval	FullTime;
-#line 619
-
-#line 619
-	gettimeofday(&FullTime, NULL);
-#line 619
-	(time5) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 619
-};
+       CLOCK(time5);
      }
 
      if (loopnum != max_num_digits-1) {
@@ -1207,59 +624,7 @@ void slave_sort()
        to = to ^ 0x1;
      }
 
-     {
-#line 627
-	unsigned long	Error, Cycle;
-#line 627
-	long		Cancel, Temp;
-#line 627
-
-#line 627
-	Error = pthread_mutex_lock(&(global->barrier_rank).mutex);
-#line 627
-	if (Error != 0) {
-#line 627
-		printf("Error while trying to get lock in barrier.\n");
-#line 627
-		exit(-1);
-#line 627
-	}
-#line 627
-
-#line 627
-	Cycle = (global->barrier_rank).cycle;
-#line 627
-	if (++(global->barrier_rank).counter != (number_of_processors)) {
-#line 627
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 627
-		while (Cycle == (global->barrier_rank).cycle) {
-#line 627
-			Error = pthread_cond_wait(&(global->barrier_rank).cv, &(global->barrier_rank).mutex);
-#line 627
-			if (Error != 0) {
-#line 627
-				break;
-#line 627
-			}
-#line 627
-		}
-#line 627
-		pthread_setcancelstate(Cancel, &Temp);
-#line 627
-	} else {
-#line 627
-		(global->barrier_rank).cycle = !(global->barrier_rank).cycle;
-#line 627
-		(global->barrier_rank).counter = 0;
-#line 627
-		Error = pthread_cond_broadcast(&(global->barrier_rank).cv);
-#line 627
-	}
-#line 627
-	pthread_mutex_unlock(&(global->barrier_rank).mutex);
-#line 627
-}
+     BARRIER(global->barrier_rank, number_of_processors)
 
      if ((MyNum == 0) || (stats)) {
        ranktime += (time3 - time2);
@@ -1267,71 +632,9 @@ void slave_sort()
      }
    } /* for */
 
-   {
-#line 635
-	unsigned long	Error, Cycle;
-#line 635
-	long		Cancel, Temp;
-#line 635
-
-#line 635
-	Error = pthread_mutex_lock(&(global->barrier_rank).mutex);
-#line 635
-	if (Error != 0) {
-#line 635
-		printf("Error while trying to get lock in barrier.\n");
-#line 635
-		exit(-1);
-#line 635
-	}
-#line 635
-
-#line 635
-	Cycle = (global->barrier_rank).cycle;
-#line 635
-	if (++(global->barrier_rank).counter != (number_of_processors)) {
-#line 635
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 635
-		while (Cycle == (global->barrier_rank).cycle) {
-#line 635
-			Error = pthread_cond_wait(&(global->barrier_rank).cv, &(global->barrier_rank).mutex);
-#line 635
-			if (Error != 0) {
-#line 635
-				break;
-#line 635
-			}
-#line 635
-		}
-#line 635
-		pthread_setcancelstate(Cancel, &Temp);
-#line 635
-	} else {
-#line 635
-		(global->barrier_rank).cycle = !(global->barrier_rank).cycle;
-#line 635
-		(global->barrier_rank).counter = 0;
-#line 635
-		Error = pthread_cond_broadcast(&(global->barrier_rank).cv);
-#line 635
-	}
-#line 635
-	pthread_mutex_unlock(&(global->barrier_rank).mutex);
-#line 635
-}
+   BARRIER(global->barrier_rank, number_of_processors)
    if ((MyNum == 0) || (stats)) {
-     {
-#line 637
-	struct timeval	FullTime;
-#line 637
-
-#line 637
-	gettimeofday(&FullTime, NULL);
-#line 637
-	(time6) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 637
-}
+     CLOCK(time6)
      global->ranktime[MyNum] = ranktime;
      global->sorttime[MyNum] = sorttime;
      global->totaltime[MyNum] = time6-time1;

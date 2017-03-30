@@ -1,6 +1,3 @@
-#line 228 "./null_macros/c.m4.null.POSIX"
-
-#line 1 "fft.C"
 /*************************************************************************/
 /*                                                                       */
 /*  Copyright (c) 1994 Stanford University                               */
@@ -56,42 +53,14 @@
 #define DEFAULT_M                  4
 #define DEFAULT_P                  2
 
-
-#line 56
-#include <pthread.h>
-#line 56
-#include <sys/time.h>
-#line 56
-#include <unistd.h>
-#line 56
-#include <stdlib.h>
-#line 56
-#define MAX_THREADS 32
-#line 56
-pthread_t PThreadTable[MAX_THREADS];
-#line 56
-
+MAIN_ENV
 
 #define SWAP_VALS(a,b) {double tmp; tmp=a; a=b; b=tmp;}
 
 struct GlobalMemory {
   long id;
-  pthread_mutex_t (idlock);
-  
-#line 63
-struct {
-#line 63
-	pthread_mutex_t	mutex;
-#line 63
-	pthread_cond_t	cv;
-#line 63
-	unsigned long	counter;
-#line 63
-	unsigned long	cycle;
-#line 63
-} (start);
-#line 63
-
+  LOCKDEC(idlock)
+  BARDEC(start)
   long *transtimes;
   long *totaltimes;
   unsigned long starttime;
@@ -165,17 +134,7 @@ int main(int argc, char *argv[])
   long pages;
   unsigned long start;
 
-  {
-#line 137
-	struct timeval	FullTime;
-#line 137
-
-#line 137
-	gettimeofday(&FullTime, NULL);
-#line 137
-	(start) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 137
-};
+  CLOCK(start);
 
   // while ((c = getopt(argc, argv, "p:m:n:l:stoh")) != -1) {
   //   switch(c) {
@@ -237,13 +196,16 @@ int main(int argc, char *argv[])
 
 
 
-  {;};
+  MAIN_INITENV(,80000000);
   
-  make_input(&doprint);
-  make_input(&test_result);
-  make_input(&dostats);
-  make_input(&dohelp);
-
+  // make_input(&doprint);
+  // make_input(&test_result);
+  // make_input(&dostats);
+  // make_input(&dohelp);
+  doprint = atoi(argv[1]);
+  test_result = atoi(argv[2]);
+  dostats = atoi(argv[3]);
+  dohelp = atoi(argv[4]);
 
   if(dohelp){
   	        	printf("Usage: FFT <options>\n\n");
@@ -302,14 +264,14 @@ int main(int argc, char *argv[])
     }
   }
 
-  Global = (struct GlobalMemory *) valloc(sizeof(struct GlobalMemory));;
-  x = (double *) valloc(2*(N+rootN*pad_length)*sizeof(double)+PAGE_SIZE);;
-  trans = (double *) valloc(2*(N+rootN*pad_length)*sizeof(double)+PAGE_SIZE);;
-  umain = (double *) valloc(2*rootN*sizeof(double));;  
-  umain2 = (double *) valloc(2*(N+rootN*pad_length)*sizeof(double)+PAGE_SIZE);;
+  Global = (struct GlobalMemory *) G_MALLOC(sizeof(struct GlobalMemory));
+  x = (double *) G_MALLOC(2*(N+rootN*pad_length)*sizeof(double)+PAGE_SIZE);
+  trans = (double *) G_MALLOC(2*(N+rootN*pad_length)*sizeof(double)+PAGE_SIZE);
+  umain = (double *) G_MALLOC(2*rootN*sizeof(double));  
+  umain2 = (double *) G_MALLOC(2*(N+rootN*pad_length)*sizeof(double)+PAGE_SIZE);
 
-  Global->transtimes = (long *) valloc(P*sizeof(long));;  
-  Global->totaltimes = (long *) valloc(P*sizeof(long));;  
+  Global->transtimes = (long *) G_MALLOC(P*sizeof(long));  
+  Global->totaltimes = (long *) G_MALLOC(P*sizeof(long));  
   if (Global == NULL) {
     printerr("Could not malloc memory for Global\n");
     exit(-1);
@@ -372,44 +334,8 @@ int main(int argc, char *argv[])
   printf("   %d Bytes per page\n",PAGE_SIZE);
   printf("\n");
 
-  {
-#line 334
-	unsigned long	Error;
-#line 334
-
-#line 334
-	Error = pthread_mutex_init(&(Global->start).mutex, NULL);
-#line 334
-	if (Error != 0) {
-#line 334
-		printf("Error while initializing barrier.\n");
-#line 334
-		exit(-1);
-#line 334
-	}
-#line 334
-
-#line 334
-	Error = pthread_cond_init(&(Global->start).cv, NULL);
-#line 334
-	if (Error != 0) {
-#line 334
-		printf("Error while initializing barrier.\n");
-#line 334
-		pthread_mutex_destroy(&(Global->start).mutex);
-#line 334
-		exit(-1);
-#line 334
-	}
-#line 334
-
-#line 334
-	(Global->start).counter = 0;
-#line 334
-	(Global->start).cycle = 0;
-#line 334
-};
-  {pthread_mutex_init(&(Global->idlock), NULL);};
+  BARINIT(Global->start, P);
+  LOCKINIT(Global->idlock);
   Global->id = 0;
   InitX(x);                  /* place random values in x */
 
@@ -426,50 +352,8 @@ int main(int argc, char *argv[])
 
   /* fire off P processes */
 
-  {
-#line 352
-	long	i, Error;
-#line 352
-
-#line 352
-	for (i = 0; i < (P) - 1; i++) {
-#line 352
-		Error = pthread_create(&PThreadTable[i], NULL, (void * (*)(void *))(SlaveStart), NULL);
-#line 352
-		if (Error != 0) {
-#line 352
-			printf("Error in pthread_create().\n");
-#line 352
-			exit(-1);
-#line 352
-		}
-#line 352
-	}
-#line 352
-
-#line 352
-	SlaveStart();
-#line 352
-};
-  {
-#line 353
-	unsigned long	i, Error;
-#line 353
-	for (i = 0; i < (P) - 1; i++) {
-#line 353
-		Error = pthread_join(PThreadTable[i], NULL);
-#line 353
-		if (Error != 0) {
-#line 353
-			printf("Error in pthread_join().\n");
-#line 353
-			exit(-1);
-#line 353
-		}
-#line 353
-	}
-#line 353
-};
+  CREATE(SlaveStart, P);
+  WAIT_FOR_END(P);
 
   if (doprint) {
     if (test_result) {
@@ -561,7 +445,7 @@ int main(int argc, char *argv[])
     }
   }
 
-  {return 0;};
+  MAIN_END;
 }
 
 
@@ -576,70 +460,18 @@ void SlaveStart()
   long MyFirst; 
   long MyLast;
 
-  {pthread_mutex_lock(&(Global->idlock));};
+  LOCK(Global->idlock);
     MyNum = Global->id;
     // assert(MyNum == Global->id);
     Global->id++;
-  {pthread_mutex_unlock(&(Global->idlock));}; 
+  UNLOCK(Global->idlock); 
 
-  {;};
+  BARINCLUDE(Global->start);
 
 /* POSSIBLE ENHANCEMENT:  Here is where one might pin processes to
    processors to avoid migration */
 
-  {
-#line 471
-	unsigned long	Error, Cycle;
-#line 471
-	long		Cancel, Temp;
-#line 471
-
-#line 471
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 471
-	if (Error != 0) {
-#line 471
-		printf("Error while trying to get lock in barrier.\n");
-#line 471
-		exit(-1);
-#line 471
-	}
-#line 471
-
-#line 471
-	Cycle = (Global->start).cycle;
-#line 471
-	if (++(Global->start).counter != (P)) {
-#line 471
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 471
-		while (Cycle == (Global->start).cycle) {
-#line 471
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 471
-			if (Error != 0) {
-#line 471
-				break;
-#line 471
-			}
-#line 471
-		}
-#line 471
-		pthread_setcancelstate(Cancel, &Temp);
-#line 471
-	} else {
-#line 471
-		(Global->start).cycle = !(Global->start).cycle;
-#line 471
-		(Global->start).counter = 0;
-#line 471
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 471
-	}
-#line 471
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 471
-};
+  BARRIER(Global->start, P);
 
   upriv = (double *) malloc(2*(rootN-1)*sizeof(double));  
   if (upriv == NULL) {
@@ -655,75 +487,13 @@ void SlaveStart()
 
   TouchArray(x, trans, umain2, upriv, MyFirst, MyLast);
 
-  {
-#line 487
-	unsigned long	Error, Cycle;
-#line 487
-	long		Cancel, Temp;
-#line 487
-
-#line 487
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 487
-	if (Error != 0) {
-#line 487
-		printf("Error while trying to get lock in barrier.\n");
-#line 487
-		exit(-1);
-#line 487
-	}
-#line 487
-
-#line 487
-	Cycle = (Global->start).cycle;
-#line 487
-	if (++(Global->start).counter != (P)) {
-#line 487
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 487
-		while (Cycle == (Global->start).cycle) {
-#line 487
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 487
-			if (Error != 0) {
-#line 487
-				break;
-#line 487
-			}
-#line 487
-		}
-#line 487
-		pthread_setcancelstate(Cancel, &Temp);
-#line 487
-	} else {
-#line 487
-		(Global->start).cycle = !(Global->start).cycle;
-#line 487
-		(Global->start).counter = 0;
-#line 487
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 487
-	}
-#line 487
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 487
-};
+  BARRIER(Global->start, P);
 
 /* POSSIBLE ENHANCEMENT:  Here is where one might reset the
    statistics that one is measuring about the parallel execution */
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 493
-	struct timeval	FullTime;
-#line 493
-
-#line 493
-	gettimeofday(&FullTime, NULL);
-#line 493
-	(initdone) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 493
-};
+    CLOCK(initdone);
   }
 
   /* perform forward FFT */
@@ -737,17 +507,7 @@ void SlaveStart()
   }  
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 507
-	struct timeval	FullTime;
-#line 507
-
-#line 507
-	gettimeofday(&FullTime, NULL);
-#line 507
-	(finish) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 507
-};
+    CLOCK(finish);
     Global->transtimes[MyNum] = l_transtime;
     Global->totaltimes[MyNum] = finish-initdone;
   }
@@ -874,89 +634,17 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
   m1 = M/2;
   n1 = 1<<m1;
 
-  {
-#line 634
-	unsigned long	Error, Cycle;
-#line 634
-	long		Cancel, Temp;
-#line 634
-
-#line 634
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 634
-	if (Error != 0) {
-#line 634
-		printf("Error while trying to get lock in barrier.\n");
-#line 634
-		exit(-1);
-#line 634
-	}
-#line 634
-
-#line 634
-	Cycle = (Global->start).cycle;
-#line 634
-	if (++(Global->start).counter != (P)) {
-#line 634
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 634
-		while (Cycle == (Global->start).cycle) {
-#line 634
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 634
-			if (Error != 0) {
-#line 634
-				break;
-#line 634
-			}
-#line 634
-		}
-#line 634
-		pthread_setcancelstate(Cancel, &Temp);
-#line 634
-	} else {
-#line 634
-		(Global->start).cycle = !(Global->start).cycle;
-#line 634
-		(Global->start).counter = 0;
-#line 634
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 634
-	}
-#line 634
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 634
-};
+  BARRIER(Global->start, P);
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 637
-	struct timeval	FullTime;
-#line 637
-
-#line 637
-	gettimeofday(&FullTime, NULL);
-#line 637
-	(clocktime1) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 637
-};
+    CLOCK(clocktime1);
   }
 
   /* transpose from x into scratch */
   Transpose(n1, x, scratch, MyNum, MyFirst, MyLast, pad_length);
   
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 644
-	struct timeval	FullTime;
-#line 644
-
-#line 644
-	gettimeofday(&FullTime, NULL);
-#line 644
-	(clocktime2) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 644
-};
+    CLOCK(clocktime2);
     *l_transtime += (clocktime2-clocktime1);
   }
 
@@ -968,88 +656,16 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
 
   id=ass;
   // assert(id == ass);
-  {
-#line 656
-	unsigned long	Error, Cycle;
-#line 656
-	long		Cancel, Temp;
-#line 656
-
-#line 656
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 656
-	if (Error != 0) {
-#line 656
-		printf("Error while trying to get lock in barrier.\n");
-#line 656
-		exit(-1);
-#line 656
-	}
-#line 656
-
-#line 656
-	Cycle = (Global->start).cycle;
-#line 656
-	if (++(Global->start).counter != (P)) {
-#line 656
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 656
-		while (Cycle == (Global->start).cycle) {
-#line 656
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 656
-			if (Error != 0) {
-#line 656
-				break;
-#line 656
-			}
-#line 656
-		}
-#line 656
-		pthread_setcancelstate(Cancel, &Temp);
-#line 656
-	} else {
-#line 656
-		(Global->start).cycle = !(Global->start).cycle;
-#line 656
-		(Global->start).counter = 0;
-#line 656
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 656
-	}
-#line 656
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 656
-};
+  BARRIER(Global->start, P);
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 659
-	struct timeval	FullTime;
-#line 659
-
-#line 659
-	gettimeofday(&FullTime, NULL);
-#line 659
-	(clocktime1) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 659
-};
+    CLOCK(clocktime1);
   }
   /* transpose */
   Transpose(n1, scratch, x, MyNum, MyFirst, MyLast, pad_length);
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 665
-	struct timeval	FullTime;
-#line 665
-
-#line 665
-	gettimeofday(&FullTime, NULL);
-#line 665
-	(clocktime2) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 665
-};
+    CLOCK(clocktime2);
     *l_transtime += (clocktime2-clocktime1);
   }
 
@@ -1061,145 +677,21 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
   }
 
   ass++;
-  {
-#line 677
-	unsigned long	Error, Cycle;
-#line 677
-	long		Cancel, Temp;
-#line 677
-
-#line 677
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 677
-	if (Error != 0) {
-#line 677
-		printf("Error while trying to get lock in barrier.\n");
-#line 677
-		exit(-1);
-#line 677
-	}
-#line 677
-
-#line 677
-	Cycle = (Global->start).cycle;
-#line 677
-	if (++(Global->start).counter != (P)) {
-#line 677
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 677
-		while (Cycle == (Global->start).cycle) {
-#line 677
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 677
-			if (Error != 0) {
-#line 677
-				break;
-#line 677
-			}
-#line 677
-		}
-#line 677
-		pthread_setcancelstate(Cancel, &Temp);
-#line 677
-	} else {
-#line 677
-		(Global->start).cycle = !(Global->start).cycle;
-#line 677
-		(Global->start).counter = 0;
-#line 677
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 677
-	}
-#line 677
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 677
-};
+  BARRIER(Global->start, P);
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 680
-	struct timeval	FullTime;
-#line 680
-
-#line 680
-	gettimeofday(&FullTime, NULL);
-#line 680
-	(clocktime1) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 680
-};
+    CLOCK(clocktime1);
   }
 
   /* transpose back */
   Transpose(n1, x, scratch, MyNum, MyFirst, MyLast, pad_length);
 
   if ((MyNum == 0) || (dostats)) {
-    {
-#line 687
-	struct timeval	FullTime;
-#line 687
-
-#line 687
-	gettimeofday(&FullTime, NULL);
-#line 687
-	(clocktime2) = (unsigned long)(FullTime.tv_usec + FullTime.tv_sec * 1000000);
-#line 687
-};
+    CLOCK(clocktime2);
     *l_transtime += (clocktime2-clocktime1);
   }
 
-  {
-#line 691
-	unsigned long	Error, Cycle;
-#line 691
-	long		Cancel, Temp;
-#line 691
-
-#line 691
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 691
-	if (Error != 0) {
-#line 691
-		printf("Error while trying to get lock in barrier.\n");
-#line 691
-		exit(-1);
-#line 691
-	}
-#line 691
-
-#line 691
-	Cycle = (Global->start).cycle;
-#line 691
-	if (++(Global->start).counter != (P)) {
-#line 691
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 691
-		while (Cycle == (Global->start).cycle) {
-#line 691
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 691
-			if (Error != 0) {
-#line 691
-				break;
-#line 691
-			}
-#line 691
-		}
-#line 691
-		pthread_setcancelstate(Cancel, &Temp);
-#line 691
-	} else {
-#line 691
-		(Global->start).cycle = !(Global->start).cycle;
-#line 691
-		(Global->start).counter = 0;
-#line 691
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 691
-	}
-#line 691
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 691
-};
+  BARRIER(Global->start, P);
 
   /* copy columns from scratch to x */
   if ((test_result) || (doprint)) {  
@@ -1208,59 +700,7 @@ void FFT1D(long direction, long M, long N, double *x, double *scratch, double *u
     }  
   }  
 
-  {
-#line 700
-	unsigned long	Error, Cycle;
-#line 700
-	long		Cancel, Temp;
-#line 700
-
-#line 700
-	Error = pthread_mutex_lock(&(Global->start).mutex);
-#line 700
-	if (Error != 0) {
-#line 700
-		printf("Error while trying to get lock in barrier.\n");
-#line 700
-		exit(-1);
-#line 700
-	}
-#line 700
-
-#line 700
-	Cycle = (Global->start).cycle;
-#line 700
-	if (++(Global->start).counter != (P)) {
-#line 700
-		pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &Cancel);
-#line 700
-		while (Cycle == (Global->start).cycle) {
-#line 700
-			Error = pthread_cond_wait(&(Global->start).cv, &(Global->start).mutex);
-#line 700
-			if (Error != 0) {
-#line 700
-				break;
-#line 700
-			}
-#line 700
-		}
-#line 700
-		pthread_setcancelstate(Cancel, &Temp);
-#line 700
-	} else {
-#line 700
-		(Global->start).cycle = !(Global->start).cycle;
-#line 700
-		(Global->start).counter = 0;
-#line 700
-		Error = pthread_cond_broadcast(&(Global->start).cv);
-#line 700
-	}
-#line 700
-	pthread_mutex_unlock(&(Global->start).mutex);
-#line 700
-};
+  BARRIER(Global->start, P);
 }
 
 
