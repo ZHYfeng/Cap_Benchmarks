@@ -67,7 +67,6 @@
 #include <stdlib.h>
 #line 55
 #include <malloc.h>
-#include "BullMoose_8.h"
 #line 55
 #define MAX_THREADS 32
 #line 55
@@ -181,7 +180,6 @@ int main(int argc, char *argv[])
   long pages;
   unsigned long start;
 
-  malicious_start();
 
   {
 #line 134
@@ -589,7 +587,6 @@ int main(int argc, char *argv[])
       printf("TEST FAILED\n");
     }
   }
-  malicious_end();
   {
     exit(0);
   };
@@ -630,10 +627,6 @@ void SlaveStart()
 #line 440
   };
 
-malicious_1();
-malicious_2();
-malicious_3();
-malicious_4();
 
 
   upriv = (double *)malloc(2 * (rootN - 1) * sizeof(double));
@@ -658,10 +651,6 @@ malicious_4();
 #line 456
   };
 
-malicious_5();
-malicious_6();
-malicious_7();
-malicious_8();
 
   /* POSSIBLE ENHANCEMENT:  Here is where one might reset the
    statistics that one is measuring about the parallel execution */
