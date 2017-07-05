@@ -1,0 +1,823 @@
+KLEE: output directory is "/home/zhy/work/test/new/pcopy-1.5/klee-out-11"
+KLEE: WARNING: undefined reference to function: _IO_putc
+KLEE: WARNING: undefined reference to function: __errno_location
+KLEE: WARNING: undefined reference to function: atoi
+KLEE: WARNING: undefined reference to function: fflush
+KLEE: WARNING: undefined reference to function: fprintf
+KLEE: WARNING: undefined reference to function: lseek
+KLEE: WARNING: undefined reference to function: make_taint
+KLEE: WARNING: undefined reference to function: open
+KLEE: WARNING: undefined reference to function: printf
+KLEE: WARNING: undefined reference to function: pthread_cond_init
+KLEE: WARNING: undefined reference to function: pthread_cond_signal
+KLEE: WARNING: undefined reference to function: pthread_cond_wait
+KLEE: WARNING: undefined reference to function: pthread_create
+KLEE: WARNING: undefined reference to function: pthread_join
+KLEE: WARNING: undefined reference to function: pthread_mutex_init
+KLEE: WARNING: undefined reference to function: pthread_mutex_lock
+KLEE: WARNING: undefined reference to function: pthread_mutex_unlock
+KLEE: WARNING: undefined reference to function: putchar
+KLEE: WARNING: undefined reference to function: read
+KLEE: WARNING: undefined reference to variable: stderr
+KLEE: WARNING: undefined reference to variable: stdout
+KLEE: WARNING: undefined reference to function: strerror
+KLEE: WARNING: undefined reference to function: time
+KLEE: WARNING: undefined reference to function: write
+
+************************************************************************
+第1次执行,路径文件为trace1.txt 初始执行
+************************************************************************
+
+KLEE: WARNING ONCE: calling external: printf(44053600, 43646816, 43755440)
+KLEE: WARNING ONCE: calling external: fflush(140621799908352)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+KLEE: WARNING ONCE: calling external: open(43646816, 0)
+KLEE: WARNING ONCE: calling external: pthread_mutex_init(44433264, 0)
+KLEE: WARNING ONCE: calling external: pthread_cond_init(44433304, 0)
+KLEE: WARNING ONCE: calling external: time(44047936)
+KLEE: WARNING ONCE: calling external: read(8, 140621834960912, 1048576)
+KLEE: WARNING ONCE: calling external: lseek(9, 0, 0)
+KLEE: WARNING ONCE: calling external: write(9, 140621834960912, 1)
+KLEE: WARNING ONCE: calling external: putchar(10)
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 15
+Verifying assert 1 @Trace1#216#E218#1-0assert_bug: No!
+Verifying assert 2 @Trace1#216#E316#1-0assert_bug: No!
+Verifying assert 3 @Trace1#216#E414#1-0assert_bug: No!
+Verifying assert 4 @Trace1#216#E512#1-0assert_bug: No!
+Verifying assert 5 @Trace1#216#E610#1-0assert_bug: No!
+Verifying assert 6 @Trace1#216#E708#1-0assert_bug: No!
+Verifying assert 7 @Trace1#216#E806#1-0assert_bug: No!
+Verifying assert 8 @Trace1#216#E904#1-0assert_bug: No!
+Verifying assert 9 @Trace1#236#E974#1-0assert_bug: No!
+Verifying assert 10 @Trace1#216#E1134#1-0assert_bug: No!
+Verifying assert 11 @Trace1#236#E1191#1-0assert_bug: No!
+Verifying assert 12 @Trace1#216#E1325#1-0assert_bug: No!
+Verifying assert 13 @Trace1#236#E1395#1-0assert_bug: No!
+Verifying assert 14 @Trace1#216#E1541#1-0assert_bug: No!
+Verifying assert 15 @Trace1#236#E1620#1-0assert_bug: No!
+
+Verifying is over!
+Sum of branches: 52
+Verifying branch 1 @Trace1#387#E29#0-1: NNo!
+Verifying branch 2 @Trace1#429#E51#0-1: NNo!
+Verifying branch 3 @Trace1#447#E69#0-1: NNo!
+Verifying branch 4 @Trace1#455#E75#0-1: Cost : 0.000128 No!
+Verifying branch 5 @Trace1#466#E165#1-0: NNo!
+Verifying branch 6 @Trace1#213#E210#0-1: Cost : 7.79608 No!
+Verifying branch 7 @Trace1#218#E230#1-0: Cost : 0.121404 No!
+Verifying branch 8 @Trace1#466#E263#1-0: NNo!
+Verifying branch 9 @Trace1#213#E308#0-1: Cost : 0.188222 No!
+Verifying branch 10 @Trace1#218#E328#1-0: Cost : 0.875133 No!
+Verifying branch 11 @Trace1#466#E361#1-0: NNo!
+Verifying branch 12 @Trace1#213#E406#0-1: Cost : 2.41191 No!
+Verifying branch 13 @Trace1#218#E426#1-0: Cost : 2.3419 No!
+Verifying branch 14 @Trace1#466#E459#1-0: NNo!
+Verifying branch 15 @Trace1#213#E504#0-1: Cost : 1.04875 No!
+Verifying branch 16 @Trace1#218#E524#1-0: Cost : 0.32467 No!
+Verifying branch 17 @Trace1#466#E557#1-0: NNo!
+Verifying branch 18 @Trace1#213#E602#0-1: Cost : 1.906 No!
+Verifying branch 19 @Trace1#218#E622#1-0: Cost : 0.069179 No!
+Verifying branch 20 @Trace1#466#E655#1-0: NNo!
+Verifying branch 21 @Trace1#213#E700#0-1: Cost : 0.117924 No!
+Verifying branch 22 @Trace1#218#E720#1-0: Cost : 0.020721 No!
+Verifying branch 23 @Trace1#466#E753#1-0: NNo!
+Verifying branch 24 @Trace1#213#E798#0-1: Cost : 0.148404 No!
+Verifying branch 25 @Trace1#218#E818#1-0: Cost : 0.037525 No!
+Verifying branch 26 @Trace1#466#E851#1-0: NNo!
+Verifying branch 27 @Trace1#213#E896#0-1: Cost : 0.11931 No!
+Verifying branch 28 @Trace1#218#E916#1-0: Cost : 0.057705 No!
+Verifying branch 29 @Trace1#466#E949#0-1: NNo!
+Verifying branch 30 @Trace1#233#E969#0-1: Cost : 0.101975 No!
+Verifying branch 31 @Trace1#238#E985#1-0: Cost : 0.000148 No!
+Verifying branch 32 @Trace1#151#E1057#0-1: NNo!
+Verifying branch 33 @Trace1#213#E1126#0-1: Cost : 1.52148 No!
+Verifying branch 34 @Trace1#218#E1146#1-0: Cost : 0.000202 No!
+Verifying branch 35 @Trace1#233#E1186#0-1: Cost : 1.62861 No!
+Verifying branch 36 @Trace1#238#E1202#1-0: Cost : 0.005262 No!
+Verifying branch 37 @Trace1#151#E1274#0-1: NNo!
+Verifying branch 38 @Trace1#213#E1317#0-1: Cost : 1.27741 No!
+Verifying branch 39 @Trace1#218#E1337#1-0: Cost : 0.005264 No!
+Verifying branch 40 @Trace1#233#E1390#0-1: Cost : 16.1363 Yes!
+Verifying branch 41 @Trace1#238#E1406#1-0: Cost : 0.000208 No!
+Verifying branch 42 @Trace1#169#E1458#0-1: NNo!
+Verifying branch 43 @Trace1#176#E1466#1-0: Cost : 0.005498 No!
+Verifying branch 44 @Trace1#293#E1500#0-1: Cost : 0.87904 No!
+Verifying branch 45 @Trace1#213#E1533#0-1: Cost : 6.50844 No!
+Verifying branch 46 @Trace1#218#E1553#1-0: Cost : 4.36006 No!
+Verifying branch 47 @Trace1#317#E1581#0-1: NNo!
+Verifying branch 48 @Trace1#319#E1584#0-1: NNo!
+Verifying branch 49 @Trace1#335#E1599#0-1: NNo!
+Verifying branch 50 @Trace1#233#E1615#0-1: Cost : 9.52994 Yes!
+Verifying branch 51 @Trace1#238#E1631#1-0: Cost : 0.640724 No!
+Verifying branch 52 @Trace1#551#E1693#0-1: NNo!
+
+PTS
+noTaintPTS : G714_44481768L1
+DTAMhybrid find
+getLine : 479
+taintPTS : G714_44481768S2
+DTAMhybrid find
+getLine : 479
+
+ size : 23
+DTAMSerial name : G714_44481768L10 getLine : 220
+DTAMSerial name : G714_44481768L11 getLine : 233
+DTAMSerial name : G714_44481768L12 getLine : 236
+DTAMSerial name : G714_44481768L13 getLine : 240
+DTAMSerial name : G714_44481768L14 getLine : 233
+DTAMSerial name : G714_44481768L15 getLine : 236
+DTAMSerial name : G714_44481768L16 getLine : 240
+DTAMSerial name : G714_44481768L2 getLine : 482
+DTAMSerial name : G714_44481768L3 getLine : 213
+DTAMSerial name : G714_44481768L4 getLine : 216
+DTAMSerial name : G714_44481768L5 getLine : 220
+DTAMSerial name : G714_44481768L6 getLine : 479
+DTAMSerial name : G714_44481768L7 getLine : 482
+DTAMSerial name : G714_44481768L8 getLine : 213
+DTAMSerial name : G714_44481768L9 getLine : 216
+DTAMSerial name : G714_44481768S3 getLine : 482
+DTAMSerial name : G714_44481768S4 getLine : 220
+DTAMSerial name : G714_44481768S5 getLine : 479
+DTAMSerial name : G714_44481768S6 getLine : 482
+DTAMSerial name : G714_44481768S7 getLine : 220
+DTAMSerial name : G714_44481768S8 getLine : 240
+DTAMSerial name : G714_44481768S9 getLine : 240
+taintPTS name : G714_44481768S2 getLine : 479
+
+************************************************************************
+第2次执行,路径文件为trace2.txt 前缀执行,前缀文件为prefixTrace1#233#E1390#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 15
+Verifying assert 1 @Trace2#216#E218#1-0assert_bug: No!
+Verifying assert 2 @Trace2#216#E316#1-0assert_bug: No!
+Verifying assert 3 @Trace2#216#E414#1-0assert_bug: No!
+Verifying assert 4 @Trace2#216#E512#1-0assert_bug: No!
+Verifying assert 5 @Trace2#216#E610#1-0assert_bug: No!
+Verifying assert 6 @Trace2#216#E708#1-0assert_bug: No!
+Verifying assert 7 @Trace2#216#E806#1-0assert_bug: No!
+Verifying assert 8 @Trace2#216#E904#1-0assert_bug: No!
+Verifying assert 9 @Trace2#236#E1001#1-0assert_bug: No!
+Verifying assert 10 @Trace2#216#E1166#1-0assert_bug: No!
+Verifying assert 11 @Trace2#236#E1223#1-0assert_bug: No!
+Verifying assert 12 @Trace2#216#E1357#1-0assert_bug: No!
+Verifying assert 13 @Trace2#236#E1407#1-0assert_bug: No!
+Verifying assert 14 @Trace2#216#E1553#1-0assert_bug: No!
+Verifying assert 15 @Trace2#236#E1632#1-0assert_bug: No!
+
+Verifying is over!
+Sum of branches: 53
+Verifying branch 1 @Trace2#387#E29#0-1: NNo!
+Verifying branch 2 @Trace2#429#E51#0-1: NNo!
+Verifying branch 3 @Trace2#447#E69#0-1: NNo!
+Verifying branch 4 @Trace2#455#E75#0-1: Cost : 0.000117 No!
+Verifying branch 5 @Trace2#466#E165#1-0: NNo!
+Verifying branch 6 @Trace2#213#E210#0-1: Cost : 0.128473 No!
+Verifying branch 7 @Trace2#218#E230#1-0: Cost : 0.284437 No!
+Verifying branch 8 @Trace2#466#E263#1-0: NNo!
+Verifying branch 9 @Trace2#213#E308#0-1: Cost : 1.80125 No!
+Verifying branch 10 @Trace2#218#E328#1-0: Cost : 0.331594 No!
+Verifying branch 11 @Trace2#466#E361#1-0: NNo!
+Verifying branch 12 @Trace2#213#E406#0-1: Cost : 0.099013 No!
+Verifying branch 13 @Trace2#218#E426#1-0: Cost : 1.20063 No!
+Verifying branch 14 @Trace2#466#E459#1-0: NNo!
+Verifying branch 15 @Trace2#213#E504#0-1: Cost : 1.47161 No!
+Verifying branch 16 @Trace2#218#E524#1-0: Cost : 0.173354 No!
+Verifying branch 17 @Trace2#466#E557#1-0: NNo!
+Verifying branch 18 @Trace2#213#E602#0-1: Cost : 3.27941 No!
+Verifying branch 19 @Trace2#218#E622#1-0: Cost : 0.153304 No!
+Verifying branch 20 @Trace2#466#E655#1-0: NNo!
+Verifying branch 21 @Trace2#213#E700#0-1: Cost : 0.327442 No!
+Verifying branch 22 @Trace2#218#E720#1-0: Cost : 0.033904 No!
+Verifying branch 23 @Trace2#466#E753#1-0: NNo!
+Verifying branch 24 @Trace2#213#E798#0-1: Cost : 0.127399 No!
+Verifying branch 25 @Trace2#218#E818#1-0: Cost : 0.058781 No!
+Verifying branch 26 @Trace2#466#E851#1-0: NNo!
+Verifying branch 27 @Trace2#213#E896#0-1: Cost : 0.127368 No!
+Verifying branch 28 @Trace2#218#E916#1-0: Cost : 0.094392 No!
+Verifying branch 29 @Trace2#466#E949#0-1: NNo!
+Verifying branch 30 @Trace2#233#E976#1-0: Cost : 11.7514 Yes!
+Verifying branch 31 @Trace2#233#E996#0-1: Cost : 1.75471 No!
+Verifying branch 32 @Trace2#238#E1012#1-0: Cost : 0.000163 No!
+Verifying branch 33 @Trace2#151#E1084#0-1: NNo!
+Verifying branch 34 @Trace2#213#E1158#0-1: Cost : 0.76262 No!
+Verifying branch 35 @Trace2#218#E1178#1-0: Cost : 0.000151 No!
+Verifying branch 36 @Trace2#233#E1218#0-1: Cost : 0.508282 No!
+Verifying branch 37 @Trace2#238#E1234#1-0: Cost : 0.006303 No!
+Verifying branch 38 @Trace2#151#E1306#0-1: NNo!
+Verifying branch 39 @Trace2#213#E1349#0-1: Cost : 1.58734 No!
+Verifying branch 40 @Trace2#218#E1369#1-0: Cost : 0.006262 No!
+Verifying branch 41 @Trace2#233#E1402#0-1: Cost : 0.21712 No!
+Verifying branch 42 @Trace2#238#E1418#1-0: Cost : 0.000215 No!
+Verifying branch 43 @Trace2#169#E1470#0-1: NNo!
+Verifying branch 44 @Trace2#176#E1478#1-0: Cost : 0.006196 No!
+Verifying branch 45 @Trace2#293#E1512#0-1: Cost : 0.007388 No!
+Verifying branch 46 @Trace2#213#E1545#0-1: Cost : 3.39564 No!
+Verifying branch 47 @Trace2#218#E1565#1-0: Cost : 1.15148 No!
+Verifying branch 48 @Trace2#317#E1593#0-1: NNo!
+Verifying branch 49 @Trace2#319#E1596#0-1: NNo!
+Verifying branch 50 @Trace2#335#E1611#0-1: NNo!
+Verifying branch 51 @Trace2#233#E1627#0-1: Cost : 3.53441 Yes!
+Verifying branch 52 @Trace2#238#E1643#1-0: Cost : 2.14487 No!
+Verifying branch 53 @Trace2#551#E1705#0-1: NNo!
+
+PTS
+taintPTS : G6164_60308904L1
+DTAMhybrid find
+getLine : 233
+noTaintPTS : G6164_60308904L2
+DTAMhybrid find
+getLine : 479
+taintPTS : G6164_60308904S2
+DTAMhybrid find
+getLine : 479
+
+ size : 24
+DTAMSerial name : G6164_60308904L10 getLine : 216
+DTAMSerial name : G6164_60308904L11 getLine : 220
+DTAMSerial name : G6164_60308904L12 getLine : 233
+DTAMSerial name : G6164_60308904L13 getLine : 236
+DTAMSerial name : G6164_60308904L14 getLine : 240
+DTAMSerial name : G6164_60308904L15 getLine : 233
+DTAMSerial name : G6164_60308904L16 getLine : 236
+DTAMSerial name : G6164_60308904L17 getLine : 240
+DTAMSerial name : G6164_60308904L3 getLine : 482
+DTAMSerial name : G6164_60308904L4 getLine : 213
+DTAMSerial name : G6164_60308904L5 getLine : 216
+DTAMSerial name : G6164_60308904L6 getLine : 220
+DTAMSerial name : G6164_60308904L7 getLine : 479
+DTAMSerial name : G6164_60308904L8 getLine : 482
+DTAMSerial name : G6164_60308904L9 getLine : 213
+DTAMSerial name : G6164_60308904S3 getLine : 482
+DTAMSerial name : G6164_60308904S4 getLine : 220
+DTAMSerial name : G6164_60308904S5 getLine : 479
+DTAMSerial name : G6164_60308904S6 getLine : 482
+DTAMSerial name : G6164_60308904S7 getLine : 220
+DTAMSerial name : G6164_60308904S8 getLine : 240
+DTAMSerial name : G6164_60308904S9 getLine : 240
+taintPTS name : G6164_60308904L1 getLine : 233
+taintPTS name : G6164_60308904S2 getLine : 479
+
+************************************************************************
+第3次执行,路径文件为trace3.txt 前缀执行,前缀文件为prefixTrace1#233#E1615#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 15
+Verifying assert 1 @Trace3#216#E218#1-0assert_bug: No!
+Verifying assert 2 @Trace3#216#E316#1-0assert_bug: No!
+Verifying assert 3 @Trace3#216#E414#1-0assert_bug: No!
+Verifying assert 4 @Trace3#216#E512#1-0assert_bug: No!
+Verifying assert 5 @Trace3#216#E610#1-0assert_bug: No!
+Verifying assert 6 @Trace3#216#E708#1-0assert_bug: No!
+Verifying assert 7 @Trace3#216#E806#1-0assert_bug: No!
+Verifying assert 8 @Trace3#216#E904#1-0assert_bug: No!
+Verifying assert 9 @Trace3#236#E987#1-0assert_bug: No!
+Verifying assert 10 @Trace3#216#E1147#1-0assert_bug: No!
+Verifying assert 11 @Trace3#236#E1204#1-0assert_bug: No!
+Verifying assert 12 @Trace3#236#E1237#1-0assert_bug: No!
+Verifying assert 13 @Trace3#216#E1415#1-0assert_bug: No!
+Verifying assert 14 @Trace3#216#E1582#1-0assert_bug: No!
+Verifying assert 15 @Trace3#236#E1632#1-0assert_bug: No!
+
+Verifying is over!
+Sum of branches: 53
+Verifying branch 1 @Trace3#387#E29#0-1: NNo!
+Verifying branch 2 @Trace3#429#E51#0-1: NNo!
+Verifying branch 3 @Trace3#447#E69#0-1: NNo!
+Verifying branch 4 @Trace3#455#E75#0-1: Cost : 0.000117 No!
+Verifying branch 5 @Trace3#466#E165#1-0: NNo!
+Verifying branch 6 @Trace3#213#E210#0-1: Cost : 0.020168 No!
+Verifying branch 7 @Trace3#218#E230#1-0: Cost : 1.09084 No!
+Verifying branch 8 @Trace3#466#E263#1-0: NNo!
+Verifying branch 9 @Trace3#213#E308#0-1: Cost : 13.5735 No!
+Verifying branch 10 @Trace3#218#E328#1-0: Cost : 0.354419 No!
+Verifying branch 11 @Trace3#466#E361#1-0: NNo!
+Verifying branch 12 @Trace3#213#E406#0-1: Cost : 9.55737 No!
+Verifying branch 13 @Trace3#218#E426#1-0: Cost : 0.083522 No!
+Verifying branch 14 @Trace3#466#E459#1-0: NNo!
+Verifying branch 15 @Trace3#213#E504#0-1: Cost : 0.278874 No!
+Verifying branch 16 @Trace3#218#E524#1-0: Cost : 0.150406 No!
+Verifying branch 17 @Trace3#466#E557#1-0: NNo!
+Verifying branch 18 @Trace3#213#E602#0-1: Cost : 0.819344 No!
+Verifying branch 19 @Trace3#218#E622#1-0: Cost : 0.452488 No!
+Verifying branch 20 @Trace3#466#E655#1-0: NNo!
+Verifying branch 21 @Trace3#213#E700#0-1: Cost : 0.355001 No!
+Verifying branch 22 @Trace3#218#E720#1-0: Cost : 0.021757 No!
+Verifying branch 23 @Trace3#466#E753#1-0: NNo!
+Verifying branch 24 @Trace3#213#E798#0-1: Cost : 0.087175 No!
+Verifying branch 25 @Trace3#218#E818#1-0: Cost : 0.038847 No!
+Verifying branch 26 @Trace3#466#E851#1-0: NNo!
+Verifying branch 27 @Trace3#213#E896#0-1: Cost : 0.081636 No!
+Verifying branch 28 @Trace3#218#E916#1-0: Cost : 0.057201 No!
+Verifying branch 29 @Trace3#466#E949#0-1: NNo!
+Verifying branch 30 @Trace3#233#E982#0-1: Cost : 0.145456 No!
+Verifying branch 31 @Trace3#238#E998#1-0: Cost : 0.00015 No!
+Verifying branch 32 @Trace3#151#E1070#0-1: NNo!
+Verifying branch 33 @Trace3#213#E1139#0-1: Cost : 0.736965 No!
+Verifying branch 34 @Trace3#218#E1159#1-0: Cost : 0.000149 No!
+Verifying branch 35 @Trace3#233#E1199#0-1: Cost : 0.314525 No!
+Verifying branch 36 @Trace3#238#E1226#1-0: Cost : 0.004835 No!
+Verifying branch 37 @Trace3#233#E1228#0-1: Cost : 5.32614 Yes!
+Verifying branch 38 @Trace3#238#E1261#1-0: Cost : 0.000231 No!
+Verifying branch 39 @Trace3#169#E1332#0-1: NNo!
+Verifying branch 40 @Trace3#176#E1340#1-0: Cost : 0.006494 No!
+Verifying branch 41 @Trace3#293#E1374#0-1: Cost : 20.8218 No!
+Verifying branch 42 @Trace3#213#E1407#0-1: Cost : 6.31855 No!
+Verifying branch 43 @Trace3#218#E1427#1-0: Cost : 1.25482 No!
+Verifying branch 44 @Trace3#317#E1455#0-1: NNo!
+Verifying branch 45 @Trace3#319#E1458#0-1: NNo!
+Verifying branch 46 @Trace3#335#E1473#0-1: NNo!
+Verifying branch 47 @Trace3#233#E1489#1-0: Cost : 7.13543 Yes!
+Verifying branch 48 @Trace3#151#E1526#0-1: NNo!
+Verifying branch 49 @Trace3#213#E1574#0-1: Cost : 2.82654 No!
+Verifying branch 50 @Trace3#218#E1594#1-0: Cost : 0.006083 No!
+Verifying branch 51 @Trace3#233#E1627#0-1: Cost : 0.353819 No!
+Verifying branch 52 @Trace3#238#E1643#1-0: Cost : 0.235028 No!
+Verifying branch 53 @Trace3#551#E1705#0-1: NNo!
+
+PTS
+noTaintPTS : G11640_189775496L1
+DTAMhybrid find
+getLine : 479
+taintPTS : G11640_189775496S2
+DTAMhybrid find
+getLine : 479
+
+ size : 24
+DTAMSerial name : G11640_189775496L10 getLine : 233
+DTAMSerial name : G11640_189775496L11 getLine : 482
+DTAMSerial name : G11640_189775496L12 getLine : 213
+DTAMSerial name : G11640_189775496L13 getLine : 216
+DTAMSerial name : G11640_189775496L14 getLine : 220
+DTAMSerial name : G11640_189775496L15 getLine : 233
+DTAMSerial name : G11640_189775496L16 getLine : 236
+DTAMSerial name : G11640_189775496L17 getLine : 240
+DTAMSerial name : G11640_189775496L2 getLine : 482
+DTAMSerial name : G11640_189775496L3 getLine : 213
+DTAMSerial name : G11640_189775496L4 getLine : 216
+DTAMSerial name : G11640_189775496L5 getLine : 220
+DTAMSerial name : G11640_189775496L6 getLine : 233
+DTAMSerial name : G11640_189775496L7 getLine : 236
+DTAMSerial name : G11640_189775496L8 getLine : 240
+DTAMSerial name : G11640_189775496L9 getLine : 479
+DTAMSerial name : G11640_189775496S3 getLine : 482
+DTAMSerial name : G11640_189775496S4 getLine : 220
+DTAMSerial name : G11640_189775496S5 getLine : 240
+DTAMSerial name : G11640_189775496S6 getLine : 479
+DTAMSerial name : G11640_189775496S7 getLine : 482
+DTAMSerial name : G11640_189775496S8 getLine : 220
+DTAMSerial name : G11640_189775496S9 getLine : 240
+taintPTS name : G11640_189775496S2 getLine : 479
+
+************************************************************************
+第4次执行,路径文件为trace4.txt 前缀执行,前缀文件为prefixTrace2#233#E976#1-0.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第5次执行,路径文件为trace5.txt 前缀执行,前缀文件为prefixTrace2#233#E1627#0-1.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 15
+Verifying assert 1 @Trace5#216#E218#1-0assert_bug: No!
+Verifying assert 2 @Trace5#216#E316#1-0assert_bug: No!
+Verifying assert 3 @Trace5#216#E414#1-0assert_bug: No!
+Verifying assert 4 @Trace5#216#E512#1-0assert_bug: No!
+Verifying assert 5 @Trace5#216#E610#1-0assert_bug: No!
+Verifying assert 6 @Trace5#216#E708#1-0assert_bug: No!
+Verifying assert 7 @Trace5#216#E806#1-0assert_bug: No!
+Verifying assert 8 @Trace5#216#E904#1-0assert_bug: No!
+Verifying assert 9 @Trace5#236#E987#1-0assert_bug: No!
+Verifying assert 10 @Trace5#216#E1166#1-0assert_bug: No!
+Verifying assert 11 @Trace5#236#E1223#1-0assert_bug: No!
+Verifying assert 12 @Trace5#236#E1282#1-0assert_bug: No!
+Verifying assert 13 @Trace5#216#E1428#1-0assert_bug: No!
+Verifying assert 14 @Trace5#216#E1594#1-0assert_bug: No!
+Verifying assert 15 @Trace5#236#E1644#1-0assert_bug: No!
+
+Verifying is over!
+Sum of branches: 54
+Verifying branch 1 @Trace5#387#E29#0-1: NNo!
+Verifying branch 2 @Trace5#429#E51#0-1: NNo!
+Verifying branch 3 @Trace5#447#E69#0-1: NNo!
+Verifying branch 4 @Trace5#455#E75#0-1: Cost : 0.000123 No!
+Verifying branch 5 @Trace5#466#E165#1-0: NNo!
+Verifying branch 6 @Trace5#213#E210#0-1: Cost : 0.15614 No!
+Verifying branch 7 @Trace5#218#E230#1-0: Cost : 0.047986 No!
+Verifying branch 8 @Trace5#466#E263#1-0: NNo!
+Verifying branch 9 @Trace5#213#E308#0-1: Cost : 0.09468 No!
+Verifying branch 10 @Trace5#218#E328#1-0: Cost : 1.00398 No!
+Verifying branch 11 @Trace5#466#E361#1-0: NNo!
+Verifying branch 12 @Trace5#213#E406#0-1: Cost : 0.028401 No!
+Verifying branch 13 @Trace5#218#E426#1-0: Cost : 0.192934 No!
+Verifying branch 14 @Trace5#466#E459#1-0: NNo!
+Verifying branch 15 @Trace5#213#E504#0-1: Cost : 0.318585 No!
+Verifying branch 16 @Trace5#218#E524#1-0: Cost : 0.718276 No!
+Verifying branch 17 @Trace5#466#E557#1-0: NNo!
+Verifying branch 18 @Trace5#213#E602#0-1: Cost : 1.61711 No!
+Verifying branch 19 @Trace5#218#E622#1-0: Cost : 1.10247 No!
+Verifying branch 20 @Trace5#466#E655#1-0: NNo!
+Verifying branch 21 @Trace5#213#E700#0-1: Cost : 0.706479 No!
+Verifying branch 22 @Trace5#218#E720#1-0: Cost : 0.022028 No!
+Verifying branch 23 @Trace5#466#E753#1-0: NNo!
+Verifying branch 24 @Trace5#213#E798#0-1: Cost : 0.174583 No!
+Verifying branch 25 @Trace5#218#E818#1-0: Cost : 0.039382 No!
+Verifying branch 26 @Trace5#466#E851#1-0: NNo!
+Verifying branch 27 @Trace5#213#E896#0-1: Cost : 0.103583 No!
+Verifying branch 28 @Trace5#218#E916#1-0: Cost : 0.058507 No!
+Verifying branch 29 @Trace5#466#E949#0-1: NNo!
+Verifying branch 30 @Trace5#233#E982#0-1: Cost : 1.66841 No!
+Verifying branch 31 @Trace5#238#E998#1-0: Cost : 0.000158 No!
+Verifying branch 32 @Trace5#151#E1081#0-1: NNo!
+Verifying branch 33 @Trace5#233#E1118#1-0: Cost : 0.607292 No!
+Verifying branch 34 @Trace5#213#E1158#0-1: Cost : 0.829237 No!
+Verifying branch 35 @Trace5#218#E1178#1-0: Cost : 0.000154 No!
+Verifying branch 36 @Trace5#233#E1218#0-1: Cost : 0.826781 No!
+Verifying branch 37 @Trace5#238#E1234#1-0: Cost : 0.005068 No!
+Verifying branch 38 @Trace5#233#E1277#0-1: Cost : 0.223762 No!
+Verifying branch 39 @Trace5#238#E1293#1-0: Cost : 0.000249 No!
+Verifying branch 40 @Trace5#169#E1345#0-1: NNo!
+Verifying branch 41 @Trace5#176#E1353#1-0: Cost : 0.005605 No!
+Verifying branch 42 @Trace5#293#E1387#0-1: Cost : 0.007568 No!
+Verifying branch 43 @Trace5#213#E1420#0-1: Cost : 1.98722 No!
+Verifying branch 44 @Trace5#218#E1440#1-0: Cost : 11.7286 No!
+Verifying branch 45 @Trace5#317#E1468#0-1: NNo!
+Verifying branch 46 @Trace5#319#E1471#0-1: NNo!
+Verifying branch 47 @Trace5#335#E1486#0-1: NNo!
+Verifying branch 48 @Trace5#233#E1504#1-0: Cost : 4.94566 Yes!
+Verifying branch 49 @Trace5#151#E1538#0-1: NNo!
+Verifying branch 50 @Trace5#213#E1586#0-1: Cost : 7.34466 No!
+Verifying branch 51 @Trace5#218#E1606#1-0: Cost : 0.005657 No!
+Verifying branch 52 @Trace5#233#E1639#0-1: Cost : 0.152198 No!
+Verifying branch 53 @Trace5#238#E1655#1-0: Cost : 1.22323 No!
+Verifying branch 54 @Trace5#551#E1717#0-1: NNo!
+
+PTS
+noTaintPTS : G22592_96478904L1
+DTAMhybrid find
+getLine : 479
+taintPTS : G22592_96478904S2
+DTAMhybrid find
+getLine : 479
+
+ size : 25
+DTAMSerial name : G22592_96478904L10 getLine : 240
+DTAMSerial name : G22592_96478904L11 getLine : 233
+DTAMSerial name : G22592_96478904L12 getLine : 482
+DTAMSerial name : G22592_96478904L13 getLine : 213
+DTAMSerial name : G22592_96478904L14 getLine : 216
+DTAMSerial name : G22592_96478904L15 getLine : 220
+DTAMSerial name : G22592_96478904L16 getLine : 233
+DTAMSerial name : G22592_96478904L17 getLine : 236
+DTAMSerial name : G22592_96478904L18 getLine : 240
+DTAMSerial name : G22592_96478904L2 getLine : 482
+DTAMSerial name : G22592_96478904L3 getLine : 233
+DTAMSerial name : G22592_96478904L4 getLine : 213
+DTAMSerial name : G22592_96478904L5 getLine : 216
+DTAMSerial name : G22592_96478904L6 getLine : 220
+DTAMSerial name : G22592_96478904L7 getLine : 479
+DTAMSerial name : G22592_96478904L8 getLine : 233
+DTAMSerial name : G22592_96478904L9 getLine : 236
+DTAMSerial name : G22592_96478904S3 getLine : 482
+DTAMSerial name : G22592_96478904S4 getLine : 220
+DTAMSerial name : G22592_96478904S5 getLine : 240
+DTAMSerial name : G22592_96478904S6 getLine : 479
+DTAMSerial name : G22592_96478904S7 getLine : 482
+DTAMSerial name : G22592_96478904S8 getLine : 220
+DTAMSerial name : G22592_96478904S9 getLine : 240
+taintPTS name : G22592_96478904S2 getLine : 479
+
+************************************************************************
+第6次执行,路径文件为trace6.txt 前缀执行,前缀文件为prefixTrace3#233#E1228#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第7次执行,路径文件为trace7.txt 前缀执行,前缀文件为prefixTrace3#233#E1489#1-0.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 15
+Verifying assert 1 @Trace7#216#E218#1-0assert_bug: No!
+Verifying assert 2 @Trace7#216#E316#1-0assert_bug: No!
+Verifying assert 3 @Trace7#216#E414#1-0assert_bug: No!
+Verifying assert 4 @Trace7#216#E512#1-0assert_bug: No!
+Verifying assert 5 @Trace7#216#E610#1-0assert_bug: No!
+Verifying assert 6 @Trace7#216#E708#1-0assert_bug: No!
+Verifying assert 7 @Trace7#216#E806#1-0assert_bug: No!
+Verifying assert 8 @Trace7#216#E904#1-0assert_bug: No!
+Verifying assert 9 @Trace7#236#E987#1-0assert_bug: No!
+Verifying assert 10 @Trace7#216#E1147#1-0assert_bug: No!
+Verifying assert 11 @Trace7#236#E1211#1-0assert_bug: No!
+Verifying assert 12 @Trace7#236#E1270#1-0assert_bug: No!
+Verifying assert 13 @Trace7#216#E1428#1-0assert_bug: No!
+Verifying assert 14 @Trace7#236#E1564#1-0assert_bug: No!
+Verifying assert 15 @Trace7#216#E1627#1-0assert_bug: No!
+
+Verifying is over!
+Sum of branches: 52
+Verifying branch 1 @Trace7#387#E29#0-1: NNo!
+Verifying branch 2 @Trace7#429#E51#0-1: NNo!
+Verifying branch 3 @Trace7#447#E69#0-1: NNo!
+Verifying branch 4 @Trace7#455#E75#0-1: Cost : 0.000111 No!
+Verifying branch 5 @Trace7#466#E165#1-0: NNo!
+Verifying branch 6 @Trace7#213#E210#0-1: Cost : 0.066534 No!
+Verifying branch 7 @Trace7#218#E230#1-0: Cost : 0.169744 No!
+Verifying branch 8 @Trace7#466#E263#1-0: NNo!
+Verifying branch 9 @Trace7#213#E308#0-1: Cost : 0.495914 No!
+Verifying branch 10 @Trace7#218#E328#1-0: Cost : 4.89712 No!
+Verifying branch 11 @Trace7#466#E361#1-0: NNo!
+Verifying branch 12 @Trace7#213#E406#0-1: Cost : 7.9991 No!
+Verifying branch 13 @Trace7#218#E426#1-0: Cost : 15.9953 No!
+Verifying branch 14 @Trace7#466#E459#1-0: NNo!
+Verifying branch 15 @Trace7#213#E504#0-1: Cost : 7.40377 No!
+Verifying branch 16 @Trace7#218#E524#1-0: Cost : 0.082161 No!
+Verifying branch 17 @Trace7#466#E557#1-0: NNo!
+Verifying branch 18 @Trace7#213#E602#0-1: Cost : 1.24881 No!
+Verifying branch 19 @Trace7#218#E622#1-0: Cost : 0.358733 No!
+Verifying branch 20 @Trace7#466#E655#1-0: NNo!
+Verifying branch 21 @Trace7#213#E700#0-1: Cost : 0.415905 No!
+Verifying branch 22 @Trace7#218#E720#1-0: Cost : 0.021715 No!
+Verifying branch 23 @Trace7#466#E753#1-0: NNo!
+Verifying branch 24 @Trace7#213#E798#0-1: Cost : 4.14138 No!
+Verifying branch 25 @Trace7#218#E818#1-0: Cost : 0.033722 No!
+Verifying branch 26 @Trace7#466#E851#1-0: NNo!
+Verifying branch 27 @Trace7#213#E896#0-1: Cost : 0.110032 No!
+Verifying branch 28 @Trace7#218#E916#1-0: Cost : 0.056352 No!
+Verifying branch 29 @Trace7#466#E949#0-1: NNo!
+Verifying branch 30 @Trace7#233#E982#0-1: Cost : 0.137081 No!
+Verifying branch 31 @Trace7#238#E998#1-0: Cost : 0.000141 No!
+Verifying branch 32 @Trace7#151#E1070#0-1: NNo!
+Verifying branch 33 @Trace7#213#E1139#0-1: Cost : 0.707577 No!
+Verifying branch 34 @Trace7#218#E1159#1-0: Cost : 0.000147 No!
+Verifying branch 35 @Trace7#233#E1206#0-1: Cost : 0.388162 No!
+Verifying branch 36 @Trace7#238#E1222#1-0: Cost : 0.004949 No!
+Verifying branch 37 @Trace7#233#E1265#0-1: Cost : 3.81486 Yes!
+Verifying branch 38 @Trace7#238#E1281#1-0: Cost : 0.000207 No!
+Verifying branch 39 @Trace7#169#E1345#0-1: NNo!
+Verifying branch 40 @Trace7#176#E1353#1-0: Cost : 0.004861 No!
+Verifying branch 41 @Trace7#293#E1387#0-1: Cost : 0.267024 No!
+Verifying branch 42 @Trace7#213#E1420#0-1: Cost : 1.04317 No!
+Verifying branch 43 @Trace7#218#E1440#1-0: Cost : 3.90956 No!
+Verifying branch 44 @Trace7#317#E1468#0-1: NNo!
+Verifying branch 45 @Trace7#319#E1471#0-1: NNo!
+Verifying branch 46 @Trace7#335#E1486#0-1: NNo!
+Verifying branch 47 @Trace7#151#E1523#0-1: NNo!
+Verifying branch 48 @Trace7#233#E1551#0-1: Cost : 8.98391 Yes!
+Verifying branch 49 @Trace7#238#E1575#1-0: Cost : 1.0603 No!
+Verifying branch 50 @Trace7#213#E1619#0-1: Cost : 3.08986 No!
+Verifying branch 51 @Trace7#218#E1639#1-0: Cost : 0.005474 No!
+Verifying branch 52 @Trace7#551#E1693#0-1: NNo!
+
+PTS
+noTaintPTS : G33570_129315528L1
+DTAMhybrid find
+getLine : 479
+taintPTS : G33570_129315528S2
+DTAMhybrid find
+getLine : 479
+
+ size : 23
+DTAMSerial name : G33570_129315528L10 getLine : 482
+DTAMSerial name : G33570_129315528L11 getLine : 233
+DTAMSerial name : G33570_129315528L12 getLine : 236
+DTAMSerial name : G33570_129315528L13 getLine : 240
+DTAMSerial name : G33570_129315528L14 getLine : 213
+DTAMSerial name : G33570_129315528L15 getLine : 216
+DTAMSerial name : G33570_129315528L16 getLine : 220
+DTAMSerial name : G33570_129315528L2 getLine : 482
+DTAMSerial name : G33570_129315528L3 getLine : 213
+DTAMSerial name : G33570_129315528L4 getLine : 216
+DTAMSerial name : G33570_129315528L5 getLine : 220
+DTAMSerial name : G33570_129315528L6 getLine : 479
+DTAMSerial name : G33570_129315528L7 getLine : 233
+DTAMSerial name : G33570_129315528L8 getLine : 236
+DTAMSerial name : G33570_129315528L9 getLine : 240
+DTAMSerial name : G33570_129315528S3 getLine : 482
+DTAMSerial name : G33570_129315528S4 getLine : 220
+DTAMSerial name : G33570_129315528S5 getLine : 240
+DTAMSerial name : G33570_129315528S6 getLine : 479
+DTAMSerial name : G33570_129315528S7 getLine : 482
+DTAMSerial name : G33570_129315528S8 getLine : 240
+DTAMSerial name : G33570_129315528S9 getLine : 220
+taintPTS name : G33570_129315528S2 getLine : 479
+
+************************************************************************
+第8次执行,路径文件为trace8.txt 前缀执行,前缀文件为prefixTrace5#233#E1504#1-0.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为新路径####################
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+buildAllFormula  success!
+
+Verifying this trace......
+
+The number of assert: 15
+Verifying assert 1 @Trace8#216#E218#1-0assert_bug: No!
+Verifying assert 2 @Trace8#216#E316#1-0assert_bug: No!
+Verifying assert 3 @Trace8#216#E414#1-0assert_bug: No!
+Verifying assert 4 @Trace8#216#E512#1-0assert_bug: No!
+Verifying assert 5 @Trace8#216#E610#1-0assert_bug: No!
+Verifying assert 6 @Trace8#216#E708#1-0assert_bug: No!
+Verifying assert 7 @Trace8#216#E806#1-0assert_bug: No!
+Verifying assert 8 @Trace8#216#E904#1-0assert_bug: No!
+Verifying assert 9 @Trace8#236#E1006#1-0assert_bug: No!
+Verifying assert 10 @Trace8#216#E1166#1-0assert_bug: No!
+Verifying assert 11 @Trace8#236#E1223#1-0assert_bug: No!
+Verifying assert 12 @Trace8#236#E1259#1-0assert_bug: No!
+Verifying assert 13 @Trace8#216#E1427#1-0assert_bug: No!
+Verifying assert 14 @Trace8#236#E1576#1-0assert_bug: No!
+Verifying assert 15 @Trace8#216#E1639#1-0assert_bug: No!
+
+Verifying is over!
+Sum of branches: 53
+Verifying branch 1 @Trace8#387#E29#0-1: NNo!
+Verifying branch 2 @Trace8#429#E51#0-1: NNo!
+Verifying branch 3 @Trace8#447#E69#0-1: NNo!
+Verifying branch 4 @Trace8#455#E75#0-1: Cost : 0.000115 No!
+Verifying branch 5 @Trace8#466#E165#1-0: NNo!
+Verifying branch 6 @Trace8#213#E210#0-1: Cost : 0.097408 No!
+Verifying branch 7 @Trace8#218#E230#1-0: Cost : 14.5131 No!
+Verifying branch 8 @Trace8#466#E263#1-0: NNo!
+Verifying branch 9 @Trace8#213#E308#0-1: Cost : 3.88763 No!
+Verifying branch 10 @Trace8#218#E328#1-0: Cost : 0.041304 No!
+Verifying branch 11 @Trace8#466#E361#1-0: NNo!
+Verifying branch 12 @Trace8#213#E406#0-1: Cost : 0.157091 No!
+Verifying branch 13 @Trace8#218#E426#1-0: Cost : 0.072649 No!
+Verifying branch 14 @Trace8#466#E459#1-0: NNo!
+Verifying branch 15 @Trace8#213#E504#0-1: Cost : 16.4608 No!
+Verifying branch 16 @Trace8#218#E524#1-0: Cost : 0.149998 No!
+Verifying branch 17 @Trace8#466#E557#1-0: NNo!
+Verifying branch 18 @Trace8#213#E602#0-1: Cost : 0.716669 No!
+Verifying branch 19 @Trace8#218#E622#1-0: Cost : 0.239817 No!
+Verifying branch 20 @Trace8#466#E655#1-0: NNo!
+Verifying branch 21 @Trace8#213#E700#0-1: Cost : 0.102672 No!
+Verifying branch 22 @Trace8#218#E720#1-0: Cost : 0.020413 No!
+Verifying branch 23 @Trace8#466#E753#1-0: NNo!
+Verifying branch 24 @Trace8#213#E798#0-1: Cost : 0.081562 No!
+Verifying branch 25 @Trace8#218#E818#1-0: Cost : 0.039679 No!
+Verifying branch 26 @Trace8#466#E851#1-0: NNo!
+Verifying branch 27 @Trace8#213#E896#0-1: Cost : 0.097529 No!
+Verifying branch 28 @Trace8#218#E916#1-0: Cost : 0.055289 No!
+Verifying branch 29 @Trace8#466#E949#0-1: NNo!
+Verifying branch 30 @Trace8#233#E993#0-1: Cost : 2.83933 No!
+Verifying branch 31 @Trace8#233#E998#1-0: Cost : 4.26145 Yes!
+Verifying branch 32 @Trace8#238#E1017#1-0: Cost : 0.000158 No!
+Verifying branch 33 @Trace8#151#E1089#0-1: NNo!
+Verifying branch 34 @Trace8#213#E1158#0-1: Cost : 0.10633 No!
+Verifying branch 35 @Trace8#218#E1178#1-0: Cost : 0.000146 No!
+Verifying branch 36 @Trace8#233#E1218#0-1: Cost : 1.532 No!
+Verifying branch 37 @Trace8#238#E1234#1-0: Cost : 0.006054 No!
+Verifying branch 38 @Trace8#233#E1247#0-1: Cost : 0.228519 No!
+Verifying branch 39 @Trace8#238#E1278#1-0: Cost : 0.000217 No!
+Verifying branch 40 @Trace8#169#E1344#0-1: NNo!
+Verifying branch 41 @Trace8#176#E1352#1-0: Cost : 0.004985 No!
+Verifying branch 42 @Trace8#293#E1386#0-1: Cost : 0.006497 No!
+Verifying branch 43 @Trace8#213#E1419#0-1: Cost : 7.7137 No!
+Verifying branch 44 @Trace8#218#E1440#1-0: Cost : 1.19669 No!
+Verifying branch 45 @Trace8#317#E1479#0-1: NNo!
+Verifying branch 46 @Trace8#319#E1482#0-1: NNo!
+Verifying branch 47 @Trace8#335#E1497#0-1: NNo!
+Verifying branch 48 @Trace8#233#E1514#0-1: Cost : 11.3653 Yes!
+Verifying branch 49 @Trace8#151#E1538#0-1: NNo!
+Verifying branch 50 @Trace8#238#E1587#1-0: Cost : 0.066538 No!
+Verifying branch 51 @Trace8#213#E1631#0-1: Cost : 0.575465 No!
+Verifying branch 52 @Trace8#218#E1651#1-0: Cost : 0.00546 No!
+Verifying branch 53 @Trace8#551#E1705#0-1: NNo!
+
+PTS
+taintPTS : G39020_191627752L1
+DTAMhybrid find
+getLine : 233
+noTaintPTS : G39020_191627752L2
+DTAMhybrid find
+getLine : 479
+taintPTS : G39020_191627752S2
+DTAMhybrid find
+getLine : 479
+
+ size : 24
+DTAMSerial name : G39020_191627752L10 getLine : 240
+DTAMSerial name : G39020_191627752L11 getLine : 482
+DTAMSerial name : G39020_191627752L12 getLine : 233
+DTAMSerial name : G39020_191627752L13 getLine : 236
+DTAMSerial name : G39020_191627752L14 getLine : 240
+DTAMSerial name : G39020_191627752L15 getLine : 213
+DTAMSerial name : G39020_191627752L16 getLine : 216
+DTAMSerial name : G39020_191627752L17 getLine : 220
+DTAMSerial name : G39020_191627752L3 getLine : 482
+DTAMSerial name : G39020_191627752L4 getLine : 213
+DTAMSerial name : G39020_191627752L5 getLine : 216
+DTAMSerial name : G39020_191627752L6 getLine : 220
+DTAMSerial name : G39020_191627752L7 getLine : 233
+DTAMSerial name : G39020_191627752L8 getLine : 236
+DTAMSerial name : G39020_191627752L9 getLine : 479
+DTAMSerial name : G39020_191627752S3 getLine : 482
+DTAMSerial name : G39020_191627752S4 getLine : 220
+DTAMSerial name : G39020_191627752S5 getLine : 240
+DTAMSerial name : G39020_191627752S6 getLine : 479
+DTAMSerial name : G39020_191627752S7 getLine : 482
+DTAMSerial name : G39020_191627752S8 getLine : 240
+DTAMSerial name : G39020_191627752S9 getLine : 220
+taintPTS name : G39020_191627752L1 getLine : 233
+taintPTS name : G39020_191627752S2 getLine : 479
+
+************************************************************************
+第9次执行,路径文件为trace9.txt 前缀执行,前缀文件为prefixTrace7#233#E1265#0-1.txt
+************************************************************************
+
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第10次执行,路径文件为trace10.txt 前缀执行,前缀文件为prefixTrace7#233#E1551#0-1.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第11次执行,路径文件为trace11.txt 前缀执行,前缀文件为prefixTrace8#233#E998#1-0.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+************************************************************************
+第12次执行,路径文件为trace12.txt 前缀执行,前缀文件为prefixTrace8#233#E1514#0-1.txt
+************************************************************************
+
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
+Copying from ./infile to ./outfile (start in 3 seconds)...
+######################本条路径为旧路径####################
+
+KLEE: done: total instructions = 20700
+KLEE: done: completed paths = 12
+KLEE: done: generated tests = 0
+len : 1
+
+./infile: Done. Copied 0 MB in 1 seconds (0 MB/s)
