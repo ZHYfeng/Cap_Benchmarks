@@ -441,6 +441,7 @@ void SlaveStart()
       make_taint(&Global->id);
   }
   Global->id = Global->id;
+  Send_Data(&Global->id);
 
   BARINCLUDE(Global->start);
 

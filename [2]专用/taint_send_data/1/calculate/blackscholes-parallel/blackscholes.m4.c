@@ -159,6 +159,8 @@ fptype * otime;
 int numError = 0;
 int nThreads;
 
+int data;
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -363,6 +365,11 @@ int bs_thread(void *tid_ptr) {
     int tid = *(int *)tid_ptr;
     int start = tid * (numOptions / nThreads);
     int end = start + (numOptions / nThreads);
+
+    data = 0;
+    make_taint(&data);
+    data = 0;
+    Send_Data(&data);
 
     for (j=0; j<NUM_RUNS; j++) {
 #ifdef ENABLE_OPENMP

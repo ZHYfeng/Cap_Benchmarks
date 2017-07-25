@@ -445,6 +445,7 @@ void slave_sort()
       make_taint(&global->Index);
   }
   global->Index = global->Index;
+    Send_Data(&global->Index);
 
    BARINCLUDE(global->barrier_key);
    BARINCLUDE(global->barrier_rank);
