@@ -433,6 +433,11 @@ void slave_sort()
 
    stats = dostats;
 
+  if (global->lock_Index == 1) {
+    global->lock_Index = global->lock_Index;
+    Send_Data(&global->lock_Index);
+  }
+
    LOCK(global->lock_Index)
      MyNum = global->Index;
    // assert(MyNum == global->Index);
@@ -440,11 +445,12 @@ void slave_sort()
    UNLOCK(global->lock_Index)
 
   global->Index = global->Index;
-  if (MyNum == 1) {
+  if (global->lock_Index == 2) {
     global->Index = global->Index;
       make_taint(&global->Index);
+      global->Index = global->Index;
   }
-  global->Index = global->Index;
+  
 
    BARINCLUDE(global->barrier_key);
    BARINCLUDE(global->barrier_rank);

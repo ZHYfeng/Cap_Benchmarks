@@ -438,9 +438,9 @@ void SlaveStart()
   Global->id = Global->id;
   if (MyNum == 1) {
     Global->id = Global->id;
-      make_taint(&Global->id);
+    make_taint(&Global->id);
+    Global->id = Global->id;
   }
-  Global->id = Global->id;
 
   BARINCLUDE(Global->start);
 
@@ -448,6 +448,8 @@ void SlaveStart()
    processors to avoid migration */
 
   BARRIER(Global->start, P)
+
+  Send_Data(&Global->id);
 
   upriv = (double *) malloc(2*(rootN-1)*sizeof(double));  
   if (upriv == NULL) {

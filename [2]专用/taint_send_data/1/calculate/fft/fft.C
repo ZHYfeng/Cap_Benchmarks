@@ -438,9 +438,9 @@ void SlaveStart()
   Global->id = Global->id;
   if (MyNum == 1) {
     Global->id = Global->id;
-      make_taint(&Global->id);
+    make_taint(&Global->id);
+    Global->id = Global->id;
   }
-  Global->id = Global->id;
   Send_Data(&Global->id);
 
   BARINCLUDE(Global->start);

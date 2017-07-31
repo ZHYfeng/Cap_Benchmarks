@@ -421,7 +421,7 @@ void SlaveStart()
   Global->id = Global->id;
   if (MyNum == 1) {
     Global->id = Global->id;
-      make_taint(&Global->id);
+    make_taint(&Global->id);
   }
   Global->id = Global->id;
   
@@ -429,6 +429,7 @@ void SlaveStart()
    processors to avoid migration */
 
   BARINCLUDE(Global->start);
+  Send_Data(&Global->id);
   OneSolve(n, block_size, MyNum, dostats);
 }
 

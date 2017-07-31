@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "box.h": "c",
+        "particle.h": "c",
+        "rt.h": "c",
+        "code.h": "c",
+        "radiosity.h": "c",
+        "memory.h": "c",
+        "decs.h": "c"
+    }
+}

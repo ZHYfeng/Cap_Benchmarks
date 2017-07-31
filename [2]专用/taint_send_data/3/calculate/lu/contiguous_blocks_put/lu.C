@@ -412,6 +412,11 @@ void SlaveStart()
 {
   long MyNum;
 
+  if (Global->id == 1) {
+    Global->id = Global->id;
+    Send_Data(&Global->id);
+  }
+
   LOCK(Global->idlock)
     MyNum = Global->id;
   // assert(MyNum == Global->id);
@@ -419,11 +424,11 @@ void SlaveStart()
   UNLOCK(Global->idlock)
 
   Global->id = Global->id;
-  if (MyNum == 1) {
+  if (Global->id == 2) {
     Global->id = Global->id;
-      make_taint(&Global->id);
+    make_taint(&Global->id);
+    Global->id = Global->id;
   }
-  Global->id = Global->id;
   
 /* POSSIBLE ENHANCEMENT:  Here is where one might pin processes to
    processors to avoid migration */

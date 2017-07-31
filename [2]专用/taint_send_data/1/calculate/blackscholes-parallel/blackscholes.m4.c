@@ -369,6 +369,7 @@ int bs_thread(void *tid_ptr) {
     data = 0;
     make_taint(&data);
     data = 0;
+    data = 0;
     Send_Data(&data);
 
     for (j=0; j<NUM_RUNS; j++) {

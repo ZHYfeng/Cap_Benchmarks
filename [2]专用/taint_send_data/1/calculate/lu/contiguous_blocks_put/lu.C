@@ -424,7 +424,7 @@ void SlaveStart()
       make_taint(&Global->id);
   }
   Global->id = Global->id;
-    Send_Data(&Global->id);
+  Send_Data(&Global->id);
   
 /* POSSIBLE ENHANCEMENT:  Here is where one might pin processes to
    processors to avoid migration */

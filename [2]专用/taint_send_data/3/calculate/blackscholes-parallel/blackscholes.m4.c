@@ -159,6 +159,8 @@ fptype * otime;
 int numError = 0;
 int nThreads;
 
+int data;
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -364,6 +366,12 @@ int bs_thread(void *tid_ptr) {
     int start = tid * (numOptions / nThreads);
     int end = start + (numOptions / nThreads);
 
+    data = data;
+    make_taint(&data);
+    data++;
+
+
+
     for (j=0; j<NUM_RUNS; j++) {
 #ifdef ENABLE_OPENMP
 #pragma omp parallel for private(i, price, priceDelta)
@@ -562,6 +570,10 @@ int main (int argc, char **argv)
 ;
     }
     
+    if(data > 3) {
+        Send_Data(&data);
+    }
+
     {
         int _M4_i;
         void *_M4_ret;

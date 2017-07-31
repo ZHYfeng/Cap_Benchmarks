@@ -344,6 +344,7 @@ void SlaveStart()
    processors to avoid migration */
 
   BARINCLUDE(Global->start);
+  Send_Data(&Global->id);
   OneSolve(n, block_size, MyNum, dostats);
 }
 

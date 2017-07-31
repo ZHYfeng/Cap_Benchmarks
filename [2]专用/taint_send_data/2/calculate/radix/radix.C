@@ -466,8 +466,10 @@ void slave_sort()
 
    init(key_start,key_stop,from);
 
-   /*BARRIER(global->barrier_key, number_of_processors) */
+   BARRIER(global->barrier_key, number_of_processors)
 
+       Send_Data(&global->Index);
+       
 /* POSSIBLE ENHANCEMENT:  Here is where one might reset the
    statistics that one is measuring about the parallel execution */
 
