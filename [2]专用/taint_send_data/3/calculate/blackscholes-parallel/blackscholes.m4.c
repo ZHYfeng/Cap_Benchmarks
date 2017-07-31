@@ -159,7 +159,7 @@ fptype * otime;
 int numError = 0;
 int nThreads;
 
-int data;
+int taint_data;
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -366,10 +366,13 @@ int bs_thread(void *tid_ptr) {
     int start = tid * (numOptions / nThreads);
     int end = start + (numOptions / nThreads);
 
-    data = data;
-    make_taint(&data);
-    data++;
-
+    taint_data = taint_data;
+    Send_Data(&taint_data);
+    taint_data++;
+    if(taint_data == 4){
+      make_taint(&taint_data);
+    }
+    taint_data = taint_data;
 
 
     for (j=0; j<NUM_RUNS; j++) {
@@ -555,7 +558,7 @@ int main (int argc, char **argv)
 #else
     int *tids;
     tids = (int *) malloc (nThreads * sizeof(int));
-
+    taint_data = 0;
     for(i=0; i<nThreads; i++) {
         tids[i]=i;
         
@@ -568,10 +571,6 @@ int main (int argc, char **argv)
         _M4_threadsTableAllocated[_M4_i] = 1;
     }
 ;
-    }
-    
-    if(data > 3) {
-        Send_Data(&data);
     }
 
     {

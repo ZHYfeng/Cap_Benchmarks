@@ -100,6 +100,7 @@ int queue_size = 8;
 int dot_mode = 0;
 time_t start;
 int silent = 0;
+int taint_data;
 
 
 typedef struct buffer
@@ -287,6 +288,9 @@ void *writer(void *foo)
     long long last_written = 0;
     int len;
 
+    taint_data = 0;
+    make_taint(&taint_data);
+    taint_data = 0;
     
     while (bp = q_pop(write_q))
     {
@@ -466,6 +470,9 @@ int main(int argc, char *argv[])
     for (i = 0; i < queue_size; i++)
 	q_push(free_q, b_create(buffer_size));
 
+
+    taint_data = 0;
+    Send_Data(&taint_data);
     pthread_create(&tid, NULL, writer, NULL);
     pos = 0;
     bytes = 0;

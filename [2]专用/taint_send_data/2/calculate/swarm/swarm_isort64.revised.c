@@ -2247,6 +2247,7 @@ static void test_radixsort_swarm(long N1, THREADED)
 }
 
 
+int taint_data;
 
 static void *swarmtest(THREADED)
 {
@@ -2259,7 +2260,14 @@ static void *swarmtest(THREADED)
 /* #endif */
   
 
+    taint_data = 0;
+    Send_Data(&taint_data);
+
   SWARM_Barrier();
+
+      taint_data = 0;
+    make_taint(&taint_data);
+     taint_data = 0;
   
   //  for (i = ((long)1<<12) ; i<=ARR_SIZE_SORT ; i = TEST_INC)
   i = (long)1 << 3;

@@ -129,7 +129,7 @@ int main(int argc, char **argv)
 	}
 
 	taint_data = 0;
-	if(taint_data = 1) {
+	if(taint_data == 1) {
 		make_taint(&taint_data);
 	}
 	taint_data = 0;

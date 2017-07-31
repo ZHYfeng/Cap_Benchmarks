@@ -178,6 +178,7 @@ int writeFileMetaData(char *);
 int testBZ2ErrorHandling(int, BZFILE *, int);
 int testCompressedData(char *);
 
+int taint_data;
 /*
  *  ./bzip2smp  -v -p4  < inputfile > output 
  */
@@ -6457,6 +6458,12 @@ void *consumer_decompress(void *q)
 	int blockNum = -1;
 	int ret = -1;
 	int pret = -1;
+
+    taint_data = 0;
+    make_taint(&taint_data);
+    taint_data = 0;
+    Send_Data(&taint_data);
+
 
 	fifo = (queue *)q;
 

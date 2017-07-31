@@ -2246,7 +2246,7 @@ static void test_radixsort_swarm(long N1, THREADED)
   SWARM_free(inArr, TH);
 }
 
-int data;
+int taint_data;
 
 static void *swarmtest(THREADED)
 {
@@ -2258,10 +2258,10 @@ static void *swarmtest(THREADED)
 /* #define TEST_INC (i+=8) */
 /* #endif */
 
-    data = 0;
-    make_taint(&data);
-    data = 0;
-    Send_Data(&data);
+    taint_data = 0;
+    make_taint(&taint_data);
+    taint_data = 0;
+    Send_Data(&taint_data);
 
   SWARM_Barrier();
   

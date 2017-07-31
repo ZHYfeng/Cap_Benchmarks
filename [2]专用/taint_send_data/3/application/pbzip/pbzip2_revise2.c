@@ -177,7 +177,7 @@ int getFileMetaData(char *);
 int writeFileMetaData(char *);
 int testBZ2ErrorHandling(int, BZFILE *, int);
 int testCompressedData(char *);
-
+int taint_data;
 /*
  *  ./bzip2smp  -v -p4  < inputfile > output 
  */
@@ -6458,6 +6458,14 @@ void *consumer_decompress(void *q)
 	int ret = -1;
 	int pret = -1;
 
+    taint_data = taint_data;
+    Send_Data(&taint_data);
+    taint_data++;
+    if(taint_data == 2){
+      make_taint(&taint_data);
+    }
+    taint_data = taint_data;
+
 	fifo = (queue *)q;
 
 	for (;;)
@@ -7750,6 +7758,7 @@ int main(int argc, char* argv[])
 		{
 			if (QuietMode != 1)
 				fprintf(stderr, "Decompressing data...\n");
+        taint_data = 0;
 			for (i=0; i < numCPU; i++)
 			{
 				ret = pthread_create(&con, NULL, consumer_decompress, fifo);
