@@ -20,6 +20,10 @@ void * signal_waiter(void *arg)
 {
 	int signal;
 
+	taint_data = 0;
+	Send_Data(&taint_data);
+	taint_data = 1;
+
 	arg = NULL;
 
 	pthread_sigmask(SIG_UNBLOCK, &signal_set, NULL);

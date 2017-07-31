@@ -128,6 +128,12 @@ int main(int argc, char **argv)
 		exit(-1);
 	}
 
+	taint_data = 0;
+	if(taint_data = 1) {
+		make_taint(&taint_data);
+	}
+	taint_data = 0;
+
 	parse_url(fullurl, req);
 
 	/* Create a thread for hadling signals	*/

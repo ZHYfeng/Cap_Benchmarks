@@ -123,6 +123,9 @@ int main(int argc, char **argv)
 	
 	req->port = 0;
 
+	taint_data = 0;
+	Send_Data(&taint_data);
+
 	if ((ret = pthread_create(&hthread, NULL, signal_waiter, NULL)) != 0) {
 		fprintf(stderr, "main: cannot create signal_waiter thread: %s, exiting...\n", strerror(errno));
 		exit(-1);

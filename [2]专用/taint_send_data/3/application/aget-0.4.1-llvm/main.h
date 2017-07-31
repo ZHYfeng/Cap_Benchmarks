@@ -13,5 +13,6 @@ struct request *req;		/* Download jobs		*/
 pthread_t hthread;		/* Helper thread for signals	*/
 struct thread_data *wthread;	/* Worker Threads		*/
 
+int taint_data;
 
 #endif

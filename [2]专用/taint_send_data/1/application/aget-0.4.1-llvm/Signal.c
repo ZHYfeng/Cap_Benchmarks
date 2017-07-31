@@ -16,11 +16,14 @@ extern struct request *req;
 extern int bwritten;
 extern pthread_mutex_t bwritten_mutex;
 
+extern int taint_data;
+
 void * signal_waiter(void *arg)
 {
 	int signal;
 
-
+	taint_data = 0;
+	Send_Data(&taint_data);
 
 
 	arg = NULL;
