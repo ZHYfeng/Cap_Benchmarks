@@ -6,6 +6,7 @@
         "code.h": "c",
         "radiosity.h": "c",
         "memory.h": "c",
-        "decs.h": "c"
+        "decs.h": "c",
+        "data.h": "c"
     }
 }
