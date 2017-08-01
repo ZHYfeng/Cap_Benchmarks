@@ -26,8 +26,6 @@ recurrence(){
 			totalline
 			pwd | awk -F"/" '{ printf("name:%s\n",$NF); }' >> ./output_info/statics.txt
 			sleep 1
-			rm -rf klee*
-			make clean
 		fi
 	done
 
