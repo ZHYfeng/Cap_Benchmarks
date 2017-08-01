@@ -82,7 +82,7 @@ typedef struct
   int icase;
 } BM;
 
-
+int taint_data;
 int bm_init(BM *bmp, unsigned char *x, int m, int icase);
 
 int bm_search(BM *bmp,  unsigned char *y, size_t n, int (*mfun)(unsigned char *buf, size_t n, size_t pos, void *misc), void *misc);
@@ -747,7 +747,14 @@ matchfun(unsigned char *buf,
   worker(void *arg)
   {
     char *path;
-    
+
+    taint_data = taint_data;
+    Send_Data(&taint_data);
+    taint_data++;
+    if(taint_data == 2){
+      make_taint(&taint_data);
+    }
+    taint_data = taint_data;
     
     while (pqueue_get(&pqb, (void **) &path) == 1)
     {
@@ -963,7 +970,7 @@ pthread_attr_init(&pab);
 pthread_attr_setscope(&pab, PTHREAD_SCOPE_SYSTEM);
 
 aworkers = nworkers;
-
+taint_data = 0;
 for (j = 0; j < nworkers; ++j)
   if (pthread_create(&tid, &pab, worker, NULL) != 0)
   {

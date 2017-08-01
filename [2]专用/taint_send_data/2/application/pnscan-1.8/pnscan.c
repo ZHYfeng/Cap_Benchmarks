@@ -63,7 +63,7 @@ unsigned long last_ip = 0xFFFFFFFF;
 pthread_mutex_t cur_lock;
 unsigned long cur_ip;
 int cur_port;
-
+int taint_data;
 pthread_mutex_t print_lock;
 
 void print_version(FILE *fp) {
@@ -596,7 +596,9 @@ void *
 r_worker(void *arg) {
 	unsigned long addr;
 	int port;
-
+    taint_data = 0;
+    make_taint(&taint_data);
+    taint_data = 0;
 	pthread_mutex_lock(&cur_lock);
 
 	while (!stop) {
@@ -985,7 +987,8 @@ int main(int argc, char *argv[]) {
 
 	if (verbose > 1)
 		fprintf(stderr, "Using %d worker threads\n", nworkers);
-
+	taint_data = 0;
+    Send_Data(&taint_data);
 	for (i = 0; i < nworkers - 1; ++i)
 		pthread_create(&tid, NULL, r_worker, NULL);
 
