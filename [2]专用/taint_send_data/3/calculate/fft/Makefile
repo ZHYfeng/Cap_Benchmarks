@@ -1,5 +1,5 @@
 TARGET = FFT
-OBJS = fft.o
+OBJS = fft.bc
 
 include Makefile.config
 

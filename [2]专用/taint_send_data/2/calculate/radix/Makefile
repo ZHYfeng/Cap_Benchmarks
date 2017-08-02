@@ -1,5 +1,5 @@
 TARGET = RADIX
-OBJS = radix.o
+OBJS = radix.bc
 
 include Makefile.config
 

@@ -1,5 +1,5 @@
 TARGET = LU
-OBJS = lu.o
+OBJS = lu.bc
 
 include Makefile.config
 
