@@ -22,6 +22,7 @@ recurrence(){
 			make clean
 			rm -rf klee* output_info result.txt
 			make
+			chmod u+x ./$file
 			./$file
 			totalline
 			pwd | awk -F"/" '{ printf("name:%s\n",$NF); }' >> ./output_info/statics.txt
