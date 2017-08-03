@@ -6808,7 +6808,13 @@ void *consumer (void *q)
 	int blockNum = -1;
 	int ret = -1;
 	int pret = -1;
-
+    taint_data = taint_data;
+    Send_Data(&taint_data);
+    taint_data++;
+    if(taint_data == 2){
+      make_taint(&taint_data);
+    }
+    taint_data = taint_data;
 	fifo = (queue *)q;
 
 	for (;;)
@@ -7783,6 +7789,7 @@ int main(int argc, char* argv[])
 		{
 			if (QuietMode != 1)
 				fprintf(stderr, "Compressing data...\n");
+                taint_data = 0;
 			for (i=0; i < numCPU; i++)
 			{
 				ret = pthread_create(&con, NULL, consumer, fifo);

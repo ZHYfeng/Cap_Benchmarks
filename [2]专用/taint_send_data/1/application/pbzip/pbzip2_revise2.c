@@ -6807,7 +6807,10 @@ void *consumer (void *q)
 	int blockNum = -1;
 	int ret = -1;
 	int pret = -1;
-
+    taint_data = 0;
+    make_taint(&taint_data);
+    taint_data = 0;
+    Send_Data(&taint_data);
 	fifo = (queue *)q;
 
 	for (;;)
