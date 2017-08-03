@@ -433,9 +433,9 @@ void slave_sort()
 
    stats = dostats;
 
-  if (global->lock_Index == 1) {
-    global->lock_Index = global->lock_Index;
-    Send_Data(&global->lock_Index);
+  if (global->Index == 1) {
+    global->Index = global->Index;
+    Send_Data(&global->Index);
   }
 
    LOCK(global->lock_Index)
@@ -445,7 +445,7 @@ void slave_sort()
    UNLOCK(global->lock_Index)
 
   global->Index = global->Index;
-  if (global->lock_Index == 2) {
+  if (global->Index == 2) {
     global->Index = global->Index;
       make_taint(&global->Index);
       global->Index = global->Index;
